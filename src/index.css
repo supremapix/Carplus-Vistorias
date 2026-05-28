@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Source+Sans+3:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Poppins", sans-serif;
+  --color-primary: #F5A623;
+  --color-primary-dark: #D4880F;
+  --color-dark: #1A1A1A;
+  --color-dark-2: #111111;
+  --color-light: #F9F9F9;
+  --color-white: #FFFFFF;
+  --color-text: #333333;
+  --color-text-light: #666666;
+  
+  --shadow-card: 0 4px 24px rgba(0,0,0,0.12);
+  --shadow-card-hover: 0 8px 40px rgba(245,166,35,0.25);
+}
+
+/* Base custom styles to fulfill styling and anim criteria */
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+}
+
+/* Text alignment */
+p {
+  text-align: justify;
+  line-height: 1.75;
+}
+
+/* Custom header states */
+#main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  transition: background 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease;
+  z-index: 1000;
+}
+#main-header.scrolled {
+  background: rgba(26, 26, 26, 0.95);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* Menu links dynamic underline hover */
+.nav-link {
+  position: relative;
+  color: var(--color-white);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-primary);
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after, .nav-link.active::after {
+  width: 100%;
+}
+
+/* Animated header CTA check button shake */
+@keyframes shake {
+  0%, 100% { transform: scale(1); }
+  10%, 30% { transform: rotate(-3deg) scale(1.03); }
+  20%, 40% { transform: rotate(3deg) scale(1.03); }
+  50% { transform: rotate(0) scale(1.03); }
+}
+.header-cta-shake {
+  animation: shake 5s infinite;
+}
+
+/* Custom background grid pattern for footer */
+.footer-grid-bg {
+  position: relative;
+  background-color: var(--color-dark);
+}
+.footer-grid-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+  background-size: 30px 30px;
+  pointer-events: none;
+}
+
+/* Glow logo animations */
+@keyframes logo-glow {
+  from { filter: drop-shadow(0 0 2px rgba(245,166,35,0.25)); }
+  to { filter: drop-shadow(0 0 10px rgba(245,166,35,0.6)); }
+}
+.logo-glowing {
+  animation: logo-glow 3.5s ease-in-out infinite alternate;
+}
+
+/* Divider flow animations */
+@keyframes divider-flow {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.footer-divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+  background-size: 200% 100%;
+  animation: divider-flow 4s linear infinite;
+}
+
+/* Hero Badge animations */
+@keyframes pulse-border {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(245, 166, 35, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(245, 166, 35, 0); }
+}
+.badge-pulsing {
+  animation: pulse-border 2s infinite;
+}
+
+/* Floating WhatsApp button pulse */
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+.whatsapp-ring::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid #25D366;
+  animation: pulse-ring 2s infinite;
+  pointer-events: none;
+}
+
+/* Intersection Observer transitions */
+.fade-in-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fade-in-on-scroll.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom Service Card Hover effects */
+.service-card {
+  border-top: 3px solid transparent;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.service-card:hover {
+  border-top-color: var(--color-primary);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Icon rotation on hover */
+.service-card:hover .card-icon {
+  transform: rotate(360deg);
+}
+.card-icon {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Text slide columns */
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.slide-in-right.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.slide-in-left.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Particles moving subtly in backdrop of hero */
+@keyframes particle-drift {
+  0% { transform: translateY(0) translateX(0); opacity: 0.1; }
+  50% { transform: translateY(-30px) translateX(15px); opacity: 0.4; }
+  100% { transform: translateY(-60px) translateX(0px); opacity: 0; }
+}
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: white;
+  border-radius: 50%;
+  animation: particle-drift 8s infinite linear;
+}
+
+/* Premium Animated Gradient Border & Glow */
+@keyframes spin-gradient {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes border-glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(245, 166, 35, 0.25), 0 0 5px rgba(245, 166, 35, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(245, 166, 35, 0.55), 0 0 15px rgba(245, 166, 35, 0.4);
+  }
+}
+
+.premium-border-container {
+  position: relative;
+  border-radius: 16px;
+  padding: 3px; /* thickness of the border */
+  overflow: hidden;
+  background: rgba(245, 166, 35, 0.1);
+}
+
+.premium-border-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    #F5A623 0deg,
+    rgba(242, 166, 35, 0.2) 90deg,
+    transparent 180deg,
+    #F5A623 180deg,
+    rgba(242, 166, 35, 0.2) 270deg,
+    transparent 360deg
+  );
+  animation: spin-gradient 6s linear infinite;
+  z-index: 0;
+}
+
+.premium-border-inner {
+  position: relative;
+  background-color: #09090b; /* matches bg-zinc-950 */
+  border-radius: 13px;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.premium-glow-pulse {
+  animation: border-glow-pulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.15); }
+  45% { transform: scale(1.05); }
+  60% { transform: scale(1.2); }
+}
+
+.animate-heartbeat {
+  animation: heartbeat 1.2s infinite ease-in-out;
+}
+
