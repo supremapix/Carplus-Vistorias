@@ -245,8 +245,16 @@ export default function App() {
             </section>
 
             {/* SEÇÃO: Diferenciais Carplus - Dark theme #111111 */}
-            <section className="bg-zinc-950 text-white py-20 px-6 border-b border-zinc-900">
-              <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <section 
+              className="relative bg-zinc-950 text-white py-20 px-6 border-b border-zinc-900 bg-cover bg-center overflow-hidden"
+              style={{
+                backgroundImage: 'url("https://img.carplusvistorias.com.br/secao-fundo-site.png")',
+              }}
+            >
+              {/* Overlay super leve para garantir visibilidade máxima da foto com leitura do conteúdo */}
+              <div className="absolute inset-0 bg-black/35 z-0"></div>
+
+              <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
                 
                 {/* Image column */}
                 <div className="lg:col-span-5 slide-in-left order-2 lg:order-1 flex items-center justify-center p-3 select-none">
@@ -405,8 +413,16 @@ export default function App() {
             </section>
 
             {/* SEÇÃO: Onde Estamos (maps + contacts) */}
-            <section className="bg-zinc-950 text-white py-20 px-6">
-              <div className="max-w-7xl mx-auto">
+            <section 
+              className="relative bg-zinc-950 text-white py-20 px-6 bg-cover bg-center overflow-hidden"
+              style={{
+                backgroundImage: 'url("https://img.carplusvistorias.com.br/secao-fundo-site.png")',
+              }}
+            >
+              {/* Overlay super leve para garantir visibilidade máxima da foto com leitura do conteúdo */}
+              <div className="absolute inset-0 bg-black/35 z-0"></div>
+
+              <div className="max-w-7xl mx-auto relative z-10">
                 
                 <div className="text-center max-w-2xl mx-auto mb-16 fade-in-on-scroll">
                   <span className="section-label text-primary font-mono select-none block mb-3">MATRIZ</span>
@@ -517,7 +533,7 @@ export default function App() {
             <section 
               className="bg-zinc-950 py-16 px-6 border-b border-zinc-900"
               style={{
-                backgroundImage: 'linear-gradient(to bottom, rgba(17,17,17,0.7), rgba(26,26,26,0.95)), url("https://img.carplusvistorias.com.br/vistorias-carplus-carros.png")',
+                backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.55)), url("https://img.carplusvistorias.com.br/secao-fundo-site.png")',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
               }}
@@ -668,7 +684,7 @@ export default function App() {
             <section 
               className="bg-zinc-950 py-16 px-6 border-b border-zinc-900"
               style={{
-                backgroundImage: 'linear-gradient(to bottom, rgba(17,17,17,0.8), rgba(26,26,26,0.95)), url("https://img.carplusvistorias.com.br/vistorias-carplus-carros.png")',
+                backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.55)), url("https://img.carplusvistorias.com.br/secao-fundo-site.png")',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
               }}
@@ -835,7 +851,7 @@ export default function App() {
             <section 
               className="bg-zinc-950 py-16 px-6 border-b border-zinc-900"
               style={{
-                backgroundImage: 'linear-gradient(to bottom, rgba(17,17,17,0.73), rgba(26,26,26,0.95)), url("https://img.carplusvistorias.com.br/vistorias-carplus-carros.png")',
+                backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.55)), url("https://img.carplusvistorias.com.br/secao-fundo-site.png")',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
               }}
@@ -882,7 +898,7 @@ export default function App() {
             <section 
               className="bg-zinc-950 py-16 px-6 border-b border-zinc-900"
               style={{
-                backgroundImage: 'linear-gradient(to bottom, rgba(17,17,17,0.75), rgba(26,26,26,0.95)), url("https://img.carplusvistorias.com.br/vistorias-carplus-carros.png")',
+                backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.55)), url("https://img.carplusvistorias.com.br/secao-fundo-site.png")',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
               }}
