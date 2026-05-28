@@ -110,8 +110,8 @@ export default function App() {
               {/* Dynamic Ken Burns Background Slide-show Slider */}
               <div className="absolute inset-0 z-0">
                 {[
-                  "https://lh3.googleusercontent.com/d/1k6OgHyYj1HHRE_5MazonGCmcPizPTXNn",
-                  "https://lh3.googleusercontent.com/d/1h7nvP4ZVEWDU5Uzbv1GtRCUAZ7WEZXZC"
+                  "https://img.carplusvistorias.com.br/carplus-inspecao.png",
+                  "https://img.carplusvistorias.com.br/hero-site-carplus-vistorias-portao-hero.png"
                 ].map((bgUrl, index) => (
                   <div
                     key={index}
@@ -235,7 +235,7 @@ export default function App() {
                 <div className="lg:col-span-5 slide-in-right relative flex items-center justify-center">
                   <div className="absolute inset-4 border border-primary/60 rounded-xl -z-10 translate-x-3 translate-y-3"></div>
                   <img 
-                    src="https://lh3.googleusercontent.com/d/1xo4eax5rjJ3jezV8kVNRTR3FIAwU0h2b" 
+                    src="https://img.carplusvistorias.com.br/vistorias-cautelares-parolin.png" 
                     alt="Vistoria Realizada pós Hero" 
                     className="w-full h-auto max-h-[340px] md:max-h-[380px] object-contain rounded-xl shadow-xl"
                     referrerPolicy="no-referrer"
@@ -253,7 +253,7 @@ export default function App() {
                   <div className="premium-border-container premium-glow-pulse w-full max-w-[340px] md:max-w-[380px] aspect-square flex items-center justify-center">
                     <div className="premium-border-inner">
                       <img 
-                        src="https://lh3.googleusercontent.com/d/1QDu6Vlj_gCxC-KNhaRlng5xN2qDXMDt9" 
+                        src="https://img.carplusvistorias.com.br/inspecao-automotiva-carplus.png" 
                         alt="Nossos Diferenciais Carplus" 
                         className="w-full h-full object-contain rounded-lg transition-transform duration-500 hover:scale-[1.03]"
                         referrerPolicy="no-referrer"
@@ -311,8 +311,13 @@ export default function App() {
             </section>
 
             {/* SEÇÃO: Nossos Serviços (4 cards dark) */}
-            <section className="bg-zinc-900 border-b border-zinc-800 py-20 px-6">
-              <div className="max-w-7xl mx-auto">
+            <section 
+              className="relative bg-zinc-950 border-b border-zinc-800 py-20 px-6 bg-cover bg-center overflow-hidden"
+              style={{
+                backgroundImage: 'linear-gradient(to bottom, rgba(17,17,17,0.85), rgba(9,9,11,0.95)), url("https://img.carplusvistorias.com.br/vistorias-carplus-carros.png")',
+              }}
+            >
+              <div className="max-w-7xl mx-auto relative z-10">
                 <div className="text-center max-w-2xl mx-auto mb-16 fade-in-on-scroll">
                   <span className="section-label font-bold text-primary tracking-widest inline-block mb-3">O QUE FAZEMOS</span>
                   <h2 className="font-display font-black text-2xl sm:text-3xl md:text-4xl uppercase tracking-tight mb-4">
@@ -509,7 +514,7 @@ export default function App() {
             <section 
               className="bg-zinc-950 py-16 px-6 border-b border-zinc-900"
               style={{
-                backgroundImage: 'linear-gradient(to bottom, rgba(17,17,17,0.7), rgba(26,26,26,0.95)), url("https://lh3.googleusercontent.com/d/14nq43jg1SVFPYnNZLrEjBqBxec9CwBPC")',
+                backgroundImage: 'linear-gradient(to bottom, rgba(17,17,17,0.7), rgba(26,26,26,0.95)), url("https://img.carplusvistorias.com.br/vistorias-carplus-carros.png")',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
               }}
@@ -660,7 +665,7 @@ export default function App() {
             <section 
               className="bg-zinc-950 py-16 px-6 border-b border-zinc-900"
               style={{
-                backgroundImage: 'linear-gradient(to bottom, rgba(17,17,17,0.8), rgba(26,26,26,0.95)), url("https://lh3.googleusercontent.com/d/14nq43jg1SVFPYnNZLrEjBqBxec9CwBPC")',
+                backgroundImage: 'linear-gradient(to bottom, rgba(17,17,17,0.8), rgba(26,26,26,0.95)), url("https://img.carplusvistorias.com.br/vistorias-carplus-carros.png")',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
               }}
@@ -705,7 +710,7 @@ export default function App() {
                 <div className="lg:col-span-5 slide-in-right relative flex items-center justify-center">
                   <div className="absolute inset-4 border border-primary/50 rounded-xl -z-10 translate-x-3 translate-y-3"></div>
                   <img 
-                    src="https://lh3.googleusercontent.com/d/16VlrczYDlXdpaOqogfQV60c2ybeSxOID"
+                    src="https://img.carplusvistorias.com.br/vistorias-pr.png"
                     alt="Quem Somos - Carplus"
                     className="w-full h-auto max-h-[340px] md:max-h-[380px] object-contain rounded-xl shadow-xl"
                     referrerPolicy="no-referrer"
@@ -827,7 +832,7 @@ export default function App() {
             <section 
               className="bg-zinc-950 py-16 px-6 border-b border-zinc-900"
               style={{
-                backgroundImage: 'linear-gradient(to bottom, rgba(17,17,17,0.73), rgba(26,26,26,0.95)), url("https://lh3.googleusercontent.com/d/14nq43jg1SVFPYnNZLrEjBqBxec9CwBPC")',
+                backgroundImage: 'linear-gradient(to bottom, rgba(17,17,17,0.73), rgba(26,26,26,0.95)), url("https://img.carplusvistorias.com.br/vistorias-carplus-carros.png")',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
               }}
@@ -874,7 +879,7 @@ export default function App() {
             <section 
               className="bg-zinc-950 py-16 px-6 border-b border-zinc-900"
               style={{
-                backgroundImage: 'linear-gradient(to bottom, rgba(17,17,17,0.75), rgba(26,26,26,0.95)), url("https://lh3.googleusercontent.com/d/14nq43jg1SVFPYnNZLrEjBqBxec9CwBPC")',
+                backgroundImage: 'linear-gradient(to bottom, rgba(17,17,17,0.75), rgba(26,26,26,0.95)), url("https://img.carplusvistorias.com.br/vistorias-carplus-carros.png")',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
               }}
@@ -909,11 +914,11 @@ export default function App() {
       <footer 
         className="relative border-t border-zinc-800 text-white py-16 px-6 bg-zinc-950 bg-cover bg-center overflow-hidden"
         style={{
-          backgroundImage: `url("https://lh3.googleusercontent.com/d/1Dx3MiBgTULnkppIbpepRjplYO4c-hjUg")`
+          backgroundImage: `url("https://img.carplusvistorias.com.br/vistorias-carplus-carros.png")`
         }}
       >
         {/* Overlay do background para máxima visibilidade da imagem mantendo legibilidade do texto */}
-        <div className="absolute inset-0 bg-black/85 z-0"></div>
+        <div className="absolute inset-0 bg-black/45 z-0"></div>
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">

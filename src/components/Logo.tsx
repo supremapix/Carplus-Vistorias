@@ -19,8 +19,8 @@ export default function Logo({ variant = 'dark', className = '', showText = true
   const subtextColor = isLightBg ? 'text-zinc-600' : 'text-gray-300';
   const pColor = '#F5A623'; // Always orange/amber
 
-  // Direct high-resolution load link for the shared Google Drive asset
-  const logoUrl = "https://lh3.googleusercontent.com/d/1bDTafzCK-ElSggqHku32K9o7KgQG2Ia2";
+  // Direct high-resolution load link for the shared asset
+  const logoUrl = "https://img.carplusvistorias.com.br/carplus-vistorias-portao-cwb.png";
   
   return (
     <div className={`flex items-center gap-3 select-none ${className}`}>
