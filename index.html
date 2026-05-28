@@ -14,6 +14,10 @@
     <meta name="geo.position" content="-25.4660;-49.2890" />
     <meta name="ICBM" content="-25.4660, -49.2890" />
     
+    <!-- Site Verifications -->
+    <meta name="google-site-verification" content="OHXQF_UrATVWFc61ycp6ykjvldFT6tDvU9vghlTV9Vg" />
+    <meta name="msvalidate.01" content="274D1FA5C55C0D2283EAE94551589DFC" />
+    
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
@@ -41,44 +45,108 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "AutoRepair",
-      "name": "Carplus Vistorias",
-      "description": "Especialistas em vistoria cautelar e perícia automotiva em Curitiba/PR. Laudo emitido na hora no Portão.",
-      "url": "https://carplusvistorias.com.br",
-      "telephone": "+55-41-98874-0258",
-      "email": "laudo@carplusvistorias.com.br",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Av. Presidente Arthur da Silva Bernardes, 1323",
-        "addressLocality": "Curitiba",
-        "addressRegion": "PR",
-        "postalCode": "80320-300",
-        "addressCountry": "BR"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": -25.4660,
-        "longitude": -49.2890
-      },
-      "openingHoursSpecification": [
+      "@graph": [
         {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-          "opens": "08:00",
-          "closes": "18:00"
+          "@type": "AutomotiveBusiness",
+          "@id": "https://carplusvistorias.com.br/#organization",
+          "name": "Carplus Vistorias",
+          "alternateName": "Carplus Vistorias Curitiba",
+          "description": "Especialistas em vistoria cautelar, perícia automotiva e laudos de transferência em Curitiba/PR. Laudo emitido na hora com seguro de responsabilidade civil incluso.",
+          "url": "https://carplusvistorias.com.br",
+          "telephone": "+55-41-98874-0258",
+          "email": "laudo@carplusvistorias.com.br",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://lh3.googleusercontent.com/d/10rqxOIprzc2ZRk3oIbumSNljFjMoXn5i",
+            "width": "200",
+            "height": "200"
+          },
+          "image": "https://lh3.googleusercontent.com/d/1r8vzJIAi6BiFvwgWbOdbqzguDig9K8GE",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Av. Presidente Arthur da Silva Bernardes, 1323",
+            "addressLocality": "Curitiba",
+            "addressRegion": "PR",
+            "postalCode": "80320-300",
+            "addressCountry": "BR"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -25.4660,
+            "longitude": -49.2890
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+              "opens": "08:00",
+              "closes": "18:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": "Saturday",
+              "opens": "08:00",
+              "closes": "13:00"
+            }
+          ],
+          "priceRange": "$$",
+          "areaServed": [
+            {
+              "@type": "AdministrativeArea",
+              "name": "Curitiba"
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "São José dos Pinhais"
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "Colombo"
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "Araucária"
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "Pinhais"
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "Fazenda Rio Grande"
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "Campo Largo"
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "Piraquara"
+            }
+          ],
+          "hasMap": "https://www.google.com/maps/dir/?api=1&destination=Av.+Presidente+Arthur+da+Silva+Bernardes,+1323,+Port%C3%A3o,+Curitiba,+PR",
+          "sameAs": [
+            "https://www.google.com/maps/place/Carplus+Vistorias"
+          ]
         },
         {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Saturday",
-          "opens": "08:00",
-          "closes": "13:00"
+          "@type": "Service",
+          "name": "Vistoria Cautelar Veicular",
+          "provider": {
+            "@id": "https://carplusvistorias.com.br/#organization"
+          },
+          "description": "Análise minuciosa da estrutura do veículo, histórico de leilão, sinistro, roubo e furto. Evite dores de cabeça no mercado de carros usados.",
+          "areaServed": "Curitiba e Região Metropolitana"
+        },
+        {
+          "@type": "Service",
+          "name": "Perícia Automotiva",
+          "provider": {
+            "@id": "https://carplusvistorias.com.br/#organization"
+          },
+          "description": "Inspeção técnica detalhada da lataria, motor, chassi e integridade estrutural para garantir total segurança antes de fechar negócio.",
+          "areaServed": "Curitiba e Região Metropolitana"
         }
-      ],
-      "priceRange": "$$",
-      "areaServed": ["Curitiba", "São José dos Pinhais", "Colombo", "Araucária", "Pinhais", "Fazenda Rio Grande", "Pinheirinho", "Portão", "Água Verde"],
-      "hasMap": "https://www.google.com/maps/dir/?api=1&destination=Av.+Presidente+Arthur+da+Silva+Bernardes,+1323,+Port%C3%A3o,+Curitiba,+PR",
-      "sameAs": [
-        "https://www.google.com/maps/place/Carplus+Vistorias"
       ]
     }
     </script>
