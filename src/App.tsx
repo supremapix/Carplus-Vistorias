@@ -314,17 +314,20 @@ export default function App() {
             <section 
               className="relative bg-zinc-950 border-b border-zinc-800 py-20 px-6 bg-cover bg-center overflow-hidden"
               style={{
-                backgroundImage: 'linear-gradient(to bottom, rgba(17,17,17,0.85), rgba(9,9,11,0.95)), url("https://img.carplusvistorias.com.br/vistorias-carplus-carros.png")',
+                backgroundImage: 'url("https://img.carplusvistorias.com.br/vistorias-carplus-carros.png")',
               }}
             >
+              {/* Overlay super leve para garantir visibilidade máxima da foto com leitura do conteúdo */}
+              <div className="absolute inset-0 bg-black/20 z-0"></div>
+
               <div className="max-w-7xl mx-auto relative z-10">
                 <div className="text-center max-w-2xl mx-auto mb-16 fade-in-on-scroll">
-                  <span className="section-label font-bold text-primary tracking-widest inline-block mb-3">O QUE FAZEMOS</span>
-                  <h2 className="font-display font-black text-2xl sm:text-3xl md:text-4xl uppercase tracking-tight mb-4">
+                  <span className="section-label font-bold text-primary tracking-widest inline-block mb-3 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">O QUE FAZEMOS</span>
+                  <h2 className="font-display font-black text-2xl sm:text-3xl md:text-4xl uppercase tracking-tight mb-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                     <span className="text-white block">Laudos com Garantia</span>
                     <span className="text-primary block mt-1">Nossos Serviços</span>
                   </h2>
-                  <p className="text-white font-medium text-center">
+                  <p className="text-white font-semibold text-center drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
                     Nossa marca é sinônimo de qualidade e excelência. Oferecemos seguro de responsabilidade civil para garantir tranquilidade total em cada laudo emitido.
                   </p>
                 </div>
@@ -332,9 +335,9 @@ export default function App() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                   {SERVICES_HOME.map((service, index) => (
                     <div
-                      key={service.id}
-                      className="service-card animate-on-scroll bg-zinc-950/60 border border-zinc-800 hover:border-primary/50 rounded-xl p-6 flex flex-col justify-between"
-                      style={{ transitionDelay: `${index * 100}ms` }}
+                       key={service.id}
+                       className="service-card animate-on-scroll bg-zinc-950/85 backdrop-blur-sm border border-zinc-800/80 hover:border-primary/50 rounded-xl p-6 flex flex-col justify-between shadow-2xl"
+                       style={{ transitionDelay: `${index * 100}ms` }}
                     >
                       <div>
                         {/* Interactive Rotating Icon */}
