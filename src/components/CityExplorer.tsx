@@ -17,6 +17,9 @@ function getSlug(name: string): string {
   if (normalized === 'alto boqueirão') {
     return 'alto-boqueirado';
   }
+  if (normalized === 'caiuá' || normalized === 'caiua') {
+    return 'caiqua';
+  }
   return normalized
     .normalize('NFD')                     // separates letters from accents
     .replace(/[\u0300-\u036f]/g, '')     // removes accents
