@@ -197,15 +197,15 @@ export default function App() {
                     href="https://wa.me/5541988740258?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20vistoria%20cautelar."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full sm:w-auto flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#1fba54] text-white font-display font-black text-base uppercase tracking-wider py-4 px-8 rounded-xl shadow-[0_10px_30px_rgba(37,211,102,0.25)] hover:scale-[1.03] active:scale-[0.98] transition-all duration-300"
+                    className="premium-btn-green w-full sm:w-auto flex items-center justify-center gap-3 font-display font-black text-base uppercase tracking-wider py-4 px-8 rounded-xl"
                   >
-                    <i className="fa-brands fa-whatsapp text-2xl animate-pulse"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-whatsapp text-[#25D366]"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 1.83.49 3.55 1.34 5.03L2 22l5.14-1.31C8.57 21.49 10.24 22 12 22c5.52 0 10-4.48 10-10Z"/></svg>
                     Agendar pelo WhatsApp
                   </a>
 
                   <button
                     onClick={() => handleNavigate('servicos')}
-                    className="w-full sm:w-auto bg-zinc-900/80 backdrop-blur-md border border-zinc-700 hover:border-primary text-white font-display font-bold text-base uppercase tracking-wider py-4 px-8 rounded-xl hover:bg-zinc-800 transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.5)] active:scale-[0.98]"
+                    className="premium-btn-gold w-full sm:w-auto font-display font-bold text-base uppercase tracking-wider py-4 px-8 rounded-xl"
                   >
                     Nossos Serviços <i className="fa-solid fa-angle-right ml-2 text-xs text-primary"></i>
                   </button>
@@ -342,9 +342,9 @@ export default function App() {
                       href="https://wa.me/5541988740258?text=Olá,%20gostaria%20de%20saber%20dos%2520diferenciais%20e%20agendar."
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-3 bg-gradient-to-r from-primary to-primary-dark hover:brightness-110 active:scale-95 text-dark font-display font-extrabold text-sm uppercase tracking-wider py-3.5 px-6 rounded-lg transition-all shadow-md shadow-primary/20"
+                      className="premium-btn-green inline-flex items-center gap-3 font-display font-extrabold text-sm uppercase tracking-wider py-3.5 px-6 rounded-lg"
                     >
-                      <i className="fa-brands fa-whatsapp text-lg"></i>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-whatsapp text-[#25D366]"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 1.83.49 3.55 1.34 5.03L2 22l5.14-1.31C8.57 21.49 10.24 22 12 22c5.52 0 10-4.48 10-10Z"/></svg>
                       Agendar pelo WhatsApp
                     </a>
                   </div>

@@ -85,10 +85,10 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
           <div className="hidden md:flex items-center gap-4">
             <a
               href="/contato.html"
-              className="header-cta-shake flex items-center gap-2 bg-gradient-to-r from-primary to-primary-light hover:brightness-110 active:scale-95 text-white font-display font-extrabold text-[11px] uppercase tracking-[0.12em] py-2.5 px-5 rounded-lg transition-all shadow-md shadow-primary/20"
+              className="premium-btn-green flex items-center gap-2 font-display font-extrabold text-[11px] uppercase tracking-[0.12em] py-2.5 px-5 rounded-lg transition-all"
             >
-              <i className="fa-solid fa-comment-dots text-xs"></i>
-              Contato
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-whatsapp text-[#25D366]"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 1.83.49 3.55 1.34 5.03L2 22l5.14-1.31C8.57 21.49 10.24 22 12 22c5.52 0 10-4.48 10-10Z"/></svg>
+              Fale Conosco
             </a>
           </div>
 
@@ -185,10 +185,10 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
 
           <a
             href="/contato.html"
-            className="flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-primary-light hover:brightness-110 text-white font-display font-extrabold text-[11px] uppercase tracking-widest py-3 rounded-lg transition-all shadow-lg shadow-primary/20 animate-pulse"
+            className="premium-btn-green flex items-center justify-center gap-2 font-display font-extrabold text-[11px] uppercase tracking-widest py-3 rounded-lg transition-all shadow-lg"
           >
-            <i className="fa-solid fa-comment-dots text-sm"></i>
-            Fale Conosco / Contato
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-whatsapp text-[#25D366]"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 1.83.49 3.55 1.34 5.03L2 22l5.14-1.31C8.57 21.49 10.24 22 12 22c5.52 0 10-4.48 10-10Z"/></svg>
+            Fale Conosco
           </a>
         </div>
       </div>
