@@ -280,3 +280,53 @@ p {
   animation: heartbeat 1.2s infinite ease-in-out;
 }
 
+/* Premium Animated Glowing Line & Laser Sweep Effects */
+@keyframes laser-sweep {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes neon-pulse {
+  0%, 100% {
+    opacity: 0.6;
+    filter: blur(3px) drop-shadow(0 0 2px rgba(255, 166, 0, 0.5));
+  }
+  50% {
+    opacity: 1;
+    filter: blur(6px) drop-shadow(0 0 12px rgba(255, 166, 0, 0.95));
+  }
+}
+
+.hero-laser-line {
+  height: 3px;
+  background: linear-gradient(90deg, 
+    rgba(255, 166, 0, 0.1) 0%, 
+    #F5A623 35%, 
+    #FFFFFF 50%, 
+    #F5A623 65%, 
+    rgba(255, 166, 0, 0.1) 100%
+  );
+  background-size: 200% 100%;
+  animation: laser-sweep 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.hero-neon-pulse {
+  height: 8px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(245, 166, 35, 0.4) 30%, 
+    rgba(255, 166, 0, 0.8) 50%, 
+    rgba(245, 166, 35, 0.4) 70%, 
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: 
+    laser-sweep 4s cubic-bezier(0.4, 0, 0.2, 1) infinite,
+    neon-pulse 2s ease-in-out infinite alternate;
+}
+
+

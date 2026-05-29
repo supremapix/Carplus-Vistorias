@@ -110,19 +110,35 @@ export default function App() {
               {/* Dynamic Ken Burns Background Slide-show Slider */}
               <div className="absolute inset-0 z-0">
                 {[
-                  "https://img.carplusvistorias.com.br/carplus-inspecao.png",
-                  "https://img.carplusvistorias.com.br/hero-site-carplus-vistorias-portao-hero.png"
-                ].map((bgUrl, index) => (
+                  {
+                    pc: "https://img.carplusvistorias.com.br/fundo-site-carplus-cwb-pr.png",
+                    mobile: "https://img.carplusvistorias.com.br/fundo-site-carplus-cwb.png"
+                  },
+                  {
+                    pc: "https://img.carplusvistorias.com.br/hero-site-carplus-vistorias-portao-hero.png",
+                    mobile: "https://img.carplusvistorias.com.br/fundo-site-carplus-cwb.png"
+                  }
+                ].map((slide, index) => (
                   <div
                     key={index}
-                    className={`absolute inset-0 bg-cover bg-center transition-all duration-[2000ms] ease-in-out ${
+                    className={`absolute inset-0 transition-all duration-[2000ms] ease-in-out ${
                       currentHeroImage === index ? 'opacity-100 scale-105' : 'opacity-0 scale-100'
                     }`}
                     style={{
-                      backgroundImage: `url("${bgUrl}")`,
                       transitionProperty: 'opacity, transform'
                     }}
-                  />
+                  >
+                    {/* Mobile Background */}
+                    <div 
+                      className="absolute inset-0 block md:hidden bg-cover bg-center"
+                      style={{ backgroundImage: `url("${slide.mobile}")` }}
+                    />
+                    {/* PC/Desktop Background */}
+                    <div 
+                      className="absolute inset-0 hidden md:block bg-cover bg-center"
+                      style={{ backgroundImage: `url("${slide.pc}")` }}
+                    />
+                  </div>
                 ))}
                 
                 {/* Advanced Multi-layer Gradients for Premium Visual Contrast and High Readability */}
@@ -195,24 +211,40 @@ export default function App() {
                   </button>
                 </div>
               </div>
+
+              {/* End of Hero Glowing Gold-Orange Divider Line with Neon Laser Accent (matches uploaded reference) */}
+              <div className="absolute bottom-0 left-0 right-0 z-25 pointer-events-none select-none">
+                {/* Intense Core Line with Laser Sweep animation */}
+                <div className="hero-laser-line" />
+                {/* Visual Neon Blur Flare with dual laser sweep and breathing pulse animations */}
+                <div className="absolute top-0 left-0 right-0 hero-neon-pulse" />
+              </div>
             </section>
 
-            {/* SEÇÃO: O Problema (Por que fazer vistoria) - Alternate light theme #F9F9F9 */}
-            <section className="bg-zinc-100 text-zinc-950 py-20 px-6 border-b border-zinc-200">
-              <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            {/* SEÇÃO: O Problema (Por que fazer vistoria) - Same premium image bg effect as footer */}
+            <section 
+              className="relative bg-zinc-950 text-white py-20 px-6 border-b border-zinc-800 bg-cover bg-center overflow-hidden"
+              style={{
+                backgroundImage: 'url("https://img.carplusvistorias.com.br/vistorias-carplus-carros.png")',
+              }}
+            >
+              {/* Overlay super leve para garantir visibilidade máxima da foto com leitura do conteúdo */}
+              <div className="absolute inset-0 bg-black/45 z-0"></div>
+
+              <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
                 
                 {/* Text column */}
-                <div className="lg:col-span-7 fade-in-on-scroll">
-                  <span className="section-label text-primary font-mono select-none block mb-3">ENTENDA</span>
-                  <h2 className="font-display font-black text-2xl sm:text-3xl md:text-4xl uppercase tracking-tight mb-6">
-                    <span className="text-zinc-900 block">Proteja seu investimento</span>
-                    <span className="text-primary-dark block mt-1">Ao comprar um usado</span>
+                <div className="lg:col-span-7 fade-in-on-scroll bg-black/50 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-zinc-800/60 shadow-2xl">
+                  <span className="section-label text-primary font-mono select-none block mb-3 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">ENTENDA</span>
+                  <h2 className="font-display font-black text-2xl sm:text-3xl md:text-4xl uppercase tracking-tight mb-6 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+                    <span className="text-white block">Proteja seu investimento</span>
+                    <span className="text-primary block mt-1">Ao comprar um usado</span>
                   </h2>
                   <div className="space-y-4">
-                    <p className="text-zinc-600 text-justify text-base leading-relaxed">
-                      A <strong>vistoria cautelar</strong>, também conhecida como perícia automotiva, foi desenvolvida para certificar as condições estruturais e documentais de um veículo no momento da compra. Ela engloba a análise da estrutura (longarinas e colunas), a investigação dos antecedentes do veículo (histórico de roubo, leilão, processos judiciais), a verificação de reparos na lataria, além da conferência das numerações identificadoras do chassi e do motor.
+                    <p className="text-zinc-200 text-justify text-base leading-relaxed font-medium">
+                      A <strong className="text-white">vistoria cautelar</strong>, também conhecida como perícia automotiva, foi desenvolvida para certificar as condições estruturais e documentais de um veículo no momento da compra. Ela engloba a análise da estrutura (longarinas e colunas), a investigação dos antecedentes do veículo (histórico de roubo, leilão, processos judiciais), a verificação de reparos na lataria, além da conferência das numerações identificadoras do chassi e do motor.
                     </p>
-                    <p className="text-zinc-600 text-justify text-base leading-relaxed">
+                    <p className="text-zinc-200 text-justify text-base leading-relaxed font-medium">
                       A vistoria cautelar é recomendada para aqueles que desejam evitar riscos na aquisição de um carro usado ou para quem pretende verificar os reparos realizados após uma colisão.
                     </p>
                   </div>
@@ -223,23 +255,26 @@ export default function App() {
                       href="https://wa.me/5541988740258?text=Ol%C3%A1!%20Desejo%20fazer%20uma%20an%C3%A1lise%20completa%20do%20meu%20ve%C3%ADculo."
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-3 bg-zinc-900 hover:bg-zinc-800 text-white font-display font-extrabold text-sm uppercase tracking-wider py-3.5 px-6 rounded-lg transition-colors shadow-md"
+                      className="inline-flex items-center gap-3 bg-primary hover:bg-[#e0951b] text-white font-display font-black text-sm uppercase tracking-wider py-3.5 px-6 rounded-lg transition-all shadow-lg hover:scale-[1.02] transform"
                     >
-                      <i className="fa-solid fa-magnifying-glass text-primary"></i>
+                      <i className="fa-solid fa-magnifying-glass text-white"></i>
                       Análise completa na hora da compra
                     </a>
                   </div>
                 </div>
 
-                {/* Image column */}
-                <div className="lg:col-span-5 slide-in-right relative flex items-center justify-center">
-                  <div className="absolute inset-4 border border-primary/60 rounded-xl -z-10 translate-x-3 translate-y-3"></div>
-                  <img 
-                    src="https://img.carplusvistorias.com.br/vistorias-cautelares-parolin.png" 
-                    alt="Vistoria Realizada pós Hero" 
-                    className="w-full h-auto max-h-[340px] md:max-h-[380px] object-contain rounded-xl shadow-xl"
-                    referrerPolicy="no-referrer"
-                  />
+                {/* Image column with premium rotating border glow effect */}
+                <div className="lg:col-span-5 slide-in-right flex items-center justify-center p-3 select-none">
+                  <div className="premium-border-container premium-glow-pulse w-full max-w-[340px] md:max-w-[380px] aspect-square flex items-center justify-center">
+                    <div className="premium-border-inner">
+                      <img 
+                        src="https://img.carplusvistorias.com.br/vistorias-cautelares-parolin.png" 
+                        alt="Vistoria Realizada pós Hero" 
+                        className="w-full h-full object-contain rounded-lg transition-transform duration-500 hover:scale-[1.03]"
+                        referrerPolicy="no-referrer"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </section>
@@ -725,15 +760,18 @@ export default function App() {
                   </p>
                 </div>
 
-                {/* Right Illustration image */}
-                <div className="lg:col-span-5 slide-in-right relative flex items-center justify-center">
-                  <div className="absolute inset-4 border border-primary/50 rounded-xl -z-10 translate-x-3 translate-y-3"></div>
-                  <img 
-                    src="https://img.carplusvistorias.com.br/vistorias-pr.png"
-                    alt="Quem Somos - Carplus"
-                    className="w-full h-auto max-h-[340px] md:max-h-[380px] object-contain rounded-xl shadow-xl"
-                    referrerPolicy="no-referrer"
-                  />
+                {/* Right Illustration image with premium rotating border glow effect */}
+                <div className="lg:col-span-5 slide-in-right flex items-center justify-center p-3 select-none">
+                  <div className="premium-border-container premium-glow-pulse w-full max-w-[340px] md:max-w-[380px] aspect-square flex items-center justify-center">
+                    <div className="premium-border-inner">
+                      <img 
+                        src="https://img.carplusvistorias.com.br/vistorias-pr.png"
+                        alt="Quem Somos - Carplus"
+                        className="w-full h-full object-contain rounded-lg transition-transform duration-500 hover:scale-[1.03]"
+                        referrerPolicy="no-referrer"
+                      />
+                    </div>
+                  </div>
                 </div>
 
               </div>

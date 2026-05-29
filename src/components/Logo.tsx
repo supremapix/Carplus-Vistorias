@@ -20,7 +20,7 @@ export default function Logo({ variant = 'dark', className = '', showText = true
   const pColor = '#F5A623'; // Always orange/amber
 
   // Direct high-resolution load link for the shared asset
-  const logoUrl = "https://img.carplusvistorias.com.br/carplus-vistorias-portao-cwb.png";
+  const logoUrl = "https://img.carplusvistorias.com.br/carplus-vistorias-portao-logo.png";
   
   return (
     <div className={`flex items-center gap-3 select-none ${className}`}>
