@@ -41,9 +41,9 @@
         extend: {
           colors: {
             primary: {
-              DEFAULT: '#C8102E',
-              dark: '#9A0C22',
-              light: '#FF3C57',
+              DEFAULT: '#F5A623',
+              dark: '#D4880F',
+              light: '#F8B64A',
             },
             dark: '#111111',
             card: '#1a1a1a',
@@ -59,13 +59,13 @@
 
   <style type="text/css">
     @keyframes pulse-contact {
-      0%, 100% { box-shadow: 0 0 20px rgba(200, 16, 46, 0.4); }
-      50% { box-shadow: 0 0 35px rgba(200, 16, 46, 0.8), 0 0 60px rgba(255, 60, 87, 0.3); }
+      0%, 100% { box-shadow: 0 0 20px rgba(245, 166, 35, 0.4); }
+      50% { box-shadow: 0 0 35px rgba(245, 166, 35, 0.8), 0 0 60px rgba(248, 182, 74, 0.3); }
     }
     .nav-contact-cta {
       position: relative;
-      background: linear-gradient(135deg, #C8102E, #FF3C57);
-      box-shadow: 0 0 20px rgba(200, 16, 46, 0.4);
+      background: linear-gradient(135deg, #F5A623, #F8B64A);
+      box-shadow: 0 0 20px rgba(245, 166, 35, 0.4);
       animation: pulse-contact 2.5s ease-in-out infinite;
       overflow: hidden;
     }
@@ -90,12 +90,12 @@
     }
     .hero-laser-line {
       height: 2px;
-      background: linear-gradient(90deg, rgba(200,16,46,0) 0%, rgba(200,16,46,1) 50%, rgba(200,16,46,0) 100%);
-      box-shadow: 0 0 8px #C8102E;
+      background: linear-gradient(90deg, rgba(245,166,35,0) 0%, rgba(245,166,35,1) 50%, rgba(245,166,35,0) 100%);
+      box-shadow: 0 0 8px #F5A623;
     }
     .hero-neon-pulse {
       height: 20px;
-      background: linear-gradient(180deg, rgba(200,16,46,0.15), rgba(200,16,46,0));
+      background: linear-gradient(180deg, rgba(245,166,35,0.15), rgba(245,166,35,0));
       filter: blur(4px);
     }
     .custom-scrollbar::-webkit-scrollbar {
@@ -105,7 +105,7 @@
       background: #111;
     }
     .custom-scrollbar::-webkit-scrollbar-thumb {
-      background: #C8102E;
+      background: #F5A623;
       border-radius: 3px;
     }
     /* Simple reveal transitions using raw intersection observer */
@@ -224,31 +224,27 @@
 <body class="bg-[#111111] text-[#F5F5F5] font-sans selection:bg-primary selection:text-white custom-scrollbar">
 
   <!-- 1. HEADER / NAVIGATION -->
-  <header class="fixed top-0 left-0 right-0 z-[100] bg-zinc-950/95 backdrop-blur-md py-4 border-b border-zinc-900 shadow-xl shadow-black/30">
+  <header class="fixed top-0 left-0 right-0 z-[100] bg-zinc-950/95 backdrop-blur-md py-3 border-b border-zinc-900 shadow-xl shadow-black/30">
     <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
       
       <!-- LOGO -->
-      <a href="/" class="flex items-center gap-3">
-        <img src="https://img.carplusvistorias.com.br/favicon-carplus.png" alt="Carplus Logo" class="h-9 w-auto">
-        <div class="flex flex-col">
-          <span class="text-xl font-display font-black tracking-wider text-white select-none">CAR<span class="text-primary text-2xl font-black italic">PLUS</span></span>
-          <span class="text-[8px] font-mono tracking-[0.3em] text-zinc-400 -mt-1 uppercase">Vistorias</span>
-        </div>
+      <a href="/" class="flex items-center gap-3 active:scale-95 transition-transform duration-300">
+        <img src="https://img.carplusvistorias.com.br/carplus-vistorias-portao-logo.png" alt="Carplus Vistorias" class="h-12 xs:h-14 sm:h-16 max-h-[80px] w-auto object-contain transition-all duration-300">
       </a>
 
       <!-- DESKTOP NAV -->
-      <nav class="hidden lg:flex items-center gap-8">
-        <a href="/#home" class="text-xs uppercase tracking-[0.2em] font-display font-medium text-zinc-300 hover:text-[#C8102E] transition-colors py-1">Início</a>
-        <a href="/#servicos" class="text-xs uppercase tracking-[0.2em] font-display font-medium text-zinc-300 hover:text-[#C8102E] transition-colors py-1">Serviços</a>
-        <a href="/#sobre" class="text-xs uppercase tracking-[0.2em] font-display font-medium text-zinc-300 hover:text-[#C8102E] transition-colors py-1">Sobre Nós</a>
-        <a href="/#cidades" class="text-xs uppercase tracking-[0.2em] font-display font-medium text-zinc-300 hover:text-[#C8102E] transition-colors py-1">Cidades Atendidas</a>
-        <a href="/#faq" class="text-xs uppercase tracking-[0.2em] font-display font-medium text-zinc-300 hover:text-[#C8102E] transition-colors py-1">FAQ / Dúvidas</a>
-        <a href="/mapa-do-site" class="text-xs uppercase tracking-[0.2em] font-display font-medium text-zinc-300 hover:text-[#C8102E] transition-colors py-1">Mapa</a>
+      <nav class="hidden lg:flex items-center gap-5 xl:gap-8">
+        <a href="/#home" class="text-[10px] uppercase tracking-[0.2em] font-display font-medium text-zinc-300 hover:text-primary transition-colors py-1">Início</a>
+        <a href="/#servicos" class="text-[10px] uppercase tracking-[0.2em] font-display font-medium text-zinc-300 hover:text-primary transition-colors py-1">Serviços</a>
+        <a href="/#sobre" class="text-[10px] uppercase tracking-[0.2em] font-display font-medium text-zinc-300 hover:text-primary transition-colors py-1">Sobre Nós</a>
+        <a href="/#cidades" class="text-[10px] uppercase tracking-[0.2em] font-display font-medium text-zinc-300 hover:text-primary transition-colors py-1">Cidades Atendidas</a>
+        <a href="/#faq" class="text-[10px] uppercase tracking-[0.2em] font-display font-medium text-zinc-300 hover:text-primary transition-colors py-1">FAQ / Dúvidas</a>
+        <a href="/mapa-do-site.html" class="text-[10px] uppercase tracking-[0.2em] font-display font-medium text-zinc-300 hover:text-primary transition-colors py-1">Mapa</a>
       </nav>
 
       <!-- ACT BUTTONS -->
       <div class="hidden lg:flex items-center gap-4">
-        <a href="/contato" class="nav-contact-cta text-white font-display font-extrabold text-xs uppercase tracking-wider py-2.5 px-5 rounded-lg flex items-center gap-2">
+        <a href="/contato.html" class="nav-contact-cta text-white font-display font-extrabold text-[11px] uppercase tracking-wider py-2.5 px-5 rounded-lg flex items-center gap-2">
           <span>💬 Contato</span>
           <span class="nav-contact-badge bg-[#25D366] text-white text-[9px] font-bold px-1.5 py-0.5 rounded uppercase font-sans">WhatsApp</span>
         </a>
@@ -265,10 +261,10 @@
 
   <!-- MOBILE MENU DRAWER -->
   <div id="mobile-drawer-backdrop" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-[98] hidden opacity-0 transition-opacity duration-300"></div>
-  <div id="mobile-drawer" class="fixed top-0 right-0 w-[80vw] sm:w-[320px] h-screen bg-zinc-950 border-l border-zinc-900 shadow-2xl z-[99] translate-x-full transition-transform duration-300 ease-out py-24 px-8 flex flex-col justify-between">
+  <div id="mobile-drawer" class="fixed top-0 right-0 w-[80vw] sm:w-[320px] h-screen bg-zinc-950 border-l border-zinc-800 shadow-2xl z-[99] translate-x-full transition-transform duration-300 ease-out py-24 px-8 flex flex-col justify-between">
     <div class="flex flex-col gap-6">
       <div class="pb-4 border-b border-zinc-900 flex flex-col gap-1">
-        <span class="text-xl font-display font-black tracking-wider text-white">CAR<span class="text-primary italic font-black">PLUS</span></span>
+        <img src="https://img.carplusvistorias.com.br/carplus-vistorias-portao-logo.png" alt="Carplus Vistorias" class="h-12 w-auto object-contain origin-left mb-1">
         <span class="text-xs text-primary font-mono font-bold uppercase tracking-widest block">Vistorias</span>
       </div>
       <nav class="flex flex-col gap-5 text-left">
@@ -277,12 +273,12 @@
         <a href="/#sobre" class="mobile-nav-link text-gray-300 hover:text-white font-display font-semibold text-base uppercase tracking-widest py-1">Sobre Nós</a>
         <a href="/#cidades" class="mobile-nav-link text-gray-300 hover:text-white font-display font-semibold text-base uppercase tracking-widest py-1">Cidades Atendidas</a>
         <a href="/#faq" class="mobile-nav-link text-gray-300 hover:text-white font-display font-semibold text-base uppercase tracking-widest py-1">FAQ / Dúvidas</a>
-        <a href="/mapa-do-site" class="mobile-nav-link text-gray-300 hover:text-white font-display font-semibold text-base uppercase tracking-widest py-1">Mapa Do Site</a>
+        <a href="/mapa-do-site.html" class="mobile-nav-link text-gray-300 hover:text-white font-display font-semibold text-base uppercase tracking-widest py-1">Mapa Do Site</a>
       </nav>
     </div>
 
     <div class="flex flex-col gap-4 border-t border-zinc-900 pt-6">
-      <a href="/contato" class="nav-contact-cta text-center text-white font-display font-extrabold text-sm uppercase tracking-widest py-3 px-4 rounded-lg flex items-center justify-center gap-2">
+      <a href="/contato.html" class="nav-contact-cta text-center text-white font-display font-extrabold text-sm uppercase tracking-widest py-3 px-4 rounded-lg flex items-center justify-center gap-2">
         <span>💬 Contato</span>
         <span class="nav-contact-badge bg-[#25D366] text-white text-[9px] font-bold px-1.5 py-0.5 rounded uppercase font-sans">WhatsApp</span>
       </a>
@@ -310,7 +306,7 @@
       </nav>
 
       <span class="inline-flex items-center gap-1.5 bg-primary/10 border border-primary/30 text-primary font-mono text-[10px] px-3.5 py-1.5 rounded-full uppercase tracking-widest font-bold mb-4 animate-pulse">
-        ⚡ LAUDO EMITIDO NA HORA COM TOTAL GARANTIA
+        <i class="fa-solid fa-bolt"></i> LAUDO EMITIDO NA HORA COM TOTAL GARANTIA
       </span>
       
       <h1 class="font-display font-black text-4xl sm:text-5xl md:text-6xl text-white uppercase tracking-tight max-w-4xl mx-auto leading-none">
@@ -658,18 +654,21 @@
     <div class="absolute inset-0 bg-black/85 z-0"></div>
     
     <div class="max-w-7xl mx-auto relative z-10">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 md:gap-14">
         
         <!-- Col 1 -->
-        <div class="lg:col-span-4 space-y-4">
+        <div class="lg:col-span-5 space-y-6">
           <div class="flex items-center gap-3">
-            <img src="https://img.carplusvistorias.com.br/favicon-carplus.png" alt="Carplus Logo" class="h-8 w-auto">
-            <span class="text-lg font-display font-black tracking-wider text-white">CAR<span class="text-primary italic">PLUS</span></span>
+            <img src="https://img.carplusvistorias.com.br/carplus-vistorias-portao-logo.png" alt="Carplus Logo" class="h-14 w-auto object-contain">
           </div>
-          <p class="text-xs text-zinc-400 leading-relaxed max-w-sm">
+          <p class="text-sm text-white font-semibold leading-relaxed text-justify max-w-sm">
             Especialistas em Vistoria Cautelar, Perícia Automotiva e Laudo de Transferência em Curitiba – PR. Procedência garantida e laudo físico emitido imediatamente na hora com total segurança.
           </p>
-          <div class="flex gap-4 pt-1 text-zinc-400 text-base">
+          <div class="pt-2 flex items-center gap-3 text-primary font-mono text-xs font-bold uppercase tracking-wider select-none">
+            <i class="fa-solid fa-shield-halved text-primary text-sm"></i>
+            Seguro de Responsabilidade Civil Ativo
+          </div>
+          <div class="flex gap-4 pt-1 font-bold text-white text-lg">
             <a href="https://g.page/r/CU6U972hG8iNEAE" target="_blank" class="hover:text-primary transition-colors"><i class="fa-brands fa-google"></i></a>
             <a href="https://instagram.com/carplusvistorias" target="_blank" class="hover:text-primary transition-colors"><i class="fa-brands fa-instagram"></i></a>
             <a href="https://wa.me/5541988740258" target="_blank" class="hover:text-primary transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
@@ -677,44 +676,49 @@
         </div>
 
         <!-- Col 2: Services Quick Links -->
-        <div class="lg:col-span-2 space-y-3">
-          <h4 class="font-display font-bold text-sm text-white uppercase tracking-wider">Serviços</h4>
-          <ul class="space-y-2 text-xs text-zinc-400">
-            <li><a href="/#servicos" class="hover:text-primary transition-colors">Vistoria Cautelar</a></li>
-            <li><a href="/#servicos" class="hover:text-primary transition-colors">Perícia Automotiva</a></li>
-            <li><a href="/#servicos" class="hover:text-primary transition-colors">Laudo de Transferência</a></li>
-            <li><a href="/#servicos" class="hover:text-primary transition-colors">Inspeção Veicular</a></li>
+        <div class="lg:col-span-2 space-y-4">
+          <h4 class="font-display font-extrabold text-lg text-white uppercase tracking-wider">Serviços</h4>
+          <ul class="space-y-3 text-sm font-semibold">
+            <li><a href="/#servicos" class="text-white hover:text-primary transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-primary"></i> Vistoria Cautelar</a></li>
+            <li><a href="/#servicos" class="text-white hover:text-primary transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-primary"></i> Perícia Automotiva</a></li>
+            <li><a href="/#servicos" class="text-white hover:text-primary transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-primary"></i> Laudo de Transferência</a></li>
+            <li><a href="/#servicos" class="text-white hover:text-primary transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-primary"></i> Inspeção Veicular</a></li>
           </ul>
         </div>
 
         <!-- Col 3: Institutional Links / Sitemap Link -->
-        <div class="lg:col-span-3 space-y-3">
-          <h4 class="font-display font-bold text-sm text-white uppercase tracking-wider">Institucional</h4>
-          <ul class="space-y-2 text-xs text-zinc-400">
-            <li><a href="/#home" class="hover:text-primary transition-colors">Início / Home</a></li>
-            <li><a href="/#sobre" class="hover:text-primary transition-colors">Quem Somos Nós</a></li>
-            <li><a href="/mapa-do-site" class="hover:text-primary transition-colors flex items-center gap-1.5 font-bold text-white">🗺️ Mapa do Site</a></li>
-            <li><a href="/contato" class="hover:text-primary transition-colors flex items-center gap-1.5 font-bold text-white">✉️ Contato e Cadastro</a></li>
+        <div class="lg:col-span-2 space-y-4">
+          <h4 class="font-display font-extrabold text-lg text-white uppercase tracking-wider">Institucional</h4>
+          <ul class="space-y-3 text-sm font-semibold">
+            <li><a href="/#home" class="text-white hover:text-primary transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-primary"></i> Início / Home</a></li>
+            <li><a href="/#sobre" class="text-white hover:text-primary transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-primary"></i> Quem Somos Nós</a></li>
+            <li><a href="/mapa-do-site.html" class="text-white hover:text-primary transition-colors flex items-center gap-2 font-bold"><i class="fa-solid fa-sitemap text-primary text-xs"></i> Mapa do Site</a></li>
+            <li><a href="/contato.html" class="text-white hover:text-primary transition-colors flex items-center gap-2 font-bold"><i class="fa-solid fa-envelope text-primary text-xs"></i> Contato e Cadastro</a></li>
           </ul>
         </div>
 
         <!-- Col 4: Address Info -->
-        <div class="lg:col-span-3 space-y-3">
-          <h4 class="font-display font-bold text-sm text-white uppercase tracking-wider">Atendimento</h4>
-          <address class="not-italic text-xs text-zinc-400 space-y-2">
-            <div class="flex items-start gap-2">
-              <i class="fa-solid fa-location-dot text-primary mt-0.5"></i>
+        <div class="lg:col-span-3 space-y-4">
+          <h4 class="font-display font-extrabold text-lg text-white uppercase tracking-wider">Atendimento</h4>
+          <address class="not-italic text-sm text-white space-y-3 font-semibold">
+            <div class="flex items-start gap-2.5">
+              <i class="fa-solid fa-location-dot text-primary mt-1 text-sm"></i>
               <span>Av. Pres. Arthur da Silva Bernardes, 1323 · Portão · Curitiba/PR</span>
             </div>
-            <div class="flex items-center gap-2">
-              <i class="fa-solid fa-phone text-primary"></i>
-              <a href="tel:+5541988740258" class="hover:text-primary hover:underline transition-colors font-mono">(41) 98874-0258</a>
+            <div class="flex items-center gap-2.5">
+              <i class="fa-solid fa-phone text-primary text-sm"></i>
+              <a href="tel:+5541988740258" class="text-white hover:text-primary hover:underline transition-colors font-mono font-bold">(41) 98874-0258</a>
             </div>
-            <div class="flex items-center gap-2">
-              <i class="fa-solid fa-envelope text-primary"></i>
-              <a href="mailto:laudo@carplusvistorias.com.br" class="hover:text-primary hover:underline transition-colors truncate">laudo@carplusvistorias.com.br</a>
+            <div class="flex items-center gap-2.5">
+              <i class="fa-solid fa-envelope text-primary text-sm"></i>
+              <a href="mailto:laudo@carplusvistorias.com.br" class="text-white hover:text-primary hover:underline transition-colors truncate">laudo@carplusvistorias.com.br</a>
             </div>
           </address>
+          <div class="pt-2">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Av.+Presidente+Arthur+da+Silva+Bernardes,+1323,+Port%C3%A3o,+Curitiba,+PR" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-mono font-bold bg-zinc-900 border border-zinc-800 hover:border-primary text-white hover:text-primary py-2.5 px-5 rounded-md transition-all uppercase">
+              <i class="fa-solid fa-diamond-turn-right text-primary text-sm"></i> Como chegar à sede
+            </a>
+          </div>
         </div>
 
       </div>
@@ -722,22 +726,22 @@
       <div class="my-10 border-t border-zinc-900"></div>
 
       <!-- Footer Bottom -->
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-center text-[10px] text-zinc-500 font-mono">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-center text-xs text-white font-mono font-bold">
         <div>
-          &copy; 2025 Carplus Vistorias. CNPJ 34.521.988/0001-90. Todos os direitos reservados.
+          &copy; 2026 Carplus Vistorias. CNPJ 34.521.988/0001-90. Todos os direitos reservados.
         </div>
         <div class="flex gap-4">
-          <a href="/mapa-do-site" class="hover:text-primary transition-colors font-bold">Mapa do Site</a>
+          <a href="/mapa-do-site.html" class="text-white hover:text-primary transition-colors font-bold">Mapa do Site</a>
           <span class="text-zinc-800">|</span>
-          <a href="/contato" class="hover:text-primary transition-colors font-bold">Contato WhatsApp</a>
+          <a href="/contato.html" class="text-white hover:text-primary transition-colors font-bold">Contato WhatsApp</a>
         </div>
       </div>
 
-      <div class="mt-6 pt-4 border-t border-zinc-900 text-center text-[10px] text-zinc-400 flex items-center justify-center gap-1.5 select-none font-mono">
-        Desenvolvido com <i class="fa-solid fa-heart text-[#C8102E] animate-pulse"></i> por
-        <a href="https://supremasite.com.br" target="_blank" rel="noopener noreferrer" class="hover:text-primary font-bold transition font-sans flex items-center gap-1">
+      <div class="mt-6 pt-4 border-t border-zinc-900 text-center text-xs text-white flex items-center justify-center gap-1.5 select-none font-mono font-bold">
+        Desenvolvido com <i class="fa-solid fa-heart text-primary animate-pulse"></i> por
+        <a href="https://supremasite.com.br" target="_blank" rel="noopener noreferrer" class="text-white hover:text-primary font-bold transition font-sans flex items-center gap-1">
           Suprema Sites Express
-          <img src="https://img.supremamidia.com/suprema-img.png" alt="Suprema Logo" class="h-3 ml-0.5 inline" referrerPolicy="no-referrer">
+          <img src="https://img.supremamidia.com/suprema-img.png" alt="Suprema Logo" class="h-3.5 ml-0.5 inline animate-bounce" referrerPolicy="no-referrer">
         </a>
       </div>
 

@@ -541,7 +541,7 @@ export default function App() {
                   <div className="lg:col-span-7 slide-in-right">
                     <div className="border border-zinc-800 rounded-xl overflow-hidden shadow-2xl relative">
                       <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.7!2d-49.2890!3d-25.4660!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sAv.+Presidente+Arthur+da+Silva+Bernardes%2C+1323%2C+Port%C3%A3o%2C+Curitiba!5e0!3m2!1spt-BR!2sbr!4v1" 
+                        src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d14404.505783352608!2d-49.33486295!3d-25.50082915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x94dce3d4aebf4897%3A0x229d2a5d9692264!2sPer%C3%ADcias%20e%20Vistorias%20Veicular%20%7C%20Carplus%20Inspe%C3%A7%C3%A3o%20Automotiva%20Curitiba%2C%20Vistorias%20e%20Inspe%C3%A7%C3%A3o%20de%20Ve%C3%ADculos%20-%20Av.%20Presidente%20Arthur%20da%20Silva%20Bernardes%2C%201323%20-%20Port%C3%A3o%2C%20Curitiba%20-%20PR%2C%2080320-300!3m2!1d-25.4636458!2d-49.300298!5e0!3m2!1spt-BR!2sbr!4v1780062222186!5m2!1spt-BR!2sbr" 
                         width="100%" 
                         height="400" 
                         style={{ border: 0 }} 
@@ -1004,115 +1004,107 @@ export default function App() {
         className="relative border-t border-zinc-800 text-white py-16 px-6 bg-zinc-950 bg-cover bg-center overflow-hidden footer-responsive-bg"
       >
         {/* Overlay do background para máxima visibilidade da imagem mantendo legibilidade do texto */}
-        <div className="absolute inset-0 bg-black/80 z-0"></div>
+        <div className="absolute inset-0 bg-black/85 z-0"></div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 md:gap-14">
             
             {/* Col 1 */}
-            <div className="lg:col-span-5 space-y-4">
+            <div className="lg:col-span-5 space-y-6">
               <Logo variant="dark" showText={false} className="logo-glowing" />
               <p className="text-sm text-justify text-white max-w-sm mt-4 leading-relaxed font-semibold">
                 Especialistas em Vistoria Cautelar e Perícia Automotiva em Curitiba – PR. Laudo emitido com total segurança para sua negociação.
               </p>
               {/* Trust symbol badge */}
-              <div className="pt-2 flex items-center gap-2 text-primary font-mono text-[11px] font-bold uppercase tracking-wider select-none">
-                <i className="fa-solid fa-shield-halved text-primary"></i>
+              <div className="pt-2 flex items-center gap-3 text-primary font-mono text-xs font-bold uppercase tracking-wider select-none">
+                <i className="fa-solid fa-shield-halved text-primary text-sm"></i>
                 Seguro de Responsabilidade Civil Ativo
               </div>
             </div>
 
             {/* Col 2 */}
-            <div className="lg:col-span-2 space-y-3">
-              <h4 className="font-display font-bold text-sm text-white uppercase tracking-wider mb-2">Serviços</h4>
-              <ul className="space-y-2 text-xs">
+            <div className="lg:col-span-2 space-y-4">
+              <h4 className="font-display font-extrabold text-lg text-white uppercase tracking-wider">Serviços</h4>
+              <ul className="space-y-3 text-sm font-semibold">
                 <li>
-                  <a href="#servicos" onClick={(e) => { e.preventDefault(); handleNavigate('servicos'); }} className="text-zinc-400 hover:text-primary transition-colors">
-                    Vistoria Cautelar
+                  <a href="#servicos" onClick={(e) => { e.preventDefault(); handleNavigate('servicos'); }} className="text-white hover:text-primary transition-colors flex items-center gap-2">
+                    <i className="fa-solid fa-chevron-right text-[10px] text-primary"></i> Vistoria Cautelar
                   </a>
                 </li>
                 <li>
-                  <a href="#servicos" onClick={(e) => { e.preventDefault(); handleNavigate('servicos'); }} className="text-zinc-400 hover:text-primary transition-colors">
-                    Perícia Automotiva
+                  <a href="#servicos" onClick={(e) => { e.preventDefault(); handleNavigate('servicos'); }} className="text-white hover:text-primary transition-colors flex items-center gap-2">
+                    <i className="fa-solid fa-chevron-right text-[10px] text-primary"></i> Perícia Automotiva
                   </a>
                 </li>
                 <li>
-                  <a href="#servicos" onClick={(e) => { e.preventDefault(); handleNavigate('servicos'); }} className="text-zinc-400 hover:text-primary transition-colors">
-                    Laudo de Transferência
+                  <a href="#servicos" onClick={(e) => { e.preventDefault(); handleNavigate('servicos'); }} className="text-white hover:text-primary transition-colors flex items-center gap-2">
+                    <i className="fa-solid fa-chevron-right text-[10px] text-primary"></i> Laudo de Transferência
                   </a>
                 </li>
                 <li>
-                  <a href="#servicos" onClick={(e) => { e.preventDefault(); handleNavigate('servicos'); }} className="text-zinc-400 hover:text-primary transition-colors">
-                    Inspeção Veicular
+                  <a href="#servicos" onClick={(e) => { e.preventDefault(); handleNavigate('servicos'); }} className="text-white hover:text-primary transition-colors flex items-center gap-2">
+                    <i className="fa-solid fa-chevron-right text-[10px] text-primary"></i> Inspeção Veicular
                   </a>
                 </li>
               </ul>
             </div>
 
             {/* Col 3 */}
-            <div className="lg:col-span-2 space-y-3">
-              <h4 className="font-display font-bold text-sm text-white uppercase tracking-wider mb-2">Institucional</h4>
-              <ul className="space-y-2 text-xs">
+            <div className="lg:col-span-2 space-y-4">
+              <h4 className="font-display font-extrabold text-lg text-white uppercase tracking-wider">Institucional</h4>
+              <ul className="space-y-3 text-sm font-semibold">
                 <li>
-                  <a href="#home" onClick={(e) => { e.preventDefault(); handleNavigate('home'); }} className="text-zinc-400 hover:text-primary transition-colors">
-                    Início / Home
+                  <a href="#home" onClick={(e) => { e.preventDefault(); handleNavigate('home'); }} className="text-white hover:text-primary transition-colors flex items-center gap-2">
+                    <i className="fa-solid fa-chevron-right text-[10px] text-primary"></i> Início / Home
                   </a>
                 </li>
                 <li>
-                  <a href="#sobre" onClick={(e) => { e.preventDefault(); handleNavigate('sobre'); }} className="text-zinc-400 hover:text-primary transition-colors">
-                    Quem Somos Nós
+                  <a href="#sobre" onClick={(e) => { e.preventDefault(); handleNavigate('sobre'); }} className="text-white hover:text-primary transition-colors flex items-center gap-2">
+                    <i className="fa-solid fa-chevron-right text-[10px] text-primary"></i> Quem Somos Nós
                   </a>
                 </li>
                 <li>
-                  <a href="/mapa-do-site.html" className="text-primary hover:underline transition-colors font-bold flex items-center gap-1.5">
-                    Mapa do Site
+                  <a href="/mapa-do-site.html" className="text-white hover:text-primary transition-colors flex items-center gap-2 font-bold">
+                    <i className="fa-solid fa-sitemap text-primary text-xs"></i> Mapa do Site
                   </a>
                 </li>
                 <li>
-                  <a href="/contato.html" className="text-white hover:text-primary transition-colors font-bold flex items-center gap-1.5">
-                    Contato e Cadastro
+                  <a href="/contato.html" className="text-white hover:text-primary transition-colors flex items-center gap-2 font-bold">
+                    <i className="fa-solid fa-envelope text-primary text-xs"></i> Contato e Cadastro
                   </a>
                 </li>
               </ul>
             </div>
 
             {/* Col 4 */}
-            <div className="lg:col-span-3 space-y-3">
-              <h4 className="font-display font-bold text-sm text-white uppercase tracking-wider mb-2">Central de Atendimento</h4>
-              <ul className="space-y-3 text-sm">
-                <li className="flex items-center gap-3">
-                  <span className="text-primary text-base"><i className="fa-solid fa-phone"></i></span>
-                  <a href="tel:+5541988740258" className="hover:text-primary hover:underline transition-colors font-mono font-bold text-white">
+            <div className="lg:col-span-3 space-y-4">
+              <h4 className="font-display font-extrabold text-lg text-white uppercase tracking-wider">Atendimento</h4>
+              <address className="not-italic text-sm text-white space-y-3 font-semibold">
+                <div className="flex items-start gap-2.5">
+                  <i className="fa-solid fa-location-dot text-primary mt-1 text-sm"></i>
+                  <span>Av. Presidente Arthur da Silva Bernardes, 1323<br />Portão – Curitiba/PR</span>
+                </div>
+                <div className="flex items-center gap-2.5">
+                  <i className="fa-solid fa-phone text-primary text-sm"></i>
+                  <a href="tel:+5541988740258" className="text-white hover:text-primary hover:underline transition-colors font-mono font-bold">
                     (41) 98874-0258
                   </a>
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="text-emerald-500 text-base"><i className="fa-brands fa-whatsapp"></i></span>
-                  <a href="https://wa.me/5541988740258" target="_blank" rel="noopener noreferrer" className="hover:text-primary hover:underline transition-colors font-mono font-bold text-white">
+                </div>
+                <div className="flex items-center gap-2.5">
+                  <i className="fa-brands fa-whatsapp text-emerald-500 text-sm"></i>
+                  <a href="https://wa.me/5541988740258" target="_blank" rel="noopener noreferrer" className="text-white hover:text-primary hover:underline transition-colors font-mono font-bold">
                     (41) 98874-0258
                   </a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Col 5 */}
-            <div className="lg:col-span-5 space-y-3">
-              <h4 className="font-display font-bold text-lg text-white uppercase tracking-wider mb-2">Localização da Sede</h4>
-              <div className="flex items-start gap-3 text-sm">
-                <span className="text-primary text-base mt-1"><i className="fa-solid fa-location-dot"></i></span>
-                <address className="not-italic text-white leading-relaxed font-sans font-bold">
-                  Av. Presidente Arthur da Silva Bernardes, 1323<br />
-                  Portão – Curitiba/PR · CEP 80320-300
-                </address>
-              </div>
-              <div class="pt-2">
+                </div>
+              </address>
+              <div className="pt-2">
                 <a
                   href="https://www.google.com/maps/dir/?api=1&destination=Av.+Presidente+Arthur+da+Silva+Bernardes,+1323,+Port%C3%A3o,+Curitiba,+PR"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-[10px] font-mono font-bold bg-zinc-900 border border-zinc-800 hover:border-primary text-white hover:text-primary py-2 px-4 rounded-md transition-all uppercase"
+                  className="inline-flex items-center gap-2 text-xs font-mono font-bold bg-zinc-900 border border-zinc-800 hover:border-primary text-white hover:text-primary py-2.5 px-5 rounded-md transition-all uppercase"
                 >
-                  <i className="fa-solid fa-diamond-turn-right text-primary text-xs"></i> Como chegar à sede
+                  <i className="fa-solid fa-diamond-turn-right text-primary text-sm"></i> Como chegar à sede
                 </a>
               </div>
             </div>
@@ -1123,23 +1115,23 @@ export default function App() {
           <div className="footer-divider my-10" />
 
           {/* Copyright section with typing animation entry */}
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-center text-xs text-zinc-200 font-mono tracking-wide font-bold">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-center text-xs text-white font-mono tracking-wide font-bold">
             <div>
               &copy; {new Date().getFullYear()} Carplus Vistorias. Todos os direitos reservados.
             </div>
             <div className="flex gap-4">
-              <a href="/mapa-do-site.html" className="text-primary hover:underline font-bold">Mapa do Site</a>
+              <a href="/mapa-do-site.html" className="text-white hover:text-primary transition-colors font-bold">Mapa do Site</a>
               <span className="text-zinc-800">|</span>
-              <a href="/contato.html" className="text-white hover:text-primary font-bold">Contato WhatsApp</a>
+              <a href="/contato.html" className="text-white hover:text-primary transition-colors font-bold">Contato WhatsApp</a>
             </div>
           </div>
 
           <div className="mt-6 pt-4 border-t border-zinc-800/50 flex justify-center text-center">
-            <p className="text-zinc-200 hover:text-primary text-xs flex items-center gap-1 select-none font-bold font-mono">
+            <p className="text-white hover:text-primary text-xs flex items-center gap-1.5 select-none font-bold font-mono">
               Desenvolvido com <Heart size={11} className="text-primary animate-heartbeat fill-primary" /> por
-              <a href="https://supremasite.com.br" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition ml-1 inline-flex items-center gap-1.5 font-bold font-sans">
+              <a href="https://supremasite.com.br" target="_blank" rel="noopener noreferrer" className="text-white hover:text-primary transition ml-1 inline-flex items-center gap-1.5 font-bold font-sans">
                 Suprema Sites Express
-                <img src="https://img.supremamidia.com/suprema-img.png" alt="Suprema" className="h-3.5 inline" referrerPolicy="no-referrer" />
+                <img src="https://img.supremamidia.com/suprema-img.png" alt="Suprema" className="h-3.5 inline animate-bounce" referrerPolicy="no-referrer" />
               </a>
             </p>
           </div>

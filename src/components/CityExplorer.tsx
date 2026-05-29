@@ -8,6 +8,23 @@ import { NEIGHBORHOODS_SEO, CITIES_SEO } from '../data';
 
 type FilterType = 'all' | 'bairros' | 'rmc';
 
+// Helper function to turn name into exact SEO sitemap slug
+function getSlug(name: string): string {
+  const normalized = name.trim().toLowerCase();
+  if (normalized.startsWith('cic') || normalized.includes('cidade industrial')) {
+    return 'cic';
+  }
+  if (normalized === 'alto boqueirão') {
+    return 'alto-boqueirado';
+  }
+  return normalized
+    .normalize('NFD')                     // separates letters from accents
+    .replace(/[\u0300-\u036f]/g, '')     // removes accents
+    .replace(/[^a-z0-9\s-]/g, '')        // removes anything that is not alphanumeric, a space, or a hyphen
+    .trim()
+    .replace(/\s+/g, '-');               // replaces spaces with hyphens
+}
+
 export default function CityExplorer() {
   const [filter, setFilter] = useState<FilterType>('all');
   const [searchQuery, setSearchQuery] = useState('');
@@ -108,6 +125,7 @@ export default function CityExplorer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredItems.map((item, index) => {
             const isSede = 'isSede' in item && item.isSede;
+            const slug = getSlug(item.name);
             return (
               <div
                 key={item.name}
@@ -117,16 +135,19 @@ export default function CityExplorer() {
                     : 'border-zinc-800 hover:border-zinc-700'
                 }`}
               >
-                {/* Card Header */}
+                {/* Card Header with direct page link */}
                 <div className="flex items-start justify-between gap-4 mb-4">
                   <div className="flex items-center gap-3">
                     <span className={`w-10 h-10 rounded-lg flex items-center justify-center ${isSede ? 'bg-primary/20 text-primary' : 'bg-zinc-800 text-white'}`}>
                       <i className={`fa-solid ${item.icon} text-base`}></i>
                     </span>
                     <div>
-                      <h3 className="font-display font-semibold text-lg text-white leading-tight">
-                        {item.name}
-                      </h3>
+                      <a href={`/vistoria-cautelar-${slug}.html`} className="group/title block">
+                        <h3 className="font-display font-semibold text-lg text-white leading-tight group-hover/title:text-primary transition-colors flex items-center gap-1.5">
+                          {item.name}
+                          <i className="fa-solid fa-arrow-up-right-from-square text-[10px] text-zinc-500 opacity-60 group-hover/title:opacity-100 group-hover/title:text-primary transition-opacity"></i>
+                        </h3>
+                      </a>
                       <span className="text-[10px] uppercase font-bold tracking-wider text-zinc-200 block mt-0.5">
                         {item.typeName}
                       </span>
@@ -145,17 +166,20 @@ export default function CityExplorer() {
                   {item.description}
                 </p>
 
-                {/* Action CTA link (Quick whatsapp schedule) */}
-                <div className="mt-5 pt-4 border-t border-zinc-800 flex items-center justify-between">
-                  <span className="text-[11px] text-zinc-300 font-mono flex items-center gap-1.5 font-bold">
-                    <i className="fa-solid fa-shield-halved text-primary"></i> Laudo em Curitiba
-                  </span>
+                {/* Action CTA link (Quick whatsapp schedule & Direct link to the SEO page) */}
+                <div className="mt-5 pt-4 border-t border-zinc-800 flex items-center justify-between gap-2">
+                  <a
+                    href={`/vistoria-cautelar-${slug}.html`}
+                    className="text-xs font-mono font-bold uppercase tracking-wider text-zinc-400 hover:text-primary flex items-center gap-1.5 transition-colors cursor-pointer"
+                  >
+                    <i className="fa-solid fa-file-invoice text-zinc-500 text-[11px]"></i> Ver Página
+                  </a>
                   
                   <a
                     href={`https://wa.me/5541988740258?text=Ol%C3%A1!%20Desejo%20agendar%20uma%20vistoria%20cautelar%20para%20ve%C3%ADculo%20em%20${encodeURIComponent(item.name)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs text-primary hover:text-primary-dark font-semibold flex items-center gap-1 group"
+                    className="text-xs text-primary hover:text-primary-light font-bold flex items-center gap-1 group bg-primary/10 border border-primary/20 hover:border-primary px-3 py-1.5 rounded-lg transition-all"
                   >
                     Agendar <i className="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
                   </a>
