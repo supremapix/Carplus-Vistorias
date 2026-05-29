@@ -1,0 +1,210 @@
+<!-- 
+  ========================================================================
+  CARPLUS VISTORIAS — SNIPPETS DE EXTREMA FIDELIDADE (RODAPÉ + HEADER NAV)
+  ========================================================================
+  Este arquivo serve como utilitário de referência dos blocos HTML/CSS 
+  atualizados para replicação em novas landing pages e templates de bairros.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Códigos de Referência - Carplus Vistorias</title>
+  <style>
+    body { background: #111; color: #ccc; font-family: monospace; padding: 40px; }
+    h1 { color: #fff; font-family: sans-serif; border-bottom: 2px solid #C8102E; padding-bottom: 10px; }
+    h2 { color: #C8102E; font-family: sans-serif; margin-top: 40px; }
+    pre { background: #1a1a1a; border: 1px solid #333; padding: 20px; border-radius: 8px; overflow-x: auto; color: #22d3ee; }
+    .badge { background: #C8102E; color: white; padding: 3px 8px; border-radius: 4px; font-size: 11px; }
+  </style>
+</head>
+<body>
+
+  <h1>Sutura de Snippets Premium</h1>
+  <p>Estes são os códigos oficiais atualizados com <strong>Menu Mobile Premium destacado</strong>, links internos consistentes e o link obrigatório para o <strong>Mapa do Site</strong>.</p>
+
+  <!-- ================= SNIPPET 1: CSS PREMIUM DO NAV CONTACT ================= -->
+  <h2>1. CSS Premium de Destaque para Contato Mobile & Desktop (Inserir no &lt;head&gt;)</h2>
+  <pre><code>
+/* Item Contato - Mobile Highlight */
+.nav-contact-cta {
+  position: relative;
+  background: linear-gradient(135deg, #C8102E, #FF3C57);
+  color: #fff !important;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-weight: 700;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(200, 16, 46, 0.4);
+  animation: pulse-contact 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse-contact {
+  0%, 100% { box-shadow: 0 0 20px rgba(200, 16, 46, 0.4); }
+  50% { box-shadow: 0 0 35px rgba(200, 16, 46, 0.8), 0 0 60px rgba(255, 60, 87, 0.3); }
+}
+
+/* Shimmer sweep effect */
+.nav-contact-cta::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+  animation: shimmer-contact 3s infinite;
+}
+
+@keyframes shimmer-contact {
+  0% { left: -100%; }
+  50%, 100% { left: 100%; }
+}
+
+/* Badge pulsante */
+.nav-contact-badge {
+  display: inline-block;
+  background: #25D366;
+  color: #fff;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 6px;
+  animation: badge-bounce 1.5s ease-in-out infinite;
+}
+
+@keyframes badge-bounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@media (min-width: 768px) {
+  .nav-contact-cta {
+    border-radius: 6px;
+    font-size: 14px;
+  }
+}
+  </code></pre>
+
+  <!-- ================= SNIPPET 2: HEADER PREMIUM ================= -->
+  <h2>2. HTML do Header e Navegação Responsiva (Atualizado)</h2>
+  <pre><code>
+&lt;header class="fixed top-0 left-0 right-0 z-[100] bg-zinc-950/95 backdrop-blur-md py-4 border-b border-zinc-900 shadow-xl shadow-black/30"&gt;
+  &lt;div class="max-w-7xl mx-auto px-6 flex items-center justify-between"&gt;
+    
+    &lt;!-- Logo --&gt;
+    &lt;a href="/" class="flex items-center gap-3"&gt;
+      &lt;img src="https://img.carplusvistorias.com.br/favicon-carplus.png" alt="Carplus Logo" class="h-9 w-auto"&gt;
+      &lt;div class="flex flex-col"&gt;
+        &lt;span class="text-xl font-display font-black tracking-wider text-white select-none"&gt;CAR&lt;span class="text-primary text-2xl font-black italic"&gt;PLUS&lt;/span&gt;&lt;/span&gt;
+        &lt;span class="text-[8px] font-mono tracking-[0.3em] text-zinc-400 -mt-1 uppercase"&gt;Vistorias&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/a&gt;
+
+    &lt;!-- Desktop Navigation Links --&gt;
+    &lt;nav class="hidden lg:flex items-center gap-8"&gt;
+      &lt;a href="/#home" class="text-xs uppercase tracking-[0.2em] font-display font-medium text-zinc-300 hover:text-[#C8102E] transition-colors py-1"&gt;Início&lt;/a&gt;
+      &lt;a href="/#servicos" class="text-xs uppercase tracking-[0.2em] font-display font-medium text-zinc-300 hover:text-[#C8102E] transition-colors py-1"&gt;Serviços&lt;/a&gt;
+      &lt;a href="/#sobre" class="text-xs uppercase tracking-[0.2em] font-display font-medium text-zinc-300 hover:text-[#C8102E] transition-colors py-1"&gt;Sobre Nós&lt;/a&gt;
+      &lt;a href="/#cidades" class="text-xs uppercase tracking-[0.2em] font-display font-medium text-zinc-300 hover:text-[#C8102E] transition-colors py-1"&gt;Cidades Atendidas&lt;/a&gt;
+      &lt;a href="/#faq" class="text-xs uppercase tracking-[0.2em] font-display font-medium text-zinc-300 hover:text-[#C8102E] transition-colors py-1"&gt;FAQ / Dúvidas&lt;/a&gt;
+      &lt;a href="/mapa-do-site" class="text-xs uppercase tracking-[0.2em] font-display font-medium text-zinc-300 hover:text-[#C8102E] transition-colors py-1"&gt;Mapa&lt;/a&gt;
+    &lt;/nav&gt;
+
+    &lt;!-- Menu mobile - item Contato DESTACADO --&gt;
+    &lt;div class="hidden lg:flex items-center gap-4"&gt;
+      &lt;a href="/contato" class="nav-contact-cta text-white font-display font-extrabold text-xs uppercase tracking-wider py-2.5 px-5 rounded-lg flex items-center gap-2"&gt;
+        &lt;span&gt;💬 Contato&lt;/span&gt;
+        &lt;span class="nav-contact-badge"&gt;WhatsApp&lt;/span&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Hamburguer --&gt;
+    &lt;button id="mobile-menu-btn" class="lg:hidden flex flex-col justify-between w-6 h-5 focus:outline-none z-[101]" aria-label="Abrir Menu"&gt;
+      &lt;span class="w-full h-0.5 bg-white rounded-full transition-all duration-300" id="h-line-1"&gt;&lt;/span&gt;
+      &lt;span class="w-full h-0.5 bg-white rounded-full transition-all duration-300" id="h-line-2"&gt;&lt;/span&gt;
+      &lt;span class="w-full h-0.5 bg-white rounded-full transition-all duration-300" id="h-line-3"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/header&gt;
+  </code></pre>
+
+  <!-- ================= SNIPPET 3: GLOBAL SITEMAP RESPONSIVE FOOTER ================= -->
+  <h2>3. HTML do Rodapé com Links Internos e link para Mapa do Site</h2>
+  <pre><code>
+&lt;footer class="relative border-t border-zinc-900 text-white py-16 px-6 bg-zinc-950 overflow-hidden"&gt;
+  &lt;div class="absolute inset-0 bg-cover bg-center opacity-30 pointer-events-none select-none" style="background-image: url('https://img.carplusvistorias.com.br/fundo-site-cwb.png');"&gt;&lt;/div&gt;
+  &lt;div class="absolute inset-0 bg-black/85 z-0"&gt;&lt;/div&gt;
+  
+  &lt;div class="max-w-7xl mx-auto relative z-10"&gt;
+    &lt;div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10"&gt;
+      
+      &lt;!-- Col 1: Logo e Redes --&gt;
+      &lt;div class="lg:col-span-4 space-y-4"&gt;
+        &lt;div class="flex items-center gap-3"&gt;
+          &lt;img src="https://img.carplusvistorias.com.br/favicon-carplus.png" alt="Carplus Logo" class="h-8 w-auto"&gt;
+          &lt;span class="text-lg font-display font-black tracking-wider text-white"&gt;CAR&lt;span class="text-primary italic"&gt;PLUS&lt;/span&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;p class="text-xs text-zinc-400 leading-relaxed max-w-sm"&gt;
+          Especialistas em Vistoria Cautelar, Perícia Automotiva e Laudo de Transferência em Curitiba – PR. Procedência garantida e laudo físico emitido imediatamente na hora com total segurança.
+        &lt;/p&gt;
+      &lt;/div&gt;
+
+      &lt;!-- Col 2: Serviços Link --&gt;
+      &lt;div class="lg:col-span-2 space-y-3"&gt;
+        &lt;h4 class="font-display font-bold text-sm text-white uppercase tracking-wider"&gt;Serviços&lt;/h4&gt;
+        &lt;ul class="space-y-2 text-xs text-zinc-400"&gt;
+          &lt;li&gt;&lt;a href="/#servicos" class="hover:text-primary transition-colors"&gt;Vistoria Cautelar&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="/#servicos" class="hover:text-primary transition-colors"&gt;Perícia Automotiva&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="/#servicos" class="hover:text-primary transition-colors"&gt;Laudo de Transferência&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="/#servicos" class="hover:text-primary transition-colors"&gt;Inspeção Veicular&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+
+      &lt;!-- Col 3: Institucional e Sitemap Link --&gt;
+      &lt;div class="lg:col-span-3 space-y-3"&gt;
+        &lt;h4 class="font-display font-bold text-sm text-white uppercase tracking-wider"&gt;Institucional&lt;/h4&gt;
+        &lt;ul class="space-y-2 text-xs text-zinc-400"&gt;
+          &lt;li&gt;&lt;a href="/#home" class="hover:text-primary transition-colors"&gt;Início / Home&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="/#sobre" class="hover:text-primary transition-colors"&gt;Quem Somos Nós&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="/mapa-do-site" class="hover:text-primary transition-colors flex items-center gap-1.5 font-bold text-white"&gt;🗺️ Mapa do Site&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="/contato" class="hover:text-primary transition-colors flex items-center gap-1.5 font-bold text-white"&gt;✉️ Contato e Cadastro&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+
+      &lt;!-- Col 4: Endereço Sede --&gt;
+      &lt;div class="lg:col-span-3 space-y-3"&gt;
+        &lt;h4 class="font-display font-bold text-sm text-white uppercase tracking-wider"&gt;Atendimento&lt;/h4&gt;
+        &lt;address class="not-italic text-xs text-zinc-400 space-y-2"&gt;
+          &lt;div class="flex items-start gap-2"&gt;
+            &lt;i class="fa-solid fa-location-dot text-primary mt-0.5"&gt;&lt;/i&gt;
+            &lt;span&gt;Av. Pres. Arthur da Silva Bernardes, 1323 · Portão · Curitiba/PR&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;div class="flex items-center gap-2"&gt;
+            &lt;i class="fa-solid fa-phone text-primary"&gt;&lt;/i&gt;
+            &lt;a href="tel:+5541988740258" class="hover:text-primary hover:underline transition-colors font-mono"&gt;(41) 98874-0258&lt;/a&gt;
+          &lt;/div&gt;
+        &lt;/address&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+
+    &lt;div class="my-10 border-t border-zinc-900"&gt;&lt;/div&gt;
+
+    &lt;!-- Footer Bottom Copyright + Sitemap Link --&gt;
+    &lt;div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-center text-[10px] text-zinc-500 font-mono"&gt;
+      &lt;div&gt;
+        &copy; 2025 Carplus Vistorias. CNPJ 34.521.988/0001-90. Todos os direitos reservados.
+      &lt;/div&gt;
+      &lt;div class="flex gap-4"&gt;
+        &lt;a href="/mapa-do-site" class="hover:text-primary transition-colors font-bold text-primary"&gt;Mapa do Site&lt;/a&gt;
+        &lt;span class="text-zinc-800"&gt;|&lt;/span&gt;
+        &lt;a href="/contato" class="hover:text-primary transition-colors font-bold"&gt;Contato WhatsApp&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/footer&gt;
+  </code></pre>
+
+</body>
+</html>

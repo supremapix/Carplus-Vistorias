@@ -70,7 +70,7 @@ export default function AnimatedCar() {
               rel="noopener noreferrer"
               className="text-white hover:text-primary mt-1 border-b border-zinc-700 pb-0.5 text-xs font-semibold group flex items-center gap-1.5"
             >
-              <span className="animate-[pulse_1s_infinite] bg-red-600 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider">
+              <span className="animate-[pulse_1s_infinite] bg-primary text-zinc-950 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider">
                 CLIQUE AQUI
               </span>
               <span className="text-[11px] group-hover:translate-x-1 transition-transform">➡ AGENDAR LAUDO</span>
@@ -153,7 +153,7 @@ export default function AnimatedCar() {
           <polygon points="6,45 13,51 13,58 6,63" fill="rgba(255, 235, 120, 0.25)" className="animate-pulse" />
 
           {/* Back Taillights (Rear Right red dot) */}
-          <path d="M 148 52 C 150 53, 151 56, 149 58" stroke="#EF4444" strokeWidth="3.5" strokeLinecap="round" />
+          <path d="M 148 52 C 150 53, 151 56, 149 58" stroke="#F5A623" strokeWidth="3.5" strokeLinecap="round" />
 
           {/* Door Handle */}
           <rect x="75" y="48" width="10" height="2" rx="1" fill="#FFFFFF" />

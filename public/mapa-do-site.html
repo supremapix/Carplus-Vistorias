@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa do Site | Carplus Vistorias – Todas as Nossas Páginas</title>
+  <meta name="description" content="Mapa do site completo da Carplus Vistorias. Encontre facilmente todas as nossas páginas de vistoria cautelar por bairro de Curitiba e região metropolitana.">
+  <meta name="robots" content="index, follow">
+  
+  <link rel="canonical" href="https://www.carplusvistorias.com.br/mapa-do-site">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://img.carplusvistorias.com.br/favicon-carplus.png" />
+
+  <!-- Google Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Tailwind CDN & PlayConfig -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#F5A623',
+              dark: '#D4880F',
+              light: '#F8B64A',
+            },
+            dark: '#111111',
+            card: '#1a1a1a',
+          },
+          fontFamily: {
+            display: ['"Barlow Condensed"', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style type="text/css">
+    @keyframes pulse-contact {
+      0%, 100% { box-shadow: 0 0 20px rgba(245, 166, 35, 0.4); }
+      50% { box-shadow: 0 0 35px rgba(245, 166, 35, 0.8), 0 0 60px rgba(248, 182, 74, 0.3); }
+    }
+    .nav-contact-cta {
+      position: relative;
+      background: linear-gradient(135deg, #F5A623, #F8B64A);
+      box-shadow: 0 0 20px rgba(245, 166, 35, 0.4);
+      animation: pulse-contact 2.5s ease-in-out infinite;
+      overflow: hidden;
+    }
+    .nav-contact-cta::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+      animation: shimmer-contact 3s infinite;
+    }
+    @keyframes shimmer-contact {
+      0% { left: -100%; }
+      50%, 100% { left: 100%; }
+    }
+    .nav-contact-badge {
+      animation: badge-bounce 1.5s ease-in-out infinite;
+    }
+    @keyframes badge-bounce {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    .hero-laser-line {
+      height: 2px;
+      background: linear-gradient(90deg, rgba(245,166,35,0) 0%, rgba(245,166,35,1) 50%, rgba(245,166,35,0) 100%);
+      box-shadow: 0 0 8px #F5A623;
+    }
+    .hero-neon-pulse {
+      height: 20px;
+      background: linear-gradient(180deg, rgba(245,166,35,0.15), rgba(245,166,35,0));
+      filter: blur(4px);
+    }
+    
+    /* Underline animation for links */
+    .sitemap-link {
+      position: relative;
+    }
+    .sitemap-link::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 1px;
+      bottom: -1px;
+      left: 0;
+      background-color: #F5A623;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+    .sitemap-link:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+ 
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #111;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #F5A623;
+      border-radius: 3px;
+    }
+  </style>
+
+  <!-- Schema.org HTML Sitemap Page Meta -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Mapa do Site – Carplus Vistorias",
+    "description": "Listagem organizada e completa de todas as páginas de serviços e bairros atendidos pela Carplus Vistorias em Curitiba.",
+    "url": "https://www.carplusvistorias.com.br/mapa-do-site",
+    "isPartOf": {
+      "@type": "WebSite",
+      "url": "https://www.carplusvistorias.com.br/"
+    }
+  }
+  </script>
+</head>
+<body class="bg-[#111111] text-[#F5F5F5] font-sans selection:bg-primary selection:text-white custom-scrollbar">
+
+  <!-- 1. FIXED GLASS HEADER -->
+  <header class="fixed top-0 left-0 right-0 z-[100] bg-zinc-950/95 backdrop-blur-md py-4 border-b border-zinc-900 shadow-xl shadow-black/30">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      
+      <!-- LOGO -->
+      <a href="/" class="flex items-center">
+        <img src="https://img.carplusvistorias.com.br/carplus-vistorias-portao-logo.png" alt="Carplus Vistorias" class="h-14 sm:h-16 max-h-[64px] w-auto object-contain transition-all duration-300">
+      </a>
+
+      <!-- DESKTOP NAV -->
+      <nav class="hidden lg:flex items-center gap-8">
+        <a href="/#home" class="text-xs uppercase tracking-[0.2em] font-display font-medium text-zinc-300 hover:text-primary transition-colors py-1">Início</a>
+        <a href="/#servicos" class="text-xs uppercase tracking-[0.2em] font-display font-medium text-zinc-300 hover:text-primary transition-colors py-1">Serviços</a>
+        <a href="/#sobre" class="text-xs uppercase tracking-[0.2em] font-display font-medium text-zinc-300 hover:text-primary transition-colors py-1">Sobre Nós</a>
+        <a href="/#cidades" class="text-xs uppercase tracking-[0.2em] font-display font-medium text-zinc-300 hover:text-primary transition-colors py-1">Cidades Atendidas</a>
+        <a href="/#faq" class="text-xs uppercase tracking-[0.2em] font-display font-medium text-zinc-300 hover:text-primary transition-colors py-1">FAQ / Dúvidas</a>
+        <a href="/mapa-do-site" class="text-xs uppercase tracking-[0.2em] font-display font-medium text-white font-bold py-1">Mapa</a>
+      </nav>
+
+      <!-- CONTACT CTA -->
+      <div class="hidden lg:flex items-center gap-4">
+        <a href="/contato" class="nav-contact-cta text-white font-display font-extrabold text-xs uppercase tracking-wider py-2.5 px-5 rounded-lg flex items-center gap-2">
+          <span>Contato</span>
+          <span class="nav-contact-badge bg-[#25D366] text-white text-[9px] font-bold px-1.5 py-0.5 rounded uppercase font-sans">WhatsApp</span>
+        </a>
+      </div>
+
+      <!-- HAMBURGER -->
+      <button id="mobile-menu-btn" class="lg:hidden flex flex-col justify-between w-6 h-5 focus:outline-none z-[101]" aria-label="Abrir Menu">
+        <span class="w-full h-0.5 bg-white rounded-full transition-all duration-300" id="h-line-1"></span>
+        <span class="w-full h-0.5 bg-white rounded-full transition-all duration-300" id="h-line-2"></span>
+        <span class="w-full h-0.5 bg-white rounded-full transition-all duration-300" id="h-line-3"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <div id="mobile-drawer-backdrop" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-[98] hidden opacity-0 transition-opacity duration-300"></div>
+  <div id="mobile-drawer" class="fixed top-0 right-0 w-[80vw] sm:w-[320px] h-screen bg-zinc-950 border-l border-zinc-900 shadow-2xl z-[99] translate-x-full transition-transform duration-300 ease-out py-24 px-8 flex flex-col justify-between">
+    <div class="flex flex-col gap-6">
+      <div class="pb-4 border-b border-zinc-900">
+        <a href="/">
+          <img src="https://img.carplusvistorias.com.br/carplus-vistorias-portao-logo.png" alt="Carplus Vistorias" class="h-12 w-auto object-contain">
+        </a>
+      </div>
+      <nav class="flex flex-col gap-5 text-left">
+        <a href="/#home" class="mobile-nav-link text-gray-300 hover:text-white font-display font-semibold text-base uppercase tracking-widest py-1">Início</a>
+        <a href="/#servicos" class="mobile-nav-link text-gray-300 hover:text-white font-display font-semibold text-base uppercase tracking-widest py-1">Serviços</a>
+        <a href="/#sobre" class="mobile-nav-link text-gray-300 hover:text-white font-display font-semibold text-base uppercase tracking-widest py-1">Sobre Nós</a>
+        <a href="/#cidades" class="mobile-nav-link text-gray-300 hover:text-white font-display font-semibold text-base uppercase tracking-widest py-1">Cidades Atendidas</a>
+        <a href="/#faq" class="mobile-nav-link text-gray-300 hover:text-white font-display font-semibold text-base uppercase tracking-widest py-1">FAQ / Dúvidas</a>
+        <a href="/mapa-do-site" class="mobile-nav-link text-white font-display font-semibold text-base uppercase tracking-widest py-1">Mapa Do Site</a>
+      </nav>
+    </div>
+
+    <div class="flex flex-col gap-4 border-t border-zinc-900 pt-6">
+      <a href="/contato" class="nav-contact-cta text-center text-white font-display font-extrabold text-sm uppercase tracking-widest py-3 px-4 rounded-lg flex items-center justify-center gap-2">
+        <span>Contato</span>
+        <span class="nav-contact-badge bg-[#25D366] text-white text-[9px] font-bold px-1.5 py-0.5 rounded uppercase font-sans">WhatsApp</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- 2. HERO SITEMAP -->
+  <section class="relative pt-36 pb-20 bg-zinc-950 border-b border-zinc-900 overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center brightness-[0.12] z-0" style="background-image: url('https://img.carplusvistorias.com.br/secao-fundo-site.png');"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-[#111111]/95 z-10"></div>
+
+    <div class="max-w-5xl mx-auto px-6 relative z-20 text-center space-y-4">
+      <span class="inline-flex items-center gap-1 bg-primary/10 border border-primary/20 text-primary font-mono text-[10px] px-3 py-1 rounded-full uppercase tracking-wider font-bold">
+        MAPA DO SITE PÚBLICO
+      </span>
+      <h1 class="font-display font-black text-4xl sm:text-5xl md:text-6xl text-white uppercase tracking-tight">
+        MAPA DO SITE — CAR<span class="text-primary italic">PLUS</span>
+      </h1>
+      <p class="text-zinc-400 max-w-2xl mx-auto text-sm sm:text-base">
+        Navegue por todas as nossas páginas estruturadas de serviços, atendimento local e municípios da Grande Curitiba.
+      </p>
+
+      <!-- Real-time region count counter -->
+      <div class="pt-2">
+        <span class="inline-block bg-zinc-900 border border-zinc-800 text-zinc-300 font-mono text-xs px-4 py-2 rounded-lg font-semibold">
+          Atendimento em <span class="text-primary font-bold animate-pulse text-sm" id="count-number">122</span> cidades e regiões parceiras de Curitiba
+        </span>
+      </div>
+    </div>
+
+    <!-- Glowing divider line -->
+    <div class="absolute bottom-0 left-0 right-0 z-25 pointer-events-none select-none">
+      <div class="hero-laser-line"></div>
+      <div class="absolute top-0 left-0 right-0 hero-neon-pulse"></div>
+    </div>
+  </section>
+
+  <!-- 3. REAL-TIME SEARCH BAR SECTION -->
+  <section class="sticky top-[73px] z-50 bg-[#111111]/95 backdrop-blur-md py-4 border-b border-zinc-900/60 shadow-lg">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="relative">
+        <span class="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500"><i class="fa-solid fa-magnifying-glass"></i></span>
+        <input 
+          type="text" 
+          id="sitemap-search" 
+          placeholder="Busque por seu bairro, vila ou cidade... (ex: Portão, Araucária, Fanny)" 
+          class="w-full bg-zinc-900/90 border border-zinc-800 hover:border-zinc-700 focus:border-primary text-sm rounded-xl py-3.5 pl-12 pr-16 text-white focus:outline-none focus:ring-1 focus:ring-primary/45 transition-all font-semibold italic placeholder-zinc-500 shadow-inner"
+        >
+        <button id="clear-search-btn" class="absolute right-4 top-1/2 -translate-y-1/2 text-xs text-zinc-500 hover:text-primary hidden font-bold font-mono">LIMPAR</button>
+      </div>
+      <div class="flex justify-between items-center mt-2 text-[10px] text-zinc-500 font-mono font-bold px-1 select-none">
+        <span id="results-count">Mostrando 125 links no total</span>
+        <span>Tecle ESC para limpar</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. GRID SITEMAP GROUPS -->
+  <main class="py-16 px-6 max-w-7xl mx-auto space-y-16">
+    
+    <!-- GROUP 0: CORE PAGES -->
+    <section class="bg-zinc-900/20 border border-zinc-900 p-8 rounded-2xl shadow-xl space-y-6 sitemap-section">
+      <div class="flex items-center gap-3 border-b border-zinc-900 pb-3">
+        <span class="text-primary text-xl"><i class="fa-solid fa-layer-group"></i></span>
+        <h2 class="font-display font-black text-2xl text-white uppercase tracking-wider">Páginas Principais</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-sm text-zinc-300">
+        <a href="/" class="sitemap-link py-2 px-4 rounded-lg bg-zinc-900/40 border border-zinc-900 hover:border-primary/20 hover:text-primary transition-all font-bold flex items-center gap-2 select-link">
+          <i class="fa-solid fa-house text-zinc-500 text-xs text-primary"></i> Home Principal e Serviços
+        </a>
+        <a href="/contato" class="sitemap-link py-2 px-4 rounded-lg bg-zinc-900/40 border border-zinc-900 hover:border-primary/20 hover:text-primary transition-all font-bold flex items-center gap-2 select-link">
+          <i class="fa-solid fa-envelope text-zinc-500 text-xs text-primary"></i> Agendamento e Contato
+        </a>
+        <a href="/mapa-do-site" class="sitemap-link py-2 px-4 rounded-lg bg-zinc-900/40 border border-zinc-900 hover:border-primary/30 text-primary transition-all font-bold flex items-center gap-2 select-link">
+          <i class="fa-solid fa-map text-zinc-500 text-xs"></i> Mapa Completo do Site
+        </a>
+        <a href="https://wa.me/5541988740258" target="_blank" class="sitemap-link py-2 px-4 rounded-lg bg-zinc-900/40 border border-zinc-900 hover:border-primary/20 hover:text-emerald-500 transition-all font-bold flex items-center gap-2 select-link">
+          <i class="fa-brands fa-whatsapp text-emerald-500 text-xs"></i> Canal WhatsApp Direto
+        </a>
+      </div>
+    </section>
+
+    <!-- GROUP 1: OFFICIAL NEIGHBORHOODS (75 Bairros) -->
+    <section id="official-neighborhoods" class="bg-zinc-900/25 border border-zinc-900 p-8 rounded-2xl shadow-xl space-y-6 sitemap-section">
+      <div class="flex items-center justify-between gap-3 border-b border-zinc-900 pb-4">
+        <div class="flex items-center gap-3">
+          <span class="text-primary text-xl"><i class="fa-solid fa-map-pin"></i></span>
+          <h2 class="font-display font-black text-2xl text-white uppercase tracking-wider">Bairros Oficiais de Curitiba (A–Z)</h2>
+        </div>
+        <span class="bg-primary/15 border border-primary/20 text-primary font-mono text-[10px] px-3 py-1 rounded-full font-bold">75 BAIRROS</span>
+      </div>
+      
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4" id="grid-official">
+        <!-- Bairros links inject/load -->
+        <div class="link-item"><a href="/vistoria-cautelar-abranches" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Abranches</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-agua-verde" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Água Verde</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-ahu" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Ahú</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-alto-boqueirado" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Alto Boqueirão</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-alto-da-gloria" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Alto da Glória</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-alto-da-rua-xv" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Alto da Rua XV</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-atuba" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Atuba</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-augusta" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Augusta</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-bacacheri" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Bacacheri</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-bairro-alto" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Bairro Alto</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-barreirinha" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Barreirinha</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-batel" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Batel</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-bigorrilho" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Bigorrilho</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-boa-vista" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Boa Vista</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-bom-retiro" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Bom Retiro</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-boqueirao" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Boqueirão</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-butiatuvinha" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Butiatuvinha</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-cabral" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Cabral</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-cachoeira" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Cachoeira</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-cajuru" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Cajuru</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-campina-do-siqueira" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Campina do Siqueira</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-campo-comprido" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Campo Comprido</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-campo-de-santana" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Campo de Santana</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-capao-raso" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Capão Raso</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-capao-da-imbuia" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Capão da Imbuia</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-cascatinha" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Cascatinha</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-caximba" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Caximba</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-centro" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Centro</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-centro-civico" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Centro Cívico</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-cic" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria na Cidade Industrial (CIC)</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-cristo-rei" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Cristo Rei</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-fanny" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Fanny</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-fazendinha" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Fazendinha</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-ganchinho" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Ganchinho</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-guabirotuba" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Guabirotuba</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-guaira" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Guaíra</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-hauer" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Hauer</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-hugo-lange" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Hugo Lange</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-jardim-botanico" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Jardim Botânico</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-jardim-social" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Jardim Social</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-jardim-das-americas" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Jardim das Américas</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-juveve" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Juvevê</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-lamenha-pequena" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria na Lamenha Pequena</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-lindoia" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Lindóia</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-merces" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria nas Mercês</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-mossungue" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Mossunguê</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-novo-mundo" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Novo Mundo</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-orleans" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Orleans</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-parolin" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Parolin</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-pilarzinho" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Pilarzinho</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-pinheirinho" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Pinheirinho</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-portao" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Portão</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-prado-velho" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Prado Velho</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-reboucas" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Rebouças</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-riviera" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria na Riviera</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-santa-candida" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Santa Cândida</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-santa-felicidade" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Santa Felicidade</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-santa-quiteria" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Santa Quitéria</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-santo-inacio" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Santo Inácio</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-seminario" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Seminário</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-sitio-cercado" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Sítio Cercado</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-sao-braz" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no São Braz</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-sao-francisco" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no São Francisco</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-sao-joao" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no São João</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-sao-lourenco" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no São Lourenço</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-sao-miguel" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no São Miguel</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-taboao" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Taboão</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-taruma" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Tarumã</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-tatuquara" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Tatuquara</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-tingui" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Tingui</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-uberaba" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Uberaba</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-umbara" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Umbará</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-vila-izabel" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria na Vila Izabel</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-vista-alegre" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Vista Alegre</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-xaxim" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Xaxim</a></div>
+      </div>
+    </section>
+
+    <!-- GROUP 2: POPULAR VILLAGES AND REGIONS (32 Localidades) -->
+    <section id="popular-villages" class="bg-zinc-900/25 border border-zinc-900 p-8 rounded-2xl shadow-xl space-y-6 sitemap-section">
+      <div class="flex items-center justify-between gap-3 border-b border-zinc-900 pb-4">
+        <div class="flex items-center gap-3">
+          <span class="text-primary text-xl"><i class="fa-solid fa-people-roof"></i></span>
+          <h2 class="font-display font-black text-2xl text-white uppercase tracking-wider">Regiões Populares e Vilas (Vilas de Curitiba)</h2>
+        </div>
+        <span class="bg-primary/15 border border-primary/20 text-primary font-mono text-[10px] px-3 py-1 rounded-full font-bold">32 LOCALIDADES</span>
+      </div>
+      
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4" id="grid-villages">
+        <div class="link-item"><a href="/vistoria-cautelar-vila-sandra" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria na Vila Sandra</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-vila-verde" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria na Vila Verde</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-vila-torres" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria na Vila Torres</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-vila-hauer" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria na Vila Hauer</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-vila-guaira" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria na Vila Guaíra</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-vila-parolin" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria na Vila Parolin</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-vila-oficinas" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria na Vila Oficinas</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-vila-osternack" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria na Vila Osternack</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-vila-sao-pedro" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria na Vila São Pedro</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-vila-audi" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria na Vila Audi</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-vila-das-torres" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria na Vila das Torres</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-vila-pantanal" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria na Vila Pantanal</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-neoville" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Neoville</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-cic-central" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no CIC Central</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-vitoria-regia" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Vitória Régia</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-caiqua" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Caiuá / Caiquá</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-sabara" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Sabará</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-conquista" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria na Conquista</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-gabineto" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Gabineto</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-itatiaia" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Itatiaia</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-santa-helena" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Santa Helena</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-atenas" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Atenas</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-osvaldo-cruz" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Osvaldo Cruz</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-barigui" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria em Barigui (região)</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-jardim-gabineto" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Jardim Gabineto</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-jardim-itatiaia" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Jardim Itatiaia</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-jardim-kosmos" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Jardim Kosmos</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-jardim-da-ordem" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Jardim da Ordem</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-jardim-alvorada" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Jardim Alvorada</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-pinheirinho-velho" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Pinheirinho Velho</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-capao-raso-velho" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Capão Raso Velho</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-sitio-cercado-velho" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria no Sítio Cercado Velho</a></div>
+      </div>
+    </section>
+
+    <!-- GROUP 3: METROPOLITAN MUNICIPALITIES (15 Cidades) -->
+    <section id="metropolitan-cities" class="bg-zinc-900/25 border border-zinc-900 p-8 rounded-2xl shadow-xl space-y-6 sitemap-section">
+      <div class="flex items-center justify-between gap-3 border-b border-zinc-900 pb-4">
+        <div class="flex items-center gap-3">
+          <span class="text-primary text-xl"><i class="fa-solid fa-tree-city"></i></span>
+          <h2 class="font-display font-black text-2xl text-white uppercase tracking-wider">Municípios da Região Metropolitana</h2>
+        </div>
+        <span class="bg-primary/15 border border-primary/20 text-primary font-mono text-[10px] px-3 py-1 rounded-full font-bold">15 MUNICÍPIOS</span>
+      </div>
+      
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4" id="grid-metropolitan">
+        <div class="link-item"><a href="/vistoria-cautelar-sao-jose-dos-pinhais" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria em São José dos Pinhais</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-pinhais" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria em Pinhais</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-colombo" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria em Colombo</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-araucaria" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria em Araucária</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-almirante-tamandare" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria em Almirante Tamandaré</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-campo-largo" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria em Campo Largo</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-campo-magro" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria em Campo Magro</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-fazenda-rio-grande" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria em Fazenda Rio Grande</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-quatro-barras" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria em Quatro Barras</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-campina-grande-do-sul" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria em Campina Grande do Sul</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-mandirituba" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria em Mandirituba</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-balsa-nova" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria em Balsa Nova</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-rio-branco-do-sul" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria em Rio Branco do Sul</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-itaperucu" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria em Itaperuçu</a></div>
+        <div class="link-item"><a href="/vistoria-cautelar-tijucas-do-sul" class="sitemap-link text-xs font-semibold py-1 hover:text-primary text-zinc-300 transition-colors block">Vistoria em Tijucas do Sul</a></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FLOATING ACTION BUTTONS -->
+  <button id="back-to-top-btn" class="fixed bottom-6 right-6 z-[90] bg-primary hover:bg-primary-light text-white p-3.5 rounded-full shadow-lg border border-primary-light/40 transition-all scale-0 opacity-0 pointer-events-none hover:scale-115 focus:outline-none" aria-label="Voltar para o topo">
+    <i class="fa-solid fa-arrow-up text-base animate-bounce"></i>
+  </button>
+
+  <!-- 5. FOOTER COMPLETO -->
+  <footer class="relative border-t border-zinc-900 text-white py-16 px-6 bg-zinc-950 overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center opacity-30 pointer-events-none select-none" style="background-image: url('https://img.carplusvistorias.com.br/fundo-site-cwb.png');"></div>
+    <div class="absolute inset-0 bg-black/85 z-0"></div>
+    
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
+        
+        <!-- Col 1 -->
+        <div class="lg:col-span-4 space-y-4">
+          <div class="flex items-center gap-3">
+            <img src="https://img.carplusvistorias.com.br/carplus-vistorias-portao-logo.png" alt="Carplus Vistorias" class="h-14 w-auto object-contain logo-glowing">
+          </div>
+          <p class="text-xs text-zinc-400 leading-relaxed max-w-sm">
+            Especialistas em Vistoria Cautelar, Perícia Automotiva e Laudo de Transferência em Curitiba – PR. Procedência garantida e laudo físico emitido imediatamente na hora com total segurança.
+          </p>
+          <div class="flex gap-4 pt-1 text-zinc-400 text-base">
+            <a href="https://g.page/r/CU6U972hG8iNEAE" target="_blank" class="hover:text-primary transition-colors"><i class="fa-brands fa-google"></i></a>
+            <a href="https://instagram.com/carplusvistorias" target="_blank" class="hover:text-primary transition-colors"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/5541988740258" target="_blank" class="hover:text-primary transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Services Quick Links -->
+        <div class="lg:col-span-2 space-y-3">
+          <h4 class="font-display font-bold text-sm text-white uppercase tracking-wider">Serviços</h4>
+          <ul class="space-y-2 text-xs text-zinc-400">
+            <li><a href="/#servicos" class="hover:text-primary transition-colors">Vistoria Cautelar</a></li>
+            <li><a href="/#servicos" class="hover:text-primary transition-colors">Perícia Automotiva</a></li>
+            <li><a href="/#servicos" class="hover:text-primary transition-colors">Laudo de Transferência</a></li>
+            <li><a href="/#servicos" class="hover:text-primary transition-colors">Inspeção Veicular</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Institutional Links / Sitemap Link -->
+        <div class="lg:col-span-3 space-y-3">
+          <h4 class="font-display font-bold text-sm text-white uppercase tracking-wider">Institucional</h4>
+          <ul class="space-y-2 text-xs text-zinc-400">
+            <li><a href="/#home" class="hover:text-primary transition-colors">Início / Home</a></li>
+            <li><a href="/#sobre" class="hover:text-primary transition-colors">Quem Somos Nós</a></li>
+            <li><a href="/mapa-do-site" class="hover:text-primary transition-colors flex items-center gap-1.5 font-bold text-primary">Mapa do Site</a></li>
+            <li><a href="/contato" class="hover:text-primary transition-colors flex items-center gap-1.5 text-zinc-400">Contato e Cadastro</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Address Info -->
+        <div class="lg:col-span-3 space-y-3">
+          <h4 class="font-display font-bold text-sm text-white uppercase tracking-wider">Atendimento</h4>
+          <address class="not-italic text-xs text-zinc-400 space-y-2">
+            <div class="flex items-start gap-2">
+              <i class="fa-solid fa-location-dot text-primary mt-0.5"></i>
+              <span>Av. Pres. Arthur da Silva Bernardes, 1323 · Portão · Curitiba/PR</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-phone text-primary"></i>
+              <a href="tel:+5541988740258" class="hover:text-primary hover:underline transition-colors font-mono">(41) 98874-0258</a>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-envelope text-primary"></i>
+              <a href="mailto:laudo@carplusvistorias.com.br" class="hover:text-primary hover:underline transition-colors truncate">laudo@carplusvistorias.com.br</a>
+            </div>
+          </address>
+        </div>
+
+      </div>
+
+      <div class="my-10 border-t border-zinc-900"></div>
+
+      <!-- Footer Bottom -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-center text-[10px] text-zinc-500 font-mono">
+        <div>
+          &copy; 2025 Carplus Vistorias. CNPJ 34.521.988/0001-90. Todos os direitos reservados.
+        </div>
+        <div class="flex gap-4">
+          <a href="/mapa-do-site" class="hover:text-primary transition-colors font-bold text-primary">Mapa do Site</a>
+          <span class="text-zinc-800">|</span>
+          <a href="/contato" class="hover:text-primary transition-colors font-bold">Contato WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="mt-6 pt-4 border-t border-zinc-900 text-center text-[10px] text-zinc-400 flex items-center justify-center gap-1.5 select-none font-mono">
+        Desenvolvido com <i class="fa-solid fa-heart text-primary animate-pulse"></i> por
+        <a href="https://supremasite.com.br" target="_blank" rel="noopener noreferrer" class="hover:text-primary font-bold transition font-sans flex items-center gap-1">
+          Suprema Sites Express
+          <img src="https://img.supremamidia.com/suprema-img.png" alt="Suprema Logo" class="h-3 ml-0.5 inline" referrerPolicy="no-referrer">
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- SITEMAP CORE INTERACTIVE JAVASCRIPT -->
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Mobile Menu Drawer Toggles
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileDrawer = document.getElementById('mobile-drawer');
+      const mobileBackdrop = document.getElementById('mobile-drawer-backdrop');
+      const hLine1 = document.getElementById('h-line-1');
+      const hLine2 = document.getElementById('h-line-2');
+      const hLine3 = document.getElementById('h-line-3');
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+      let isOpen = false;
+
+      function toggleMenu() {
+        isOpen = !isOpen;
+        if (isOpen) {
+          mobileDrawer.classList.remove('translate-x-full');
+          mobileDrawer.classList.add('translate-x-0');
+          mobileBackdrop.classList.remove('hidden');
+          setTimeout(() => {
+            mobileBackdrop.classList.remove('opacity-0');
+            mobileBackdrop.classList.add('opacity-100');
+          }, 10);
+          hLine1.classList.add('rotate-45', 'translate-y-2');
+          hLine2.classList.add('opacity-0', 'scale-0');
+          hLine3.classList.add('-rotate-45', '-translate-y-2');
+        } else {
+          mobileDrawer.classList.remove('translate-x-0');
+          mobileDrawer.classList.add('translate-x-full');
+          mobileBackdrop.classList.remove('opacity-100');
+          mobileBackdrop.classList.add('opacity-0');
+          setTimeout(() => {
+            mobileBackdrop.classList.add('hidden');
+          }, 300);
+          hLine1.classList.remove('rotate-45', 'translate-y-2');
+          hLine2.classList.remove('opacity-0', 'scale-0');
+          hLine3.classList.remove('-rotate-45', '-translate-y-2');
+        }
+      }
+
+      mobileBtn.addEventListener('click', toggleMenu);
+      mobileBackdrop.addEventListener('click', toggleMenu);
+      mobileNavLinks.forEach(link => link.addEventListener('click', toggleMenu));
+
+      // 2. Real-time client-side search filtering
+      const searchInput = document.getElementById('sitemap-search');
+      const clearBtn = document.getElementById('clear-search-btn');
+      const linkItems = document.querySelectorAll('.link-item');
+      const resultsCountText = document.getElementById('results-count');
+      const sections = document.querySelectorAll('.sitemap-section');
+
+      // Filter function
+      function filterLinks(query) {
+        query = query.toLowerCase().trim()
+          .normalize('NFD').replace(/[\u0300-\u036f]/g, ''); // Accents removal support
+        
+        let visibleCount = 0;
+        let totalLocalityCount = 122; // The static list of locations
+
+        if (query === '') {
+          clearBtn.classList.add('hidden');
+          linkItems.forEach(item => {
+            item.classList.remove('hidden');
+          });
+          sections.forEach(sec => sec.classList.remove('hidden'));
+          resultsCountText.textContent = `Mostrando ${totalLocalityCount} localidades no total`;
+          return;
+        }
+
+        clearBtn.classList.remove('hidden');
+
+        linkItems.forEach(item => {
+          const text = item.textContent.toLowerCase()
+            .normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+          
+          if (text.includes(query)) {
+            item.classList.remove('hidden');
+            visibleCount++;
+          } else {
+            item.classList.add('hidden');
+          }
+        });
+
+        // Smart hide/show block sections with no items visible
+        sections.forEach(sec => {
+          // Skip first section which is core pages
+          if (sec.querySelector('.grid-cols-1')) return; 
+
+          const itemsInSecList = sec.querySelectorAll('.link-item');
+          const hiddenCount = Array.from(itemsInSecList).filter(it => it.classList.contains('hidden')).length;
+          
+          if (hiddenCount === itemsInSecList.length) {
+            sec.classList.add('hidden');
+          } else {
+            sec.classList.remove('hidden');
+          }
+        });
+
+        resultsCountText.textContent = `Encontrados ${visibleCount} resultados para "${query}"`;
+      }
+
+      // Input listener
+      searchInput.addEventListener('input', (e) => {
+        filterLinks(e.target.value);
+      });
+
+      // Clear action
+      clearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        filterLinks('');
+        searchInput.focus();
+      });
+
+      // ESC key listener
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          searchInput.value = '';
+          filterLinks('');
+          searchInput.blur();
+        }
+      });
+
+      // 3. Back to Top Button
+      const bttBtn = document.getElementById('back-to-top-btn');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+          bttBtn.classList.remove('scale-0', 'opacity-0', 'pointer-events-none');
+          bttBtn.classList.add('scale-100', 'opacity-100', 'pointer-events-auto');
+        } else {
+          bttBtn.classList.remove('scale-100', 'opacity-100', 'pointer-events-auto');
+          bttBtn.classList.add('scale-0', 'opacity-0', 'pointer-events-none');
+        }
+      });
+
+      bttBtn.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

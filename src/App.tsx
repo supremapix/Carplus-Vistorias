@@ -130,21 +130,21 @@ export default function App() {
                   >
                     {/* Mobile Background */}
                     <div 
-                      className="absolute inset-0 block md:hidden bg-cover bg-center"
+                      className="absolute inset-0 block md:hidden bg-cover bg-center brightness-110 saturate-[1.1]"
                       style={{ backgroundImage: `url("${slide.mobile}")` }}
                     />
                     {/* PC/Desktop Background */}
                     <div 
-                      className="absolute inset-0 hidden md:block bg-cover bg-center"
+                      className="absolute inset-0 hidden md:block bg-cover bg-center brightness-110 saturate-[1.1]"
                       style={{ backgroundImage: `url("${slide.pc}")` }}
                     />
                   </div>
                 ))}
                 
                 {/* Advanced Multi-layer Gradients for Premium Visual Contrast and High Readability */}
-                <div className="absolute inset-0 bg-black/55 z-[1]" />
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-black/20 to-zinc-950/90 z-[1]" />
-                <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/65 via-transparent to-zinc-950/65 z-[1]" />
+                <div className="absolute inset-0 bg-black/25 z-[1]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-black/5 to-zinc-950/40 z-[1]" />
+                <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/40 via-transparent to-zinc-950/40 z-[1]" />
               </div>
 
               {/* Ambient premium neon glow indicators tracking active slide */}
@@ -268,7 +268,7 @@ export default function App() {
                   <div className="premium-border-container premium-glow-pulse w-full max-w-[340px] md:max-w-[380px] aspect-square flex items-center justify-center">
                     <div className="premium-border-inner">
                       <img 
-                        src="https://img.carplusvistorias.com.br/vistorias-cautelares-parolin.png" 
+                        src="https://img.carplusvistorias.com.br/imagem-carplus-site.png" 
                         alt="Vistoria Realizada pós Hero" 
                         className="w-full h-full object-contain rounded-lg transition-transform duration-500 hover:scale-[1.03]"
                         referrerPolicy="no-referrer"
@@ -566,7 +566,7 @@ export default function App() {
             
             {/* HERO SERVICOS */}
             <section 
-              className="bg-zinc-950 py-16 px-6 border-b border-zinc-900"
+              className="relative overflow-hidden bg-zinc-950 py-16 px-6 border-b border-zinc-900"
               style={{
                 backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.55)), url("https://img.carplusvistorias.com.br/secao-fundo-site.png")',
                 backgroundSize: 'cover',
@@ -588,6 +588,14 @@ export default function App() {
                 <p className="max-w-3xl mx-auto text-white text-justify text-center text-base md:text-lg font-medium">
                   Laudos emitidos na hora com tecnologia de ponta e cobertura de responsabilidade civil
                 </p>
+              </div>
+
+              {/* End of Hero Glowing Gold-Orange Divider Line with Neon Laser Accent */}
+              <div className="absolute bottom-0 left-0 right-0 z-25 pointer-events-none select-none">
+                {/* Intense Core Line with Laser Sweep animation */}
+                <div className="hero-laser-line" />
+                {/* Visual Neon Blur Flare with dual laser sweep and breathing pulse animations */}
+                <div className="absolute top-0 left-0 right-0 hero-neon-pulse" />
               </div>
             </section>
 
@@ -717,7 +725,7 @@ export default function App() {
             
             {/* HERO SOBRE */}
             <section 
-              className="bg-zinc-950 py-16 px-6 border-b border-zinc-900"
+              className="relative overflow-hidden bg-zinc-950 py-16 px-6 border-b border-zinc-900"
               style={{
                 backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.55)), url("https://img.carplusvistorias.com.br/secao-fundo-site.png")',
                 backgroundSize: 'cover',
@@ -735,6 +743,14 @@ export default function App() {
                   <span className="text-white block">Especialistas em Perícia</span>
                   <span className="text-primary block mt-1">Carplus Vistorias</span>
                 </h1>
+              </div>
+
+              {/* End of Hero Glowing Gold-Orange Divider Line with Neon Laser Accent */}
+              <div className="absolute bottom-0 left-0 right-0 z-25 pointer-events-none select-none">
+                {/* Intense Core Line with Laser Sweep animation */}
+                <div className="hero-laser-line" />
+                {/* Visual Neon Blur Flare with dual laser sweep and breathing pulse animations */}
+                <div className="absolute top-0 left-0 right-0 hero-neon-pulse" />
               </div>
             </section>
 
@@ -765,7 +781,7 @@ export default function App() {
                   <div className="premium-border-container premium-glow-pulse w-full max-w-[340px] md:max-w-[380px] aspect-square flex items-center justify-center">
                     <div className="premium-border-inner">
                       <img 
-                        src="https://img.carplusvistorias.com.br/vistorias-pr.png"
+                        src="https://img.carplusvistorias.com.br/imagem-carplus-cwb.png"
                         alt="Quem Somos - Carplus"
                         className="w-full h-full object-contain rounded-lg transition-transform duration-500 hover:scale-[1.03]"
                         referrerPolicy="no-referrer"
@@ -887,7 +903,7 @@ export default function App() {
             
             {/* HERO CIDADES */}
             <section 
-              className="bg-zinc-950 py-16 px-6 border-b border-zinc-900"
+              className="relative overflow-hidden bg-zinc-950 py-16 px-6 border-b border-zinc-900"
               style={{
                 backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.55)), url("https://img.carplusvistorias.com.br/secao-fundo-site.png")',
                 backgroundSize: 'cover',
@@ -908,6 +924,14 @@ export default function App() {
                 <p className="max-w-3xl mx-auto text-white text-justify text-center text-base md:text-lg font-semibold">
                   Atendemos Curitiba e as principais cidades da Grande Curitiba com laudo na hora
                 </p>
+              </div>
+
+              {/* End of Hero Glowing Gold-Orange Divider Line with Neon Laser Accent */}
+              <div className="absolute bottom-0 left-0 right-0 z-25 pointer-events-none select-none">
+                {/* Intense Core Line with Laser Sweep animation */}
+                <div className="hero-laser-line" />
+                {/* Visual Neon Blur Flare with dual laser sweep and breathing pulse animations */}
+                <div className="absolute top-0 left-0 right-0 hero-neon-pulse" />
               </div>
             </section>
 
@@ -934,7 +958,7 @@ export default function App() {
             
             {/* HERO FAQ */}
             <section 
-              className="bg-zinc-950 py-16 px-6 border-b border-zinc-900"
+              className="relative overflow-hidden bg-zinc-950 py-16 px-6 border-b border-zinc-900"
               style={{
                 backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.55)), url("https://img.carplusvistorias.com.br/secao-fundo-site.png")',
                 backgroundSize: 'cover',
@@ -956,6 +980,14 @@ export default function App() {
                   Tire suas dúvidas sobre perícia automotiva, laudos e inspeção veicular
                 </p>
               </div>
+
+              {/* End of Hero Glowing Gold-Orange Divider Line with Neon Laser Accent */}
+              <div className="absolute bottom-0 left-0 right-0 z-25 pointer-events-none select-none">
+                {/* Intense Core Line with Laser Sweep animation */}
+                <div className="hero-laser-line" />
+                {/* Visual Neon Blur Flare with dual laser sweep and breathing pulse animations */}
+                <div className="absolute top-0 left-0 right-0 hero-neon-pulse" />
+              </div>
             </section>
 
             {/* EXPANDABLE ACCORDIONS FAQ */}
@@ -969,13 +1001,10 @@ export default function App() {
 
       {/* 4. Footer Global Section */}
       <footer 
-        className="relative border-t border-zinc-800 text-white py-16 px-6 bg-zinc-950 bg-cover bg-center overflow-hidden"
-        style={{
-          backgroundImage: `url("https://img.carplusvistorias.com.br/vistorias-carplus-carros.png")`
-        }}
+        className="relative border-t border-zinc-800 text-white py-16 px-6 bg-zinc-950 bg-cover bg-center overflow-hidden footer-responsive-bg"
       >
         {/* Overlay do background para máxima visibilidade da imagem mantendo legibilidade do texto */}
-        <div className="absolute inset-0 bg-black/45 z-0"></div>
+        <div className="absolute inset-0 bg-black/80 z-0"></div>
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
@@ -994,8 +1023,62 @@ export default function App() {
             </div>
 
             {/* Col 2 */}
+            <div className="lg:col-span-2 space-y-3">
+              <h4 className="font-display font-bold text-sm text-white uppercase tracking-wider mb-2">Serviços</h4>
+              <ul className="space-y-2 text-xs">
+                <li>
+                  <a href="#servicos" onClick={(e) => { e.preventDefault(); handleNavigate('servicos'); }} className="text-zinc-400 hover:text-primary transition-colors">
+                    Vistoria Cautelar
+                  </a>
+                </li>
+                <li>
+                  <a href="#servicos" onClick={(e) => { e.preventDefault(); handleNavigate('servicos'); }} className="text-zinc-400 hover:text-primary transition-colors">
+                    Perícia Automotiva
+                  </a>
+                </li>
+                <li>
+                  <a href="#servicos" onClick={(e) => { e.preventDefault(); handleNavigate('servicos'); }} className="text-zinc-400 hover:text-primary transition-colors">
+                    Laudo de Transferência
+                  </a>
+                </li>
+                <li>
+                  <a href="#servicos" onClick={(e) => { e.preventDefault(); handleNavigate('servicos'); }} className="text-zinc-400 hover:text-primary transition-colors">
+                    Inspeção Veicular
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Col 3 */}
+            <div className="lg:col-span-2 space-y-3">
+              <h4 className="font-display font-bold text-sm text-white uppercase tracking-wider mb-2">Institucional</h4>
+              <ul className="space-y-2 text-xs">
+                <li>
+                  <a href="#home" onClick={(e) => { e.preventDefault(); handleNavigate('home'); }} className="text-zinc-400 hover:text-primary transition-colors">
+                    Início / Home
+                  </a>
+                </li>
+                <li>
+                  <a href="#sobre" onClick={(e) => { e.preventDefault(); handleNavigate('sobre'); }} className="text-zinc-400 hover:text-primary transition-colors">
+                    Quem Somos Nós
+                  </a>
+                </li>
+                <li>
+                  <a href="/mapa-do-site.html" className="text-primary hover:underline transition-colors font-bold flex items-center gap-1.5">
+                    Mapa do Site
+                  </a>
+                </li>
+                <li>
+                  <a href="/contato.html" className="text-white hover:text-primary transition-colors font-bold flex items-center gap-1.5">
+                    Contato e Cadastro
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Col 4 */}
             <div className="lg:col-span-3 space-y-3">
-              <h4 className="font-display font-bold text-lg text-white uppercase tracking-wider mb-2">Central de Atendimento</h4>
+              <h4 className="font-display font-bold text-sm text-white uppercase tracking-wider mb-2">Central de Atendimento</h4>
               <ul className="space-y-3 text-sm">
                 <li className="flex items-center gap-3">
                   <span className="text-primary text-base"><i className="fa-solid fa-phone"></i></span>
@@ -1009,17 +1092,11 @@ export default function App() {
                     (41) 98874-0258
                   </a>
                 </li>
-                <li className="flex items-center gap-3">
-                  <span className="text-primary text-base"><i className="fa-solid fa-envelope"></i></span>
-                  <a href="mailto:laudo@carplusvistorias.com.br" className="hover:text-primary hover:underline transition-colors font-mono text-white font-semibold">
-                    laudo@carplusvistorias.com.br
-                  </a>
-                </li>
               </ul>
             </div>
 
-            {/* Col 3 */}
-            <div className="lg:col-span-4 space-y-3">
+            {/* Col 5 */}
+            <div className="lg:col-span-5 space-y-3">
               <h4 className="font-display font-bold text-lg text-white uppercase tracking-wider mb-2">Localização da Sede</h4>
               <div className="flex items-start gap-3 text-sm">
                 <span className="text-primary text-base mt-1"><i className="fa-solid fa-location-dot"></i></span>
@@ -1028,7 +1105,7 @@ export default function App() {
                   Portão – Curitiba/PR · CEP 80320-300
                 </address>
               </div>
-              <div className="pt-2">
+              <div class="pt-2">
                 <a
                   href="https://www.google.com/maps/dir/?api=1&destination=Av.+Presidente+Arthur+da+Silva+Bernardes,+1323,+Port%C3%A3o,+Curitiba,+PR"
                   target="_blank"
@@ -1050,14 +1127,16 @@ export default function App() {
             <div>
               &copy; {new Date().getFullYear()} Carplus Vistorias. Todos os direitos reservados.
             </div>
-            <div className="text-center sm:text-right">
-              Av. Presidente Arthur da Silva Bernardes, 1323 – Portão, Curitiba/PR – CEP 80320-300
+            <div className="flex gap-4">
+              <a href="/mapa-do-site.html" className="text-primary hover:underline font-bold">Mapa do Site</a>
+              <span className="text-zinc-800">|</span>
+              <a href="/contato.html" className="text-white hover:text-primary font-bold">Contato WhatsApp</a>
             </div>
           </div>
 
           <div className="mt-6 pt-4 border-t border-zinc-800/50 flex justify-center text-center">
             <p className="text-zinc-200 hover:text-primary text-xs flex items-center gap-1 select-none font-bold font-mono">
-              Desenvolvido com <Heart size={11} className="text-red-500 animate-heartbeat fill-red-500" /> por
+              Desenvolvido com <Heart size={11} className="text-primary animate-heartbeat fill-primary" /> por
               <a href="https://supremasite.com.br" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition ml-1 inline-flex items-center gap-1.5 font-bold font-sans">
                 Suprema Sites Express
                 <img src="https://img.supremamidia.com/suprema-img.png" alt="Suprema" className="h-3.5 inline" referrerPolicy="no-referrer" />

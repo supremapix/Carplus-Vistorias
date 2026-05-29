@@ -84,13 +84,11 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
           {/* Header Action Button (Shaking) */}
           <div className="hidden md:flex items-center gap-4">
             <a
-              href="https://wa.me/5541988740258?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20vistoria%20cautelar."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="header-cta-shake flex items-center gap-2 bg-gradient-to-r from-primary to-primary-dark hover:brightness-110 active:scale-95 text-dark font-display font-extrabold text-[10px] uppercase tracking-[0.12em] py-2 px-3.5 rounded-lg transition-all shadow-md shadow-primary/20"
+              href="/contato.html"
+              className="header-cta-shake flex items-center gap-2 bg-gradient-to-r from-primary to-primary-light hover:brightness-110 active:scale-95 text-white font-display font-extrabold text-[11px] uppercase tracking-[0.12em] py-2.5 px-5 rounded-lg transition-all shadow-md shadow-primary/20"
             >
-              <i className="fa-brands fa-whatsapp text-xs"></i>
-              Agendar Laudo
+              <i className="fa-solid fa-comment-dots text-xs"></i>
+              Contato
             </a>
           </div>
 
@@ -138,8 +136,7 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
             <Logo variant="dark" isHeader={true} className="scale-90 origin-left mb-1" />
             <span className="text-xs text-primary font-mono font-bold uppercase tracking-widest block">Carplus Vistorias</span>
           </div>
-          
-          <nav className="flex flex-col gap-5">
+                 <nav className="flex flex-col gap-5">
             {navItems.map((item) => (
               <button
                 key={item.id}
@@ -151,6 +148,12 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
                 {item.label}
               </button>
             ))}
+            <a
+              href="/mapa-do-site.html"
+              className="text-left font-display font-semibold text-base uppercase tracking-widest py-1 text-gray-300 hover:text-white"
+            >
+              Mapa do Site
+            </a>
           </nav>
         </div>
 
@@ -181,13 +184,11 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
           </div>
 
           <a
-            href="https://wa.me/5541988740258?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20vistoria%20cautelar."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1eba4f] text-white font-display font-extrabold text-[11px] uppercase tracking-widest py-2.5 rounded-lg transition-colors shadow-lg"
+            href="/contato.html"
+            className="flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-primary-light hover:brightness-110 text-white font-display font-extrabold text-[11px] uppercase tracking-widest py-3 rounded-lg transition-all shadow-lg shadow-primary/20 animate-pulse"
           >
-            <i className="fa-brands fa-whatsapp text-sm animate-[wiggle_1s_infinite]"></i>
-            Falar no WhatsApp
+            <i className="fa-solid fa-comment-dots text-sm"></i>
+            Fale Conosco / Contato
           </a>
         </div>
       </div>

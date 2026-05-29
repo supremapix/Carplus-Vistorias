@@ -329,4 +329,15 @@ p {
     neon-pulse 2s ease-in-out infinite alternate;
 }
 
+/* Footer Responsive Background (Mobile: fundo-site-cwb, Desktop: vistorias-carplus-carros) */
+.footer-responsive-bg {
+  background-image: url("https://img.carplusvistorias.com.br/fundo-site-cwb.png");
+}
+
+@media (min-width: 768px) {
+  .footer-responsive-bg {
+    background-image: url("https://img.carplusvistorias.com.br/vistorias-carplus-carros.png");
+  }
+}
+
 

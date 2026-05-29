@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato & Agendamento | Carplus Vistorias Curitiba</title>
+  <meta name="description" content="Entre em contato com a Carplus Vistorias. Agende sua vistoria cautelar, perícia, laudo de transferência ou tire dúvidas diretamente pelo WhatsApp ou nosso formulário online.">
+  <meta name="robots" content="index, follow">
+  
+  <link rel="canonical" href="https://www.carplusvistorias.com.br/contato">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://img.carplusvistorias.com.br/favicon-carplus.png" />
+
+  <!-- Google Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Tailwind CDN & PlayConfig -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#F5A623',
+              dark: '#D4880F',
+              light: '#F8B64A',
+            },
+            dark: '#111111',
+            card: '#1a1a1a',
+          },
+          fontFamily: {
+            display: ['"Barlow Condensed"', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Canvas Confetti CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+  <style type="text/css">
+    @keyframes pulse-contact {
+      0%, 100% { box-shadow: 0 0 20px rgba(245, 166, 35, 0.4); }
+      50% { box-shadow: 0 0 35px rgba(245, 166, 35, 0.8), 0 0 60px rgba(248, 182, 74, 0.3); }
+    }
+    .nav-contact-cta {
+      position: relative;
+      background: linear-gradient(135deg, #F5A623, #F8B64A);
+      box-shadow: 0 0 20px rgba(245, 166, 35, 0.4);
+      animation: pulse-contact 2.5s ease-in-out infinite;
+      overflow: hidden;
+    }
+    .nav-contact-cta::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+      animation: shimmer-contact 3s infinite;
+    }
+    @keyframes shimmer-contact {
+      0% { left: -100%; }
+      50%, 100% { left: 100%; }
+    }
+    .nav-contact-badge {
+      animation: badge-bounce 1.5s ease-in-out infinite;
+    }
+    @keyframes badge-bounce {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    .hero-laser-line {
+      height: 2px;
+      background: linear-gradient(90deg, rgba(245,166,35,0) 0%, rgba(245,166,35,1) 50%, rgba(245,166,35,0) 100%);
+      box-shadow: 0 0 8px #F5A623;
+    }
+    .hero-neon-pulse {
+      height: 20px;
+      background: linear-gradient(180deg, rgba(245,166,35,0.15), rgba(245,166,35,0));
+      filter: blur(4px);
+    }
+    
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #111;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #F5A623;
+      border-radius: 3px;
+    }
+
+    /* Transition classes for steps */
+    .step-container {
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+  </style>
+
+  <!-- Schema.org ContactPage JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contato – Carplus Vistorias",
+    "description": "Fale com nossos peritos ou agende online via WhatsApp sua Vistoria Cautelar ou laudos veiculares de forma rápida e segura.",
+    "url": "https://www.carplusvistorias.com.br/contato",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Carplus Vistorias",
+      "telephone": "+554198874-0258",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+554198874-0258",
+        "availableLanguage": "Portuguese",
+        "contactOption": "TollFree",
+        "areaServed": "BR"
+      }
+    }
+  }
+  </script>
+</head>
+<body class="bg-[#111111] text-[#F5F5F5] font-sans selection:bg-primary selection:text-white custom-scrollbar">
+
+  <!-- 1. FIXED GLASS HEADER -->
+  <header class="fixed top-0 left-0 right-0 z-[100] bg-zinc-950/95 backdrop-blur-md py-4 border-b border-zinc-900 shadow-xl shadow-black/30">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      
+      <!-- LOGO -->
+      <a href="/" class="flex items-center">
+        <img src="https://img.carplusvistorias.com.br/carplus-vistorias-portao-logo.png" alt="Carplus Vistorias" class="h-14 sm:h-16 max-h-[64px] w-auto object-contain transition-all duration-300">
+      </a>
+
+      <!-- DESKTOP NAV -->
+      <nav class="hidden lg:flex items-center gap-8">
+        <a href="/#home" class="text-xs uppercase tracking-[0.2em] font-display font-medium text-zinc-300 hover:text-primary transition-colors py-1">Início</a>
+        <a href="/#servicos" class="text-xs uppercase tracking-[0.2em] font-display font-medium text-zinc-300 hover:text-primary transition-colors py-1">Serviços</a>
+        <a href="/#sobre" class="text-xs uppercase tracking-[0.2em] font-display font-medium text-zinc-300 hover:text-primary transition-colors py-1">Sobre Nós</a>
+        <a href="/#cidades" class="text-xs uppercase tracking-[0.2em] font-display font-medium text-zinc-300 hover:text-primary transition-colors py-1">Cidades Atendidas</a>
+        <a href="/#faq" class="text-xs uppercase tracking-[0.2em] font-display font-medium text-zinc-300 hover:text-primary transition-colors py-1">FAQ / Dúvidas</a>
+        <a href="/mapa-do-site" class="text-xs uppercase tracking-[0.2em] font-display font-medium text-zinc-300 hover:text-primary transition-colors py-1">Mapa</a>
+      </nav>
+
+      <!-- CONTACT CTA -->
+      <div class="hidden lg:flex items-center gap-4">
+        <a href="/contato" class="nav-contact-cta text-white font-display font-extrabold text-xs uppercase tracking-wider py-2.5 px-5 rounded-lg flex items-center gap-2">
+          <span>Contato</span>
+          <span class="nav-contact-badge bg-[#25D366] text-white text-[9px] font-bold px-1.5 py-0.5 rounded uppercase font-sans">WhatsApp</span>
+        </a>
+      </div>
+
+      <!-- HAMBURGER -->
+      <button id="mobile-menu-btn" class="lg:hidden flex flex-col justify-between w-6 h-5 focus:outline-none z-[101]" aria-label="Abrir Menu">
+        <span class="w-full h-0.5 bg-white rounded-full transition-all duration-300" id="h-line-1"></span>
+        <span class="w-full h-0.5 bg-white rounded-full transition-all duration-300" id="h-line-2"></span>
+        <span class="w-full h-0.5 bg-white rounded-full transition-all duration-300" id="h-line-3"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <div id="mobile-drawer-backdrop" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-[98] hidden opacity-0 transition-opacity duration-300"></div>
+  <div id="mobile-drawer" class="fixed top-0 right-0 w-[80vw] sm:w-[320px] h-screen bg-zinc-950 border-l border-zinc-900 shadow-2xl z-[99] translate-x-full transition-transform duration-300 ease-out py-24 px-8 flex flex-col justify-between">
+    <div class="flex flex-col gap-6">
+      <div class="pb-4 border-b border-zinc-900">
+        <a href="/">
+          <img src="https://img.carplusvistorias.com.br/carplus-vistorias-portao-logo.png" alt="Carplus Vistorias" class="h-12 w-auto object-contain">
+        </a>
+      </div>
+      <nav class="flex flex-col gap-5 text-left">
+        <a href="/#home" class="mobile-nav-link text-gray-300 hover:text-white font-display font-semibold text-base uppercase tracking-widest py-1">Início</a>
+        <a href="/#servicos" class="mobile-nav-link text-gray-300 hover:text-white font-display font-semibold text-base uppercase tracking-widest py-1">Serviços</a>
+        <a href="/#sobre" class="mobile-nav-link text-gray-300 hover:text-white font-display font-semibold text-base uppercase tracking-widest py-1">Sobre Nós</a>
+        <a href="/#cidades" class="mobile-nav-link text-gray-300 hover:text-white font-display font-semibold text-base uppercase tracking-widest py-1">Cidades Atendidas</a>
+        <a href="/#faq" class="mobile-nav-link text-gray-300 hover:text-white font-display font-semibold text-base uppercase tracking-widest py-1">FAQ / Dúvidas</a>
+        <a href="/mapa-do-site" class="mobile-nav-link text-gray-300 hover:text-white font-display font-semibold text-base uppercase tracking-widest py-1">Mapa Do Site</a>
+      </nav>
+    </div>
+
+    <div class="flex flex-col gap-4 border-t border-zinc-900 pt-6">
+      <a href="/contato" class="nav-contact-cta text-center text-white font-display font-extrabold text-sm uppercase tracking-widest py-3 px-4 rounded-lg flex items-center justify-center gap-2">
+        <span>Contato</span>
+        <span class="nav-contact-badge bg-[#25D366] text-white text-[9px] font-bold px-1.5 py-0.5 rounded uppercase font-sans">WhatsApp</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- 2. HERO SECTION -->
+  <section class="relative pt-36 pb-20 bg-zinc-950 border-b border-zinc-900 overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center brightness-[0.12] z-0" style="background-image: url('https://img.carplusvistorias.com.br/secao-fundo-site.png');"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-[#111111]/95 z-10"></div>
+
+    <div class="max-w-4xl mx-auto px-6 relative z-20 text-center space-y-4">
+      <span class="inline-flex items-center gap-1 bg-primary/10 border border-primary/20 text-primary font-mono text-[10px] px-3 py-1 rounded-full uppercase tracking-wider font-bold animate-pulse">
+        CENTRAL DE AGENDAMENTOS
+      </span>
+      <h1 class="font-display font-black text-4xl sm:text-5xl md:text-6xl text-white uppercase tracking-tight">
+        FALE COM O NOSSO TIME DE PERITOS
+      </h1>
+      <p class="text-zinc-400 max-w-2xl mx-auto text-sm sm:text-base">
+        Agende sua vistoria estruturada ou tire suas dúvidas em poucos cliques através de nossa central multicanais ou reserve no formulário expresso.
+      </p>
+    </div>
+
+    <!-- Glowing divider line -->
+    <div class="absolute bottom-0 left-0 right-0 z-25 pointer-events-none select-none">
+      <div class="hero-laser-line"></div>
+      <div class="absolute top-0 left-0 right-0 hero-neon-pulse"></div>
+    </div>
+  </section>
+
+  <!-- 3. MAIN CONTACT LAYOUT -->
+  <main class="py-16 px-6 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+    
+    <!-- LEFT COLUMN: MULTI-STEP FORM (Lg: col-span-7) -->
+    <section class="lg:col-span-7 bg-zinc-900/40 border border-zinc-900 p-6 md:p-8 rounded-2xl shadow-xl space-y-8">
+      
+      <!-- STEP PROGRESS INDICATOR -->
+      <div class="space-y-3">
+        <div class="flex justify-between items-center text-xs font-mono font-bold uppercase tracking-wider text-zinc-400">
+          <span id="step-numerator-text" class="text-primary">Etapa 1 de 4 · Escolha o Serviço</span>
+          <span id="step-percentage">25%</span>
+        </div>
+        <!-- Progress bar line -->
+        <div class="h-1.5 w-full bg-zinc-850 rounded-full overflow-hidden">
+          <div id="progress-bar-fill" class="h-full w-1/4 bg-gradient-to-r from-primary to-primary-light transition-all duration-300 rounded-full"></div>
+        </div>
+      </div>
+
+      <!-- FORM CONTENT SCROLLER / CONTAINER -->
+      <form id="multistep-form" onsubmit="event.preventDefault();" class="space-y-6">
+        
+        <!-- STEP 1: SERVICE CHOICE -->
+        <div id="step-1" class="step-container space-y-6">
+          <div class="space-y-1">
+            <h2 class="font-display font-black text-2xl text-white uppercase tracking-wide">Como podemos te ajudar hoje?</h2>
+            <p class="text-xs text-zinc-400 select-none">Selecione uma das opções abaixo para iniciarmos o direcionamento.</p>
+          </div>
+          
+          <div class="grid grid-cols-1 gap-3.5" id="service-options-container">
+            <button type="button" data-val="Vistoria Cautelar" class="service-opt-btn w-full text-left p-4 rounded-xl border border-zinc-800 hover:border-primary bg-zinc-950/40 hover:bg-zinc-950/85 text-zinc-100 font-display font-extrabold text-base tracking-wide uppercase flex items-center justify-between group transition-all duration-200">
+              <span class="flex items-center gap-3">
+                <span class="text-primary group-hover:scale-110 transition-transform"><i class="fa-solid fa-shield"></i></span>
+                🔍 Vistoria Cautelar Estruturada
+              </span>
+              <span class="text-zinc-600 group-hover:text-primary"><i class="fa-solid fa-chevron-right text-xs"></i></span>
+            </button>
+            
+            <button type="button" data-val="Perícia Automotiva" class="service-opt-btn w-full text-left p-4 rounded-xl border border-zinc-800 hover:border-primary bg-zinc-950/40 hover:bg-zinc-950/85 text-zinc-100 font-display font-extrabold text-base tracking-wide uppercase flex items-center justify-between group transition-all duration-200">
+              <span class="flex items-center gap-3">
+                <span class="text-primary group-hover:scale-110 transition-transform"><i class="fa-solid fa-engine"></i></span>
+                🔬 Perícia Automotiva Detalhada
+              </span>
+              <span class="text-zinc-600 group-hover:text-primary"><i class="fa-solid fa-chevron-right text-xs"></i></span>
+            </button>
+            
+            <button type="button" data-val="Inspeção Veicular" class="service-opt-btn w-full text-left p-4 rounded-xl border border-zinc-800 hover:border-primary bg-zinc-950/40 hover:bg-zinc-950/85 text-zinc-100 font-display font-extrabold text-base tracking-wide uppercase flex items-center justify-between group transition-all duration-200">
+              <span class="flex items-center gap-3">
+                <span class="text-primary group-hover:scale-110 transition-transform"><i class="fa-solid fa-car-tunnel"></i></span>
+                📋 Inspeção Segurança Veicular
+              </span>
+              <span class="text-zinc-600 group-hover:text-primary"><i class="fa-solid fa-chevron-right text-xs"></i></span>
+            </button>
+            
+            <button type="button" data-val="Laudo Cautelar" class="service-opt-btn w-full text-left p-4 rounded-xl border border-zinc-800 hover:border-primary bg-zinc-950/40 hover:bg-zinc-950/85 text-zinc-100 font-display font-extrabold text-base tracking-wide uppercase flex items-center justify-between group transition-all duration-200">
+              <span class="flex items-center gap-3">
+                <span class="text-primary group-hover:scale-110 transition-transform"><i class="fa-solid fa-file-invoice"></i></span>
+                📄 Laudo de Transferência Cautelar
+              </span>
+              <span class="text-zinc-600 group-hover:text-primary"><i class="fa-solid fa-chevron-right text-xs"></i></span>
+            </button>
+
+            <button type="button" data-val="Tenho uma dúvida" class="service-opt-btn w-full text-left p-4 rounded-xl border border-zinc-800 hover:border-primary bg-zinc-950/40 hover:bg-zinc-950/85 text-zinc-100 font-display font-extrabold text-base tracking-wide uppercase flex items-center justify-between group transition-all duration-200">
+              <span class="flex items-center gap-3">
+                <span class="text-primary group-hover:scale-110 transition-transform"><i class="fa-solid fa-circle-question"></i></span>
+                ❓ Tenho uma dúvida / Falar Conosco
+              </span>
+              <span class="text-zinc-600 group-hover:text-primary"><i class="fa-solid fa-chevron-right text-xs"></i></span>
+            </button>
+          </div>
+          
+          <input type="hidden" id="input-service-val" value="">
+          <div id="error-step-1" class="hidden text-xs text-primary font-bold font-mono"><i class="fa-solid fa-triangle-exclamation"></i> Por favor, selecione um serviço para continuar!</div>
+        </div>
+
+        <!-- STEP 2: VEHICLE INFO -->
+        <div id="step-2" class="step-container space-y-6 hidden">
+          <div class="space-y-1">
+            <h2 class="font-display font-black text-2xl text-white uppercase tracking-wide">Sobre o Veículo</h2>
+            <p class="text-xs text-zinc-400">Mencione brevemente o modelo e ano do seu veículo.</p>
+          </div>
+
+          <div class="space-y-4">
+            <div class="space-y-1.5">
+              <label for="input-veiculo-nome" class="block text-xs font-mono font-bold uppercase tracking-wider text-zinc-300">Modelo ou Placa do Veículo (Obrigatório)</label>
+              <input 
+                type="text" 
+                id="input-veiculo-nome" 
+                placeholder="Ex e ex: Corolla XEI, Honda Civic ou Placa do carro" 
+                class="w-full bg-zinc-950/60 border border-zinc-800 focus:border-primary rounded-xl py-3 px-4 text-white focus:outline-none text-sm transition-all shadow-inner font-semibold"
+              >
+            </div>
+
+            <div class="space-y-1.5">
+              <label for="select-veiculo-ano" class="block text-xs font-mono font-bold uppercase tracking-wider text-zinc-300">Ano de Fabricação</label>
+              <select 
+                id="select-veiculo-ano" 
+                class="w-full bg-zinc-950/60 border border-zinc-800 focus:border-primary rounded-xl py-3 px-4 text-white focus:outline-none text-sm transition-all focus:ring-1 focus:ring-primary/40 font-semibold"
+              >
+                <option value="Não informado">Selecione o ano aproximado</option>
+                <option value="2025">2025</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+                <option value="2014">2014</option>
+                <option value="2013">2013</option>
+                <option value="2012">2012</option>
+                <option value="2011">2011</option>
+                <option value="2010">2010</option>
+                <option value="2005-2009">2005 a 2009</option>
+                <option value="2000-2004">2000 a 2004</option>
+                <option value="1990-1999">1990 a 1999</option>
+                <option value="Antes de 1990">Antes de 1990</option>
+              </select>
+            </div>
+
+            <div class="space-y-1.5">
+              <label for="textarea-veiculo-obs" class="block text-xs font-mono font-bold uppercase tracking-wider text-zinc-300">Alguma observação especial? (Opcional)</label>
+              <textarea 
+                id="textarea-veiculo-obs" 
+                rows="3" 
+                placeholder="Descreva se o veículo possui leilão, histórico de transferência, modificação ou qualquer outra dúvida estrutural..." 
+                class="w-full bg-zinc-950/60 border border-zinc-800 focus:border-primary rounded-xl py-3 px-4 text-white focus:outline-none text-sm transition-all shadow-inner font-semibold"
+              ></textarea>
+            </div>
+          </div>
+
+          <div id="error-step-2" class="hidden text-xs text-primary font-bold font-mono"><i class="fa-solid fa-triangle-exclamation"></i> Por favor, informe o modelo ou a placa do veículo!</div>
+        </div>
+
+        <!-- STEP 3: DATE & LOCATION PREFERENCES -->
+        <div id="step-3" class="step-container space-y-6 hidden">
+          <div class="space-y-1">
+            <h2 class="font-display font-black text-2xl text-white uppercase tracking-wide">Preferências de Agendamento</h2>
+            <p class="text-xs text-zinc-400">Qual o melhor período do dia para você e sua região municipal de Curitiba?</p>
+          </div>
+
+          <div class="space-y-5">
+            <div class="space-y-2">
+              <label class="block text-xs font-mono font-bold uppercase tracking-wider text-zinc-300">Qual período você prefere para atendimento?</label>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <label class="time-opt-btn flex items-center justify-center p-3.5 border border-zinc-800 bg-zinc-950/45 rounded-xl cursor-pointer hover:border-primary text-zinc-300 font-bold text-xs font-mono uppercase transition-all select-none gap-2">
+                  <input type="radio" name="time-preference" value="Manhã (8h às 12h)" class="accent-primary hidden" checked>
+                  🌅 Manhã (8h–12h)
+                </label>
+                <label class="time-opt-btn flex items-center justify-center p-3.5 border border-zinc-800 bg-zinc-950/45 rounded-xl cursor-pointer hover:border-primary text-zinc-300 font-bold text-xs font-mono uppercase transition-all select-none gap-2">
+                  <input type="radio" name="time-preference" value="Tarde (13h às 18h)" class="accent-primary hidden">
+                  🌇 Tarde (13h–18h)
+                </label>
+                <label class="time-opt-btn flex items-center justify-center p-3.5 border border-zinc-800 bg-zinc-950/45 rounded-xl cursor-pointer hover:border-primary text-zinc-300 font-bold text-xs font-mono uppercase transition-all select-none gap-2">
+                  <input type="radio" name="time-preference" value="Qualquer Horário" class="accent-primary hidden">
+                  📅 Qualquer horario
+                </label>
+              </div>
+            </div>
+
+            <div class="space-y-1.5">
+              <label for="input-user-bairro" class="block text-xs font-mono font-bold uppercase tracking-wider text-zinc-300">Seu Bairro / Cidade em Curitiba e RMC (Obrigatório)</label>
+              <input 
+                type="text" 
+                id="input-user-bairro" 
+                placeholder="Ex e ex: Portão, Batel, Centro, São José dos Pinhais" 
+                class="w-full bg-zinc-950/60 border border-zinc-800 focus:border-primary rounded-xl py-3 px-4 text-white focus:outline-none text-sm transition-all shadow-inner font-semibold animate-none"
+              >
+            </div>
+          </div>
+
+          <div id="error-step-3" class="hidden text-xs text-primary font-bold font-mono"><i class="fa-solid fa-triangle-exclamation"></i> Por favor, informe seu bairro ou cidade de Curitiba!</div>
+        </div>
+
+        <!-- STEP 4: CONTACT INFO -->
+        <div id="step-4" class="step-container space-y-6 hidden">
+          <div class="space-y-1">
+            <h2 class="font-display font-black text-2xl text-white uppercase tracking-wide">Quase lá! Seus Dados de Contato</h2>
+            <p class="text-xs text-zinc-400">Insira suas informações de contato direto para prosseguirmos.</p>
+          </div>
+
+          <div class="space-y-4">
+            <div class="space-y-1.5">
+              <label for="input-user-nome" class="block text-xs font-mono font-bold uppercase tracking-wider text-zinc-300">Seu nome Completo (Obrigatório)</label>
+              <input 
+                type="text" 
+                id="input-user-nome" 
+                placeholder="Como gostaria de ser chamado?" 
+                class="w-full bg-zinc-950/60 border border-zinc-800 focus:border-primary rounded-xl py-3 px-4 text-white focus:outline-none text-sm transition-all shadow-inner font-semibold"
+                required
+              >
+            </div>
+
+            <div class="space-y-1.5">
+              <label for="input-user-tel" class="block text-xs font-mono font-bold uppercase tracking-wider text-zinc-300">WhatsApp de Contato (Obrigatório)</label>
+              <input 
+                type="tel" 
+                id="input-user-tel" 
+                placeholder="Ex: (41) 98874-0258" 
+                class="w-full bg-zinc-950/60 border border-zinc-800 focus:border-primary rounded-xl py-3 px-4 text-white focus:outline-none text-sm transition-all shadow-inner font-semibold"
+                required
+              >
+            </div>
+
+            <div class="space-y-1.5">
+              <label for="input-user-email" class="block text-xs font-mono font-bold uppercase tracking-wider text-zinc-300">Seu E-mail (Opcional)</label>
+              <input 
+                type="email" 
+                id="input-user-email" 
+                placeholder="Ex e ex: agendamento@carplusvistorias.com.br" 
+                class="w-full bg-zinc-950/60 border border-zinc-800 focus:border-primary rounded-xl py-3 px-4 text-white focus:outline-none text-sm transition-all shadow-inner font-semibold"
+              >
+            </div>
+          </div>
+
+          <div id="error-step-4" class="hidden text-xs text-primary font-bold font-mono"><i class="fa-solid fa-triangle-exclamation"></i> Por favor, informe seu Nome e número de WhatsApp válidos!</div>
+        </div>
+
+        <!-- NAVIGATION ACTION CONTROL BAR -->
+        <div class="flex items-center justify-between pt-6 border-t border-zinc-900 bg-zinc-950/30 p-4 rounded-xl">
+          <button 
+            type="button" 
+            id="prev-step-btn" 
+            class="hidden bg-zinc-900 border border-zinc-800 hover:border-zinc-700 hover:text-white text-zinc-400 py-3 px-6 rounded-xl font-mono text-xs font-bold uppercase transition-all select-none"
+          >
+            VOLTAR
+          </button>
+          
+          <button 
+            type="button" 
+            id="next-step-btn" 
+            class="w-full sm:w-auto bg-primary hover:bg-primary-light active:scale-95 text-white py-3.5 px-8 rounded-xl font-display font-extrabold text-sm uppercase tracking-wider transition-all ml-auto flex items-center justify-center gap-2 shadow-lg shadow-primary/25 shadow-black/40"
+          >
+            AVANÇAR <i class="fa-solid fa-arrow-right text-xs"></i>
+          </button>
+        </div>
+
+      </form>
+    </section>
+
+    <!-- RIGHT COLUMN: PHYSICAL DIRECT CONTACT INFO (Lg: col-span-5) -->
+    <aside class="lg:col-span-5 space-y-6">
+      
+      <!-- DIRECT CARDS -->
+      <div class="bg-zinc-900/40 border border-zinc-900 p-6 rounded-2xl shadow-xl space-y-5">
+        <h3 class="font-display font-black text-xl text-white uppercase tracking-wider border-b border-zinc-900 pb-2">Contatos Rápidos</h3>
+        
+        <div class="space-y-4 text-sm text-zinc-300">
+          <!-- WhatsApp Support -->
+          <div class="flex items-start gap-4 p-3 bg-zinc-950/30 border border-zinc-900 rounded-xl">
+            <span class="text-[#25D366] text-2xl pt-1"><i class="fa-brands fa-whatsapp"></i></span>
+            <div>
+              <h4 class="font-display font-black text-sm uppercase text-white tracking-wide">Falar via WhatsApp</h4>
+              <p class="text-xs text-zinc-400">Atendimento e orçamentos inmediatos.</p>
+              <a href="https://wa.me/5541988740258" target="_blank" class="text-white hover:text-primary font-mono text-sm font-bold block mt-1">(41) 98874-0258</a>
+            </div>
+          </div>
+
+          <!-- Phone Link -->
+          <div class="flex items-start gap-4 p-3 bg-zinc-950/30 border border-zinc-900 rounded-xl">
+            <span class="text-primary text-xl pt-1"><i class="fa-solid fa-phone"></i></span>
+            <div>
+              <h4 class="font-display font-black text-sm uppercase text-white tracking-wide">Ligar no Telefone</h4>
+              <p class="text-xs text-zinc-400">Atendimento telefônico administrativo.</p>
+              <a href="tel:+5541988740258" class="text-white hover:text-primary font-mono text-sm font-bold block mt-1">(41) 98874-0258</a>
+            </div>
+          </div>
+
+          <!-- Email Support -->
+          <div class="flex items-start gap-4 p-3 bg-zinc-950/30 border border-zinc-900 rounded-xl">
+            <span class="text-primary text-lg pt-1"><i class="fa-solid fa-envelope"></i></span>
+            <div>
+              <h4 class="font-display font-black text-sm uppercase text-white tracking-wide">E-mail Corporativo</h4>
+              <p class="text-xs text-zinc-400">Dúvidas, parcerias ou envio de comprovantes.</p>
+              <a href="mailto:laudo@carplusvistorias.com.br" class="text-white hover:text-primary text-xs font-semibold block mt-1 truncate">laudo@carplusvistorias.com.br</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OFFICE / BUSINESS HOUR CARD -->
+      <div class="bg-zinc-900/40 border border-zinc-900 p-6 rounded-2xl shadow-xl space-y-4">
+        <h3 class="font-display font-black text-xl text-white uppercase tracking-wider border-b border-zinc-900 pb-2">Nosso Endereço & Expediente</h3>
+        <address class="not-italic text-sm text-zinc-300 space-y-3">
+          <p class="flex items-start gap-3">
+            <span class="text-primary mt-0.5"><i class="fa-solid fa-location-dot"></i></span>
+            <span>
+              Av. Pres. Arthur da Silva Bernardes, 1323<br>
+              Portão · Curitiba/PR · CEP 80320-300<br>
+              <span class="text-zinc-500 text-[11px] font-mono font-bold uppercase tracking-wider">Sede física estrategicamente localizada</span>
+            </span>
+          </p>
+          <p class="flex items-start gap-3">
+            <span class="text-primary mt-0.5"><i class="fa-solid fa-clock"></i></span>
+            <span>
+              Segunda a Sexta-feira: 08:00h às 18:00h<br>
+              Sábado: 08:00h às 13:00h<br>
+              <span class="text-zinc-500 text-[11px] font-mono font-bold uppercase tracking-wider">Atendimento agendado sem filas</span>
+            </span>
+          </p>
+        </address>
+
+        <!-- EMBD GOOGLE MAPS IFRAME -->
+        <div class="w-full h-44 rounded-xl overflow-hidden border border-zinc-800 shadow-inner mt-4">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m12!1m3!1d3601.8157778216124!2d-49.29813158498485!3d-25.46610738377227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce4091a03dddd%3A0x6734c3866d997647!2sAv.%20Pres.%20Arthur%20da%20Silva%20Bernardes%2C%201323%20-%20Port%C3%A3o%2C%20Curitiba%20-%20PR%2C%2080320-300!5e0!3m2!1spt-BR!2sbr!4v1685333061234!5m2!1spt-BR!2sbr" 
+            class="w-full h-full border-none filter brightness-90 saturate-75 contrast-75"
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+
+    </aside>
+  </main>
+
+  <!-- 4. FOOTER COMPLETO -->
+  <footer class="relative border-t border-zinc-900 text-white py-16 px-6 bg-zinc-950 overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center opacity-30 pointer-events-none select-none" style="background-image: url('https://img.carplusvistorias.com.br/fundo-site-cwb.png');"></div>
+    <div class="absolute inset-0 bg-black/85 z-0"></div>
+    
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
+        
+        <!-- Col 1 -->
+        <div class="lg:col-span-4 space-y-4">
+          <div class="flex items-center gap-3">
+            <img src="https://img.carplusvistorias.com.br/carplus-vistorias-portao-logo.png" alt="Carplus Vistorias" class="h-14 w-auto object-contain logo-glowing">
+          </div>
+          <p class="text-xs text-zinc-400 leading-relaxed max-w-sm">
+            Especialistas em Vistoria Cautelar, Perícia Automotiva e Laudo de Transferência em Curitiba – PR. Procedência garantida e laudo físico emitido imediatamente na hora com total segurança.
+          </p>
+          <div class="flex gap-4 pt-1 text-zinc-400 text-base">
+            <a href="https://g.page/r/CU6U972hG8iNEAE" target="_blank" class="hover:text-primary transition-colors"><i class="fa-brands fa-google"></i></a>
+            <a href="https://instagram.com/carplusvistorias" target="_blank" class="hover:text-primary transition-colors"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/5541988740258" target="_blank" class="hover:text-primary transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Services Quick Links -->
+        <div class="lg:col-span-2 space-y-3">
+          <h4 class="font-display font-bold text-sm text-white uppercase tracking-wider">Serviços</h4>
+          <ul class="space-y-2 text-xs text-zinc-400">
+            <li><a href="/#servicos" class="hover:text-primary transition-colors">Vistoria Cautelar</a></li>
+            <li><a href="/#servicos" class="hover:text-primary transition-colors">Perícia Automotiva</a></li>
+            <li><a href="/#servicos" class="hover:text-primary transition-colors">Laudo de Transferência</a></li>
+            <li><a href="/#servicos" class="hover:text-primary transition-colors">Inspeção Veicular</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Institutional Links / Sitemap Link -->
+        <div class="lg:col-span-3 space-y-3">
+          <h4 class="font-display font-bold text-sm text-white uppercase tracking-wider">Institucional</h4>
+          <ul class="space-y-2 text-xs text-zinc-400">
+            <li><a href="/#home" class="hover:text-primary transition-colors">Início / Home</a></li>
+            <li><a href="/#sobre" class="hover:text-primary transition-colors">Quem Somos Nós</a></li>
+            <li><a href="/mapa-do-site" class="hover:text-primary transition-colors flex items-center gap-1.5 text-zinc-400">Mapa do Site</a></li>
+            <li><a href="/contato" class="hover:text-primary transition-colors flex items-center gap-1.5 font-bold text-primary">Contato e Cadastro</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Address Info -->
+        <div class="lg:col-span-3 space-y-3">
+          <h4 class="font-display font-bold text-sm text-white uppercase tracking-wider">Atendimento</h4>
+          <address class="not-italic text-xs text-zinc-400 space-y-2">
+            <div class="flex items-start gap-2">
+              <i class="fa-solid fa-location-dot text-primary mt-0.5"></i>
+              <span>Av. Pres. Arthur da Silva Bernardes, 1323 · Portão · Curitiba/PR</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-phone text-primary"></i>
+              <a href="tel:+5541988740258" class="hover:text-primary hover:underline transition-colors font-mono">(41) 98874-0258</a>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-envelope text-primary"></i>
+              <a href="mailto:laudo@carplusvistorias.com.br" class="hover:text-primary hover:underline transition-colors truncate">laudo@carplusvistorias.com.br</a>
+            </div>
+          </address>
+        </div>
+
+      </div>
+
+      <div class="my-10 border-t border-zinc-900"></div>
+
+      <!-- Footer Bottom -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-center text-[10px] text-zinc-500 font-mono">
+        <div>
+          &copy; 2025 Carplus Vistorias. CNPJ 34.521.988/0001-90. Todos os direitos reservados.
+        </div>
+        <div class="flex gap-4">
+          <a href="/mapa-do-site" class="hover:text-primary transition-colors font-bold">Mapa do Site</a>
+          <span class="text-zinc-800">|</span>
+          <a href="/contato" class="hover:text-primary transition-colors font-bold text-primary">Contato WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="mt-6 pt-4 border-t border-zinc-900 text-center text-[10px] text-zinc-400 flex items-center justify-center gap-1.5 select-none font-mono">
+        Desenvolvido com <i class="fa-solid fa-heart text-primary animate-pulse"></i> por
+        <a href="https://supremasite.com.br" target="_blank" rel="noopener noreferrer" class="hover:text-primary font-bold transition font-sans flex items-center gap-1">
+          Suprema Sites Express
+          <img src="https://img.supremamidia.com/suprema-img.png" alt="Suprema Logo" class="h-3 ml-0.5 inline" referrerPolicy="no-referrer">
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- MULTI-STEP INTEGRATION JAVASCRIPT -->
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      // 1. Mobile Menu Drawer Toggle
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileDrawer = document.getElementById('mobile-drawer');
+      const mobileBackdrop = document.getElementById('mobile-drawer-backdrop');
+      const hLine1 = document.getElementById('h-line-1');
+      const hLine2 = document.getElementById('h-line-2');
+      const hLine3 = document.getElementById('h-line-3');
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+      let isDrawerOpen = false;
+
+      function toggleMenu() {
+        isDrawerOpen = !isDrawerOpen;
+        if (isDrawerOpen) {
+          mobileDrawer.classList.remove('translate-x-full');
+          mobileDrawer.classList.add('translate-x-0');
+          mobileBackdrop.classList.remove('hidden');
+          setTimeout(() => {
+            mobileBackdrop.classList.remove('opacity-0');
+            mobileBackdrop.classList.add('opacity-100');
+          }, 10);
+          hLine1.classList.add('rotate-45', 'translate-y-2');
+          hLine2.classList.add('opacity-0', 'scale-0');
+          hLine3.classList.add('-rotate-45', '-translate-y-2');
+        } else {
+          mobileDrawer.classList.remove('translate-x-0');
+          mobileDrawer.classList.add('translate-x-full');
+          mobileBackdrop.classList.remove('opacity-100');
+          mobileBackdrop.classList.add('opacity-0');
+          setTimeout(() => {
+            mobileBackdrop.classList.add('hidden');
+          }, 300);
+          hLine1.classList.remove('rotate-45', 'translate-y-2');
+          hLine2.classList.remove('opacity-0', 'scale-0');
+          hLine3.classList.remove('-rotate-45', '-translate-y-2');
+        }
+      }
+
+      mobileBtn.addEventListener('click', toggleMenu);
+      mobileBackdrop.addEventListener('click', toggleMenu);
+      mobileNavLinks.forEach(link => link.addEventListener('click', toggleMenu));
+
+      // 2. Multi-step agendamento form logic
+      let currentStep = 1;
+      const totalSteps = 4;
+
+      const btnPrev = document.getElementById('prev-step-btn');
+      const btnNext = document.getElementById('next-step-btn');
+      
+      const step1 = document.getElementById('step-1');
+      const step2 = document.getElementById('step-2');
+      const step3 = document.getElementById('step-3');
+      const step4 = document.getElementById('step-4');
+
+      const progressBar = document.getElementById('progress-bar-fill');
+      const numeratorText = document.getElementById('step-numerator-text');
+      const percentageText = document.getElementById('step-percentage');
+
+      // Setup service choice buttons click
+      const serviceButtons = document.querySelectorAll('.service-opt-btn');
+      const hiddenServiceInput = document.getElementById('input-service-val');
+
+      serviceButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Remove selected styling on all
+          serviceButtons.forEach(b => {
+            b.classList.remove('border-primary', 'bg-zinc-950/80', 'ring-1', 'ring-primary/40');
+            b.classList.add('border-zinc-800', 'bg-zinc-950/40');
+          });
+          
+          // Add selected styling to clicked
+          btn.classList.remove('border-zinc-800', 'bg-zinc-950/40');
+          btn.classList.add('border-primary', 'bg-zinc-950/80', 'ring-1', 'ring-primary/40');
+          
+          hiddenServiceInput.value = btn.getAttribute('data-val');
+          document.getElementById('error-step-1').classList.add('hidden');
+          
+          // Auto advance step 1 to step 2 dynamically for high-fidelity feel!
+          setTimeout(() => {
+            advanceStep();
+          }, 300);
+        });
+      });
+
+      // Simple click radio styling for step 3 shifts
+      const shiftContainers = document.querySelectorAll('.time-opt-btn');
+      shiftContainers.forEach(container => {
+        const input = container.querySelector('input');
+        
+        // Initial set if checked
+        if(input.checked) {
+          container.classList.add('border-primary', 'bg-zinc-950/80', 'ring-1', 'ring-primary/40');
+        }
+
+        container.addEventListener('click', () => {
+          shiftContainers.forEach(c => c.classList.remove('border-primary', 'bg-zinc-950/80', 'ring-1', 'ring-primary/40'));
+          container.classList.add('border-primary', 'bg-zinc-950/80', 'ring-1', 'ring-primary/40');
+        });
+      });
+
+      // WhatsApp masking auto format (XX) XXXXX-XXXX
+      const telInput = document.getElementById('input-user-tel');
+      telInput.addEventListener('input', (e) => {
+        let value = e.target.value.replace(/\D/g, "");
+        if (value.length > 0) {
+          if (value.length <= 2) {
+            e.target.value = `(${value}`;
+          } else if (value.length <= 7) {
+            e.target.value = `(${value.substring(0, 2)}) ${value.substring(2)}`;
+          } else {
+            e.target.value = `(${value.substring(0, 2)}) ${value.substring(2, 7)}-${value.substring(7, 11)}`;
+          }
+        }
+      });
+
+      // Update progress visuals
+      function updateProgressTracker() {
+        const percentage = Math.round((currentStep / totalSteps) * 100);
+        progressBar.style.width = `${percentage}%`;
+        percentageText.textContent = `${percentage}%`;
+
+        // Numerator labeling
+        switch(currentStep) {
+          case 1:
+            numeratorText.textContent = "Etapa 1 de 4 · Escolha seu Serviço";
+            btnPrev.classList.add('hidden');
+            btnNext.innerHTML = 'AVANÇAR <i class="fa-solid fa-arrow-right text-xs"></i>';
+            break;
+          case 2:
+            numeratorText.textContent = "Etapa 2 de 4 · Dados do Veículo";
+            btnPrev.classList.remove('hidden');
+            btnNext.innerHTML = 'AVANÇAR <i class="fa-solid fa-arrow-right text-xs"></i>';
+            break;
+          case 3:
+            numeratorText.textContent = "Etapa 3 de 4 · Horário e Bairro";
+            btnPrev.classList.remove('hidden');
+            btnNext.innerHTML = 'AVANÇAR <i class="fa-solid fa-arrow-right text-xs"></i>';
+            break;
+          case 4:
+            numeratorText.textContent = "Etapa 4 de 4 · Seus Contatos";
+            btnPrev.classList.remove('hidden');
+            btnNext.innerHTML = 'ENVIAR PELO WHATSAPP <i class="fa-brands fa-whatsapp text-lg"></i>';
+            break;
+        }
+      }
+
+      // Step validations
+      function validateStep(step) {
+        if (step === 1) {
+          const service = hiddenServiceInput.value;
+          if (!service) {
+            document.getElementById('error-step-1').classList.remove('hidden');
+            return false;
+          }
+          document.getElementById('error-step-1').classList.add('hidden');
+          return true;
+        }
+        
+        if (step === 2) {
+          const veic = document.getElementById('input-veiculo-nome').value.trim();
+          if (!veic) {
+            document.getElementById('error-step-2').classList.remove('hidden');
+            return false;
+          }
+          document.getElementById('error-step-2').classList.add('hidden');
+          return true;
+        }
+
+        if (step === 3) {
+          const bairro = document.getElementById('input-user-bairro').value.trim();
+          if (!bairro) {
+            document.getElementById('error-step-3').classList.remove('hidden');
+            return false;
+          }
+          document.getElementById('error-step-3').classList.add('hidden');
+          return true;
+        }
+
+        if (step === 4) {
+          const nome = document.getElementById('input-user-nome').value.trim();
+          const tel = document.getElementById('input-user-tel').value.trim();
+          if (!nome || tel.length < 13) {
+            document.getElementById('error-step-4').classList.remove('hidden');
+            return false;
+          }
+          document.getElementById('error-step-4').classList.add('hidden');
+          return true;
+        }
+
+        return true;
+      }
+
+      function showActiveStep() {
+        // Hide all steps first
+        [step1, step2, step3, step4].forEach(s => {
+          s.classList.add('hidden');
+          s.style.opacity = '0';
+          s.style.transform = 'translateX(20px)';
+        });
+
+        // Show current
+        let activeEl;
+        if (currentStep === 1) activeEl = step1;
+        else if (currentStep === 2) activeEl = step2;
+        else if (currentStep === 3) activeEl = step3;
+        else if (currentStep === 4) activeEl = step4;
+
+        activeEl.classList.remove('hidden');
+        setTimeout(() => {
+          activeEl.style.opacity = '1';
+          activeEl.style.transform = 'translateX(0)';
+        }, 50);
+
+        updateProgressTracker();
+        window.scrollTo({ top: document.querySelector('main').offsetTop - 120, behavior: 'smooth' });
+      }
+
+      function advanceStep() {
+        if (!validateStep(currentStep)) return;
+        
+        if (currentStep < totalSteps) {
+          currentStep++;
+          showActiveStep();
+        } else {
+          // Submit final form compilation and fire Confetti before WhatsApp!
+          fireFormSubmit();
+        }
+      }
+
+      function recedeStep() {
+        if (currentStep > 1) {
+          currentStep--;
+          showActiveStep();
+        }
+      }
+
+      btnNext.addEventListener('click', advanceStep);
+      btnPrev.addEventListener('click', recedeStep);
+
+      // Submit formatting and Whatsapp trigger with cool Canvas Confetti
+      function fireFormSubmit() {
+        // Play Confetti Celebration
+        confetti({
+          particleCount: 150,
+          spread: 80,
+          origin: { y: 0.6 },
+          colors: ['#C8102E', '#FF3C57', '#ffffff']
+        });
+
+        // Pull inputs
+        const servico = hiddenServiceInput.value;
+        const veiculo = document.getElementById('input-veiculo-nome').value.trim();
+        const ano = document.getElementById('select-veiculo-ano').value;
+        const obs = document.getElementById('textarea-veiculo-obs').value.trim();
+        const prefShift = document.querySelector('input[name="time-preference"]:checked').value;
+        const bairro = document.getElementById('input-user-bairro').value.trim();
+        const nome = document.getElementById('input-user-nome').value.trim();
+        const tel = document.getElementById('input-user-tel').value.trim();
+        const email = document.getElementById('input-user-email').value.trim();
+
+        // Compile WhatsApp text
+        const messageText = `Olá Carplus Vistorias! 🚗\n` + 
+                            `Gostaria de agendar uma vistoria através do formulário.\n\n` +
+                            `• *Serviço:* ${servico}\n` +
+                            `• *Modelo/Placa:* ${veiculo}\n` +
+                            `• *Ano do Veículo:* ${ano}\n` +
+                            `• *Preferencia do Horário:* ${prefShift}\n` +
+                            `• *Bairro:* ${bairro}\n\n` +
+                            `• *Nome:* ${nome}\n` +
+                            `• *Telefone:* ${tel}\n` +
+                            `${email ? '• *E-mail:* ' + email + '\n' : ''}` +
+                            `${obs ? '\n*Observação:* ' + obs : ''}`;
+
+        // Redirection trigger
+        const url = `https://wa.me/5541988740258?text=${encodeURIComponent(messageText)}`;
+        
+        setTimeout(() => {
+          window.open(url, '_blank');
+        }, 1200); // Small delay to let confetti explode dramatically
+      }
+
+    });
+  </script>
+
+</body>
+</html>
