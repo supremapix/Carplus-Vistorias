@@ -281,13 +281,10 @@ export default function App() {
 
             {/* SEÇÃO: Diferenciais Carplus - Dark theme #111111 */}
             <section 
-              className="relative bg-zinc-950 text-white py-20 px-6 border-b border-zinc-900 bg-cover bg-center overflow-hidden"
-              style={{
-                backgroundImage: 'url("https://img.carplusvistorias.com.br/secao-fundo-site.png")',
-              }}
+              className="relative bg-zinc-950 text-white py-20 px-6 border-b border-zinc-900 bg-cover bg-center overflow-hidden bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb.png')] md:bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb-pr.png')]"
             >
               {/* Overlay super leve para garantir visibilidade máxima da foto com leitura do conteúdo */}
-              <div className="absolute inset-0 bg-black/35 z-0"></div>
+              <div className="absolute inset-0 bg-black/45 z-0"></div>
 
               <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
                 
@@ -449,13 +446,10 @@ export default function App() {
 
             {/* SEÇÃO: Onde Estamos (maps + contacts) */}
             <section 
-              className="relative bg-zinc-950 text-white py-20 px-6 bg-cover bg-center overflow-hidden"
-              style={{
-                backgroundImage: 'url("https://img.carplusvistorias.com.br/secao-fundo-site.png")',
-              }}
+              className="relative bg-zinc-950 text-white py-20 px-6 bg-cover bg-center overflow-hidden bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb.png')] md:bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb-pr.png')]"
             >
               {/* Overlay super leve para garantir visibilidade máxima da foto com leitura do conteúdo */}
-              <div className="absolute inset-0 bg-black/35 z-0"></div>
+              <div className="absolute inset-0 bg-black/45 z-0"></div>
 
               <div className="max-w-7xl mx-auto relative z-10">
                 
@@ -566,14 +560,13 @@ export default function App() {
             
             {/* HERO SERVICOS */}
             <section 
-              className="relative overflow-hidden bg-zinc-950 py-16 px-6 border-b border-zinc-900"
-              style={{
-                backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.55)), url("https://img.carplusvistorias.com.br/secao-fundo-site.png")',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center'
-              }}
+              className="relative overflow-hidden bg-zinc-950 py-16 px-6 border-b border-zinc-900 bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb.png')] md:bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb-pr.png')] bg-cover bg-center"
             >
-              <div className="max-w-7xl mx-auto text-center py-10">
+              {/* Overlay with linear-gradient and solid multiplier for high contrast visual pairing */}
+              <div className="absolute inset-0 bg-black/45 z-0 pointer-events-none"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-black/65 z-0 pointer-events-none"></div>
+
+              <div className="max-w-7xl mx-auto text-center py-10 relative z-10">
                 {/* Breadcrumb */}
                 <div className="text-xs font-mono uppercase tracking-widest text-primary mb-4">
                   <span onClick={() => handleNavigate('home')} className="hover:underline cursor-pointer">Início</span>
@@ -725,14 +718,13 @@ export default function App() {
             
             {/* HERO SOBRE */}
             <section 
-              className="relative overflow-hidden bg-zinc-950 py-16 px-6 border-b border-zinc-900"
-              style={{
-                backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.55)), url("https://img.carplusvistorias.com.br/secao-fundo-site.png")',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center'
-              }}
+              className="relative overflow-hidden bg-zinc-950 py-16 px-6 border-b border-zinc-900 bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb.png')] md:bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb-pr.png')] bg-cover bg-center"
             >
-              <div className="max-w-7xl mx-auto text-center py-10">
+              {/* Overlay with linear-gradient and solid multiplier for high contrast visual pairing */}
+              <div className="absolute inset-0 bg-black/45 z-0 pointer-events-none"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-black/65 z-0 pointer-events-none"></div>
+
+              <div className="max-w-7xl mx-auto text-center py-10 relative z-10">
                 <div className="text-xs font-mono uppercase tracking-widest text-primary mb-4">
                   <span onClick={() => handleNavigate('home')} className="hover:underline cursor-pointer">Início</span>
                   <span className="mx-2 text-gray-500">/</span>
@@ -903,14 +895,13 @@ export default function App() {
             
             {/* HERO CIDADES */}
             <section 
-              className="relative overflow-hidden bg-zinc-950 py-16 px-6 border-b border-zinc-900"
-              style={{
-                backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.55)), url("https://img.carplusvistorias.com.br/secao-fundo-site.png")',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center'
-              }}
+              className="relative overflow-hidden bg-zinc-950 py-16 px-6 border-b border-zinc-900 bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb.png')] md:bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb-pr.png')] bg-cover bg-center"
             >
-              <div className="max-w-7xl mx-auto text-center py-10">
+              {/* Overlay with linear-gradient and solid multiplier for high contrast visual pairing */}
+              <div className="absolute inset-0 bg-black/45 z-0 pointer-events-none"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-black/65 z-0 pointer-events-none"></div>
+
+              <div className="max-w-7xl mx-auto text-center py-10 relative z-10">
                 <div className="text-xs font-mono uppercase tracking-widest text-primary mb-4">
                   <span onClick={() => handleNavigate('home')} className="hover:underline cursor-pointer">Início</span>
                   <span className="mx-2 text-gray-500">/</span>
@@ -958,14 +949,13 @@ export default function App() {
             
             {/* HERO FAQ */}
             <section 
-              className="relative overflow-hidden bg-zinc-950 py-16 px-6 border-b border-zinc-900"
-              style={{
-                backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.55)), url("https://img.carplusvistorias.com.br/secao-fundo-site.png")',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center'
-              }}
+              className="relative overflow-hidden bg-zinc-950 py-16 px-6 border-b border-zinc-900 bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb.png')] md:bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb-pr.png')] bg-cover bg-center"
             >
-              <div className="max-w-7xl mx-auto text-center py-10">
+              {/* Overlay with linear-gradient and solid multiplier for high contrast visual pairing */}
+              <div className="absolute inset-0 bg-black/45 z-0 pointer-events-none"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-black/65 z-0 pointer-events-none"></div>
+
+              <div className="max-w-7xl mx-auto text-center py-10 relative z-10">
                 <div className="text-xs font-mono uppercase tracking-widest text-primary mb-4">
                   <span onClick={() => handleNavigate('home')} className="hover:underline cursor-pointer">Início</span>
                   <span className="mx-2 text-gray-500">/</span>
@@ -997,6 +987,73 @@ export default function App() {
 
           </div>
         )}
+
+        {/* CC-ONLY HIGHLIGHTED VIDEO SECTION (ON ALL SPA VIEWS) */}
+        <section className="relative bg-zinc-950 py-16 px-6 border-t border-zinc-900 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-zinc-950 pointer-events-none"></div>
+          <div className="max-w-7xl mx-auto relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+              
+              {/* Text Content */}
+              <div className="lg:col-span-7 space-y-6 text-left">
+                <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold tracking-wider text-primary uppercase animate-pulse">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" className="lucide lucide-play-circle text-primary"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+                  Perícia Real em Vídeo
+                </div>
+                <h2 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight text-white leading-tight">
+                  O Segredo que a <span className="text-primary text-glow-gold">Vistoria Cautelar</span> Revela Antes de Você Comprar!
+                </h2>
+                <p className="text-zinc-400 text-base leading-relaxed text-justify">
+                  Não jogue seu dinheiro fora comprando um carro com problemas ocultos de estrutura ou passagem por leilão. Neste vídeo explicativo de poucos segundos, veja na prática como nossos peritos mapeiam repinturas, defeitos estruturais ocultos e garantem que você faça um negócio 100% livre de dores de cabeça.
+                </p>
+                <div className="space-y-3 font-semibold text-sm text-zinc-300">
+                  <div className="flex items-center gap-3">
+                    <svg className="h-5 w-5 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                    <span>Análise detalhada de chassi, teto e lacres originais</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <svg className="h-5 w-5 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                    <span>Mapeamento eletrônico de camada de repintura e massa plástica</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <svg className="h-5 w-5 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                    <span>Laudo cautelar certificado entregue logo após a perícia</span>
+                  </div>
+                </div>
+                <div className="pt-4">
+                  <a href="https://wa.me/5541988740258?text=Olá,%20assisti%20ao%20vídeo%20da%20vistoria%20e%20gostaria%20de%20agendar%20uma%20perícia." target="_blank" rel="noopener noreferrer" className="premium-btn-green font-display font-black text-sm uppercase tracking-wider py-4 px-8 rounded-xl inline-flex items-center justify-center gap-2.5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-whatsapp text-[#25D366]"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 1.83.49 3.55 1.34 5.03L2 22l5.14-1.31C8.57 21.49 10.24 22 12 22c5.52 0 10-4.48 10-10Z"/></svg>
+                    Fale com um Especialista Agora
+                  </a>
+                </div>
+              </div>
+              
+              {/* Video Embed Column */}
+              <div className="lg:col-span-5 flex justify-center">
+                {/* Sleek smartphone/vertical frame overlay for high contrast mobile video display */}
+                <div className="relative w-full max-w-[320px] aspect-[9/16] rounded-3xl p-3 bg-zinc-900 border border-zinc-800 shadow-2xl shadow-primary/10 group overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/10 pointer-events-none z-10 rounded-2xl"></div>
+                  
+                  {/* Inner Video Player */}
+                  <div className="w-full h-full rounded-2xl overflow-hidden bg-black relative">
+                    <iframe 
+                      className="w-full h-full border-0 absolute inset-0"
+                      src="https://www.youtube.com/embed/OWyalVY-xCQ?autoplay=0&mute=1&loop=1&playlist=OWyalVY-xCQ"
+                      title="Perícia Cautelar em Ação"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                  
+                  {/* Gloss Accent */}
+                  <div className="absolute -top-10 -left-10 w-40 h-40 bg-white/5 rounded-full blur-2xl pointer-events-none group-hover:scale-150 transition-all duration-700"></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
       </main>
 
       {/* 4. Footer Global Section */}

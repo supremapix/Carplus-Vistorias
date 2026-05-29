@@ -30,7 +30,7 @@
   <!-- Google Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Tailwind CDN & PlayConfig -->
@@ -49,8 +49,8 @@
             card: '#1a1a1a',
           },
           fontFamily: {
-            display: ['"Barlow Condensed"', 'sans-serif'],
-            sans: ['Inter', 'sans-serif'],
+            display: ['Poppins', 'sans-serif'],
+            sans: ['"Source Sans 3"', 'sans-serif'],
           }
         }
       }
@@ -58,35 +58,51 @@
   </script>
 
   <style type="text/css">
-    @keyframes pulse-contact {
-      0%, 100% { box-shadow: 0 0 20px rgba(245, 166, 35, 0.4); }
-      50% { box-shadow: 0 0 35px rgba(245, 166, 35, 0.8), 0 0 60px rgba(248, 182, 74, 0.3); }
+    /* Premium Button Styles: One base color (#0d0d0f), different colored borders/glowing outlines around them, elegant float animations */
+    @keyframes premium-glow-green {
+      0%, 100% { box-shadow: 0 0 15px rgba(37, 211, 102, 0.20), inset 0 0 10px rgba(37, 211, 102, 0.05); }
+      50% { box-shadow: 0 0 25px rgba(37, 211, 102, 0.45), 0 0 35px rgba(37, 211, 102, 0.15), inset 0 0 12px rgba(37, 211, 102, 0.1); }
     }
-    .nav-contact-cta {
-      position: relative;
-      background: linear-gradient(135deg, #F5A623, #F8B64A);
-      box-shadow: 0 0 20px rgba(245, 166, 35, 0.4);
-      animation: pulse-contact 2.5s ease-in-out infinite;
-      overflow: hidden;
+    @keyframes premium-glow-gold {
+      0%, 100% { box-shadow: 0 0 15px rgba(245, 166, 35, 0.20), inset 0 0 10px rgba(245, 166, 35, 0.05); }
+      50% { box-shadow: 0 0 25px rgba(245, 166, 35, 0.45), 0 0 35px rgba(245, 166, 35, 0.15), inset 0 0 12px rgba(245, 166, 35, 0.1); }
     }
-    .nav-contact-cta::before {
-      content: '';
-      position: absolute;
-      top: 0; left: -100%;
-      width: 100%; height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
-      animation: shimmer-contact 3s infinite;
+    @keyframes float-btn {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
     }
-    @keyframes shimmer-contact {
-      0% { left: -100%; }
-      50%, 100% { left: 100%; }
+    .premium-btn-green {
+      background-color: #0d0d0f !important;
+      border: 2px solid #25D366 !important;
+      color: #ffffff !important;
+      animation: float-btn 3s ease-in-out infinite, premium-glow-green 2.5s ease-in-out infinite;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .nav-contact-badge {
-      animation: badge-bounce 1.5s ease-in-out infinite;
+    .premium-btn-green:hover {
+      background-color: #121216 !important;
+      color: #25D366 !important;
+      box-shadow: 0 0 30px rgba(37, 211, 102, 0.6) !important;
+      transform: translateY(-5px) scale(1.03) !important;
     }
-    @keyframes badge-bounce {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.1); }
+    .premium-btn-green:active {
+      transform: translateY(1px) scale(0.97) !important;
+    }
+
+    .premium-btn-gold {
+      background-color: #0d0d0f !important;
+      border: 2px solid #F5A623 !important;
+      color: #ffffff !important;
+      animation: float-btn 3.3s ease-in-out infinite, premium-glow-gold 2.5s ease-in-out infinite;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .premium-btn-gold:hover {
+      background-color: #121216 !important;
+      color: #F5A623 !important;
+      box-shadow: 0 0 30px rgba(245, 166, 35, 0.6) !important;
+      transform: translateY(-5px) scale(1.03) !important;
+    }
+    .premium-btn-gold:active {
+      transform: translateY(1px) scale(0.97) !important;
     }
     .hero-laser-line {
       height: 2px;
@@ -244,9 +260,9 @@
 
       <!-- ACT BUTTONS -->
       <div class="hidden lg:flex items-center gap-4">
-        <a href="/contato.html" class="nav-contact-cta text-white font-display font-extrabold text-[11px] uppercase tracking-wider py-2.5 px-5 rounded-lg flex items-center gap-2">
-          <span>💬 Contato</span>
-          <span class="nav-contact-badge bg-[#25D366] text-white text-[9px] font-bold px-1.5 py-0.5 rounded uppercase font-sans">WhatsApp</span>
+        <a href="/contato.html" class="premium-btn-green text-white font-display font-extrabold text-[11px] uppercase tracking-wider py-2.5 px-5 rounded-lg flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-whatsapp text-[#25D366]"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 1.83.49 3.55 1.34 5.03L2 22l5.14-1.31C8.57 21.49 10.24 22 12 22c5.52 0 10-4.48 10-10Z"/></svg>
+          <span>Fale Conosco</span>
         </a>
       </div>
 
@@ -278,9 +294,9 @@
     </div>
 
     <div class="flex flex-col gap-4 border-t border-zinc-900 pt-6">
-      <a href="/contato.html" class="nav-contact-cta text-center text-white font-display font-extrabold text-sm uppercase tracking-widest py-3 px-4 rounded-lg flex items-center justify-center gap-2">
-        <span>💬 Contato</span>
-        <span class="nav-contact-badge bg-[#25D366] text-white text-[9px] font-bold px-1.5 py-0.5 rounded uppercase font-sans">WhatsApp</span>
+      <a href="/contato.html" class="premium-btn-green text-center text-white font-display font-extrabold text-sm uppercase tracking-widest py-3 px-4 rounded-lg flex items-center justify-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-whatsapp text-[#25D366]"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 1.83.49 3.55 1.34 5.03L2 22l5.14-1.31C8.57 21.49 10.24 22 12 22c5.52 0 10-4.48 10-10Z"/></svg>
+        <span>Fale Conosco</span>
       </a>
       
       <div class="bg-zinc-900/45 p-3 rounded-lg border border-zinc-900 text-xs flex flex-col gap-1 text-zinc-400">
@@ -292,7 +308,7 @@
 
   <!-- 2. HERO LOCAL SECTION -->
   <section class="relative pt-36 pb-24 md:py-32 bg-zinc-950 overflow-hidden border-b border-zinc-900">
-    <div class="absolute inset-0 bg-cover bg-center brightness-[0.2] saturate-[0.8] z-0" style="background-image: url('https://img.carplusvistorias.com.br/secao-fundo-site.png');"></div>
+    <div class="absolute inset-0 bg-cover bg-center brightness-[0.25] saturate-[0.8] z-0 bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb.png')] md:bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb-pr.png')]"></div>
     <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-[#111111]/90 z-10"></div>
     
     <div class="max-w-7xl mx-auto px-6 relative z-20 text-center">
@@ -318,11 +334,11 @@
       </p>
 
       <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="https://wa.me/5541988740258?text=Ol%C3%A1%20Carplus!%20Desejo%20agendar%20uma%20vistoria%20cautelar%20no Fanny." target="_blank" rel="noopener noreferrer" class="bg-[#25D366] hover:bg-[#1eba4f] text-white hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 font-display font-extrabold text-sm uppercase tracking-widest py-4 px-8 rounded-full shadow-lg shadow-[#25d366]/20 inline-flex items-center justify-center gap-2.5">
-          <i class="fa-brands fa-whatsapp text-lg"></i> AGENDAR PELO WHATSAPP
+        <a href="https://wa.me/5541988740258?text=Ol%C3%A1%20Carplus!%20Desejo%20agendar%20uma%20vistoria%20cautelar%20no Fanny." target="_blank" rel="noopener noreferrer" class="premium-btn-green font-display font-extrabold text-sm uppercase tracking-widest py-4 px-8 rounded-full inline-flex items-center justify-center gap-2.5">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-whatsapp text-[#25D366]"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 1.83.49 3.55 1.34 5.03L2 22l5.14-1.31C8.57 21.49 10.24 22 12 22c5.52 0 10-4.48 10-10Z"/></svg> AGENDAR PELO WHATSAPP
         </a>
-        <a href="tel:+5541988740258" class="border border-zinc-700 hover:border-primary text-white hover:text-primary bg-zinc-900/60 font-mono text-xs font-bold uppercase tracking-widest py-4 px-8 rounded-full transition-all duration-300 flex items-center justify-center gap-2">
-          <i class="fa-solid fa-phone"></i> LIGAR: (41) 98874-0258
+        <a href="tel:+5541988740258" class="premium-btn-gold font-mono text-xs font-bold uppercase tracking-widest py-4 px-8 rounded-full flex items-center justify-center gap-2">
+          <i class="fa-solid fa-phone text-primary"></i> LIGAR: (41) 98874-0258
         </a>
       </div>
     </div>
@@ -346,7 +362,8 @@
         </h2>
         
         <p class="text-zinc-300 leading-relaxed text-justify text-sm sm:text-base">
-          Se você está comprando ou vendendo um veículo no Fanny ou arredores, a segurança deve vir sempre em primeiro lugar. O mercado automotivo em Curitiba é agitado, e é comum encontrar automóveis que já passaram por leilões, possuem sinistros camuflados, chassis adulterados e reformas estruturais severas que comprometem a dirigibilidade e o valor de revenda.
+          Próximo ao Fanny, realizamos perícias estruturais avançadas de colunas e assoalho com equipamentos de medição de espessura de alta sensibilidade.
+          O mercado automotivo na região de Curitiba é extremamente dinâmico e agitado. Por isso, ao negociar veículos no Fanny ou em outros pontos da cidade, ter o apoio de peritos certificados é crucial. Além de no Fanny, também emitimos laudos rápidos para donos de veículos procedentes de outras regiões próximas, tais como <a href="/vistoria-cautelar-novo-mundo.html" class="text-primary hover:underline hover:text-primary-light transition-colors font-bold">Novo Mundo</a> e <a href="/vistoria-cautelar-vila-verde.html" class="text-primary hover:underline hover:text-primary-light transition-colors font-bold">Vila Verde</a>, garantindo cobertura total. Para consultar as demais coberturas, confira o nosso <a href="/mapa-do-site.html" class="text-primary hover:underline hover:text-primary-light transition-colors font-bold">mapa do site</a> ou visite nossa página de <a href="/contato.html" class="text-primary hover:underline hover:text-primary-light transition-colors font-bold">agendamento e contato</a>.
         </p>
         
         <p class="text-zinc-300 leading-relaxed text-justify text-sm sm:text-base">
@@ -431,7 +448,7 @@
         <div class="bg-zinc-900/65 border border-zinc-800/80 hover:border-primary/45 p-6 rounded-2xl flex flex-col justify-between group transition-all duration-300 hover:-translate-y-1 shadow-xl">
           <div class="space-y-4">
             <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center border border-primary/20 group-hover:bg-primary/20 transition-colors">
-              <i class="fa-solid fa-engine text-primary text-xl"></i>
+              <i class="fa-solid fa-gears text-primary text-xl"></i>
             </div>
             <h3 class="font-display font-black text-xl text-white uppercase tracking-wide">Perícia Automotiva</h3>
             <p class="text-xs text-zinc-400 leading-relaxed text-justify">
@@ -634,7 +651,7 @@
 
   <!-- 8. CTA FINAL CONVERSION -->
   <section class="relative py-20 px-6 overflow-hidden bg-zinc-950 text-center">
-    <div class="absolute inset-0 bg-cover bg-center opacity-[0.06] pointer-events-none select-none saturate-50" style="background-image: url('https://img.carplusvistorias.com.br/secao-fundo-site.png');"></div>
+    <div class="absolute inset-0 bg-cover bg-center opacity-[0.06] pointer-events-none select-none saturate-50 bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb.png')] md:bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb-pr.png')]"></div>
     <div class="max-w-4xl mx-auto relative z-10 space-y-6 reveal">
       <h2 class="font-display font-black text-3xl sm:text-5xl text-white uppercase tracking-tighter max-w-2xl mx-auto leading-none">
         FAÇA UMA COMPRA SEGURA HOJE no Fanny
@@ -643,12 +660,78 @@
         Não corra riscos inúteis. Clique abaixo para reservar seu laudo estruturado e receber as informações corretas de quem entende do assunto.
       </p>
       <div class="pt-4 flex flex-col md:flex-row gap-4 justify-center items-center">
-        <a href="https://wa.me/5541988740258?text=Ol%C3%A1%20Carplus!%20Desejo%20agendar%20uma%20vistoria%20cautelar%20no Fanny." target="_blank" rel="noopener noreferrer" class="bg-[#25D366] hover:bg-[#1eba4f] text-white hover:scale-105 transition-transform duration-300 font-display font-extrabold text-sm uppercase tracking-widest py-4.5 px-10 rounded-full shadow-xl shadow-[#25d366]/20 flex items-center gap-2">
-          <i class="fa-brands fa-whatsapp text-lg"></i> AGENDAR PELO WHATSAPP
+        <a href="https://wa.me/5541988740258?text=Ol%C3%A1%20Carplus!%20Desejo%20agendar%20uma%20vistoria%20cautelar%20no Fanny." target="_blank" rel="noopener noreferrer" class="premium-btn-green font-display font-extrabold text-sm uppercase tracking-widest py-4.5 px-10 rounded-full inline-flex items-center justify-center gap-2.5">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-whatsapp text-[#25D366]"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 1.83.49 3.55 1.34 5.03L2 22l5.14-1.31C8.57 21.49 10.24 22 12 22c5.52 0 10-4.48 10-10Z"/></svg> AGENDAR PELO WHATSAPP
         </a>
-        <a href="/contato" class="border border-zinc-700 hover:border-primary text-white hover:text-primary font-mono text-xs font-bold uppercase tracking-widest py-4.5 px-8 rounded-full transition-colors duration-300">
+        <a href="/contato.html" class="premium-btn-gold font-mono text-xs font-bold uppercase tracking-widest py-4.5 px-8 rounded-full flex items-center justify-center gap-2">
           Formulário de Contato
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO HIGHLIGHT SECTION -->
+  <section class="relative bg-zinc-950 py-16 px-6 border-t border-zinc-900 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-zinc-950 pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Text Content -->
+        <div class="lg:col-span-7 space-y-6 text-left">
+          <div class="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold tracking-wider text-primary uppercase">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="lucide lucide-play-circle text-primary"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+            Perícia Real em Vídeo
+          </div>
+          <h2 class="font-display font-black text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight text-white leading-tight">
+            O Segredo que a <span class="text-primary">Vistoria Cautelar</span> Revela Antes de Você Comprar!
+          </h2>
+          <p class="text-zinc-400 text-base leading-relaxed text-justify">
+            Não jogue seu dinheiro fora comprando um carro com problemas ocultos de estrutura ou passagem por leilão. Neste vídeo explicativo de poucos segundos, veja na prática como nossos peritos mapeiam repinturas, defeitos estruturais ocultos e garantem que você faça um negócio 100% livre de dores de cabeça no Fanny.
+          </p>
+          <div class="space-y-3 font-semibold text-sm text-zinc-300">
+            <div class="flex items-center gap-3">
+              <svg class="h-5 w-5 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span>Análise detalhada de chassi, teto e lacres originais</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <svg class="h-5 w-5 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span>Mapeamento eletrônico de camada de repintura e massa plástica</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <svg class="h-5 w-5 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span>Laudo cautelar certificado entregue logo após a perícia no Fanny</span>
+            </div>
+          </div>
+          <div class="pt-4">
+            <a href="https://wa.me/5541988740258?text=Ol%C3%A1%20Carplus!%20Desejo%20agendar%20uma%20vistoria%20cautelar%20no Fanny." target="_blank" rel="noopener noreferrer" class="premium-btn-green font-display font-black text-sm uppercase tracking-wider py-4 px-8 rounded-xl inline-flex items-center justify-center gap-2.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-whatsapp text-[#25D366]"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 1.83.49 3.55 1.34 5.03L2 22l5.14-1.31C8.57 21.49 10.24 22 12 22c5.52 0 10-4.48 10-10Z"/></svg>
+              Fale com um Especialista Agora
+            </a>
+          </div>
+        </div>
+        
+        <!-- Video Embed Column -->
+        <div class="lg:col-span-5 flex justify-center">
+          <!-- Sleek smartphone/vertical frame overlay for high contrast mobile video display -->
+          <div class="relative w-full max-w-[320px] aspect-[9/16] rounded-3xl p-3 bg-zinc-900 border border-zinc-800 shadow-2xl shadow-primary/10 group overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/10 pointer-events-none z-10 rounded-2xl"></div>
+            
+            <!-- Inner Video Player -->
+            <div class="w-full h-full rounded-2xl overflow-hidden bg-black relative">
+              <iframe 
+                class="w-full h-full border-0 absolute inset-0"
+                src="https://www.youtube.com/embed/OWyalVY-xCQ?autoplay=0&mute=1&loop=1&playlist=OWyalVY-xCQ"
+                title="Perícia Cautelar em Ação"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+            
+            <!-- Gloss Accent -->
+            <div class="absolute -top-10 -left-10 w-40 h-40 bg-white/5 rounded-full blur-2xl pointer-events-none group-hover:scale-150 transition-all duration-700"></div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>

@@ -377,14 +377,14 @@ p {
     neon-pulse 2s ease-in-out infinite alternate;
 }
 
-/* Footer Responsive Background (Mobile: fundo-site-cwb, Desktop: vistorias-carplus-carros) */
+/* Footer Responsive Background (Mobile: fundo-site-carplus-cwb, Desktop: fundo-site-carplus-cwb-pr) */
 .footer-responsive-bg {
-  background-image: url("https://img.carplusvistorias.com.br/fundo-site-cwb.png");
+  background-image: url("https://img.carplusvistorias.com.br/fundo-site-carplus-cwb.png");
 }
 
 @media (min-width: 768px) {
   .footer-responsive-bg {
-    background-image: url("https://img.carplusvistorias.com.br/vistorias-carplus-carros.png");
+    background-image: url("https://img.carplusvistorias.com.br/fundo-site-carplus-cwb-pr.png");
   }
 }
 
