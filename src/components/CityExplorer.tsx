@@ -132,48 +132,48 @@ export default function CityExplorer() {
             return (
               <div
                 key={item.name}
-                className={`bg-zinc-900 border overflow-hidden rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${
+                className={`bg-white border-2 overflow-hidden rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg text-zinc-950 ${
                   isSede 
-                    ? 'border-primary/50 shadow-lg shadow-primary/5 ring-1 ring-primary/20' 
-                    : 'border-zinc-800 hover:border-zinc-700'
+                    ? 'border-primary shadow-lg shadow-primary/5 ring-1 ring-primary/20' 
+                    : 'border-black hover:border-zinc-700'
                 }`}
               >
                 {/* Card Header with direct page link */}
                 <div className="flex items-start justify-between gap-4 mb-4">
                   <div className="flex items-center gap-3">
-                    <span className={`w-10 h-10 rounded-lg flex items-center justify-center ${isSede ? 'bg-primary/20 text-primary' : 'bg-zinc-800 text-white'}`}>
+                    <span className={`w-10 h-10 rounded-lg flex items-center justify-center ${isSede ? 'bg-zinc-950 text-primary' : 'bg-zinc-900 text-white'}`}>
                       <i className={`fa-solid ${item.icon} text-base`}></i>
                     </span>
                     <div>
                       <a href={`/vistoria-cautelar-${slug}.html`} className="group/title block">
-                        <h3 className="font-display font-semibold text-lg text-white leading-tight group-hover/title:text-primary transition-colors flex items-center gap-1.5">
+                        <h3 className="font-display font-semibold text-lg text-zinc-950 leading-tight group-hover/title:text-primary transition-colors flex items-center gap-1.5">
                           {item.name}
                           <i className="fa-solid fa-arrow-up-right-from-square text-[10px] text-zinc-500 opacity-60 group-hover/title:opacity-100 group-hover/title:text-primary transition-opacity"></i>
                         </h3>
                       </a>
-                      <span className="text-[10px] uppercase font-bold tracking-wider text-zinc-200 block mt-0.5">
+                      <span className="text-[10px] uppercase font-bold tracking-wider text-zinc-600 block mt-0.5">
                         {item.typeName}
                       </span>
                     </div>
                   </div>
 
                   {isSede && (
-                    <span className="text-[10px] bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">
+                    <span className="text-[10px] bg-primary/20 text-primary-dark border border-primary/30 px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">
                       Sede
                     </span>
                   )}
                 </div>
 
                 {/* Card Description */}
-                <p className="text-white text-sm text-justify leading-relaxed font-semibold">
+                <p className="text-zinc-800 text-sm text-justify leading-relaxed font-semibold">
                   {item.description}
                 </p>
 
                 {/* Action CTA link (Quick whatsapp schedule & Direct link to the SEO page) */}
-                <div className="mt-5 pt-4 border-t border-zinc-800 flex items-center justify-between gap-2">
+                <div className="mt-5 pt-4 border-t border-zinc-200 flex items-center justify-between gap-2">
                   <a
                     href={`/vistoria-cautelar-${slug}.html`}
-                    className="text-xs font-mono font-bold uppercase tracking-wider text-zinc-400 hover:text-primary flex items-center gap-1.5 transition-colors cursor-pointer"
+                    className="text-xs font-mono font-bold uppercase tracking-wider text-zinc-650 hover:text-primary flex items-center gap-1.5 transition-colors cursor-pointer"
                   >
                     <i className="fa-solid fa-file-invoice text-zinc-500 text-[11px]"></i> Ver Página
                   </a>
@@ -182,7 +182,7 @@ export default function CityExplorer() {
                     href={`https://wa.me/5541988740258?text=Ol%C3%A1!%20Desejo%20agendar%20uma%20vistoria%20cautelar%20para%20ve%C3%ADculo%20em%20${encodeURIComponent(item.name)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs text-primary hover:text-primary-light font-bold flex items-center gap-1 group bg-primary/10 border border-primary/20 hover:border-primary px-3 py-1.5 rounded-lg transition-all"
+                    className="text-xs text-zinc-950 hover:text-white font-bold flex items-center gap-1 group bg-primary hover:bg-zinc-950 border border-black px-3 py-1.5 rounded-lg transition-all"
                   >
                     Agendar <i className="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
                   </a>

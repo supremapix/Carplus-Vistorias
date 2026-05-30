@@ -15,7 +15,7 @@
   <!-- Google Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Tailwind CDN & PlayConfig -->
@@ -34,8 +34,8 @@
             card: '#1a1a1a',
           },
           fontFamily: {
-            display: ['"Barlow Condensed"', 'sans-serif'],
-            sans: ['Inter', 'sans-serif'],
+            display: ['Poppins', 'sans-serif'],
+            sans: ['"Source Sans 3"', 'sans-serif'],
           }
         }
       }
@@ -141,12 +141,12 @@
 
       <!-- DESKTOP NAV -->
       <nav class="hidden lg:flex items-center gap-5 xl:gap-8">
-        <a href="/#home" class="text-[10px] uppercase tracking-[0.2em] font-display font-medium text-zinc-300 hover:text-primary transition-colors py-1">Início</a>
-        <a href="/#servicos" class="text-[10px] uppercase tracking-[0.2em] font-display font-medium text-zinc-300 hover:text-primary transition-colors py-1">Serviços</a>
-        <a href="/#sobre" class="text-[10px] uppercase tracking-[0.2em] font-display font-medium text-zinc-300 hover:text-primary transition-colors py-1">Sobre Nós</a>
-        <a href="/#cidades" class="text-[10px] uppercase tracking-[0.2em] font-display font-medium text-zinc-300 hover:text-primary transition-colors py-1">Cidades Atendidas</a>
-        <a href="/#faq" class="text-[10px] uppercase tracking-[0.2em] font-display font-medium text-zinc-300 hover:text-primary transition-colors py-1">FAQ / Dúvidas</a>
-        <a href="/mapa-do-site.html" class="text-[10px] uppercase tracking-[0.2em] font-display font-medium text-zinc-300 hover:text-primary transition-colors py-1">Mapa</a>
+        <a href="/#home" class="text-[10px] uppercase tracking-[0.2em] font-display font-medium text-white hover:text-primary transition-colors py-1">Início</a>
+        <a href="/#servicos" class="text-[10px] uppercase tracking-[0.2em] font-display font-medium text-white hover:text-primary transition-colors py-1">Serviços</a>
+        <a href="/#sobre" class="text-[10px] uppercase tracking-[0.2em] font-display font-medium text-white hover:text-primary transition-colors py-1">Sobre Nós</a>
+        <a href="/#cidades" class="text-[10px] uppercase tracking-[0.2em] font-display font-medium text-white hover:text-primary transition-colors py-1">Cidades Atendidas</a>
+        <a href="/#faq" class="text-[10px] uppercase tracking-[0.2em] font-display font-medium text-white hover:text-primary transition-colors py-1">FAQ / Dúvidas</a>
+        <a href="/mapa-do-site.html" class="text-[10px] uppercase tracking-[0.2em] font-display font-medium text-white hover:text-primary transition-colors py-1">Mapa</a>
       </nav>
 
       <!-- CONTACT CTA -->
@@ -175,12 +175,12 @@
         <span class="text-xs text-primary font-mono font-bold uppercase tracking-widest block">Vistorias</span>
       </div>
       <nav class="flex flex-col gap-5 text-left">
-        <a href="/#home" class="mobile-nav-link text-gray-300 hover:text-white font-display font-semibold text-base uppercase tracking-widest py-1">Início</a>
-        <a href="/#servicos" class="mobile-nav-link text-gray-300 hover:text-white font-display font-semibold text-base uppercase tracking-widest py-1">Serviços</a>
-        <a href="/#sobre" class="mobile-nav-link text-gray-300 hover:text-white font-display font-semibold text-base uppercase tracking-widest py-1">Sobre Nós</a>
-        <a href="/#cidades" class="mobile-nav-link text-gray-300 hover:text-white font-display font-semibold text-base uppercase tracking-widest py-1">Cidades Atendidas</a>
-        <a href="/#faq" class="mobile-nav-link text-gray-300 hover:text-white font-display font-semibold text-base uppercase tracking-widest py-1">FAQ / Dúvidas</a>
-        <a href="/mapa-do-site.html" class="mobile-nav-link text-gray-300 hover:text-white font-display font-semibold text-base uppercase tracking-widest py-1">Mapa Do Site</a>
+        <a href="/#home" class="mobile-nav-link text-white hover:text-primary font-display font-semibold text-base uppercase tracking-widest py-1">Início</a>
+        <a href="/#servicos" class="mobile-nav-link text-white hover:text-primary font-display font-semibold text-base uppercase tracking-widest py-1">Serviços</a>
+        <a href="/#sobre" class="mobile-nav-link text-white hover:text-primary font-display font-semibold text-base uppercase tracking-widest py-1">Sobre Nós</a>
+        <a href="/#cidades" class="mobile-nav-link text-white hover:text-primary font-display font-semibold text-base uppercase tracking-widest py-1">Cidades Atendidas</a>
+        <a href="/#faq" class="mobile-nav-link text-white hover:text-primary font-display font-semibold text-base uppercase tracking-widest py-1">FAQ / Dúvidas</a>
+        <a href="/mapa-do-site.html" class="mobile-nav-link text-white hover:text-primary font-display font-semibold text-base uppercase tracking-widest py-1">Mapa Do Site</a>
       </nav>
     </div>
 
@@ -194,8 +194,10 @@
 
   <!-- 2. HERO SECTION -->
   <section class="relative pt-36 pb-20 bg-zinc-950 border-b border-zinc-900 overflow-hidden">
-    <div class="absolute inset-0 bg-cover bg-center brightness-[0.12] z-0 bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb.png')] md:bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb-pr.png')]"></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-[#111111]/95 z-10"></div>
+    <!-- Imagem de fundo isolada de altíssima vibrância, brilho e contraste -->
+    <div class="absolute inset-0 bg-cover bg-center bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb.png')] md:bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb-pr.png')] brightness-110 saturate-[1.1] z-0"></div>
+    <div class="absolute inset-0 bg-black/45 z-[1]"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-[#111111]/95 z-[1]"></div>
 
     <div class="max-w-4xl mx-auto px-6 relative z-20 text-center space-y-4">
       <span class="inline-flex items-center gap-1 bg-primary/10 border border-primary/20 text-primary font-mono text-[10px] px-3 py-1 rounded-full uppercase tracking-wider font-bold animate-pulse">
@@ -537,8 +539,9 @@
   </main>
 
   <!-- VIDEO HIGHLIGHT SECTION -->
-  <section class="relative bg-zinc-950 py-16 px-6 border-t border-zinc-900 overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-zinc-950 pointer-events-none"></div>
+  <section class="relative bg-zinc-950 py-16 px-6 border-t border-zinc-900 overflow-hidden bg-cover bg-center bg-[url('https://img.carplusvistorias.com.br/vistorias-carplus-carros.png')]">
+    <!-- Overlay super leve para garantir visibilidade máxima da foto com leitura do conteúdo -->
+    <div class="absolute inset-0 bg-black/60 z-0 pointer-events-none"></div>
     <div class="max-w-7xl mx-auto relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
@@ -604,8 +607,9 @@
 
   <!-- 4. FOOTER COMPLETO -->
   <footer class="relative border-t border-zinc-900 text-white py-16 px-6 bg-zinc-950 overflow-hidden">
-    <div class="absolute inset-0 bg-cover bg-center opacity-30 pointer-events-none select-none" style="background-image: url('https://img.carplusvistorias.com.br/fundo-site-cwb.png');"></div>
-    <div class="absolute inset-0 bg-black/85 z-0"></div>
+    <!-- Imagem de fundo responsiva do rodapé com encaixe otimizado para celular e PC -->
+    <div class="absolute inset-0 bg-cover bg-center brightness-110 saturate-[1.1] pointer-events-none select-none bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb.png')] md:bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb-pr.png')] z-0"></div>
+    <div class="absolute inset-0 bg-black/45 z-0"></div>
     
     <div class="max-w-7xl mx-auto relative z-10">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 md:gap-14">

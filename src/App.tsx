@@ -12,33 +12,71 @@ import FAQAccordion from './components/FAQAccordion';
 import CityExplorer from './components/CityExplorer';
 import WhatsAppButton from './components/WhatsAppButton';
 import AnimatedCar from './components/AnimatedCar';
+import EnhancedSEO from './components/EnhancedSEO';
+import LocationPage from './components/LocationPage';
 import { AppSection } from './types';
 import { SERVICES_HOME, ADVANTAGES_HOME, DETAILED_SERVICES } from './data';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState<AppSection>('home');
+  const [activeLocation, setActiveLocation] = useState<string | null>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [currentHeroImage, setCurrentHeroImage] = useState(0);
 
   // Interval for changing hero background images (slider)
   useEffect(() => {
-    if (activeSection !== 'home') return;
+    if (activeSection !== 'home' || activeLocation !== null) return;
     const interval = setInterval(() => {
-      setCurrentHeroImage((prev) => (prev + 1) % 2);
+      setCurrentHeroImage((prev) => (prev + 1) % 3);
     }, 5500);
     return () => clearInterval(interval);
-  }, [activeSection]);
+  }, [activeSection, activeLocation]);
 
-  // Parse initial hash route if available
+  // Parse path or hash route
   useEffect(() => {
-    const hash = window.location.hash.replace('#', '') as AppSection;
-    if (['home', 'servicos', 'sobre', 'cidades', 'faq'].includes(hash)) {
-      setActiveSection(hash);
-    }
+    const parseInitialRoute = () => {
+      const path = window.location.pathname;
+      if (path.startsWith('/vistoria-cautelar-')) {
+        let slug = path.replace('/vistoria-cautelar-', '');
+        if (slug.endsWith('.html')) slug = slug.substring(0, slug.length - 5);
+        if (slug.endsWith('/')) slug = slug.substring(0, slug.length - 1);
+        setActiveLocation(slug);
+      } else {
+        setActiveLocation(null);
+        const hash = window.location.hash.replace('#', '') as AppSection;
+        if (['home', 'servicos', 'sobre', 'cidades', 'faq'].includes(hash)) {
+          setActiveSection(hash);
+        }
+      }
+    };
+
+    parseInitialRoute();
+
+    // Listen to manual or fallback browser back/forward buttons
+    const handlePopState = () => {
+      parseInitialRoute();
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
   // System of navigation SPA overlay transition handler
   const handleNavigate = (sectionId: AppSection) => {
+    if (activeLocation !== null) {
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setActiveLocation(null);
+        setActiveSection(sectionId);
+        window.history.pushState({}, '', `/#${sectionId}`);
+        window.scrollTo(0, 0);
+        setTimeout(() => {
+          setIsTransitioning(false);
+        }, 100);
+      }, 250);
+      return;
+    }
+
     if (sectionId === activeSection) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
@@ -55,6 +93,59 @@ export default function App() {
         setIsTransitioning(false);
       }, 100);
     }, 250);
+  };
+
+  const handleGoHome = () => {
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setActiveLocation(null);
+      setActiveSection('home');
+      window.history.pushState({}, '', '/');
+      window.scrollTo(0, 0);
+      setTimeout(() => {
+        setIsTransitioning(false);
+      }, 100);
+    }, 250);
+  };
+
+  const getSEOProps = () => {
+    switch (activeSection) {
+      case 'servicos':
+        return {
+          title: 'Nossos Serviços de Perícia e Vistoria Cautelar em Curitiba | Carplus',
+          description: 'Conheça nossos serviços de perícia automotiva, vistoria de chassi, análise estrutural de lataria, histórico de leilão, sinistro e laudo de transferência.',
+          keywords: 'perícia automotiva, vistoria de chassi, laudo de transferência, vistoria de leilao, estrutura longarina',
+          canonicalUrl: 'https://www.carplusvistorias.com.br/#servicos'
+        };
+      case 'sobre':
+        return {
+          title: 'Sobre a Carplus Vistorias | Perícia e Vistoria Cautelar em Curitiba',
+          description: 'Conheça a Carplus Vistorias, sediada no Portão em Curitiba-PR. Equipe credenciada de peritos automotivos emitindo laudos cautelares rápidos na hora.',
+          keywords: 'sobre carplus, quem somos carplus, peritos automotivos curitiba, vistoria curitiba portao',
+          canonicalUrl: 'https://www.carplusvistorias.com.br/#sobre'
+        };
+      case 'cidades':
+        return {
+          title: 'Cidades Atendidas em Curitiba e RMC | Carplus Vistorias',
+          description: 'A Carplus Vistorias atende compradores de todas as regiões e bairros de Curitiba e cidades parceiras da RMC com laudos de procedência completos.',
+          keywords: 'bairros curitiba vistoria, rmc vistoria, cidades vizinhas curitiba perícia',
+          canonicalUrl: 'https://www.carplusvistorias.com.br/#cidades'
+        };
+      case 'faq':
+        return {
+          title: 'Perguntas Frequentes — FAQ | Carplus Vistorias',
+          description: 'Dúvidas sobre Vistoria Cautelar e Perícia Automotiva em Curitiba. Saiba o que é analisado, tempo de emissão, seguro de responsabilidade civil e mais.',
+          keywords: 'faq vistoria, dúvidas cautelar, tempo laudo cautelar, validade laudo de transferencia',
+          canonicalUrl: 'https://www.carplusvistorias.com.br/#faq'
+        };
+      default:
+        return {
+          title: 'Vistoria Cautelar em Curitiba | Carplus Vistorias – Laudo na Hora',
+          description: 'Carplus Vistorias: perícia automotiva e vistoria cautelar em Curitiba/PR. Laudo completo emitido na hora. Portão, Curitiba. (41) 98874-0258. Agende pelo WhatsApp.',
+          keywords: 'vistorias, vistoria cautelar curitiba, perícia automotiva curitiba, inspeção veicular curitiba, laudo cautelar curitiba, vistoria de carro curitiba, carplus vistorias',
+          canonicalUrl: 'https://www.carplusvistorias.com.br'
+        };
+    }
   };
 
   // Re-observe elements when section loads for smooth transitions on scroll
@@ -79,7 +170,8 @@ export default function App() {
   }, [activeSection]);
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-gray-300 Selection:bg-primary selection:text-dark">
+    <div className="min-h-screen bg-zinc-950 text-zinc-100 selection:bg-primary selection:text-dark">
+      {activeLocation === null && <EnhancedSEO {...getSEOProps()} />}
       
       {/* 1. Page SPA Black Transition Overlay */}
       <div 
@@ -101,7 +193,11 @@ export default function App() {
 
       {/* 3. Render and mount active section */}
       <main className="pt-[76px]">
-        {activeSection === 'home' && (
+        {activeLocation !== null ? (
+          <LocationPage slug={activeLocation} onGoHome={handleGoHome} />
+        ) : (
+          <>
+            {activeSection === 'home' && (
           <div id="home-section" className="transition-all duration-300">
             
             {/* HERO SECTION HOME */}
@@ -111,21 +207,27 @@ export default function App() {
               <div className="absolute inset-0 z-0">
                 {[
                   {
+                    pc: "https://img.carplusvistorias.com.br/hero-slider-img.png",
+                    mobile: "https://img.carplusvistorias.com.br/hero-slider-img.png"
+                  },
+                  {
                     pc: "https://img.carplusvistorias.com.br/fundo-site-carplus-cwb-pr.png",
                     mobile: "https://img.carplusvistorias.com.br/fundo-site-carplus-cwb.png"
                   },
                   {
                     pc: "https://img.carplusvistorias.com.br/hero-site-carplus-vistorias-portao-hero.png",
-                    mobile: "https://img.carplusvistorias.com.br/fundo-site-carplus-cwb.png"
+                    mobile: "https://img.carplusvistorias.com.br/car-plus-hero-slider.png"
                   }
                 ].map((slide, index) => (
                   <div
                     key={index}
-                    className={`absolute inset-0 transition-all duration-[2000ms] ease-in-out ${
-                      currentHeroImage === index ? 'opacity-100 scale-105' : 'opacity-0 scale-100'
+                    className={`absolute inset-0 transition-all duration-[1500ms] ease-[cubic-bezier(0.25,1,0.5,1)] ${
+                      currentHeroImage === index 
+                        ? 'opacity-100 scale-105 translate-x-0 rotate-0 blur-none' 
+                        : 'opacity-0 scale-115 -translate-x-full md:-translate-x-44 md:rotate-[-2deg] blur-md'
                     }`}
                     style={{
-                      transitionProperty: 'opacity, transform'
+                      transitionProperty: 'opacity, transform, filter'
                     }}
                   >
                     {/* Mobile Background */}
@@ -149,7 +251,7 @@ export default function App() {
 
               {/* Ambient premium neon glow indicators tracking active slide */}
               <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2.5 z-20">
-                {[0, 1].map((idx) => (
+                {[0, 1, 2].map((idx) => (
                   <button
                     key={idx}
                     onClick={() => setCurrentHeroImage(idx)}
@@ -192,23 +294,33 @@ export default function App() {
                 </p>
 
                 {/* CTA buttons */}
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-[word-in_0.6s_0.65s_forwards_both]">
-                  <a
-                    href="https://wa.me/5541988740258?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20vistoria%20cautelar."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="premium-btn-green w-full sm:w-auto flex items-center justify-center gap-3 font-display font-black text-base uppercase tracking-wider py-4 px-8 rounded-xl"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-whatsapp text-[#25D366]"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 1.83.49 3.55 1.34 5.03L2 22l5.14-1.31C8.57 21.49 10.24 22 12 22c5.52 0 10-4.48 10-10Z"/></svg>
-                    Agendar pelo WhatsApp
-                  </a>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-6 animate-[word-in_0.6s_0.65s_forwards_both]">
+                  <div className="flex flex-col items-center w-full sm:w-auto">
+                    <a
+                      href="https://wa.me/5541988740258?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20vistoria%20cautelar."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="premium-btn-green w-full flex items-center justify-center gap-3 font-display font-black text-base uppercase tracking-wider py-4 px-8 rounded-xl"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-whatsapp text-[#25D366]"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 1.83.49 3.55 1.34 5.03L2 22l5.14-1.31C8.57 21.49 10.24 22 12 22c5.52 0 10-4.48 10-10Z"/></svg>
+                      AGENDAR
+                    </a>
+                    <span className="text-[10px] text-zinc-300 mt-2.5 uppercase font-mono tracking-widest font-bold block text-center leading-none">
+                      Agendar pelo WhatsApp · Profissional & Premium
+                    </span>
+                  </div>
 
-                  <button
-                    onClick={() => handleNavigate('servicos')}
-                    className="premium-btn-gold w-full sm:w-auto font-display font-bold text-base uppercase tracking-wider py-4 px-8 rounded-xl"
-                  >
-                    Nossos Serviços <i className="fa-solid fa-angle-right ml-2 text-xs text-primary"></i>
-                  </button>
+                  <div className="flex flex-col items-center w-full sm:w-auto">
+                    <button
+                      onClick={() => handleNavigate('servicos')}
+                      className="premium-btn-gold w-full font-display font-bold text-base uppercase tracking-wider py-4 px-8 rounded-xl"
+                    >
+                      SERVIÇOS <i className="fa-solid fa-angle-right ml-2 text-xs text-primary font-bold"></i>
+                    </button>
+                    <span className="text-[10px] text-zinc-300 mt-2.5 uppercase font-mono tracking-widest font-bold block text-center leading-none">
+                      Nossos Serviços · Profissional & Premium
+                    </span>
+                  </div>
                 </div>
               </div>
 
@@ -234,17 +346,17 @@ export default function App() {
               <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
                 
                 {/* Text column */}
-                <div className="lg:col-span-7 fade-in-on-scroll bg-black/50 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-zinc-800/60 shadow-2xl">
-                  <span className="section-label text-primary font-mono select-none block mb-3 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">ENTENDA</span>
-                  <h2 className="font-display font-black text-2xl sm:text-3xl md:text-4xl uppercase tracking-tight mb-6 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-                    <span className="text-white block">Proteja seu investimento</span>
+                <div className="lg:col-span-7 fade-in-on-scroll bg-white p-6 sm:p-8 rounded-2xl border-2 border-black shadow-2xl text-zinc-950">
+                  <span className="section-label text-primary font-mono select-none block mb-3 font-extrabold">ENTENDA</span>
+                  <h2 className="font-display font-black text-2xl sm:text-3xl md:text-4xl uppercase tracking-tight mb-6">
+                    <span className="text-zinc-950 block">Proteja seu investimento</span>
                     <span className="text-primary block mt-1">Ao comprar um usado</span>
                   </h2>
                   <div className="space-y-4">
-                    <p className="text-zinc-200 text-justify text-base leading-relaxed font-medium">
-                      A <strong className="text-white">vistoria cautelar</strong>, também conhecida como perícia automotiva, foi desenvolvida para certificar as condições estruturais e documentais de um veículo no momento da compra. Ela engloba a análise da estrutura (longarinas e colunas), a investigação dos antecedentes do veículo (histórico de roubo, leilão, processos judiciais), a verificação de reparos na lataria, além da conferência das numerações identificadoras do chassi e do motor.
+                    <p className="text-zinc-700 text-justify text-base leading-relaxed font-semibold">
+                      A <strong className="text-zinc-950 border-b border-black">vistoria cautelar</strong>, também conhecida como perícia automotiva, foi desenvolvida para certificar as condições estruturais e documentais de um veículo no momento da compra. Ela engloba a análise da estrutura (longarinas e colunas), a investigação dos antecedentes do veículo (histórico de roubo, leilão, processos judiciais), a verificação de reparos na lataria, além da conferência das numerações identificadoras do chassi e do motor.
                     </p>
-                    <p className="text-zinc-200 text-justify text-base leading-relaxed font-medium">
+                    <p className="text-zinc-700 text-justify text-base leading-relaxed font-semibold">
                       A vistoria cautelar é recomendada para aqueles que desejam evitar riscos na aquisição de um carro usado ou para quem pretende verificar os reparos realizados após uma colisão.
                     </p>
                   </div>
@@ -281,10 +393,12 @@ export default function App() {
 
             {/* SEÇÃO: Diferenciais Carplus - Dark theme #111111 */}
             <section 
-              className="relative bg-zinc-950 text-white py-20 px-6 border-b border-zinc-900 bg-cover bg-center overflow-hidden bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb.png')] md:bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb-pr.png')]"
+              className="relative bg-zinc-950 text-white py-20 px-6 border-b border-zinc-900 overflow-hidden"
             >
+              {/* Imagem de fundo isolada de altíssima vibrância, brilho e contraste */}
+              <div className="absolute inset-0 bg-cover bg-center bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb.png')] md:bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb-pr.png')] brightness-110 saturate-[1.1] z-0"></div>
               {/* Overlay super leve para garantir visibilidade máxima da foto com leitura do conteúdo */}
-              <div className="absolute inset-0 bg-black/45 z-0"></div>
+              <div className="absolute inset-0 bg-black/45 z-[1]"></div>
 
               <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
                 
@@ -334,7 +448,7 @@ export default function App() {
                   </div>
 
                   {/* CTA WhatsApp Schedule */}
-                  <div>
+                  <div className="flex flex-col items-start gap-1">
                     <a
                       href="https://wa.me/5541988740258?text=Olá,%20gostaria%20de%20saber%20dos%2520diferenciais%20e%20agendar."
                       target="_blank"
@@ -342,8 +456,11 @@ export default function App() {
                       className="premium-btn-green inline-flex items-center gap-3 font-display font-extrabold text-sm uppercase tracking-wider py-3.5 px-6 rounded-lg"
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-whatsapp text-[#25D366]"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 1.83.49 3.55 1.34 5.03L2 22l5.14-1.31C8.57 21.49 10.24 22 12 22c5.52 0 10-4.48 10-10Z"/></svg>
-                      Agendar pelo WhatsApp
+                      WHATSAPP
                     </a>
+                    <span className="text-[10px] text-zinc-400 mt-1.5 uppercase font-mono tracking-widest font-semibold block leading-none">
+                      Agendar pelo WhatsApp · Profissional & Premium
+                    </span>
                   </div>
                 </div>
 
@@ -376,26 +493,26 @@ export default function App() {
                   {SERVICES_HOME.map((service, index) => (
                     <div
                        key={service.id}
-                       className="service-card animate-on-scroll bg-zinc-950/85 backdrop-blur-sm border border-zinc-800/80 hover:border-primary/50 rounded-xl p-6 flex flex-col justify-between shadow-2xl"
+                       className="service-card animate-on-scroll bg-white border-2 border-black rounded-xl p-6 flex flex-col justify-between shadow-xl"
                        style={{ transitionDelay: `${index * 100}ms` }}
                     >
                       <div>
                         {/* Interactive Rotating Icon */}
-                        <div className="card-icon w-12 h-12 rounded-lg bg-primary/10 border border-primary/25 text-primary flex items-center justify-center mb-5">
+                        <div className="card-icon w-12 h-12 rounded-lg bg-zinc-950 text-primary flex items-center justify-center mb-5">
                           <i className={`fa-solid ${service.icon} text-lg`}></i>
                         </div>
-                        <h3 className="font-display font-bold text-xl text-white mb-3 block">
+                        <h3 className="font-display font-bold text-xl text-zinc-950 mb-3 block">
                           {service.title}
                         </h3>
-                        <p className="text-white/95 text-sm text-justify leading-relaxed font-normal">
+                        <p className="text-zinc-700 text-sm text-justify leading-relaxed font-semibold">
                           {service.description}
                         </p>
                       </div>
 
-                      <div className="mt-6 pt-4 border-t border-zinc-900 flex items-center justify-end">
+                      <div className="mt-6 pt-4 border-t border-zinc-200 flex items-center justify-end">
                         <button
                           onClick={() => handleNavigate('servicos')}
-                          className="text-xs text-primary font-bold uppercase tracking-wider hover:text-white flex items-center gap-1 cursor-pointer"
+                          className="text-xs text-primary font-bold uppercase tracking-wider hover:text-zinc-950 flex items-center gap-1 cursor-pointer"
                         >
                           Conhecer mais <i className="fa-solid fa-arrow-right text-[10px]"></i>
                         </button>
@@ -426,7 +543,7 @@ export default function App() {
                   {ADVANTAGES_HOME.map((item, index) => (
                     <div
                       key={item.id}
-                      className="bg-white border border-zinc-250 rounded-xl p-6 shadow-md hover:shadow-xl hover:border-zinc-300 transition-all duration-300"
+                      className="bg-white border-2 border-black rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300"
                       style={{ transitionDelay: `${index * 100}ms` }}
                     >
                       <div className="w-12 h-12 rounded-lg bg-zinc-900 text-primary flex items-center justify-center mb-5 shadow-inner">
@@ -435,7 +552,7 @@ export default function App() {
                       <h3 className="font-display font-bold text-xl text-zinc-900 mb-3">
                         {item.title}
                       </h3>
-                      <p className="text-zinc-650 text-sm text-justify leading-relaxed">
+                      <p className="text-zinc-650 text-sm text-justify leading-relaxed font-semibold">
                         {item.subtitle}
                       </p>
                     </div>
@@ -446,10 +563,12 @@ export default function App() {
 
             {/* SEÇÃO: Onde Estamos (maps + contacts) */}
             <section 
-              className="relative bg-zinc-950 text-white py-20 px-6 bg-cover bg-center overflow-hidden bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb.png')] md:bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb-pr.png')]"
+              className="relative bg-zinc-950 text-white py-20 px-6 overflow-hidden"
             >
+              {/* Imagem de fundo isolada de altíssima vibrância, brilho e contraste */}
+              <div className="absolute inset-0 bg-cover bg-center bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb.png')] md:bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb-pr.png')] brightness-110 saturate-[1.1] z-0"></div>
               {/* Overlay super leve para garantir visibilidade máxima da foto com leitura do conteúdo */}
-              <div className="absolute inset-0 bg-black/45 z-0"></div>
+              <div className="absolute inset-0 bg-black/45 z-[1]"></div>
 
               <div className="max-w-7xl mx-auto relative z-10">
                 
@@ -560,11 +679,13 @@ export default function App() {
             
             {/* HERO SERVICOS */}
             <section 
-              className="relative overflow-hidden bg-zinc-950 py-16 px-6 border-b border-zinc-900 bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb.png')] md:bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb-pr.png')] bg-cover bg-center"
+              className="relative overflow-hidden bg-zinc-950 py-16 px-6 border-b border-zinc-900"
             >
+              {/* Imagem de fundo isolada de altíssima vibrância, brilho e contraste */}
+              <div className="absolute inset-0 bg-cover bg-center bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb.png')] md:bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb-pr.png')] brightness-110 saturate-[1.1] z-0"></div>
               {/* Overlay with linear-gradient and solid multiplier for high contrast visual pairing */}
-              <div className="absolute inset-0 bg-black/45 z-0 pointer-events-none"></div>
-              <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-black/65 z-0 pointer-events-none"></div>
+              <div className="absolute inset-0 bg-black/45 z-[1] pointer-events-none"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-black/65 z-[1] pointer-events-none"></div>
 
               <div className="max-w-7xl mx-auto text-center py-10 relative z-10">
                 {/* Breadcrumb */}
@@ -599,30 +720,30 @@ export default function App() {
                   {DETAILED_SERVICES.map((item, index) => (
                     <div
                       key={item.id}
-                      className="bg-zinc-950/80 border border-zinc-800 hover:border-primary/50 rounded-xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/5"
+                      className="bg-white border-2 border-black rounded-xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-lg text-zinc-950"
                     >
                       <div>
                         {/* Title & Badge */}
                         <div className="flex items-center justify-between gap-2 mb-4">
-                          <h3 className="font-display font-bold text-xl text-white">
+                          <h3 className="font-display font-bold text-xl text-zinc-950">
                             {item.title}
                           </h3>
-                          <span className="text-[9.5px] uppercase font-mono font-bold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-full whitespace-nowrap">
+                          <span className="text-[9.5px] uppercase font-mono font-bold text-primary bg-zinc-900 px-2.5 py-1 rounded-full whitespace-nowrap">
                             Laudo Expresso
                           </span>
                         </div>
 
                         {/* Description */}
-                        <p className="text-white text-sm text-justify leading-relaxed mb-6 font-semibold">
+                        <p className="text-zinc-700 text-sm text-justify leading-relaxed mb-6 font-semibold">
                           {item.description}
                         </p>
 
                         {/* Includes bullet details */}
-                        <div className="bg-zinc-900 border border-zinc-850 rounded-lg p-4 mb-6">
-                          <div className="text-[10px] uppercase font-bold tracking-wider text-zinc-300 mb-2">O que está incluso:</div>
+                        <div className="bg-zinc-100 border border-zinc-200 rounded-lg p-4 mb-6">
+                          <div className="text-[10px] uppercase font-bold tracking-wider text-zinc-600 mb-2">O que está incluso:</div>
                           <ul className="space-y-2">
                             {item.includes.map((inc, i) => (
-                              <li key={i} className="flex items-center gap-2 text-xs text-white font-medium">
+                              <li key={i} className="flex items-center gap-2 text-xs text-zinc-800 font-semibold">
                                 <span className="text-primary text-[10px]"><i className="fa-solid fa-circle text-primary"></i></span>
                                 {inc}
                               </li>
@@ -637,7 +758,7 @@ export default function App() {
                           href={`https://wa.me/5541988740258?text=Ola!%20Gostaria%20de%20saber%20valores%20e%20agendar%20o%20serviço%20de%20${encodeURIComponent(item.title)}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-full inline-flex items-center justify-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-white font-display font-semibold uppercase text-xs tracking-wider py-3 px-4 rounded-lg transition-colors border border-zinc-700 hover:border-primary"
+                          className="w-full inline-flex items-center justify-center gap-2 bg-zinc-900 hover:bg-zinc-800 text-white font-display font-semibold uppercase text-xs tracking-wider py-3 px-4 rounded-lg transition-colors border border-black hover:border-primary"
                         >
                           <i className="fa-brands fa-whatsapp text-sm text-emerald-500"></i>
                           {item.ctaText}
@@ -718,11 +839,13 @@ export default function App() {
             
             {/* HERO SOBRE */}
             <section 
-              className="relative overflow-hidden bg-zinc-950 py-16 px-6 border-b border-zinc-900 bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb.png')] md:bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb-pr.png')] bg-cover bg-center"
+              className="relative overflow-hidden bg-zinc-950 py-16 px-6 border-b border-zinc-900"
             >
+              {/* Imagem de fundo isolada de altíssima vibrância, brilho e contraste */}
+              <div className="absolute inset-0 bg-cover bg-center bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb.png')] md:bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb-pr.png')] brightness-110 saturate-[1.1] z-0"></div>
               {/* Overlay with linear-gradient and solid multiplier for high contrast visual pairing */}
-              <div className="absolute inset-0 bg-black/45 z-0 pointer-events-none"></div>
-              <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-black/65 z-0 pointer-events-none"></div>
+              <div className="absolute inset-0 bg-black/45 z-[1] pointer-events-none"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-black/65 z-[1] pointer-events-none"></div>
 
               <div className="max-w-7xl mx-auto text-center py-10 relative z-10">
                 <div className="text-xs font-mono uppercase tracking-widest text-primary mb-4">
@@ -792,45 +915,45 @@ export default function App() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                   
                   {/* Missao */}
-                  <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6 transition-colors hover:border-zinc-700">
-                    <span className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/25 text-primary flex items-center justify-center mb-5">
+                  <div className="bg-white border-2 border-black rounded-xl p-6 transition-all shadow-lg text-zinc-950">
+                    <span className="w-10 h-10 rounded-lg bg-zinc-950 text-primary flex items-center justify-center mb-5">
                       <i className="fa-solid fa-crosshairs text-base"></i>
                     </span>
-                    <h3 className="font-display font-bold text-xl text-white mb-3">Missão</h3>
-                    <p className="text-white text-sm text-justify leading-relaxed font-semibold">
+                    <h3 className="font-display font-bold text-xl text-zinc-950 mb-3">Missão</h3>
+                    <p className="text-zinc-700 text-sm text-justify leading-relaxed font-semibold">
                       Oferecer laudos de vistoria veicular com precisão técnica e agilidade, protegendo cada cliente de riscos na compra e venda de veículos usados.
                     </p>
                   </div>
 
                   {/* Visao */}
-                  <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6 transition-colors hover:border-zinc-700">
-                    <span className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/25 text-primary flex items-center justify-center mb-5">
+                  <div className="bg-white border-2 border-black rounded-xl p-6 transition-all shadow-lg text-zinc-950">
+                    <span className="w-10 h-10 rounded-lg bg-zinc-950 text-primary flex items-center justify-center mb-5">
                       <i className="fa-solid fa-eye text-base"></i>
                     </span>
-                    <h3 className="font-display font-bold text-xl text-white mb-3">Visão</h3>
-                    <p className="text-white text-sm text-justify leading-relaxed font-semibold">
+                    <h3 className="font-display font-bold text-xl text-zinc-950 mb-3">Visão</h3>
+                    <p className="text-zinc-700 text-sm text-justify leading-relaxed font-semibold">
                       Ser a referência em perícia automotiva em Curitiba e região metropolitana, reconhecida pela excelência técnica e atendimento humanizado.
                     </p>
                   </div>
 
                   {/* Valores */}
-                  <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6 transition-colors hover:border-zinc-700">
-                    <span className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/25 text-primary flex items-center justify-center mb-5">
+                  <div className="bg-white border-2 border-black rounded-xl p-6 transition-all shadow-lg text-zinc-950">
+                    <span className="w-10 h-10 rounded-lg bg-zinc-950 text-primary flex items-center justify-center mb-5">
                       <i className="fa-solid fa-gem text-base"></i>
                     </span>
-                    <h3 className="font-display font-bold text-xl text-white mb-3">Valores</h3>
-                    <p className="text-white text-sm text-justify leading-relaxed font-semibold">
+                    <h3 className="font-display font-bold text-xl text-zinc-950 mb-3">Valores</h3>
+                    <p className="text-zinc-700 text-sm text-justify leading-relaxed font-semibold">
                       Transparência, integridade técnica, agilidade no atendimento, responsabilidade civil e comprometimento com a segurança do cliente.
                     </p>
                   </div>
 
                   {/* Diferenciais */}
-                  <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6 transition-colors hover:border-zinc-700">
-                    <span className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/25 text-primary flex items-center justify-center mb-5">
+                  <div className="bg-white border-2 border-black rounded-xl p-6 transition-all shadow-lg text-zinc-950">
+                    <span className="w-10 h-10 rounded-lg bg-zinc-950 text-primary flex items-center justify-center mb-5">
                       <i className="fa-solid fa-award text-base"></i>
                     </span>
-                    <h3 className="font-display font-bold text-xl text-white mb-3">Diferenciais</h3>
-                    <p className="text-white text-sm text-justify leading-relaxed font-semibold">
+                    <h3 className="font-display font-bold text-xl text-zinc-950 mb-3">Diferenciais</h3>
+                    <p className="text-zinc-700 text-sm text-justify leading-relaxed font-semibold">
                       Laudo emitido na hora, seguro de responsabilidade civil incluso, equipe certificada, aceito em todo o Brasil.
                     </p>
                   </div>
@@ -895,11 +1018,13 @@ export default function App() {
             
             {/* HERO CIDADES */}
             <section 
-              className="relative overflow-hidden bg-zinc-950 py-16 px-6 border-b border-zinc-900 bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb.png')] md:bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb-pr.png')] bg-cover bg-center"
+              className="relative overflow-hidden bg-zinc-950 py-16 px-6 border-b border-zinc-900"
             >
+              {/* Imagem de fundo isolada de altíssima vibrância, brilho e contraste */}
+              <div className="absolute inset-0 bg-cover bg-center bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb.png')] md:bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb-pr.png')] brightness-110 saturate-[1.1] z-0"></div>
               {/* Overlay with linear-gradient and solid multiplier for high contrast visual pairing */}
-              <div className="absolute inset-0 bg-black/45 z-0 pointer-events-none"></div>
-              <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-black/65 z-0 pointer-events-none"></div>
+              <div className="absolute inset-0 bg-black/45 z-[1] pointer-events-none"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-black/65 z-[1] pointer-events-none"></div>
 
               <div className="max-w-7xl mx-auto text-center py-10 relative z-10">
                 <div className="text-xs font-mono uppercase tracking-widest text-primary mb-4">
@@ -949,11 +1074,13 @@ export default function App() {
             
             {/* HERO FAQ */}
             <section 
-              className="relative overflow-hidden bg-zinc-950 py-16 px-6 border-b border-zinc-900 bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb.png')] md:bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb-pr.png')] bg-cover bg-center"
+              className="relative overflow-hidden bg-zinc-950 py-16 px-6 border-b border-zinc-900"
             >
+              {/* Imagem de fundo isolada de altíssima vibrância, brilho e contraste */}
+              <div className="absolute inset-0 bg-cover bg-center bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb.png')] md:bg-[url('https://img.carplusvistorias.com.br/fundo-site-carplus-cwb-pr.png')] brightness-110 saturate-[1.1] z-0"></div>
               {/* Overlay with linear-gradient and solid multiplier for high contrast visual pairing */}
-              <div className="absolute inset-0 bg-black/45 z-0 pointer-events-none"></div>
-              <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-black/65 z-0 pointer-events-none"></div>
+              <div className="absolute inset-0 bg-black/45 z-[1] pointer-events-none"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-black/65 z-[1] pointer-events-none"></div>
 
               <div className="max-w-7xl mx-auto text-center py-10 relative z-10">
                 <div className="text-xs font-mono uppercase tracking-widest text-primary mb-4">
@@ -990,7 +1117,10 @@ export default function App() {
 
         {/* CC-ONLY HIGHLIGHTED VIDEO SECTION (ON ALL SPA VIEWS) */}
         <section className="relative bg-zinc-950 py-16 px-6 border-t border-zinc-900 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-zinc-950 pointer-events-none"></div>
+          {/* Imagem de fundo responsiva da seção de vídeo com alta visibilidade */}
+          <div className="absolute inset-0 bg-cover bg-center bg-[url('https://img.carplusvistorias.com.br/car-plus-img.png')] md:bg-[url('https://img.carplusvistorias.com.br/vistorias-carplus-carros.png')] brightness-110 saturate-[1.1] z-0"></div>
+          <div className="absolute inset-0 bg-black/45 z-[1]"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-zinc-950 pointer-events-none z-[1]"></div>
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               
@@ -1003,10 +1133,10 @@ export default function App() {
                 <h2 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight text-white leading-tight">
                   O Segredo que a <span className="text-primary text-glow-gold">Vistoria Cautelar</span> Revela Antes de Você Comprar!
                 </h2>
-                <p className="text-zinc-400 text-base leading-relaxed text-justify">
+                <p className="text-white text-base leading-relaxed text-justify font-semibold">
                   Não jogue seu dinheiro fora comprando um carro com problemas ocultos de estrutura ou passagem por leilão. Neste vídeo explicativo de poucos segundos, veja na prática como nossos peritos mapeiam repinturas, defeitos estruturais ocultos e garantem que você faça um negócio 100% livre de dores de cabeça.
                 </p>
-                <div className="space-y-3 font-semibold text-sm text-zinc-300">
+                <div className="space-y-3 font-extrabold text-sm text-white">
                   <div className="flex items-center gap-3">
                     <svg className="h-5 w-5 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
                     <span>Análise detalhada de chassi, teto e lacres originais</span>
@@ -1020,11 +1150,14 @@ export default function App() {
                     <span>Laudo cautelar certificado entregue logo após a perícia</span>
                   </div>
                 </div>
-                <div className="pt-4">
+                <div className="pt-4 flex flex-col items-start gap-1">
                   <a href="https://wa.me/5541988740258?text=Olá,%20assisti%20ao%20vídeo%20da%20vistoria%20e%20gostaria%20de%20agendar%20uma%20perícia." target="_blank" rel="noopener noreferrer" className="premium-btn-green font-display font-black text-sm uppercase tracking-wider py-4 px-8 rounded-xl inline-flex items-center justify-center gap-2.5">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-whatsapp text-[#25D366]"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 1.83.49 3.55 1.34 5.03L2 22l5.14-1.31C8.57 21.49 10.24 22 12 22c5.52 0 10-4.48 10-10Z"/></svg>
-                    Fale com um Especialista Agora
+                    AGENDAR
                   </a>
+                  <span className="text-[10px] text-zinc-400 mt-1.5 uppercase font-mono tracking-widest font-semibold block leading-none">
+                    Fale com um Especialista Agora · Profissional & Premium
+                  </span>
                 </div>
               </div>
               
@@ -1053,15 +1186,18 @@ export default function App() {
             </div>
           </div>
         </section>
-
+          </>
+        )}
       </main>
 
       {/* 4. Footer Global Section */}
       <footer 
-        className="relative border-t border-zinc-800 text-white py-16 px-6 bg-zinc-950 bg-cover bg-center overflow-hidden footer-responsive-bg"
+        className="relative border-t border-zinc-800 text-white py-16 px-6 bg-zinc-950 overflow-hidden"
       >
+        {/* Imagem de fundo responsiva do rodapé com alta visibilidade e brilho */}
+        <div className="absolute inset-0 bg-cover bg-center brightness-110 saturate-[1.1] pointer-events-none select-none footer-responsive-bg"></div>
         {/* Overlay do background para máxima visibilidade da imagem mantendo legibilidade do texto */}
-        <div className="absolute inset-0 bg-black/85 z-0"></div>
+        <div className="absolute inset-0 bg-black/45 z-0"></div>
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 md:gap-14">

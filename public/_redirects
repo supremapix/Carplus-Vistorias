@@ -1,0 +1,4 @@
+# Netlify Redirects for Carplus Vistorias SPA fallback and Static pages
+# Netlify serves static files automatically if they exist (shadowing the redirects).
+# For other paths, we route to index.html for React SPA fallback.
+/*  /index.html  200
