@@ -14,18 +14,20 @@ import WhatsAppButton from './components/WhatsAppButton';
 import AnimatedCar from './components/AnimatedCar';
 import EnhancedSEO from './components/EnhancedSEO';
 import LocationPage from './components/LocationPage';
+import PreCompraPage from './components/PreCompraPage';
 import { AppSection } from './types';
 import { SERVICES_HOME, ADVANTAGES_HOME, DETAILED_SERVICES } from './data';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState<AppSection>('home');
   const [activeLocation, setActiveLocation] = useState<string | null>(null);
+  const [activePreCompraSlug, setActivePreCompraSlug] = useState<string | null>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [currentHeroImage, setCurrentHeroImage] = useState(0);
 
   // Interval for changing hero background images (slider)
   useEffect(() => {
-    if (activeSection !== 'home' || activeLocation !== null) return;
+    if (activeSection !== 'home' || activeLocation !== null || activePreCompraSlug !== null) return;
     const interval = setInterval(() => {
       setCurrentHeroImage((prev) => (prev + 1) % 3);
     }, 5500);
@@ -36,13 +38,33 @@ export default function App() {
   useEffect(() => {
     const parseInitialRoute = () => {
       const path = window.location.pathname;
-      if (path.startsWith('/vistoria-cautelar-')) {
+      const cleanPath = path.endsWith('.html') ? path.substring(0, path.length - 5) : path;
+      const cleanPathNoSlash = cleanPath.endsWith('/') ? cleanPath.substring(0, cleanPath.length - 1) : cleanPath;
+      
+      const isPreCompra = 
+        cleanPathNoSlash.startsWith('/vistoria-pre-compra-') ||
+        cleanPathNoSlash.startsWith('/avaliacao-veicular-') ||
+        cleanPathNoSlash.startsWith('/inspecao-veicular-') ||
+        cleanPathNoSlash.startsWith('/verificacao-procedencia-') ||
+        cleanPathNoSlash.startsWith('/analise-veiculos-usados-') ||
+        cleanPathNoSlash.startsWith('/laudo-pre-compra-') ||
+        cleanPathNoSlash.startsWith('/check-up-veicular-') ||
+        cleanPathNoSlash.startsWith('/analise-carro-usado-') ||
+        cleanPathNoSlash.startsWith('/consultoria-compra-') ||
+        cleanPathNoSlash.startsWith('/avaliacao-automotiva-');
+
+      if (isPreCompra) {
+        setActiveLocation(null);
+        setActivePreCompraSlug(cleanPathNoSlash.substring(1)); // strip leading slash
+      } else if (path.startsWith('/vistoria-cautelar-')) {
+        setActivePreCompraSlug(null);
         let slug = path.replace('/vistoria-cautelar-', '');
         if (slug.endsWith('.html')) slug = slug.substring(0, slug.length - 5);
         if (slug.endsWith('/')) slug = slug.substring(0, slug.length - 1);
         setActiveLocation(slug);
       } else {
         setActiveLocation(null);
+        setActivePreCompraSlug(null);
         const hash = window.location.hash.replace('#', '') as AppSection;
         if (['home', 'servicos', 'sobre', 'cidades', 'faq'].includes(hash)) {
           setActiveSection(hash);
@@ -63,10 +85,11 @@ export default function App() {
 
   // System of navigation SPA overlay transition handler
   const handleNavigate = (sectionId: AppSection) => {
-    if (activeLocation !== null) {
+    if (activeLocation !== null || activePreCompraSlug !== null) {
       setIsTransitioning(true);
       setTimeout(() => {
         setActiveLocation(null);
+        setActivePreCompraSlug(null);
         setActiveSection(sectionId);
         window.history.pushState({}, '', `/#${sectionId}`);
         window.scrollTo(0, 0);
@@ -99,6 +122,7 @@ export default function App() {
     setIsTransitioning(true);
     setTimeout(() => {
       setActiveLocation(null);
+      setActivePreCompraSlug(null);
       setActiveSection('home');
       window.history.pushState({}, '', '/');
       window.scrollTo(0, 0);
@@ -171,12 +195,12 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100 selection:bg-primary selection:text-dark">
-      {activeLocation === null && <EnhancedSEO {...getSEOProps()} />}
+      {activeLocation === null && activePreCompraSlug === null && <EnhancedSEO {...getSEOProps()} />}
       
       {/* 1. Page SPA Black Transition Overlay */}
       <div 
         id="page-overlay" 
-        className={`fixed inset-0 bg-zinc-950 z-[9999] transition-opacity duration-300 pointer-events-none flex items-center justify-center ${
+        className={`fixed inset-0 bg-zinc-955 z-[9999] transition-opacity duration-300 pointer-events-none flex items-center justify-center ${
           isTransitioning ? 'opacity-100 pointer-events-auto' : 'opacity-0'
         }`}
       >
@@ -193,7 +217,9 @@ export default function App() {
 
       {/* 3. Render and mount active section */}
       <main className="pt-[76px]">
-        {activeLocation !== null ? (
+        {activePreCompraSlug !== null ? (
+          <PreCompraPage slug={activePreCompraSlug} onGoHome={handleGoHome} />
+        ) : activeLocation !== null ? (
           <LocationPage slug={activeLocation} onGoHome={handleGoHome} />
         ) : (
           <>
