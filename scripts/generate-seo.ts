@@ -9,7 +9,7 @@ const PRE_COMPRA_PAGES = [
     h1: 'Vistoria Pré Compra Curitiba',
     description: 'Realize sua Vistoria Pré Compra em Curitiba com a Carplus. Avaliação veicular minuciosa com equipe credenciada e laudo técnico original na hora para evitar golpes.',
     keywords: 'vistoria pre compra curitiba, laudo de carro usado, perito automotivo curitiba, comprar carro seguro, carplus vistorias',
-    canonicalUrl: 'https://www.carplusvistorias.com.br/vistoria-pre-compra-curitiba.html',
+    canonicalUrl: 'https://www.carplusvistorias.com.br/vistoria-pre-compra-curitiba',
     anchorText: 'Vistoria Pré Compra Curitiba'
   },
   {
@@ -18,7 +18,7 @@ const PRE_COMPRA_PAGES = [
     h1: 'Avaliação Veicular Pré Compra Curitiba',
     description: 'Faça uma detalhada Avaliação Veicular Pré Compra em Curitiba. Analisamos pintura, lacres, motor e chassi para atestar a originalidade do automóvel.',
     keywords: 'avaliacao veicular curitiba, vistoria pre compra, pericia automotiva curitiba, analise carro usado, carplus vistorias',
-    canonicalUrl: 'https://www.carplusvistorias.com.br/avaliacao-veicular-pre-compra-curitiba.html',
+    canonicalUrl: 'https://www.carplusvistorias.com.br/avaliacao-veicular-pre-compra-curitiba',
     anchorText: 'Avaliação Veicular Pré Compra Curitiba'
   },
   {
@@ -27,7 +27,7 @@ const PRE_COMPRA_PAGES = [
     h1: 'Inspeção Veicular Antes da Compra Curitiba',
     description: 'Inspeção veicular profissional antes de comprar carros usados em Curitiba. Evite comprar carros com teto solar cortado, sinistros e adulterações graves.',
     keywords: 'inspecao veicular curitiba, vistoria cautelar, laudo cautelar completo, vistoria de compra, carplus vistorias',
-    canonicalUrl: 'https://www.carplusvistorias.com.br/inspecao-veicular-curitiba.html',
+    canonicalUrl: 'https://www.carplusvistorias.com.br/inspecao-veicular-curitiba',
     anchorText: 'Inspeção Veicular Antes da Compra Curitiba'
   },
   {
@@ -36,7 +36,7 @@ const PRE_COMPRA_PAGES = [
     h1: 'Verificação de Procedência Veicular Curitiba',
     description: 'Saiba o histórico real de leilão, furto, gravames e restrições com nossa Verificação de Procedência Veicular em Curitiba. Obtenha segurança total.',
     keywords: 'verificacao de procedencia veicular curitiba, historico do veiculo, leilao sinistro seguradora, carplus vistorias',
-    canonicalUrl: 'https://www.carplusvistorias.com.br/verificacao-procedencia-curitiba.html',
+    canonicalUrl: 'https://www.carplusvistorias.com.br/verificacao-procedencia-curitiba',
     anchorText: 'Verificação de Procedência Veicular Curitiba'
   },
   {
@@ -45,7 +45,7 @@ const PRE_COMPRA_PAGES = [
     h1: 'Análise Completa de Veículos Usados Curitiba',
     description: 'Contrate a Análise Completa de Veículos Usados em Curitiba da Carplus. Mapeamos soldas clandestinas, reparos estruturais e restrições com emitido na hora.',
     keywords: 'analise de veiculos usados curitiba, vistoria cautelar portao, carro usado completo, carplus vistorias',
-    canonicalUrl: 'https://www.carplusvistorias.com.br/analise-veiculos-usados-curitiba.html',
+    canonicalUrl: 'https://www.carplusvistorias.com.br/analise-veiculos-usados-curitiba',
     anchorText: 'Análise Completa de Veículos Usados Curitiba'
   },
   {
@@ -54,7 +54,7 @@ const PRE_COMPRA_PAGES = [
     h1: 'Laudo Pré Compra Curitiba',
     description: 'Emissão oficial de Laudo Pré Compra em Curitiba. Parecer pericial de estrutura, pintura e histórico legal emitido em até 60 minutos na nossa sede.',
     keywords: 'laudo pre compra curitiba, laudo cautelar curitiba, vistoria de transferencia, vistoria portao, carplus vistorias',
-    canonicalUrl: 'https://www.carplusvistorias.com.br/laudo-pre-compra-curitiba.html',
+    canonicalUrl: 'https://www.carplusvistorias.com.br/laudo-pre-compra-curitiba',
     anchorText: 'Laudo Pré Compra Curitiba'
   },
   {
@@ -63,7 +63,7 @@ const PRE_COMPRA_PAGES = [
     h1: 'Check-up Veicular Antes da Compra Curitiba',
     description: 'O melhor Check-up Veicular em Curitiba antes de fechar negócio. Analisamos teto, longarinas, colunas e numeração de peças com medidor especializado.',
     keywords: 'check-up veicular curitiba, carplus vistoria, perícia automotiva curitiba, laudo na hora',
-    canonicalUrl: 'https://www.carplusvistorias.com.br/check-up-veicular-curitiba.html',
+    canonicalUrl: 'https://www.carplusvistorias.com.br/check-up-veicular-curitiba',
     anchorText: 'Check-up Veicular Antes da Compra Curitiba'
   },
   {
@@ -72,7 +72,7 @@ const PRE_COMPRA_PAGES = [
     h1: 'Análise de Carro Usado Curitiba',
     description: 'Não compre seu veículo no escuro. Agende nossa Perícia e Análise de Carro Usado em Curitiba para obter transparência estrutural e documental.',
     keywords: 'analise de carro usado curitiba, vistoria cautelar curitiba, carros batidos sinistrados, carplus vistorias',
-    canonicalUrl: 'https://www.carplusvistorias.com.br/analise-carro-usado-curitiba.html',
+    canonicalUrl: 'https://www.carplusvistorias.com.br/analise-carro-usado-curitiba',
     anchorText: 'Análise de Carro Usado Curitiba'
   },
   {
@@ -81,7 +81,7 @@ const PRE_COMPRA_PAGES = [
     h1: 'Consultoria para Compra de Veículos Curitiba',
     description: 'Evite golpes financeiros. Nossa Consultoria para Compra de Veículos Usados em Curitiba pericia 80+ pontos críticos e garante boa procedência.',
     keywords: 'consultoria para compra de veiculos curitiba, vistoria automotiva, laudo completo curitiba',
-    canonicalUrl: 'https://www.carplusvistorias.com.br/consultoria-compra-veiculos-curitiba.html',
+    canonicalUrl: 'https://www.carplusvistorias.com.br/consultoria-compra-veiculos-curitiba',
     anchorText: 'Consultoria para Compra de Veículos Curitiba'
   },
   {
@@ -90,7 +90,7 @@ const PRE_COMPRA_PAGES = [
     h1: 'Avaliação Automotiva para Compra Curitiba',
     description: 'Compre com segurança em Curitiba. Avaliação Automotiva para Compra de carros seminovos e usados com equipe técnica especializada.',
     keywords: 'avaliacao automotiva para compra curitiba, laudo de vistoria curitiba, pericia cautelar, carplus vistorias',
-    canonicalUrl: 'https://www.carplusvistorias.com.br/avaliacao-automotiva-compra-curitiba.html',
+    canonicalUrl: 'https://www.carplusvistorias.com.br/avaliacao-automotiva-compra-curitiba',
     anchorText: 'Avaliação Automotiva para Compra Curitiba'
   },
   {
@@ -99,7 +99,7 @@ const PRE_COMPRA_PAGES = [
     h1: 'Vistoria Pré Compra Portão',
     description: 'Vistoria pré compra na região do Portão em Curitiba. Sede própria para você realizar a avaliação cautelar estrutural completa do carro com emissão na hora.',
     keywords: 'vistoria pre compra portao, vistoria cautelar portao, perito carro portão curitiba',
-    canonicalUrl: 'https://www.carplusvistorias.com.br/vistoria-pre-compra-portao.html',
+    canonicalUrl: 'https://www.carplusvistorias.com.br/vistoria-pre-compra-portao',
     anchorText: 'Vistoria Pré Compra Portão'
   },
   {
@@ -108,7 +108,7 @@ const PRE_COMPRA_PAGES = [
     h1: 'Vistoria Pré Compra Água Verde',
     description: 'Está no Água Verde? Faça a Vistoria Pré Compra do seu seminovo com a Carplus. Avaliação minuciosa perto de você com certificação e laudo técnico.',
     keywords: 'vistoria pre compra agua verde, pericia veicular agua verde curitiba',
-    canonicalUrl: 'https://www.carplusvistorias.com.br/vistoria-pre-compra-agua-verde.html',
+    canonicalUrl: 'https://www.carplusvistorias.com.br/vistoria-pre-compra-agua-verde',
     anchorText: 'Vistoria Pré Compra Água Verde'
   },
   {
@@ -117,7 +117,7 @@ const PRE_COMPRA_PAGES = [
     h1: 'Vistoria Pré Compra Capão Raso',
     description: 'Garanta a procedência de veículos comprados no Capão Raso com nossa Vistoria Pré Compra completa. Evite fraudes mecânicas e sinistros camuflados.',
     keywords: 'vistoria pre compra capao raso, laudo cautelar capao raso, vistoria curitiba, carplus vistorias',
-    canonicalUrl: 'https://www.carplusvistorias.com.br/vistoria-pre-compra-capao-raso.html',
+    canonicalUrl: 'https://www.carplusvistorias.com.br/vistoria-pre-compra-capao-raso',
     anchorText: 'Vistoria Pré Compra Capão Raso'
   },
   {
@@ -126,7 +126,7 @@ const PRE_COMPRA_PAGES = [
     h1: 'Vistoria Pré Compra Bigorrilho',
     description: 'Análise rigorosa e laudo pericial para compradores de carros no Bigorrilho / Champagnat. Agende sua Vistoria Pré Compra na Carplus pelo WhatsApp.',
     keywords: 'vistoria pre compra bigorrilho, perito automotivo champagnat, laudo cautelar champagnat',
-    canonicalUrl: 'https://www.carplusvistorias.com.br/vistoria-pre-compra-bigorrilho.html',
+    canonicalUrl: 'https://www.carplusvistorias.com.br/vistoria-pre-compra-bigorrilho',
     anchorText: 'Vistoria Pré Compra Bigorrilho'
   },
   {
@@ -135,7 +135,7 @@ const PRE_COMPRA_PAGES = [
     h1: 'Vistoria Pré Compra Batel',
     description: 'Avaliação premium de carros de luxo e importados na região do Batel. Vistoria Pré Compra e laudo de transferência com máxima precisão técnica.',
     keywords: 'vistoria pre compra batel, perito veiculos importados batel, laudo cautelar batel',
-    canonicalUrl: 'https://www.carplusvistorias.com.br/vistoria-pre-compra-batel.html',
+    canonicalUrl: 'https://www.carplusvistorias.com.br/vistoria-pre-compra-batel',
     anchorText: 'Vistoria Pré Compra Batel'
   },
   {
@@ -144,7 +144,7 @@ const PRE_COMPRA_PAGES = [
     h1: 'Vistoria Pré Compra Novo Mundo',
     description: 'Agende um laudo de vistoria no Novo Mundo de forma dinâmica. Verificamos se o veículo possui restrições ou foi danificado de forma estrutural.',
     keywords: 'vistoria pre compra novo mundo, vistoria carro novo mundo, pericia veicular',
-    canonicalUrl: 'https://www.carplusvistorias.com.br/vistoria-pre-compra-novo-mundo.html',
+    canonicalUrl: 'https://www.carplusvistorias.com.br/vistoria-pre-compra-novo-mundo',
     anchorText: 'Vistoria Pré Compra Novo Mundo'
   },
   {
@@ -153,7 +153,7 @@ const PRE_COMPRA_PAGES = [
     h1: 'Avaliação Veicular Curitiba',
     description: 'Laudos periciais com fotos e parecer técnico rigoroso na hora. Avaliação Veicular completa de chassis, vidros, etiquetas e restrições.',
     keywords: 'avaliacao veicular curitiba, vistoria cautelar curitiba, laudo cautelar',
-    canonicalUrl: 'https://www.carplusvistorias.com.br/avaliacao-veicular-curitiba.html',
+    canonicalUrl: 'https://www.carplusvistorias.com.br/avaliacao-veicular-curitiba',
     anchorText: 'Avaliação Veicular Curitiba'
   },
   {
@@ -162,7 +162,7 @@ const PRE_COMPRA_PAGES = [
     h1: 'Consultoria de Compra de Carros Curitiba',
     description: 'Seja assessorado por peritos certificados. Descubra repinturas severas, soldas de fábrica cortadas e leilões na nossa consultoria automotiva.',
     keywords: 'consultoria compra de carros curitiba, analise cautelar curitiba, vistoria carro usado, carplus vistorias',
-    canonicalUrl: 'https://www.carplusvistorias.com.br/consultoria-compra-carros-curitiba.html',
+    canonicalUrl: 'https://www.carplusvistorias.com.br/consultoria-compra-carros-curitiba',
     anchorText: 'Consultoria Compra de Carros'
   },
   {
@@ -171,7 +171,7 @@ const PRE_COMPRA_PAGES = [
     h1: 'Verificação de Procedência Veicular Curitiba',
     description: 'Consulte mais de 15 base de dados detalhadas sobre gravames ativos, passagens por seguradora, recalls e reparos de funilaria em Curitiba.',
     keywords: 'verificacao de procedencia veicular curitiba, carplus vistorias, laudo original de compra',
-    canonicalUrl: 'https://www.carplusvistorias.com.br/verificacao-procedencia-veicular-curitiba.html',
+    canonicalUrl: 'https://www.carplusvistorias.com.br/verificacao-procedencia-veicular-curitiba',
     anchorText: 'Verificação de Procedência Veicular'
   }
 ];
@@ -360,10 +360,7 @@ function run() {
   const template = fs.readFileSync(templatePath, 'utf-8');
   let sitemapHtml = fs.readFileSync(sitemapPath, 'utf-8');
 
-  // Normalize sitemap links to include .html extension for clean static compatibility
-  sitemapHtml = sitemapHtml.replace(/href="\/vistoria-cautelar-([a-z0-9-]+)(?!\.html)"/g, 'href="/vistoria-cautelar-$1.html"');
-  fs.writeFileSync(sitemapPath, sitemapHtml, 'utf-8');
-
+  // Parse sitemap links
   const linkRegex = /href="\/vistoria-cautelar-([^".]+?)(?:\.html)?"[^>]*>Vistoria ([^<]+)<\/a>/g;
   let match;
   const items: Array<{ slug: string; bairroGenitive: string; name: string }> = [];
@@ -407,7 +404,7 @@ function run() {
     const neighbors: string[] = [];
     for (let j = 1; j <= 6; j++) {
       const neighborItem = items[(i + j) % items.length];
-      const nhHtml = `<a href="/vistoria-cautelar-${neighborItem.slug}.html" class="bg-zinc-900 border border-zinc-800 hover:border-primary/50 text-zinc-300 hover:text-white p-3 rounded-lg transition-all truncate block font-bold">${neighborItem.name}</a>`;
+      const nhHtml = `<a href="/vistoria-cautelar-${neighborItem.slug}" class="bg-zinc-900 border border-zinc-800 hover:border-primary/50 text-zinc-300 hover:text-white p-3 rounded-lg transition-all truncate block font-bold">${neighborItem.name}</a>`;
       neighbors.push(nhHtml);
     }
     const neighborsHtml = neighbors.join('\n        ');
@@ -436,12 +433,12 @@ function run() {
 
     const descWithLinks = desc
       .replace('Carplus Vistorias', '<a href="/" class="text-primary hover:underline hover:text-primary-light font-bold">Carplus Vistorias</a>')
-      .replace('vistoria cautelar', '<a href="/#servicos" class="text-primary hover:underline font-bold">vistoria cautelar</a>')
-      .replace('perícia veicular', '<a href="/#servicos" class="text-primary hover:underline font-bold">perícia veicular</a>')
-      .replace('perícia automotiva', '<a href="/#servicos" class="text-primary hover:underline font-bold">perícia automotiva</a>');
+      .replace('vistoria cautelar', '<a href="/vistoria-cautelar-curitiba" class="text-primary hover:underline font-bold">vistoria cautelar</a>')
+      .replace('perícia veicular', '<a href="/vistoria-cautelar-curitiba" class="text-primary hover:underline font-bold">perícia veicular</a>')
+      .replace('perícia automotiva', '<a href="/vistoria-cautelar-curitiba" class="text-primary hover:underline font-bold">perícia automotiva</a>');
 
     const targetParagraph = `Se você está comprando ou vendendo um veículo ${bairroGenitive} ou arredores, a segurança deve vir sempre em primeiro lugar. O mercado automotivo em Curitiba é agitado, e é comum encontrar automóveis que já passaram por leilões, possuem sinistros camuflados, chassis adulterados e reformas estruturais severas que comprometem a dirigibilidade e o valor de revenda.`;
-    const customizedParagraph = `${descWithLinks}\n          O mercado automotivo na região de Curitiba é extremamente dinâmico e agitado. Por isso, ao negociar veículos ${bairroGenitive} ou em outros pontos da cidade, ter o apoio de peritos certificados é crucial. Além de ${bairroGenitive}, também emitimos laudos rápidos para donos de veículos procedentes de outras regiões próximas, tais como <a href="/vistoria-cautelar-${linkItem1.slug}.html" class="text-primary hover:underline hover:text-primary-light transition-colors font-bold">${linkItem1.name}</a> e <a href="/vistoria-cautelar-${linkItem2.slug}.html" class="text-primary hover:underline hover:text-primary-light transition-colors font-bold">${linkItem2.name}</a>, garantindo cobertura total. Para consultar as demais coberturas, confira o nosso <a href="/mapa-do-site.html" class="text-primary hover:underline hover:text-primary-light transition-colors font-bold">mapa do site</a> ou visite nossa página de <a href="/contato.html" class="text-primary hover:underline hover:text-primary-light transition-colors font-bold">agendamento e contato</a>.`;
+    const customizedParagraph = `${descWithLinks}\n          O mercado automotivo na região de Curitiba é extremamente dinâmico e agitado. Por isso, ao negociar veículos ${bairroGenitive} ou em outros pontos da cidade, ter o apoio de peritos certificados é crucial. Além de ${bairroGenitive}, também emitimos laudos rápidos para donos de veículos procedentes de outras regiões próximas, tais como <a href="/vistoria-cautelar-${linkItem1.slug}" class="text-primary hover:underline hover:text-primary-light transition-colors font-bold">${linkItem1.name}</a> e <a href="/vistoria-cautelar-${linkItem2.slug}" class="text-primary hover:underline hover:text-primary-light transition-colors font-bold">${linkItem2.name}</a>, garantindo cobertura total. Para consultar o panorama completo da cidade, confira nosso hub de <a href="/vistoria-cautelar-curitiba" class="text-primary hover:underline hover:text-primary-light transition-colors font-bold">vistoria cautelar em Curitiba</a>, veja nosso <a href="/mapa-do-site" class="text-primary hover:underline hover:text-primary-light transition-colors font-bold">mapa do site</a> ou visite nossa página de <a href="/contato" class="text-primary hover:underline hover:text-primary-light transition-colors font-bold">agendamento e contato</a>.`;
     pageContent = pageContent.replace(targetParagraph, customizedParagraph);
 
     pageContent = pageContent.replace(
@@ -470,23 +467,21 @@ function run() {
 
   const preCompraTemplate = fs.readFileSync(preCompraTemplatePath, 'utf-8');
 
-  // Build static FAQ items accordion markup
+  // Build static semantic FAQ items accordion markup using HTML5 <details>/<summary>
   let faqAccordionHtml = '';
-  FAQS.forEach((faq, index) => {
+  FAQS.forEach((faq) => {
     faqAccordionHtml += `
-    <div class="bg-zinc-900/60 rounded-xl border border-zinc-800 overflow-hidden">
-      <button onclick="toggleFaqElement(this)" class="w-full text-left py-4 px-6 font-display font-semibold text-white hover:text-primary transition-colors flex justify-between items-center bg-zinc-900/45 select-none focus:outline-none">
+    <details class="faq-item group bg-zinc-900/60 rounded-xl border border-zinc-800 overflow-hidden mb-4 transition-all">
+      <summary class="w-full text-left py-4 px-6 font-display font-semibold text-white hover:text-primary transition-colors flex justify-between items-center bg-zinc-900/45 cursor-pointer list-none select-none">
         <span class="text-xs sm:text-sm md:text-base">${faq.q}</span>
-        <span class="faq-icon-chevron w-8 h-8 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400 text-xs flex items-center justify-center transition-transform duration-300 flex-shrink-0">
+        <span class="faq-icon-chevron w-8 h-8 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400 text-xs flex items-center justify-center transition-transform duration-300 flex-shrink-0 group-open:rotate-180 group-open:bg-primary/10 group-open:border-primary/40 group-open:text-primary">
           <i class="fa-solid fa-chevron-down"></i>
         </span>
-      </button>
-      <div class="faq-body-content max-h-0 opacity-0 overflow-hidden transition-all duration-300 text-xs sm:text-sm md:text-base text-zinc-400">
-        <div class="p-6 text-zinc-400 bg-zinc-950/80 leading-relaxed text-justify border-t border-zinc-900">
-          ${faq.a}
-        </div>
+      </summary>
+      <div class="faq-body-content p-6 text-zinc-400 bg-zinc-950/80 leading-relaxed text-justify border-t border-zinc-900 text-xs sm:text-sm md:text-base">
+        ${faq.a}
       </div>
-    </div>`;
+    </details>`;
   });
 
   console.log(`Generating ${PRE_COMPRA_PAGES.length} deep semantic pre-compra files...`);
@@ -497,7 +492,7 @@ function run() {
     PRE_COMPRA_PAGES.forEach((otherPage) => {
       if (otherPage.slug !== page.slug) {
         linkageNodes.push(`
-          <a href="/${otherPage.slug}.html" class="bg-zinc-900 border border-zinc-800/80 hover:border-primary/50 text-zinc-400 hover:text-white py-1.5 px-3.5 rounded-full transition-all text-xs truncate max-w-[240px] font-semibold hover:shadow-lg hover:scale-105 transform">
+          <a href="/${otherPage.slug}" class="bg-zinc-900 border border-zinc-800/80 hover:border-primary/50 text-zinc-400 hover:text-white py-1.5 px-3.5 rounded-full transition-all text-xs truncate max-w-[240px] font-semibold hover:shadow-lg hover:scale-105 transform">
             ${otherPage.anchorText}
           </a>
         `);
@@ -505,7 +500,7 @@ function run() {
     });
     const linkageHtml = linkageNodes.join('\n');
 
-    // Generate dynamic JSON-LD
+    // Generate dynamic JSON-LD according to strict Google guidelines (LocalBusiness + Service)
     const jsonLd = [
       {
         "@context": "https://schema.org",
@@ -521,7 +516,7 @@ function run() {
           "streetAddress": "Av. Pres. Arthur da Silva Bernardes, 1323",
           "addressLocality": "Curitiba",
           "addressRegion": "PR",
-          "postalCode": "80320-000",
+          "postalCode": "80320-300",
           "addressCountry": "BR"
         },
         "geo": {
@@ -531,8 +526,8 @@ function run() {
         },
         "openingHoursSpecification": {
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "09:00",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "08:00",
           "closes": "18:00"
         }
       },
@@ -549,18 +544,6 @@ function run() {
           { "@type": "AdministrativeArea", "name": "Paraná" }
         ],
         "description": page.description
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": FAQS.map((f) => ({
-          "@type": "Question",
-          "name": f.q,
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": f.a
-          }
-        }))
       }
     ];
 
