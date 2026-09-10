@@ -157,6 +157,51 @@ export default function LocationPage({ slug, onGoHome }: LocationPageProps) {
             Realize sua perícia automotiva e garanta a procedência de veículos usados {bairroGenitive} ou arredores de Curitiba com laudo emitido imediatamente na nossa sede.
           </p>
 
+          {/* Aviso Proeminente de Atendimento na Unidade Portão */}
+          {slug !== 'portao' ? (
+            <div className="max-w-3xl mx-auto my-4 p-4 sm:p-5 rounded-2xl bg-amber-500/15 border-2 border-amber-500/60 shadow-xl text-left backdrop-blur-sm">
+              <div className="flex items-start gap-3.5">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-amber-500 text-zinc-950 flex items-center justify-center font-bold text-xl shrink-0 shadow-md mt-0.5">
+                  <i className="fa-solid fa-location-dot"></i>
+                </div>
+                <div className="space-y-1">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-display font-black text-sm sm:text-base uppercase tracking-wider text-white">
+                      ATENDIMENTO PRESENCIAL NA UNIDADE PORTÃO
+                    </span>
+                    <span className="text-[10px] bg-amber-500 text-zinc-950 font-black px-2 py-0.5 rounded-full font-mono uppercase">
+                      Aviso Importante
+                    </span>
+                  </div>
+                  <p className="text-xs sm:text-sm text-zinc-200 leading-relaxed font-semibold">
+                    Moradores, compradores e lojistas {bairroGenitive}: todo o atendimento pericial, vistoria física e emissão do laudo são realizados exclusivamente em nossa sede própria na <strong>Unidade Portão</strong> (Av. Presidente Arthur da Silva Bernardes, 1323 · Curitiba/PR). Fácil acesso com estacionamento próprio e laudo emitido na hora!
+                  </p>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="max-w-3xl mx-auto my-4 p-4 sm:p-5 rounded-2xl bg-primary/15 border-2 border-primary/60 shadow-xl text-left backdrop-blur-sm">
+              <div className="flex items-start gap-3.5">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-primary text-zinc-950 flex items-center justify-center font-bold text-xl shrink-0 shadow-md mt-0.5">
+                  <i className="fa-solid fa-building"></i>
+                </div>
+                <div className="space-y-1">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-display font-black text-sm sm:text-base uppercase tracking-wider text-white">
+                      SEDE PRÓPRIA CARPLUS VISTORIAS — PORTÃO
+                    </span>
+                    <span className="text-[10px] bg-primary text-zinc-950 font-black px-2 py-0.5 rounded-full font-mono uppercase">
+                      Matriz Oficial
+                    </span>
+                  </div>
+                  <p className="text-xs sm:text-sm text-zinc-200 leading-relaxed font-semibold">
+                    Você está na matriz central da Carplus Vistorias no bairro Portão (Av. Presidente Arthur da Silva Bernardes, 1323). Equipamentos de ponta com medidores digitais e peritos credenciados prontos para emitir seu laudo na hora.
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
+
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4">
             <div className="flex flex-col items-center w-full sm:w-auto">
               <a 
@@ -208,6 +253,30 @@ export default function LocationPage({ slug, onGoHome }: LocationPageProps) {
             <h2 className="font-display font-black text-2xl sm:text-3xl text-white uppercase tracking-tight">
               A Vistoria Cautelar Ideal Para Quem Reside {bairroGenitive}
             </h2>
+
+            {/* Aviso de Atendimento na Unidade Portão */}
+            {slug !== 'portao' ? (
+              <div className="p-4 sm:p-5 rounded-xl bg-zinc-900 border-2 border-amber-500/60 shadow-lg text-left">
+                <div className="flex items-center gap-2 text-amber-400 font-display font-black text-sm uppercase tracking-wide mb-1.5">
+                  <i className="fa-solid fa-circle-info text-base"></i>
+                  <span>Local do Atendimento: Unidade Portão</span>
+                </div>
+                <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-medium">
+                  Ressaltamos que a realização da vistoria cautelar e inspeção física dos veículos procedentes ou negociados {bairroGenitive} é realizada em nossa sede na <strong>Unidade Portão</strong> (Av. Presidente Arthur da Silva Bernardes, 1323 · Portão, Curitiba/PR). Contamos com rampa de perícia, elevador automotivo e equipamentos ópticos de última geração.
+                </p>
+              </div>
+            ) : (
+              <div className="p-4 sm:p-5 rounded-xl bg-zinc-900 border-2 border-primary/60 shadow-lg text-left">
+                <div className="flex items-center gap-2 text-primary font-display font-black text-sm uppercase tracking-wide mb-1.5">
+                  <i className="fa-solid fa-building text-base"></i>
+                  <span>Sede Oficial no Bairro Portão</span>
+                </div>
+                <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-medium">
+                  Nossa sede própria está localizada na Av. Presidente Arthur da Silva Bernardes, 1323 no Portão. Estrutura ampla, moderna e de fácil acesso para garantir a você um atendimento rápido e laudo certificado entregue na hora.
+                </p>
+              </div>
+            )}
+
             <div className="space-y-4 text-justify font-bold">
               <p className="text-white">
                 {description.replace('Carplus Vistorias', 'Carplus Vistorias')}
@@ -362,6 +431,13 @@ export default function LocationPage({ slug, onGoHome }: LocationPageProps) {
             </a>
             <span className="text-[10px] text-zinc-400 mt-2.5 uppercase font-mono tracking-widest font-semibold block text-center leading-none">
               Falar Conosco Agora · Profissional & Premium
+            </span>
+          </div>
+
+          <div className="pt-2">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-900 border border-amber-500/40 text-xs text-zinc-300 font-mono font-bold">
+              <i className="fa-solid fa-location-dot text-amber-500"></i>
+              <span>Atendimento na Unidade Portão · Av. Pres. Arthur da Silva Bernardes, 1323</span>
             </span>
           </div>
         </div>

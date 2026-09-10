@@ -446,6 +446,108 @@ function run() {
       'LAUDO EMITIDO NA HORA - FALE COMS NOSSO TIME DE PERITOS'
     );
 
+    const isPortao = slug === 'portao';
+
+    let heroLocalAlert = '';
+    let contentLocalAlert = '';
+    let step2CheckinText = '';
+    let faq3LocalAnswer = '';
+    let ctaLocalNotice = '';
+
+    if (!isPortao) {
+      heroLocalAlert = `
+      <div class="max-w-3xl mx-auto my-6 p-4 sm:p-5 rounded-2xl bg-amber-500/15 border-2 border-amber-500/60 shadow-xl text-left backdrop-blur-sm">
+        <div class="flex items-start gap-3.5">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-amber-500 text-zinc-950 flex items-center justify-center font-bold text-xl shrink-0 shadow-md mt-0.5">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <div class="space-y-1">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="font-display font-black text-sm sm:text-base uppercase tracking-wider text-white">
+                ATENDIMENTO PRESENCIAL NA UNIDADE PORTÃO
+              </span>
+              <span class="text-[10px] bg-amber-500 text-zinc-950 font-black px-2 py-0.5 rounded-full font-mono uppercase">
+                Aviso Importante
+              </span>
+            </div>
+            <p class="text-xs sm:text-sm text-zinc-200 leading-relaxed font-semibold">
+              Moradores, compradores e lojistas ${bairroGenitive}: todo o atendimento pericial, vistoria física e emissão do laudo são realizados exclusivamente em nossa sede própria na <strong>Unidade Portão</strong> (Av. Presidente Arthur da Silva Bernardes, 1323 · Curitiba/PR). Fácil acesso com estacionamento próprio e laudo emitido na hora!
+            </p>
+          </div>
+        </div>
+      </div>`;
+
+      contentLocalAlert = `
+        <div class="p-4 sm:p-5 rounded-xl bg-zinc-900 border-2 border-amber-500/60 shadow-lg text-left my-4">
+          <div class="flex items-center gap-2 text-amber-400 font-display font-black text-sm uppercase tracking-wide mb-1.5">
+            <i class="fa-solid fa-circle-info text-base"></i>
+            <span>Local do Atendimento: Unidade Portão</span>
+          </div>
+          <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed font-medium">
+            Ressaltamos que a realização da vistoria cautelar e inspeção física dos veículos procedentes ou negociados ${bairroGenitive} é realizada em nossa sede na <strong>Unidade Portão</strong> (Av. Presidente Arthur da Silva Bernardes, 1323 · Portão, Curitiba/PR). Contamos com rampa de perícia, elevador automotivo e equipamentos ópticos de última geração.
+          </p>
+        </div>`;
+
+      step2CheckinText = `Dirija-se à nossa sede na <strong>Unidade Portão</strong> (Av. Pres. Arthur da Silva Bernardes, 1323) no horário agendado com fácil e rápido deslocamento a partir de ${name}.`;
+
+      faq3LocalAnswer = `Sim! A Carplus Vistorias atende com grande agilidade todos os moradores, lojistas e compradores ${bairroGenitive}. <strong>Ressaltamos que todo o atendimento presencial é realizado em nossa sede própria na Unidade Portão</strong> (Av. Presidente Arthur da Silva Bernardes, 1323 – Portão, Curitiba/PR), garantindo equipamentos periciais de última geração, comodidade e laudo oficial emitido na hora.`;
+
+      ctaLocalNotice = `
+      <div class="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-900 border border-amber-500/40 text-xs text-zinc-300 font-mono font-bold">
+        <i class="fa-solid fa-location-dot text-amber-500"></i>
+        <span>Atendimento na Unidade Portão · Av. Pres. Arthur da Silva Bernardes, 1323</span>
+      </div>`;
+    } else {
+      heroLocalAlert = `
+      <div class="max-w-3xl mx-auto my-6 p-4 sm:p-5 rounded-2xl bg-primary/15 border-2 border-primary/60 shadow-xl text-left backdrop-blur-sm">
+        <div class="flex items-start gap-3.5">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-primary text-zinc-950 flex items-center justify-center font-bold text-xl shrink-0 shadow-md mt-0.5">
+            <i class="fa-solid fa-building"></i>
+          </div>
+          <div class="space-y-1">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="font-display font-black text-sm sm:text-base uppercase tracking-wider text-white">
+                SEDE PRÓPRIA CARPLUS VISTORIAS — PORTÃO
+              </span>
+              <span class="text-[10px] bg-primary text-zinc-950 font-black px-2 py-0.5 rounded-full font-mono uppercase">
+                Matriz Oficial
+              </span>
+            </div>
+            <p class="text-xs sm:text-sm text-zinc-200 leading-relaxed font-semibold">
+              Você está na matriz central da Carplus Vistorias no bairro Portão (Av. Presidente Arthur da Silva Bernardes, 1323). Equipamentos de ponta com medidores digitais e peritos credenciados prontos para emitir seu laudo na hora.
+            </p>
+          </div>
+        </div>
+      </div>`;
+
+      contentLocalAlert = `
+        <div class="p-4 sm:p-5 rounded-xl bg-zinc-900 border-2 border-primary/60 shadow-lg text-left my-4">
+          <div class="flex items-center gap-2 text-primary font-display font-black text-sm uppercase tracking-wide mb-1.5">
+            <i class="fa-solid fa-building text-base"></i>
+            <span>Sede Oficial no Bairro Portão</span>
+          </div>
+          <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed font-medium">
+            Nossa sede própria está localizada na Av. Presidente Arthur da Silva Bernardes, 1323 no Portão. Estrutura ampla, moderna e de fácil acesso para garantir a você um atendimento rápido e laudo certificado entregue na hora.
+          </p>
+        </div>`;
+
+      step2CheckinText = `Passe na nossa sede no Portão (Av. Pres. Arthur da Silva Bernardes, 1323) no horário reservado para ser atendido com rapidez e sem esperas.`;
+
+      faq3LocalAnswer = `Sim! A sede própria da Carplus Vistorias fica exatamente no bairro Portão (Av. Presidente Arthur da Silva Bernardes, 1323 – Curitiba/PR), oferecendo estrutura pericial completa e laudo emitido na hora para todos os moradores da região.`;
+
+      ctaLocalNotice = `
+      <div class="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-900 border border-primary/40 text-xs text-zinc-300 font-mono font-bold">
+        <i class="fa-solid fa-building text-primary"></i>
+        <span>Sede Própria Carplus Vistorias · Av. Pres. Arthur da Silva Bernardes, 1323 · Portão</span>
+      </div>`;
+    }
+
+    pageContent = pageContent.replace('[hero-local-alert]', heroLocalAlert);
+    pageContent = pageContent.replace('[content-local-alert]', contentLocalAlert);
+    pageContent = pageContent.replace('[step2-checkin-text]', step2CheckinText);
+    pageContent = pageContent.replace('[faq3-local-answer]', faq3LocalAnswer);
+    pageContent = pageContent.replace('[cta-local-notice]', ctaLocalNotice);
+
     const dirPath = path.join(currentDir, 'public', `vistoria-cautelar-${slug}`);
     if (!fs.existsSync(dirPath)) {
       fs.mkdirSync(dirPath, { recursive: true });
@@ -556,6 +658,75 @@ function run() {
     content = content.replace('[schema-json-ld]', JSON.stringify(jsonLd, null, 2));
     content = content.replace('[faq-items-placeholders]', faqAccordionHtml);
     content = content.replace('[linkage-placeholders]', linkageHtml);
+
+    const isNeighborhoodPreCompra = page.slug.includes('agua-verde') || page.slug.includes('capao-raso') || page.slug.includes('bigorrilho') || page.slug.includes('batel') || page.slug.includes('novo-mundo');
+    const isPortaoPreCompra = page.slug === 'vistoria-pre-compra-portao';
+
+    let preCompraHeroAlert = '';
+    if (isNeighborhoodPreCompra) {
+      preCompraHeroAlert = `
+        <div class="max-w-3xl mx-auto my-6 p-4 sm:p-5 rounded-2xl bg-amber-500/15 border-2 border-amber-500/60 shadow-xl text-left backdrop-blur-sm">
+          <div class="flex items-start gap-3.5">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-amber-500 text-zinc-950 flex items-center justify-center font-bold text-xl shrink-0 shadow-md mt-0.5">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div class="space-y-1">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="font-display font-black text-sm sm:text-base uppercase tracking-wider text-white">
+                  ATENDIMENTO PRESENCIAL NA UNIDADE PORTÃO
+                </span>
+                <span class="text-[10px] bg-amber-500 text-zinc-950 font-black px-2 py-0.5 rounded-full font-mono uppercase">
+                  Aviso Importante
+                </span>
+              </div>
+              <p class="text-xs sm:text-sm text-zinc-200 leading-relaxed font-semibold">
+                Clientes e compradores de veículos desta região: todas as avaliações veiculares e perícias pré-compra são realizadas com infraestrutura completa em nossa sede na <strong>Unidade Portão</strong> (Av. Presidente Arthur da Silva Bernardes, 1323 · Curitiba/PR). Fácil acesso com laudo entregue na hora!
+              </p>
+            </div>
+          </div>
+        </div>`;
+    } else if (isPortaoPreCompra) {
+      preCompraHeroAlert = `
+        <div class="max-w-3xl mx-auto my-6 p-4 sm:p-5 rounded-2xl bg-primary/15 border-2 border-primary/60 shadow-xl text-left backdrop-blur-sm">
+          <div class="flex items-start gap-3.5">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-primary text-zinc-950 flex items-center justify-center font-bold text-xl shrink-0 shadow-md mt-0.5">
+              <i class="fa-solid fa-building"></i>
+            </div>
+            <div class="space-y-1">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="font-display font-black text-sm sm:text-base uppercase tracking-wider text-white">
+                  SEDE PRÓPRIA CARPLUS VISTORIAS — PORTÃO
+                </span>
+                <span class="text-[10px] bg-primary text-zinc-950 font-black px-2 py-0.5 rounded-full font-mono uppercase">
+                  Matriz
+                </span>
+              </div>
+              <p class="text-xs sm:text-sm text-zinc-200 leading-relaxed font-semibold">
+                Atendimento presencial realizado em nossa sede central no bairro Portão (Av. Presidente Arthur da Silva Bernardes, 1323 · Curitiba/PR). Avaliação pré-compra minuciosa com peritos certificados!
+              </p>
+            </div>
+          </div>
+        </div>`;
+    } else {
+      preCompraHeroAlert = `
+        <div class="max-w-3xl mx-auto my-6 p-4 sm:p-5 rounded-2xl bg-zinc-900/80 border border-zinc-800 shadow-xl text-left backdrop-blur-sm">
+          <div class="flex items-start gap-3.5">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-primary/20 text-primary border border-primary/40 flex items-center justify-center font-bold text-xl shrink-0 shadow-md mt-0.5">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div class="space-y-1">
+              <span class="font-display font-black text-sm sm:text-base uppercase tracking-wider text-white block">
+                SEDE PRÓPRIA CARPLUS — UNIDADE PORTÃO
+              </span>
+              <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed font-semibold">
+                Atendimento presencial e laudos periciais realizados em nossa sede na <strong>Av. Presidente Arthur da Silva Bernardes, 1323 – Portão, Curitiba/PR</strong>. Estrutura pericial completa para atendimento rápido de toda a capital.
+              </p>
+            </div>
+          </div>
+        </div>`;
+    }
+
+    content = content.replace('[hero-local-alert]', preCompraHeroAlert);
 
     // Save outputs:
     // Slug folder
