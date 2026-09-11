@@ -430,7 +430,51 @@ export default function PreCompraPage({ slug, onGoHome }: PreCompraPageProps) {
               Realize a perícia mais rigorosa e minuciosa de Curitiba antes de fechar qualquer negócio. Na <span className="text-white font-bold">Carplus Vistorias</span>, nosso time de peritos automotivos credenciados emite laudos detalhados no ato, protegendo sua integridade financeira contra golpes, sinistros ocultos e problemas cadastrais insolúveis.
             </p>
 
-            <div className="mt-10 flex flex-col sm:flex-row gap-6 justify-center items-center">
+            {/* Aviso da Base da Empresa e Taxa de Deslocamento */}
+            <div className="max-w-3xl mx-auto my-6 p-4 sm:p-5 rounded-2xl bg-amber-500/15 border-2 border-amber-500/70 shadow-2xl text-left backdrop-blur-sm">
+              <div className="flex items-start gap-3.5">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-amber-500 text-zinc-950 flex items-center justify-center font-bold text-xl shrink-0 shadow-md mt-0.5">
+                  <i className="fa-solid fa-triangle-exclamation"></i>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-display font-black text-sm sm:text-base uppercase tracking-wider text-white">
+                      ATENDIMENTO NA BASE DA EMPRESA (PORTÃO)
+                    </span>
+                    <span className="text-[10px] bg-red-600 text-white font-black px-2.5 py-0.5 rounded-full font-mono uppercase tracking-wide">
+                      Deslocamento tem Taxa
+                    </span>
+                    <span className="text-[10px] bg-amber-500 text-zinc-950 font-black px-2 py-0.5 rounded-full font-mono uppercase">
+                      Consulte Antes
+                    </span>
+                  </div>
+                  <p className="text-xs sm:text-sm text-zinc-200 leading-relaxed font-semibold">
+                    <strong>O atendimento é realizado na base da empresa</strong> (Unidade Portão: Av. Presidente Arthur da Silva Bernardes, 1323 · Portão, Curitiba/PR), equipada com elevadores automotivos, rampa de perícia e medidores digitais.
+                  </p>
+                  <p className="text-xs sm:text-sm text-amber-300 leading-relaxed font-black bg-black/40 p-2.5 rounded-lg border border-amber-500/40">
+                    <i className="fa-solid fa-circle-exclamation mr-1.5 text-amber-400"></i> AVISO: O atendimento é na base da empresa. Caso precise de deslocamento em outras regiões fora da região do Portão, temos uma taxa — consulte antes o valor!
+                  </p>
+                  <div className="flex flex-wrap items-center gap-2 pt-1 text-[11px] font-bold">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                      <i className="fa-solid fa-building"></i> Na Base (Portão): Sem Taxa de Deslocamento
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-950/70 text-red-300 border border-red-500/50">
+                      <i className="fa-solid fa-car-side"></i> Fora do Portão: Temos Taxa (Consulte Antes)
+                    </span>
+                    <a
+                      href="https://wa.me/5541988740258?text=Olá!%20Gostaria%20de%20consultar%20o%20valor%20da%20taxa%20de%20deslocamento%20para%20outra%20região."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white transition-colors"
+                    >
+                      <i className="fa-brands fa-whatsapp"></i> Consultar Taxa no WhatsApp
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8 flex flex-col sm:flex-row gap-6 justify-center items-center">
               <div className="flex flex-col items-center w-full sm:w-auto">
                 <a
                   href="https://wa.me/5541988740258?text=Olá%20Carplus!%20Gostaria%20de%20agendar%20uma%20vistoria%20pré%20compra%20completa%20Curitiba."
@@ -859,6 +903,17 @@ export default function PreCompraPage({ slug, onGoHome }: PreCompraPageProps) {
               </a>
               <span className="text-[10px] text-zinc-400 mt-2.5 uppercase font-mono tracking-widest font-semibold block text-center leading-none">
                 Agendar pelo WhatsApp · Profissional & Premium
+              </span>
+            </div>
+
+            <div className="mt-6 flex flex-wrap justify-center items-center gap-2">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-950 border border-primary/50 text-xs text-zinc-300 font-mono font-bold">
+                <i className="fa-solid fa-building text-primary"></i>
+                <span>Atendimento na Base da Empresa (Portão · Av. Pres. Arthur da Silva Bernardes, 1323)</span>
+              </span>
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-950/60 border border-red-500/50 text-xs text-red-300 font-mono font-bold">
+                <i className="fa-solid fa-triangle-exclamation text-red-400"></i>
+                <span>Deslocamento fora da Região do Portão: Temos Taxa (Consulte Antes)</span>
               </span>
             </div>
           </div>

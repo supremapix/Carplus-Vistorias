@@ -157,46 +157,82 @@ export default function LocationPage({ slug, onGoHome }: LocationPageProps) {
             Realize sua perícia automotiva e garanta a procedência de veículos usados {bairroGenitive} ou arredores de Curitiba com laudo emitido imediatamente na nossa sede.
           </p>
 
-          {/* Aviso Proeminente de Atendimento na Unidade Portão */}
+          {/* Aviso Proeminente de Atendimento na Base da Empresa e Regra de Deslocamento */}
           {slug !== 'portao' ? (
-            <div className="max-w-3xl mx-auto my-4 p-4 sm:p-5 rounded-2xl bg-amber-500/15 border-2 border-amber-500/60 shadow-xl text-left backdrop-blur-sm">
+            <div className="max-w-3xl mx-auto my-4 p-4 sm:p-5 rounded-2xl bg-amber-500/15 border-2 border-amber-500/70 shadow-2xl text-left backdrop-blur-sm">
               <div className="flex items-start gap-3.5">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-amber-500 text-zinc-950 flex items-center justify-center font-bold text-xl shrink-0 shadow-md mt-0.5">
-                  <i className="fa-solid fa-location-dot"></i>
+                  <i className="fa-solid fa-triangle-exclamation"></i>
                 </div>
-                <div className="space-y-1">
+                <div className="space-y-2">
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="font-display font-black text-sm sm:text-base uppercase tracking-wider text-white">
-                      ATENDIMENTO PRESENCIAL NA UNIDADE PORTÃO
+                      ATENDIMENTO NA BASE DA EMPRESA (PORTÃO)
+                    </span>
+                    <span className="text-[10px] bg-red-600 text-white font-black px-2.5 py-0.5 rounded-full font-mono uppercase tracking-wide">
+                      Deslocamento tem Taxa
                     </span>
                     <span className="text-[10px] bg-amber-500 text-zinc-950 font-black px-2 py-0.5 rounded-full font-mono uppercase">
-                      Aviso Importante
+                      Consulte Antes
                     </span>
                   </div>
                   <p className="text-xs sm:text-sm text-zinc-200 leading-relaxed font-semibold">
-                    Moradores, compradores e lojistas {bairroGenitive}: todo o atendimento pericial, vistoria física e emissão do laudo são realizados exclusivamente em nossa sede própria na <strong>Unidade Portão</strong> (Av. Presidente Arthur da Silva Bernardes, 1323 · Curitiba/PR). Fácil acesso com estacionamento próprio e laudo emitido na hora!
+                    Moradores, compradores e lojistas {bairroGenitive}: <strong>o atendimento é na base da empresa</strong> (Unidade Portão: Av. Presidente Arthur da Silva Bernardes, 1323 · Curitiba/PR), onde dispomos de rampa de perícia, elevadores e equipamentos ópticos digitais.
                   </p>
+                  <p className="text-xs sm:text-sm text-amber-300 leading-relaxed font-black bg-black/40 p-2.5 rounded-lg border border-amber-500/40">
+                    <i className="fa-solid fa-circle-exclamation mr-1.5 text-amber-400"></i> AVISO IMPORTANTE: O atendimento é na base da empresa. Caso precise de deslocamento em outras regiões fora da região do Portão, temos uma taxa — consulte antes o valor!
+                  </p>
+                  <div className="flex flex-wrap items-center gap-2 pt-1 text-[11px] font-bold">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                      <i className="fa-solid fa-building"></i> Na Base (Portão): Sem Taxa de Deslocamento
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-950/70 text-red-300 border border-red-500/50">
+                      <i className="fa-solid fa-car-side"></i> Fora do Portão: Temos Taxa (Consulte Antes)
+                    </span>
+                    <a 
+                      href={`https://wa.me/5541988740258?text=Olá!%20Gostaria%20de%20consultar%20o%20valor%20da%20taxa%20de%20deslocamento%20para%20${encodeURIComponent(name)}.`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white transition-colors"
+                    >
+                      <i className="fa-brands fa-whatsapp"></i> Consultar Taxa no WhatsApp
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           ) : (
-            <div className="max-w-3xl mx-auto my-4 p-4 sm:p-5 rounded-2xl bg-primary/15 border-2 border-primary/60 shadow-xl text-left backdrop-blur-sm">
+            <div className="max-w-3xl mx-auto my-4 p-4 sm:p-5 rounded-2xl bg-primary/15 border-2 border-primary/70 shadow-2xl text-left backdrop-blur-sm">
               <div className="flex items-start gap-3.5">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-primary text-zinc-950 flex items-center justify-center font-bold text-xl shrink-0 shadow-md mt-0.5">
                   <i className="fa-solid fa-building"></i>
                 </div>
-                <div className="space-y-1">
+                <div className="space-y-2">
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="font-display font-black text-sm sm:text-base uppercase tracking-wider text-white">
-                      SEDE PRÓPRIA CARPLUS VISTORIAS — PORTÃO
+                      ATENDIMENTO NA BASE DA EMPRESA — PORTÃO
                     </span>
                     <span className="text-[10px] bg-primary text-zinc-950 font-black px-2 py-0.5 rounded-full font-mono uppercase">
-                      Matriz Oficial
+                      Base Oficial
+                    </span>
+                    <span className="text-[10px] bg-emerald-500 text-zinc-950 font-black px-2 py-0.5 rounded-full font-mono uppercase">
+                      Sem Taxa na Base
                     </span>
                   </div>
                   <p className="text-xs sm:text-sm text-zinc-200 leading-relaxed font-semibold">
-                    Você está na matriz central da Carplus Vistorias no bairro Portão (Av. Presidente Arthur da Silva Bernardes, 1323). Equipamentos de ponta com medidores digitais e peritos credenciados prontos para emitir seu laudo na hora.
+                    Você está na base da empresa da Carplus Vistorias no bairro Portão (Av. Presidente Arthur da Silva Bernardes, 1323). <strong>O atendimento pericial é realizado diretamente na nossa base</strong> com toda a infraestrutura física de elevadores, medidores e rampa de perícia.
                   </p>
+                  <p className="text-xs sm:text-sm text-amber-300 leading-relaxed font-black bg-black/40 p-2.5 rounded-lg border border-amber-500/40">
+                    <i className="fa-solid fa-circle-exclamation mr-1.5 text-amber-400"></i> O atendimento é na base da empresa. Caso precise de deslocamento em outras regiões fora da região do Portão, temos uma taxa — consulte antes o valor!
+                  </p>
+                  <div className="flex flex-wrap items-center gap-2 pt-1 text-[11px] font-bold">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                      <i className="fa-solid fa-circle-check"></i> Na Base (Portão): Sem Taxa de Deslocamento
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-950/70 text-red-300 border border-red-500/50">
+                      <i className="fa-solid fa-car-side"></i> Fora do Portão: Temos Taxa (Consulte Antes)
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -254,25 +290,31 @@ export default function LocationPage({ slug, onGoHome }: LocationPageProps) {
               A Vistoria Cautelar Ideal Para Quem Reside {bairroGenitive}
             </h2>
 
-            {/* Aviso de Atendimento na Unidade Portão */}
+            {/* Aviso de Atendimento na Base da Empresa e Regra de Deslocamento */}
             {slug !== 'portao' ? (
-              <div className="p-4 sm:p-5 rounded-xl bg-zinc-900 border-2 border-amber-500/60 shadow-lg text-left">
-                <div className="flex items-center gap-2 text-amber-400 font-display font-black text-sm uppercase tracking-wide mb-1.5">
-                  <i className="fa-solid fa-circle-info text-base"></i>
-                  <span>Local do Atendimento: Unidade Portão</span>
+              <div className="p-4 sm:p-5 rounded-xl bg-zinc-900 border-2 border-amber-500/70 shadow-xl text-left space-y-2">
+                <div className="flex items-center gap-2 text-amber-400 font-display font-black text-sm uppercase tracking-wide">
+                  <i className="fa-solid fa-triangle-exclamation text-base"></i>
+                  <span>Atendimento na Base da Empresa · Taxa Fora da Região do Portão</span>
                 </div>
                 <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-medium">
-                  Ressaltamos que a realização da vistoria cautelar e inspeção física dos veículos procedentes ou negociados {bairroGenitive} é realizada em nossa sede na <strong>Unidade Portão</strong> (Av. Presidente Arthur da Silva Bernardes, 1323 · Portão, Curitiba/PR). Contamos com rampa de perícia, elevador automotivo e equipamentos ópticos de última geração.
+                  Informamos que <strong>o atendimento é na base da empresa</strong> na <strong>Unidade Portão</strong> (Av. Presidente Arthur da Silva Bernardes, 1323 · Portão, Curitiba/PR), equipada com elevadores automotivos, rampa de perícia e medidores digitais de camada de tinta.
+                </p>
+                <p className="text-xs sm:text-sm text-amber-300 leading-relaxed font-bold bg-amber-500/10 p-3 rounded-lg border border-amber-500/30">
+                  <i className="fa-solid fa-circle-exclamation mr-1.5 text-amber-400"></i> Trazer o veículo até nossa base no Portão não tem taxa de deslocamento. <u>Caso precise de deslocamento em outras regiões fora da região do Portão, temos uma taxa — consulte antes o valor!</u>
                 </p>
               </div>
             ) : (
-              <div className="p-4 sm:p-5 rounded-xl bg-zinc-900 border-2 border-primary/60 shadow-lg text-left">
-                <div className="flex items-center gap-2 text-primary font-display font-black text-sm uppercase tracking-wide mb-1.5">
+              <div className="p-4 sm:p-5 rounded-xl bg-zinc-900 border-2 border-primary/70 shadow-xl text-left space-y-2">
+                <div className="flex items-center gap-2 text-primary font-display font-black text-sm uppercase tracking-wide">
                   <i className="fa-solid fa-building text-base"></i>
-                  <span>Sede Oficial no Bairro Portão</span>
+                  <span>Atendimento na Base da Empresa · Bairro Portão</span>
                 </div>
                 <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-medium">
-                  Nossa sede própria está localizada na Av. Presidente Arthur da Silva Bernardes, 1323 no Portão. Estrutura ampla, moderna e de fácil acesso para garantir a você um atendimento rápido e laudo certificado entregue na hora.
+                  Nossa base própria está localizada na Av. Presidente Arthur da Silva Bernardes, 1323 no Portão. <strong>O atendimento é realizado na base da empresa</strong> com equipamentos de ponta para emissão de laudo certificado na hora.
+                </p>
+                <p className="text-xs sm:text-sm text-amber-300 leading-relaxed font-bold bg-amber-500/10 p-3 rounded-lg border border-amber-500/30">
+                  Realizando a vistoria aqui na base no Portão não há taxa. Caso precise de deslocamento em outras regiões fora da região do Portão, temos uma taxa — consulte antes o valor!
                 </p>
               </div>
             )}
@@ -434,10 +476,14 @@ export default function LocationPage({ slug, onGoHome }: LocationPageProps) {
             </span>
           </div>
 
-          <div className="pt-2">
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-900 border border-amber-500/40 text-xs text-zinc-300 font-mono font-bold">
-              <i className="fa-solid fa-location-dot text-amber-500"></i>
-              <span>Atendimento na Unidade Portão · Av. Pres. Arthur da Silva Bernardes, 1323</span>
+          <div className="pt-2 flex flex-wrap justify-center items-center gap-2">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-900 border border-primary/50 text-xs text-zinc-300 font-mono font-bold">
+              <i className="fa-solid fa-building text-primary"></i>
+              <span>Atendimento na Base da Empresa (Portão · Av. Pres. Arthur da Silva Bernardes, 1323)</span>
+            </span>
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-950/60 border border-red-500/50 text-xs text-red-300 font-mono font-bold">
+              <i className="fa-solid fa-triangle-exclamation text-red-400"></i>
+              <span>Deslocamento fora da Região do Portão: Temos Taxa (Consulte Antes)</span>
             </span>
           </div>
         </div>
