@@ -647,7 +647,7 @@ export default function App() {
                         <span className="text-primary text-xl flex-shrink-0 w-8 text-center"><i className="fa-solid fa-phone"></i></span>
                         <div>
                           <div className="text-[10px] uppercase font-bold tracking-wider text-zinc-300">Telefone</div>
-                          <a href="tel:+5541988740258" className="text-sm font-mono text-white hover:text-primary font-bold">
+                          <a href="tel:+5541988740258" data-track-location="localizacao" className="text-sm font-mono text-white hover:text-primary font-bold">
                             (41) 98874-0258
                           </a>
                         </div>
@@ -658,7 +658,7 @@ export default function App() {
                         <span className="text-emerald-500 text-xl flex-shrink-0 w-8 text-center"><i className="fa-brands fa-whatsapp"></i></span>
                         <div>
                           <div className="text-[10px] uppercase font-bold tracking-wider text-zinc-300">WhatsApp</div>
-                          <a href="https://wa.me/5541988740258" target="_blank" rel="noopener noreferrer" className="text-sm font-mono text-white hover:text-primary font-bold">
+                          <a href="https://wa.me/5541988740258" data-track-location="localizacao" target="_blank" rel="noopener noreferrer" className="text-sm font-mono text-white hover:text-primary font-bold">
                             (41) 98874-0258
                           </a>
                         </div>
