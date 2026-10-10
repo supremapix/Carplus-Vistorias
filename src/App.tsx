@@ -393,6 +393,8 @@ export default function App() {
                       href="https://wa.me/5541988740258?text=Ol%C3%A1!%20Desejo%20fazer%20uma%20an%C3%A1lise%20completa%20do%20meu%20ve%C3%ADculo."
                       target="_blank"
                       rel="noopener noreferrer"
+                      data-track-location="beneficios"
+                      data-service="Vistoria Cautelar"
                       className="inline-flex items-center gap-3 bg-primary hover:bg-[#e0951b] text-white font-display font-black text-sm uppercase tracking-wider py-3.5 px-6 rounded-lg transition-all shadow-lg hover:scale-[1.02] transform"
                     >
                       <i className="fa-solid fa-magnifying-glass text-white"></i>
@@ -479,6 +481,7 @@ export default function App() {
                       href="https://wa.me/5541988740258?text=Olá,%20gostaria%20de%20saber%20dos%2520diferenciais%20e%20agendar."
                       target="_blank"
                       rel="noopener noreferrer"
+                      data-track-location="diferenciais"
                       className="premium-btn-green inline-flex items-center gap-3 font-display font-extrabold text-sm uppercase tracking-wider py-3.5 px-6 rounded-lg"
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-whatsapp text-[#25D366]"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 1.83.49 3.55 1.34 5.03L2 22l5.14-1.31C8.57 21.49 10.24 22 12 22c5.52 0 10-4.48 10-10Z"/></svg>
