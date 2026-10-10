@@ -1004,7 +1004,7 @@
         const url = `https://wa.me/5541988740258?text=${encodeURIComponent(messageText)}`;
 
         if (typeof window.trackFormSubmission === 'function') {
-          window.trackFormSubmission('contato_agendamento', servico, 'carro', 'whatsapp');
+          window.trackFormSubmission('contato_agendamento', servico, '', 'whatsapp');
         }
         
         setTimeout(() => {

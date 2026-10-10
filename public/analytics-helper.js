@@ -22,7 +22,7 @@ window.trackEvent = function(name, params = {}) {
       }
     }
 
-    // Mirror to Meta Pixel (fbq) & Bing UET (uetq) if exist
+    // Mirror to Meta Pixel (fbq) & Bing UET (uetq) if exist (1 click = 1 GA4 + 1 Meta + 1 Bing)
     if (['whatsapp_click', 'phone_click'].includes(name)) {
       if (typeof window.fbq === 'function') {
         try { window.fbq('track', 'Contact'); } catch(e) {}
@@ -48,7 +48,7 @@ window.trackFormSubmission = function(formName, serviceName, vehicleType, contac
   window.trackEvent('generate_lead', {
     form_name: formName || 'formulario_contato',
     service_name: serviceName || 'Vistoria Cautelar',
-    vehicle_type: vehicleType || 'carro',
+    vehicle_type: vehicleType !== undefined ? vehicleType : '',
     contact_method: contactMethod || 'formulario',
     currency: 'BRL',
     value: 0
@@ -65,9 +65,24 @@ document.addEventListener('click', function(e) {
     const textContent = (el.innerText || el.getAttribute('aria-label') || el.getAttribute('title') || '').trim();
     const button_text = textContent.substring(0, 100);
 
-    // Find click_location
+    // Find click_location with fallback inference across required sections
     let locationEl = el.closest('[data-track-location]');
-    let click_location = locationEl ? locationEl.getAttribute('data-track-location') : 'outro';
+    let click_location = locationEl ? locationEl.getAttribute('data-track-location') : null;
+
+    if (!click_location || click_location === 'outro') {
+      if (el.closest('header') || el.closest('nav:not(#mobile-menu)')) click_location = 'header';
+      else if (el.closest('.mobile-menu') || el.closest('#mobile-menu') || el.closest('[id*="mobile"]')) click_location = 'menu_mobile';
+      else if (el.closest('.hero') || el.closest('section:first-of-type') || el.closest('[id*="hero"]')) click_location = 'hero';
+      else if (el.closest('.fixed') || el.closest('[class*="fixed"]') || el.closest('[class*="botao-flutuante"]')) click_location = 'botao_flutuante';
+      else if (el.closest('.card') || el.closest('[data-service]') || el.closest('[class*="service"]') || el.closest('[class*="servico"]')) click_location = 'card_servico';
+      else if (el.closest('[id*="preco"]') || el.closest('[class*="preco"]') || el.closest('[id*="valor"]')) click_location = 'precos';
+      else if (el.closest('[id*="como"]') || el.closest('[class*="como"]')) click_location = 'como_funciona';
+      else if (el.closest('[id*="faq"]') || el.closest('[class*="faq"]') || el.closest('details')) click_location = 'faq';
+      else if (el.closest('[id*="depoimento"]') || el.closest('[class*="depoimento"]')) click_location = 'depoimentos';
+      else if (el.closest('footer')) click_location = 'rodape';
+      else if (el.closest('[id*="contato"]') || el.closest('main form')) click_location = 'contato';
+      else click_location = 'outro';
+    }
 
     // Find service_name & vehicle_type
     let serviceEl = el.closest('[data-service]');
