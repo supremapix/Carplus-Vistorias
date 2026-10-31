@@ -323,7 +323,7 @@ export default function App() {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-6 animate-[word-in_0.6s_0.65s_forwards_both]">
                   <div className="flex flex-col items-center w-full sm:w-auto">
                     <a
-                      href="https://wa.me/5541988740258?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20vistoria%20cautelar."
+                      href="https://wa.me/5541988740258?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20vistoria%20cautelar.%20Vi%20no%20site%20(Hero)."
                       target="_blank"
                       rel="noopener noreferrer"
                       className="premium-btn-green w-full flex items-center justify-center gap-3 font-display font-black text-base uppercase tracking-wider py-4 px-8 rounded-xl"
@@ -390,7 +390,7 @@ export default function App() {
                   {/* CTA linked action */}
                   <div className="mt-8">
                     <a
-                      href="https://wa.me/5541988740258?text=Ol%C3%A1!%20Desejo%20fazer%20uma%20an%C3%A1lise%20completa%20do%20meu%20ve%C3%ADculo."
+                      href="https://wa.me/5541988740258?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20vistoria%20cautelar.%20Vi%20no%20site%20(An%C3%A1lise%20Completa)."
                       target="_blank"
                       rel="noopener noreferrer"
                       data-track-location="beneficios"
@@ -478,7 +478,7 @@ export default function App() {
                   {/* CTA WhatsApp Schedule */}
                   <div className="flex flex-col items-start gap-1">
                     <a
-                      href="https://wa.me/5541988740258?text=Olá,%20gostaria%20de%20saber%20dos%2520diferenciais%20e%20agendar."
+                      href="https://wa.me/5541988740258?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20vistoria%20cautelar.%20Vi%20no%20site%20(Diferenciais)."
                       target="_blank"
                       rel="noopener noreferrer"
                       data-track-location="diferenciais"
@@ -658,7 +658,7 @@ export default function App() {
                         <span className="text-emerald-500 text-xl flex-shrink-0 w-8 text-center"><i className="fa-brands fa-whatsapp"></i></span>
                         <div>
                           <div className="text-[10px] uppercase font-bold tracking-wider text-zinc-300">WhatsApp</div>
-                          <a href="https://wa.me/5541988740258" data-track-location="localizacao" target="_blank" rel="noopener noreferrer" className="text-sm font-mono text-white hover:text-primary font-bold">
+                          <a href="https://wa.me/5541988740258?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20vistoria%20cautelar.%20Vi%20no%20site%20(Sede)." data-track-location="localizacao" target="_blank" rel="noopener noreferrer" className="text-sm font-mono text-white hover:text-primary font-bold">
                             (41) 98874-0258
                           </a>
                         </div>
@@ -784,7 +784,7 @@ export default function App() {
                       {/* Action trigger button */}
                       <div>
                         <a
-                          href={`https://wa.me/5541988740258?text=Ola!%20Gostaria%20de%20saber%20valores%20e%20agendar%20o%20serviço%20de%20${encodeURIComponent(item.title)}`}
+                          href={`https://wa.me/5541988740258?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20vistoria%20cautelar.%20Vi%20no%20site%20o%20servi%C3%A7o:%20${encodeURIComponent(item.title)}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="w-full inline-flex items-center justify-center gap-2 bg-zinc-900 hover:bg-zinc-800 text-white font-display font-semibold uppercase text-xs tracking-wider py-3 px-4 rounded-lg transition-colors border border-black hover:border-primary"
@@ -1180,7 +1180,7 @@ export default function App() {
                   </div>
                 </div>
                 <div className="pt-4 flex flex-col items-start gap-1">
-                  <a href="https://wa.me/5541988740258?text=Olá,%20assisti%20ao%20vídeo%20da%20vistoria%20e%20gostaria%20de%20agendar%20uma%20perícia." target="_blank" rel="noopener noreferrer" className="premium-btn-green font-display font-black text-sm uppercase tracking-wider py-4 px-8 rounded-xl inline-flex items-center justify-center gap-2.5">
+                  <a href="https://wa.me/5541988740258?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20vistoria%20cautelar.%20Vi%20no%20site%20(V%C3%ADdeo)." target="_blank" rel="noopener noreferrer" className="premium-btn-green font-display font-black text-sm uppercase tracking-wider py-4 px-8 rounded-xl inline-flex items-center justify-center gap-2.5">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-whatsapp text-[#25D366]"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 1.83.49 3.55 1.34 5.03L2 22l5.14-1.31C8.57 21.49 10.24 22 12 22c5.52 0 10-4.48 10-10Z"/></svg>
                     AGENDAR
                   </a>
@@ -1314,7 +1314,7 @@ export default function App() {
                 </div>
                 <div className="flex items-center gap-2.5">
                   <i className="fa-brands fa-whatsapp text-emerald-500 text-sm"></i>
-                  <a href="https://wa.me/5541988740258" target="_blank" rel="noopener noreferrer" className="text-white hover:text-primary hover:underline transition-colors font-mono font-bold">
+                  <a href="https://wa.me/5541988740258?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20vistoria%20cautelar.%20Vi%20no%20site%20(Rodap%C3%A9)." target="_blank" rel="noopener noreferrer" className="text-white hover:text-primary hover:underline transition-colors font-mono font-bold">
                     (41) 98874-0258
                   </a>
                 </div>

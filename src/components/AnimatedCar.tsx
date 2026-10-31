@@ -65,7 +65,7 @@ export default function AnimatedCar() {
             <span className="text-[10px] text-zinc-400 font-mono tracking-widest uppercase font-semibold">Agende mais rápido:</span>
             <span className="font-mono text-base font-extrabold text-[#F5A623]">{'(41) 98874-0258'}</span>
             <a 
-              href="https://wa.me/5541988740258?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20vistoria%20cautelar."
+              href="https://wa.me/5541988740258?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20vistoria%20cautelar.%20Vi%20no%20site%20(Carro%20Animado)."
               target="_blank" 
               rel="noopener noreferrer"
               className="text-white hover:text-primary mt-1 border-b border-zinc-700 pb-0.5 text-xs font-semibold group flex items-center gap-1.5"

@@ -179,7 +179,7 @@ export default function CityExplorer() {
                   </a>
                   
                   <a
-                    href={`https://wa.me/5541988740258?text=Ol%C3%A1!%20Desejo%20agendar%20uma%20vistoria%20cautelar%20para%20ve%C3%ADculo%20em%20${encodeURIComponent(item.name)}`}
+                    href={`https://wa.me/5541988740258?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20vistoria%20cautelar.%20Vi%20no%20site%20a%20regi%C3%A3o%20de%20${encodeURIComponent(item.name)}.`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-xs text-zinc-950 hover:text-white font-bold flex items-center gap-1 group bg-primary hover:bg-zinc-950 border border-black px-3 py-1.5 rounded-lg transition-all"

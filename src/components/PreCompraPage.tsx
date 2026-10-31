@@ -462,7 +462,7 @@ export default function PreCompraPage({ slug, onGoHome }: PreCompraPageProps) {
                       <i className="fa-solid fa-car-side"></i> Fora do Portão: Temos Taxa (Consulte Antes)
                     </span>
                     <a
-                      href="https://wa.me/5541988740258?text=Olá!%20Gostaria%20de%20consultar%20o%20valor%20da%20taxa%20de%20deslocamento%20para%20outra%20região."
+                      href={`https://wa.me/5541988740258?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20vistoria%20cautelar.%20Vi%20no%20site%20a%20p%C3%A1gina%20de%20${encodeURIComponent(config.anchorText)}%20(Taxa%20Deslocamento).`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white transition-colors"
@@ -477,7 +477,7 @@ export default function PreCompraPage({ slug, onGoHome }: PreCompraPageProps) {
             <div className="mt-8 flex flex-col sm:flex-row gap-6 justify-center items-center">
               <div className="flex flex-col items-center w-full sm:w-auto">
                 <a
-                  href="https://wa.me/5541988740258?text=Olá%20Carplus!%20Gostaria%20de%20agendar%20uma%20vistoria%20pré%20compra%20completa%20Curitiba."
+                  href={`https://wa.me/5541988740258?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20vistoria%20cautelar.%20Vi%20no%20site%20a%20p%C3%A1gina%20de%20${encodeURIComponent(config.anchorText)}.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="premium-btn-green w-full sm:w-auto font-display font-black text-sm uppercase tracking-widest py-4 px-10 rounded-full inline-flex items-center justify-center gap-2.5"
@@ -893,7 +893,7 @@ export default function PreCompraPage({ slug, onGoHome }: PreCompraPageProps) {
 
             <div className="mt-8 flex flex-col items-center gap-1">
               <a
-                href="https://wa.me/5541988740258?text=Olá%20Carplus!%20Gostaria%20de%20agendar%20um%20check%20up%20veicular%20pré%20compra%20hoje."
+                href={`https://wa.me/5541988740258?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20vistoria%20cautelar.%20Vi%20no%20site%20a%20p%C3%A1gina%20de%20${encodeURIComponent(config.anchorText)}%20(Check-up).`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="premium-btn-green font-display font-black text-sm uppercase tracking-wider py-4 px-10 rounded-xl inline-flex items-center justify-center gap-2.5"
