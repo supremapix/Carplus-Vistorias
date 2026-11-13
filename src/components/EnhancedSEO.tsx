@@ -69,8 +69,6 @@ export default function EnhancedSEO({
       {/* 5. Geographic Meta Tags */}
       <meta name="geo.region" content="BR-PR" />
       <meta name="geo.placename" content="Curitiba" />
-      <meta name="geo.position" content="-25.4660;-49.2890" />
-      <meta name="ICBM" content="-25.4660, -49.2890" />
 
       {/* 6. Font Optimization Critical Preload */}
       <link 

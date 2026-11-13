@@ -7,7 +7,6 @@ import React, { useState, useEffect } from 'react';
 import { Heart, Zap, MapPin, Map, Star } from 'lucide-react';
 import Header from './components/Header';
 import Logo from './components/Logo';
-import CountUp from './components/CountUp';
 import FAQAccordion from './components/FAQAccordion';
 import CityExplorer from './components/CityExplorer';
 import WhatsAppButton from './components/WhatsAppButton';
@@ -144,7 +143,7 @@ export default function App() {
       case 'sobre':
         return {
           title: 'Sobre a Carplus Vistorias | Perícia e Vistoria Cautelar em Curitiba',
-          description: 'Conheça a Carplus Vistorias, sediada no Portão em Curitiba-PR. Equipe credenciada de peritos automotivos emitindo laudos cautelares rápidos na hora.',
+          description: 'Conheça a Carplus Vistorias, sediada no Portão em Curitiba-PR. Consulte escopo, orçamento e agendamento da avaliação do veículo.',
           keywords: 'sobre carplus, quem somos carplus, peritos automotivos curitiba, vistoria curitiba portao',
           canonicalUrl: 'https://www.carplusvistorias.com.br/#sobre'
         };
@@ -158,14 +157,14 @@ export default function App() {
       case 'faq':
         return {
           title: 'Perguntas Frequentes — FAQ | Carplus Vistorias',
-          description: 'Dúvidas sobre Vistoria Cautelar e Perícia Automotiva em Curitiba. Saiba o que é analisado, tempo de emissão, seguro de responsabilidade civil e mais.',
+          description: 'Dúvidas sobre Vistoria Cautelar e Perícia Automotiva em Curitiba. Saiba o que é analisado, agendamento, escopo e limitações do laudo.',
           keywords: 'faq vistoria, dúvidas cautelar, tempo laudo cautelar, validade laudo de transferencia',
           canonicalUrl: 'https://www.carplusvistorias.com.br/#faq'
         };
       default:
         return {
-          title: 'Vistoria Cautelar em Curitiba | Carplus Vistorias – Laudo na Hora',
-          description: 'Carplus Vistorias: perícia automotiva e vistoria cautelar em Curitiba/PR. Laudo completo emitido na hora. Portão, Curitiba. (41) 98874-0258. Agende pelo WhatsApp.',
+          title: 'Vistoria Cautelar em Curitiba no Portão | Carplus Vistorias',
+          description: 'Carplus Vistorias: perícia automotiva e vistoria cautelar em Curitiba/PR. Atendimento na base do Portão, mediante agendamento. Portão, Curitiba. (41) 98874-0258. Agende pelo WhatsApp.',
           keywords: 'vistorias, vistoria cautelar curitiba, perícia automotiva curitiba, inspeção veicular curitiba, laudo cautelar curitiba, vistoria de carro curitiba, carplus vistorias',
           canonicalUrl: 'https://www.carplusvistorias.com.br'
         };
@@ -301,7 +300,7 @@ export default function App() {
                 {/* Badge pulsing */}
                 <div className="inline-flex items-center gap-2 bg-zinc-950/80 backdrop-blur-md border border-primary/40 px-4 py-2 rounded-full text-xs font-bold font-mono tracking-wider text-primary uppercase mb-8 badge-pulsing select-none shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
                   <span className="w-2.5 h-2.5 rounded-full bg-primary animate-ping"></span>
-                  <Zap size={12} className="text-primary fill-primary animate-pulse" /> LAUDO EMITIDO NA HORA
+                  <Zap size={12} className="text-primary fill-primary animate-pulse" /> CONSULTE ESCOPO E AGENDAMENTO
                 </div>
 
                 {/* Staggered text animated entry headings */}
@@ -380,7 +379,7 @@ export default function App() {
                   </h2>
                   <div className="space-y-4">
                     <p className="text-zinc-700 text-justify text-base leading-relaxed font-semibold">
-                      A <strong className="text-zinc-950 border-b border-black">vistoria cautelar</strong>, também conhecida como perícia automotiva, foi desenvolvida para certificar as condições estruturais e documentais de um veículo no momento da compra. Ela engloba a análise da estrutura (longarinas e colunas), a investigação dos antecedentes do veículo (histórico de roubo, leilão, processos judiciais), a verificação de reparos na lataria, além da conferência das numerações identificadoras do chassi e do motor.
+                      A <strong className="text-zinc-950 border-b border-black">vistoria cautelar</strong>, também conhecida como perícia automotiva, ajuda a avaliar as condições estruturais e documentais de um veículo no momento da compra. Ela engloba a análise da estrutura (longarinas e colunas), a investigação dos antecedentes do veículo (histórico de roubo, leilão, processos judiciais), a verificação de reparos na lataria, além da conferência das numerações identificadoras do chassi e do motor.
                     </p>
                     <p className="text-zinc-700 text-justify text-base leading-relaxed font-semibold">
                       A vistoria cautelar é recomendada para aqueles que desejam evitar riscos na aquisição de um carro usado ou para quem pretende verificar os reparos realizados após uma colisão.
@@ -398,7 +397,7 @@ export default function App() {
                       className="inline-flex items-center gap-3 bg-primary hover:bg-[#e0951b] text-white font-display font-black text-sm uppercase tracking-wider py-3.5 px-6 rounded-lg transition-all shadow-lg hover:scale-[1.02] transform"
                     >
                       <i className="fa-solid fa-magnifying-glass text-white"></i>
-                      Análise completa na hora da compra
+                      Análise antes da compra
                     </a>
                   </div>
                 </div>
@@ -452,7 +451,7 @@ export default function App() {
                     <span className="text-primary block mt-1">A Carplus Vistorias?</span>
                   </h2>
                   <p className="text-white text-justify text-base leading-relaxed mb-6 font-medium">
-                    Se você está no processo de comprar um veículo, seja de uma loja, revendedora autorizada, de bancos, consórcios, portais online, ou qualquer outro canal, a segurança deve ser sua prioridade. A Vistoria Cautelar da Carplus oferece uma análise abrangente e meticulosa para garantir que sua compra seja segura e que o veículo esteja em condições ideais.
+                    Se você está no processo de comprar um veículo, seja de uma loja, revendedora autorizada, de bancos, consórcios, portais online, ou qualquer outro canal, a segurança deve ser sua prioridade. A Vistoria Cautelar da Carplus oferece uma análise abrangente e meticulosa para reunir informações sobre o veículo antes da negociação. A avaliação tem escopo e limitações e não garante ausência de defeitos.
                   </p>
                   
                   {/* Stats list under differentials */}
@@ -463,11 +462,11 @@ export default function App() {
                     </div>
                     <div className="flex items-start gap-2.5">
                       <span className="text-primary text-lg mt-0.5"><i className="fa-solid fa-circle-check"></i></span>
-                      <span className="text-white text-sm font-bold">Integridade Documental 100%</span>
+                      <span className="text-white text-sm font-bold">Conferência de Identificadores</span>
                     </div>
                     <div className="flex items-start gap-2.5">
                       <span className="text-primary text-lg mt-0.5"><i className="fa-solid fa-circle-check"></i></span>
-                      <span className="text-white text-sm font-bold">Equipe Certificada e Experiente</span>
+                      <span className="text-white text-sm font-bold">Esclarecimento dos Apontamentos</span>
                     </div>
                     <div className="flex items-start gap-2.5">
                       <span className="text-primary text-lg mt-0.5"><i className="fa-solid fa-circle-check"></i></span>
@@ -510,11 +509,11 @@ export default function App() {
                 <div className="text-center max-w-2xl mx-auto mb-16 fade-in-on-scroll">
                   <span className="section-label font-bold text-primary tracking-widest inline-block mb-3 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">O QUE FAZEMOS</span>
                   <h2 className="font-display font-black text-2xl sm:text-3xl md:text-4xl uppercase tracking-tight mb-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-                    <span className="text-white block">Laudos com Garantia</span>
+                    <span className="text-white block">Avaliação com Clareza</span>
                     <span className="text-primary block mt-1">Nossos Serviços</span>
                   </h2>
                   <p className="text-white font-semibold text-center drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
-                    Nossa marca é sinônimo de qualidade e excelência. Oferecemos seguro de responsabilidade civil para garantir tranquilidade total em cada laudo emitido.
+                    Confirme quais itens e consultas integram o serviço. Peça explicações sobre os resultados e as limitações da avaliação antes de decidir.
                   </p>
                 </div>
 
@@ -557,7 +556,7 @@ export default function App() {
               <div className="max-w-7xl mx-auto">
                 <div className="text-center max-w-3xl mx-auto mb-16 fade-in-on-scroll">
                   <div className="inline-flex items-center gap-2 bg-primary/20 border border-primary/40 px-3 .5 py-1.5 rounded-full text-[11px] font-bold font-mono tracking-wider text-primary-dark uppercase mb-4 select-none">
-                    <Zap size={11} className="text-primary-dark fill-primary-dark inline mr-1.5 animate-pulse" /> AQUI SEU LAUDO É EMITIDO NA HORA!
+                    <Zap size={11} className="text-primary-dark fill-primary-dark inline mr-1.5 animate-pulse" /> CONFIRME O PRAZO AO AGENDAR
                   </div>
                   <h2 className="font-display font-black text-2xl sm:text-3xl uppercase tracking-tight mb-4">
                     <span className="text-zinc-900 block">Laudo Sem Complicações</span>
@@ -729,7 +728,7 @@ export default function App() {
                   <span className="text-primary block mt-1">Automotiva em Curitiba</span>
                 </h1>
                 <p className="max-w-3xl mx-auto text-white text-justify text-center text-base md:text-lg font-medium">
-                  Laudos emitidos na hora com tecnologia de ponta e cobertura de responsabilidade civil
+                  Consulte o escopo da avaliação, o orçamento e o prazo
                 </p>
               </div>
 
@@ -825,27 +824,27 @@ export default function App() {
                         <tr className="hover:bg-zinc-50">
                           <td className="py-4 px-6 font-semibold text-zinc-900 border-r border-zinc-200">Comprando carro usado</td>
                           <td className="py-4 px-6 text-primary-dark font-bold font-display uppercase text-sm border-r border-zinc-200">Vistoria Cautelar Completa</td>
-                          <td className="py-4 px-6 text-center text-zinc-600 font-mono font-medium">60 min</td>
+                          <td className="py-4 px-6 text-center text-zinc-600 font-mono font-medium">A confirmar</td>
                         </tr>
                         <tr className="hover:bg-zinc-50 bg-zinc-50/50">
-                          <td className="py-4 px-6 font-semibold text-zinc-900 border-r border-zinc-200">Transferindo propriedade no DETRAN/cartório</td>
-                          <td className="py-4 px-6 text-zinc-800 font-bold font-display uppercase text-sm border-r border-zinc-200">Vistoria para Transferência</td>
-                          <td className="py-4 px-6 text-center text-zinc-600 font-mono font-medium">30 min</td>
+                          <td className="py-4 px-6 font-semibold text-zinc-900 border-r border-zinc-200">Preparando a transferência do veículo</td>
+                          <td className="py-4 px-6 text-zinc-800 font-bold font-display uppercase text-sm border-r border-zinc-200">Confirme o procedimento com o Detran-PR</td>
+                          <td className="py-4 px-6 text-center text-zinc-600 font-mono font-medium">A confirmar</td>
                         </tr>
                         <tr className="hover:bg-zinc-50">
                           <td className="py-4 px-6 font-semibold text-zinc-900 border-r border-zinc-200">Comprovação e liberação de financiamento</td>
-                          <td className="py-4 px-6 text-zinc-800 font-bold font-display uppercase text-sm border-r border-zinc-200">Inspeção para Financiamento</td>
-                          <td className="py-4 px-6 text-center text-zinc-600 font-mono font-medium">30 min</td>
+                          <td className="py-4 px-6 text-zinc-800 font-bold font-display uppercase text-sm border-r border-zinc-200">Confirme o laudo aceito pela instituição</td>
+                          <td className="py-4 px-6 text-center text-zinc-600 font-mono font-medium">A confirmar</td>
                         </tr>
                         <tr className="hover:bg-zinc-50 bg-zinc-50/50">
                           <td className="py-4 px-6 font-semibold text-zinc-900 border-r border-zinc-200">Verificando batida/reparo pós-retífica</td>
                           <td className="py-4 px-6 text-primary-dark font-bold font-display uppercase text-sm border-r border-zinc-200">Análise Estrutural de Lataria</td>
-                          <td className="py-4 px-6 text-center text-zinc-600 font-mono font-medium">45 min</td>
+                          <td className="py-4 px-6 text-center text-zinc-600 font-mono font-medium">A confirmar</td>
                         </tr>
                         <tr className="hover:bg-zinc-50">
                           <td className="py-4 px-6 font-semibold text-zinc-900 border-r border-zinc-200">Suspeita de alteração de chassi / motor clonado</td>
                           <td className="py-4 px-6 text-zinc-800 font-bold font-display uppercase text-sm border-r border-zinc-200">Perícia de Chassi e Numerações</td>
-                          <td className="py-4 px-6 text-center text-zinc-600 font-mono font-medium">45 min</td>
+                          <td className="py-4 px-6 text-center text-zinc-600 font-mono font-medium">A confirmar</td>
                         </tr>
                       </tbody>
                     </table>
@@ -854,7 +853,7 @@ export default function App() {
 
                 {/* Info block under table */}
                 <div className="mt-6 text-center text-zinc-500 font-sans text-xs italic tracking-wide">
-                  * Todos os laudos acompanham documentação fotográfica detalhada e seguro de responsabilidade civil em Curitiba.
+                  * Confirme a finalidade e o escopo antes de contratar. Vistoria cautelar não substitui automaticamente outros procedimentos.
                 </div>
 
               </div>
@@ -910,13 +909,13 @@ export default function App() {
                     <span className="text-primary-dark block mt-1">Quem Somos Nós</span>
                   </h2>
                   <p className="text-zinc-650 leading-relaxed text-justify">
-                    A Carplus Vistorias é uma empresa curitibana especializada em perícias e vistorias veiculares, sediada no bairro Portão, em Curitiba/PR. Fundada por peritos automotivos com mais de uma década de experiência no setor, nossa missão é proteger compradores e vendedores de veículos usados em Curitiba e região metropolitana.
+                    A Carplus Vistorias é uma empresa curitibana especializada em perícias e vistorias veiculares, sediada no bairro Portão, em Curitiba/PR. Nosso atendimento ajuda compradores e vendedores a esclarecer as condições avaliadas no veículo antes de negociar.
                   </p>
                   <p className="text-zinc-650 leading-relaxed text-justify">
-                    Utilizamos equipamentos de última geração, como medidores de espessura de pintura, detectores de solda, scanners de chassi e bases de dados integradas a órgãos oficiais, para emitir laudos técnicos precisos e aceitos em todo o Brasil.
+                    A avaliação considera identificação, estrutura, pintura e histórico disponível, conforme o serviço contratado. Pergunte quais verificações estão incluídas e o que precisa ser analisado separadamente.
                   </p>
                   <p className="text-zinc-650 leading-relaxed text-justify">
-                    Na Carplus, seu laudo é emitido na hora — sem espera, sem burocracia, com toda a segurança que sua negociação merece.
+                    Combine a apresentação do veículo na base do Portão. O orçamento, a disponibilidade e o prazo são confirmados no agendamento.
                   </p>
                 </div>
 
@@ -983,7 +982,7 @@ export default function App() {
                     </span>
                     <h3 className="font-display font-bold text-xl text-zinc-950 mb-3">Diferenciais</h3>
                     <p className="text-zinc-700 text-sm text-justify leading-relaxed font-semibold">
-                      Laudo emitido na hora, seguro de responsabilidade civil incluso, equipe certificada, aceito em todo o Brasil.
+                      Atendimento na base do Portão, orçamento sob consulta e esclarecimento dos itens avaliados.
                     </p>
                   </div>
 
@@ -992,52 +991,6 @@ export default function App() {
               </div>
             </section>
 
-            {/* NUMEROS ANIMADOS (CONTADORES) */}
-            <section className="bg-gradient-to-r from-zinc-900 to-zinc-950 text-white py-16 px-6">
-              <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                
-                {/* Stat 1 */}
-                <div className="fade-in-on-scroll">
-                  <div className="text-primary font-display font-black text-4xl md:text-5xl tracking-normal mb-2 leading-none">
-                    <CountUp end={5000} prefix="+" />
-                  </div>
-                  <div className="text-[10px] md:text-xs uppercase font-bold tracking-wider text-zinc-200">
-                    Laudos Emitidos Estáveis
-                  </div>
-                </div>
-
-                {/* Stat 2 */}
-                <div className="fade-in-on-scroll" style={{ transitionDelay: '100ms' }}>
-                  <div className="text-primary font-display font-black text-4xl md:text-5xl tracking-normal mb-2 leading-none">
-                    <CountUp end={10} prefix="+" />
-                  </div>
-                  <div className="text-[10px] md:text-xs uppercase font-bold tracking-wider text-zinc-200">
-                    Anos de Experiência
-                  </div>
-                </div>
-
-                {/* Stat 3 */}
-                <div className="fade-in-on-scroll" style={{ transitionDelay: '200ms' }}>
-                  <div className="text-primary font-display font-black text-4xl md:text-5xl tracking-normal mb-2 leading-none">
-                    <CountUp end={100} suffix="%" />
-                  </div>
-                  <div className="text-[10px] md:text-xs uppercase font-bold tracking-wider text-zinc-200">
-                    Laudos Aceitos em Cartórios
-                  </div>
-                </div>
-
-                {/* Stat 4 */}
-                <div className="fade-in-on-scroll" style={{ transitionDelay: '300ms' }}>
-                  <div className="text-primary font-display font-black text-4xl md:text-5xl tracking-normal mb-2 leading-none flex items-center justify-center">
-                    4.9<Star size={24} className="text-primary fill-primary inline ml-1.5 animate-pulse" />
-                  </div>
-                  <div className="text-[10px] md:text-xs uppercase font-bold tracking-wider text-zinc-200">
-                    Nota média no Google
-                  </div>
-                </div>
-
-              </div>
-            </section>
 
           </div>
         )}
@@ -1067,7 +1020,7 @@ export default function App() {
                   <span className="text-primary block mt-1">Curitiba e Região</span>
                 </h1>
                 <p className="max-w-3xl mx-auto text-white text-justify text-center text-base md:text-lg font-semibold">
-                  Atendemos Curitiba e as principais cidades da Grande Curitiba com laudo na hora
+                  Atendimento a clientes de Curitiba e região na base do Portão
                 </p>
               </div>
 
@@ -1163,7 +1116,7 @@ export default function App() {
                   O Segredo que a <span className="text-primary text-glow-gold">Vistoria Cautelar</span> Revela Antes de Você Comprar!
                 </h2>
                 <p className="text-white text-base leading-relaxed text-justify font-semibold">
-                  Não jogue seu dinheiro fora comprando um carro com problemas ocultos de estrutura ou passagem por leilão. Neste vídeo explicativo de poucos segundos, veja na prática como nossos peritos mapeiam repinturas, defeitos estruturais ocultos e garantem que você faça um negócio 100% livre de dores de cabeça.
+                  Não jogue seu dinheiro fora comprando um carro com problemas ocultos de estrutura ou passagem por leilão. Neste vídeo explicativo de poucos segundos, veja na prática como nossos peritos mapeiam repinturas, defeitos estruturais ocultos e explicam os pontos observados. A avaliação não elimina todos os riscos da compra.
                 </p>
                 <div className="space-y-3 font-extrabold text-sm text-white">
                   <div className="flex items-center gap-3">
@@ -1176,7 +1129,7 @@ export default function App() {
                   </div>
                   <div className="flex items-center gap-3">
                     <svg className="h-5 w-5 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
-                    <span>Laudo cautelar certificado entregue logo após a perícia</span>
+                    <span>Consulte o formato do relatório e o prazo de entrega</span>
                   </div>
                 </div>
                 <div className="pt-4 flex flex-col items-start gap-1">
@@ -1240,7 +1193,7 @@ export default function App() {
               {/* Trust symbol badge */}
               <div className="pt-2 flex items-center gap-3 text-primary font-mono text-xs font-bold uppercase tracking-wider select-none">
                 <i className="fa-solid fa-shield-halved text-primary text-sm"></i>
-                Seguro de Responsabilidade Civil Ativo
+                Consulte o escopo da avaliação
               </div>
             </div>
 

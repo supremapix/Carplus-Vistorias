@@ -14,677 +14,648 @@ import {
 
 export const SERVICES_HOME: ServiceCardType[] = [
   {
-    id: 'estrutural',
-    icon: 'fa-car-crash',
-    title: 'Análise Estrutural',
-    description: 'Verificação de longarinas, colunas e estrutura do chassi para detectar colisões anteriores.'
+    "id": "estrutural",
+    "icon": "fa-car-crash",
+    "title": "Análise Estrutural",
+    "description": "Avaliação dos pontos estruturais previstos no serviço para registrar indícios de danos ou reparos."
   },
   {
-    id: 'antecedentes',
-    icon: 'fa-file-shield',
-    title: 'Pesquisa de Antecedentes',
-    description: 'Histórico de roubo, leilão, processos judiciais e gravame financeiro do veículo.'
+    "id": "antecedentes",
+    "icon": "fa-file-shield",
+    "title": "Pesquisa de Antecedentes",
+    "description": "Consulta ao histórico disponível. Confirme as bases utilizadas e as limitações da pesquisa."
   },
   {
-    id: 'lataria',
-    icon: 'fa-spray-can',
-    title: 'Verificação de Lataria',
-    description: 'Análise de pintura, amassados, reparos e retoques para identificar colisões ocultas.'
+    "id": "lataria",
+    "icon": "fa-spray-can",
+    "title": "Verificação de Lataria",
+    "description": "Observação de pintura e sinais de reparos, considerados no contexto da avaliação."
   },
   {
-    id: 'numeracoes',
-    icon: 'fa-barcode',
-    title: 'Conferência de Numerações',
-    description: 'Checagem do número do chassi, motor e demais identificadores do veículo.'
+    "id": "numeracoes",
+    "icon": "fa-barcode",
+    "title": "Conferência de Numerações",
+    "description": "Conferência de identificadores do veículo, como chassi e motor, conforme o escopo contratado."
   }
 ];
-
 export const ADVANTAGES_HOME: AdvantageCardType[] = [
   {
-    id: 'seguras',
-    icon: 'fa-handshake',
-    title: 'Negociações Seguras',
-    subtitle: 'Tome decisões informadas e evite problemas futuros com nossos laudos detalhados.'
+    "id": "seguras",
+    "icon": "fa-handshake",
+    "title": "Decisões informadas",
+    "subtitle": "Conheça os apontamentos e as limitações do relatório antes de negociar."
   },
   {
-    id: 'rapidez',
-    icon: 'fa-bolt',
-    title: 'Rapidez e Eficiência',
-    subtitle: 'Entregue seu laudo na hora, sem demoras frustrantes. Processo ágil do início ao fim.'
+    "id": "rapidez",
+    "icon": "fa-bolt",
+    "title": "Agendamento",
+    "subtitle": "Confirme orçamento, disponibilidade e prazo com a equipe."
   },
   {
-    id: 'excelencia',
-    icon: 'fa-star',
-    title: 'Comprometimento e Excelência',
-    subtitle: 'Nossa tecnologia de ponta garante relatórios precisos, evitando surpresas desagradáveis.'
+    "id": "excelencia",
+    "icon": "fa-star",
+    "title": "Clareza na avaliação",
+    "subtitle": "Pergunte quais itens serão examinados e como o resultado será apresentado."
   },
   {
-    id: 'segurança',
-    icon: 'fa-shield-halved',
-    title: 'Sua segurança é a nossa prioridade!',
-    subtitle: 'Na Carplus Vistorias, sua tranquilidade é a nossa prioridade. Conte em nós para uma jornada segura.'
+    "id": "segurança",
+    "icon": "fa-shield-halved",
+    "title": "Atendimento no Portão",
+    "subtitle": "Traga o veículo à base após confirmar seu agendamento."
   }
 ];
-
 export const DETAILED_SERVICES: DetailedServiceType[] = [
   {
-    id: 'vistoria-completa',
-    title: 'Vistoria Cautelar Completa',
-    description: 'O laudo cautelar é a perícia mais completa disponível para quem está comprando ou vendendo um veículo usado. Nossa vistoria inclui análise estrutural do chassi, verificação de numerações, pesquisa de gravame, histórico de leilão e muito mais. Ideal para negociações seguras.',
-    includes: ['Análise de 80+ itens', 'Laudo na hora', 'Seguro de responsabilidade civil'],
-    ctaText: 'Agendar Vistoria Cautelar'
+    "id": "vistoria-completa",
+    "title": "Vistoria Cautelar",
+    "description": "Avaliação antes da compra ou venda de um veículo, considerando estrutura, identificação e histórico disponível. Não garante ausência de defeitos futuros.",
+    "includes": [
+      "Identificação e estrutura",
+      "Histórico disponível",
+      "Limitações explicadas"
+    ],
+    "ctaText": "Consultar avaliação"
   },
   {
-    id: 'pericia-chassi',
-    title: 'Perícia de Chassi e Numerações',
-    description: 'Verificação detalhada do número do chassi, número do motor, etiquetas de identificação e todos os itens de segurança rastreáveis do veículo. Detectamos adulterações, clonings e irregularidades documentais com precisão técnica.',
-    includes: ['Verificação de 12 numerações', 'Consulta DETRAN', 'Relatório técnico'],
-    ctaText: 'Agendar Perícia de Chassi'
+    "id": "pericia-chassi",
+    "title": "Conferência de Chassi e Numerações",
+    "description": "Conferência de identificadores do veículo, conforme o escopo contratado.",
+    "includes": [
+      "Escopo a confirmar",
+      "Orçamento sob consulta",
+      "Esclarecimento do resultado"
+    ],
+    "ctaText": "Consultar avaliação"
   },
   {
-    id: 'analise-estrutural',
-    title: 'Análise Estrutural de Lataria',
-    description: 'Utilizamos equipamentos de última geração para detectar reparos ocultos, amassados, solda irregular, massa em excesso e colisões anteriores em toda a estrutura metálica do veículo. Nada passa despercebido pelos nossos peritos.',
-    includes: ['Medidor de espessura', 'Análise de pintura', 'Fotos documentadas'],
-    ctaText: 'Agendar Análise Estrutural'
+    "id": "analise-estrutural",
+    "title": "Verificação de Lataria",
+    "description": "Observação de pintura e sinais de reparos, considerados no contexto da avaliação.",
+    "includes": [
+      "Escopo a confirmar",
+      "Orçamento sob consulta",
+      "Esclarecimento do resultado"
+    ],
+    "ctaText": "Consultar avaliação"
   },
   {
-    id: 'pesquisa-antecedentes',
-    title: 'Pesquisa de Antecedentes Veiculares',
-    description: 'Investigamos o histórico completo do veículo: roubo, furto, restrições judiciais, financiamento pendente (gravame), histórico de leilão, recall pendente e situação junto ao DETRAN-PR. Você sabe tudo antes de assinar.',
-    includes: ['15+ bases de dados', 'DETRAN, SENATRAN, Receita Federal', 'Relatório PDF'],
-    ctaText: 'Consultar Antecedentes'
+    "id": "pesquisa-antecedentes",
+    "title": "Pesquisa de Antecedentes",
+    "description": "Consulta ao histórico disponível. Confirme as bases utilizadas e as limitações da pesquisa.",
+    "includes": [
+      "Escopo a confirmar",
+      "Orçamento sob consulta",
+      "Esclarecimento do resultado"
+    ],
+    "ctaText": "Consultar avaliação"
   },
   {
-    id: 'vistoria-transferencia',
-    title: 'Vistoria para Transferência',
-    description: 'Laudo técnico obrigatório para transferência de propriedade em Curitiba e região metropolitana. Nosso documento é aceito por todas as seguradoras, financeiras, cartórios e pelo DETRAN-PR. Emissão imediata.',
-    includes: ['Aceito em todos os cartórios', 'Válido por 30 dias', 'Emissão na hora'],
-    ctaText: 'Agendar Vistoria de Transferência'
+    "id": "vistoria-transferencia",
+    "title": "Dúvidas sobre transferência",
+    "description": "Não confunda vistoria cautelar com o procedimento de transferência. Confirme com o Detran-PR o que é exigido no seu caso e com a equipe qual serviço pode ser prestado.",
+    "includes": [
+      "Informe a finalidade",
+      "Confirme os requisitos aplicáveis"
+    ],
+    "ctaText": "Consultar a equipe"
   },
   {
-    id: 'inspecao-financiamento',
-    title: 'Inspeção para Financiamento e Seguro',
-    description: 'Laudo de vistoria aceito por todos os bancos, financeiras e seguradoras que operam em Curitiba. Bradesco, Itaú, Santander, Porto Seguro, Allianz e demais operadoras. Processo rápido e sem burocracia.',
-    includes: ['Aceito em todas as financeiras', 'Formato digital e impresso', 'Validade nacional'],
-    ctaText: 'Agendar Inspeção de Financiamento'
+    "id": "inspecao-financiamento",
+    "title": "Avaliação para financiamento ou seguro",
+    "description": "Antes de contratar uma avaliação para banco ou seguradora, confirme diretamente com a instituição qual documento é aceito. A aceitação não é garantida por esta página.",
+    "includes": [
+      "Confirme com a instituição",
+      "Consulte escopo e disponibilidade"
+    ],
+    "ctaText": "Consultar a equipe"
   }
 ];
-
 export const NEIGHBORHOODS_SEO: NeighborhoodType[] = [
   {
     name: 'Portão',
     isSede: true,
-    description: 'A Carplus Vistorias está sediada no Portão, bairro central e estratégico de Curitiba. Nosso endereço na Av. Presidente Arthur da Silva Bernardes, 1323 oferece fácil acesso a moradores para realizar vistorias completas com laudo emitido na hora.'
+    description: 'Clientes de Portão podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Abranches',
-    description: 'Realize a vistoria cautelar de veículos no Abranches com quem é especialista no mercado de Curitiba. Garanta um laudo técnico robusto antes de comprar ou vender.'
+    description: 'Clientes de Abranches podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Água Verde',
-    description: 'Moradores e revendas do Água Verde contam com a estrutura de ponta da Carplus Vistorias, ágil e a poucos minutos do bairro, com laudo entregue na hora.'
+    description: 'Clientes de Água Verde podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Ahú',
-    description: 'Segurança na compra de veículos seminovos no Ahú. Perícia cautelar completa examinando chassi, numeração de motor, histórico de leilão e integridade física.'
+    description: 'Clientes de Ahú podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Alto Boqueirão',
-    description: 'Laudo cautelar confiável para quem reside ou negocia automóveis no Alto Boqueirão. Evite prejuízos verificando se o carro tem reparos ocultos ou restrições.'
+    description: 'Clientes de Alto Boqueirão podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Alto da Glória',
-    description: 'Consultoria e vistoria cautelar de alta precisão para a região do Alto da Glória. Laudos estruturados com fotos detalhadas para total clareza na transação.'
+    description: 'Clientes de Alto da Glória podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Alto da Rua XV',
-    description: 'Negociações de veículos transparentes e seguras no Alto da Rua XV. Inspeção rigorosa de pintura, chassi e busca de antecedentes em minutos.'
+    description: 'Clientes de Alto da Rua XV podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Atuba',
-    description: 'Proteja seu patrimônio no Atuba realizando a perícia cautelar completa com a Carplus. Oferecemos o laudo mais detalhado com seguro de responsabilidade.'
+    description: 'Clientes de Atuba podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Augusta',
-    description: 'Vistoria especializada atendendo a região da Augusta. Examinamos minuciosamente pontos vitais de fixação, suspensão e longarinas.'
+    description: 'Clientes de Augusta podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Bacacheri',
-    description: 'Perícias e laudos cautelares no Bacacheri com atendimento de excelência. Agende seu horário pelo WhatsApp e faça uma compra 100% segura.'
+    description: 'Clientes de Bacacheri podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Bairro Alto',
-    description: 'Moradores e comerciantes do Bairro Alto encontram na Carplus a análise veicular definitiva. Laudo completo aceito pelas maiores seguradoras e DETRAN.'
+    description: 'Clientes de Bairro Alto podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Barreirinha',
-    description: 'Garanta um bom negócio na Barreirinha. Nossa vistoria cautelar certifica numerações de peças e constata integridade mecânica e operacional.'
+    description: 'Clientes de Barreirinha podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Batel',
-    description: 'Atendimento de alto padrão para o Batel. Vistoria técnica minuciosa com testes de lataria detalhados para veículos importados e de alto padrão.'
+    description: 'Clientes de Batel podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Bigorrilho',
-    description: 'Seja para vender ou adquirir um seminovo no Bigorrilho, nosso laudo técnico é a prova de qualidade. Transações transparentes e de confiança.'
+    description: 'Clientes de Bigorrilho podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Boa Vista',
-    description: 'A Carplus Vistorias apoia clientes do Boa Vista na certificação de automóveis. Credibilidade e agilidade para um laudo estruturado e sem surpresas.'
+    description: 'Clientes de Boa Vista podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Bom Retiro',
-    description: 'Para negociações seguras no Bom Retiro, conte com o laudo pericial da Carplus. Análise completa de histórico e checagem mecânica de chassi.'
+    description: 'Clientes de Bom Retiro podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Boqueirão',
-    description: 'Um dos principais polos imobiliários e automotivos de Curitiba, o Boqueirão conta com nosso suporte para vistorias ágeis e periciais do mais alto nível.'
+    description: 'Clientes de Boqueirão podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Butiatuvinha',
-    description: 'Vistoria veicular cautelar em Santana e Butiatuvinha. Conferência rigorosa de autenticidade documental e histórico do veículo antes do pagamento.'
+    description: 'Clientes de Butiatuvinha podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Cabral',
-    description: 'Tranquilidade jurídica e mecânica para quem compra carros no Cabral. Avaliação estrutural rigorosa e pesquisa detalhada em mais de 15 bases de dados.'
+    description: 'Clientes de Cabral podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Cachoeira',
-    description: 'Proteja-se de golpes ou veículos adulterados na Cachoeira. Realize sua vistoria com nossos especialistas e receba o parecer técnico de imediato.'
+    description: 'Clientes de Cachoeira podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Cajuru',
-    description: 'Atendimento personalizado para o Cajuru. Laudo cautelar executado por peritos experientes com máxima eficiência para você fechar negócio rápido.'
+    description: 'Clientes de Cajuru podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Campina do Siqueira',
-    description: 'Compre com segurança na Campina do Siqueira. Verificamos se o veículo tem passagem por seguradoras, leilões ou se possui sinistro ativo.'
+    description: 'Clientes de Campina do Siqueira podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Campo Comprido',
-    description: 'Vistoria automotiva completa para moradores do Campo Comprido. Mapeamento de repinturas, reparos de massa plástica, e pontos de deformação estrutural.'
+    description: 'Clientes de Campo Comprido podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Campo de Santana',
-    description: 'Segurança em primeiro lugar no Campo de Santana. Avaliação cautelar imparcial e objetiva, ideal para valorizar seu seminovo na venda.'
+    description: 'Clientes de Campo de Santana podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Capão Raso',
-    description: 'Perícia técnica de chassi e painéis corta-fogo para o Capão Raso. Certifique-se de que o carro pretendido é original e livre de multas ou ônus.'
+    description: 'Clientes de Capão Raso podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Capão da Imbuia',
-    description: 'Vistoria de transferência e laudo cautelar estendido no Capão da Imbuia. Atendimento prático e sem frescura para agilizar sua transação.'
+    description: 'Clientes de Capão da Imbuia podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Cascatinha',
-    description: 'Moradores de Cascatinha contam com nossa equipe para certificar a procedência física e documental de utilitários, nacionais e importados de luxo.'
+    description: 'Clientes de Cascatinha podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Caximba',
-    description: 'Laudo cautelar certificado pela Carplus no bairro Caximba. Segurança jurídica para quem está comprando ou vendendo carros de passeio e utilitários.'
+    description: 'Clientes de Caximba podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Centro',
-    description: 'Vistoria veicular dinâmica no Centro de Curitiba. Rapidez absoluta e exatidão técnica que o público do coração comercial da cidade exige.'
+    description: 'Clientes de Centro podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Centro Cívico',
-    description: 'O polo administrativo de Curitiba recebe nossa cobertura de vistorias com precisão absoluta. Atendimento pontual com hora marcada via WhatsApp.'
+    description: 'Clientes de Centro Cívico podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Cidade Industrial (CIC)',
-    description: 'Atendimento de excelência na maior região industrial de Curitiba. Certificação cautelar completa com seguro de responsabilidade integrado.'
+    description: 'Clientes de Cidade Industrial (CIC) podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Cristo Rei',
-    description: 'Seja para transferir ou emitir laudo cautelar preventivo no Cristo Rei, a Carplus é sua principal parceira em diagnóstico veicular profissional.'
+    description: 'Clientes de Cristo Rei podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Fanny',
-    description: 'Próximo ao Fanny, realizamos perícias estruturais avançadas de colunas e assoalho com equipamentos de medição de espessura de alta sensibilidade.'
+    description: 'Clientes de Fanny podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Fazendinha',
-    description: 'Proteção veicular garantida no Fazendinha. Saiba qual o histórico de sinistros, leilões ou fraudes que podem depreciar o preço do automóvel.'
+    description: 'Clientes de Fazendinha podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Ganchinho',
-    description: 'Atendimento confiável na região do Ganchinho para vistorias completas. Nossos peritos inspecionam juntas, longarinas e soldas de fábrica.'
+    description: 'Clientes de Ganchinho podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Guabirotuba',
-    description: 'Segurança automotiva premium no Guabirotuba. Laudos técnicos completos que agregam altíssimo valor e transparência na revenda de seu carro.'
+    description: 'Clientes de Guabirotuba podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Guaíra',
-    description: 'Moradores de Guaíra contam com check-up de chassi e motor detalhados, livrando o comprador de cair em armadilhas de fraudadores.'
+    description: 'Clientes de Guaíra podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Hauer',
-    description: 'Para lojistas e compradores do Hauer, realizamos vistoria com entrega na hora. Não perca tempo e feche seu negócio com total amparo documental.'
+    description: 'Clientes de Hauer podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Hugo Lange',
-    description: 'Foco em procedência técnica e qualidade no Hugo Lange. Análise abrangente focada em detalhes ocultos e conferência documental detalhada.'
+    description: 'Clientes de Hugo Lange podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Jardim Botânico',
-    description: 'Uma das principais referências e cartões postais de Curitiba recebe nossa cobertura de segurança automotiva com atendimento de primeira classe.'
+    description: 'Clientes de Jardim Botânico podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Jardim Social',
-    description: 'Para veículos de alto luxo e alta cilindrada do Jardim Social, conte com nossa inspeção de alta fidelidade e laudo técnico rico em fotos.'
+    description: 'Clientes de Jardim Social podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Jardim das Américas',
-    description: 'Quem reside no Jardim das Américas tem garantia de laudo cautelar fidedigno na Carplus. Evite sinistros e perdas financeiras comprando com segurança.'
+    description: 'Clientes de Jardim das Américas podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Juvevê',
-    description: 'Soluções de perícia cautelar rápidas e eficientes para o Juvevê. Verificamos soldas na área do painel frontal e possíveis sinais de adulterações.'
+    description: 'Clientes de Juvevê podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Lamenha Pequena',
-    description: 'Atendimento técnico especializado em Lamenha Pequena. Inspeção estrutural pesada para atestar se o veículo foi cortado ou remontado.'
+    description: 'Clientes de Lamenha Pequena podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Lindóia',
-    description: 'Laudo automotivo certificado no Lindóia. Verificação de antecedentes, gravames ativos e restrições judiciais com consulta integrada.'
+    description: 'Clientes de Lindóia podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Mercês',
-    description: 'No Mercês, conte com nossa equipe especializada para avaliar a estrutura externa e interna do veículo antes de efetuar o pagamento.'
+    description: 'Clientes de Mercês podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Mossunguê',
-    description: 'Para a região do Mossunguê e Ecoville, disponibilizamos uma perícia técnica minuciosa para certificar marcas originais e o histórico de leilão.'
+    description: 'Clientes de Mossunguê podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Novo Mundo',
-    description: 'Facilidade imbatível e rapidez na entrega do laudo pericial para o Novo Mundo. Faça uma vistoria completa rápida e garanta sua integridade.'
+    description: 'Clientes de Novo Mundo podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Orleans',
-    description: 'Laudo cautelar confiável no Orleans. Avaliamos se houve qualquer alteração estrutural nas longarinas ou teto, assegurando se o carro é seguro.'
+    description: 'Clientes de Orleans podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Parolin',
-    description: 'Análise cautelar transparente no Parolin. Documentamos todas as condições do motor e eventuais desgastes ou danos na parte inferior do chassi.'
+    description: 'Clientes de Parolin podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Pilarzinho',
-    description: 'A melhor avaliação cautelar de Curitiba no Pilarzinho. Saiba se o carro passou por sinistros graves que comprometem a estabilidade.'
+    description: 'Clientes de Pilarzinho podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Pinheirinho',
-    description: 'No Pinheirinho, nossa vistoria técnica é rápida e precisa. Auxiliamos você no processo de aquisição segura do seu próximo veículo seminovo.'
+    description: 'Clientes de Pinheirinho podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Prado Velho',
-    description: 'Garantia de segurança pericial no Prado Velho. Agilidade na entrega do laudo técnico e atendimento personalizado focado na sua tranquilidade.'
+    description: 'Clientes de Prado Velho podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Rebouças',
-    description: 'Seja perto das faculdades ou nos polos corporativos do Rebouças, conte com nossa plataforma pericial para certificar a qualidade do seu automóvel.'
+    description: 'Clientes de Rebouças podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Riviera',
-    description: 'Atendimento pericial profissional e ágil no bairro Riviera. Evite comprar gato por lebre verificando todas as numerações com especialistas.'
+    description: 'Clientes de Riviera podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Santa Cândida',
-    description: 'No Santa Cândida, a Carplus garante que seu laudo técnico seja de perfeito rigor e aceito prontamente nos cartórios, financeiras e pelo DETRAN.'
+    description: 'Clientes de Santa Cândida podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Santa Felicidade',
-    description: 'Para moradores e investidores de Santa Felicidade, oferecemos vistoria cautelar de excelência para sua inteira segurança e valorização do carro.'
+    description: 'Clientes de Santa Felicidade podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Santa Quitéria',
-    description: 'Análise completa para o Santa Quitéria. Nossos equipamentos aferem a camada exata de pintura do carro para sinalizar batidas com perfeição.'
+    description: 'Clientes de Santa Quitéria podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Santo Inácio',
-    description: 'No Santo Inácio, realize a vistoria pericial que certifica longarinas, colunas dianteiras e traseiras para total integridade de seus passageiros.'
+    description: 'Clientes de Santo Inácio podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Seminário',
-    description: 'Investigação abrangente no Seminário antes de assinar o DUT. Prevenção absoluta contra clones e veículos adulterados ou com restrição.'
+    description: 'Clientes de Seminário podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Sítio Cercado',
-    description: 'Atendimento diário com qualidade garantida para o Sítio Cercado. Faça seu laudo completo de vistoria e feche seu negócio de forma segura.'
+    description: 'Clientes de Sítio Cercado podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'São Braz',
-    description: 'No São Braz, faça uma compra assessorada pela Carplus. Entregamos um laudo detalhado e explicamos cada ponto analisado da mecânica ao chassi.'
+    description: 'Clientes de São Braz podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'São Francisco',
-    description: 'Integridade e segurança em São Francisco. Identificação precisa de adulteração de motores e alteração em numerações de identificadores.'
+    description: 'Clientes de São Francisco podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'São João',
-    description: 'Vistoria especializada no bairro São João. Protegemos sua transação comercial com perícias cautelares completas e laudos rápidos e práticos.'
+    description: 'Clientes de São João podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'São Lourenço',
-    description: 'Quem reside no São Lourenço conta com o apoio da Carplus para certificar veículos com passagem por leilão ou histórico de locadoras.'
+    description: 'Clientes de São Lourenço podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'São Miguel',
-    description: 'Procedência de verdade no São Miguel. Identificamos se as peças de segurança, cintos e airbags são originais ou se já foram violados.'
+    description: 'Clientes de São Miguel podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Taboão',
-    description: 'No Taboão, faça a vistoria cautelar do seu veículo e evite dores de cabeça futuras. Entregamos resultados precisos na hora do exame físico.'
+    description: 'Clientes de Taboão podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Tarumã',
-    description: 'Para motoristas e comerciantes do Tarumã, garantimos vistoria cautelar rápida e fidedigna com excelente infraestrutura técnica ao seu dispor.'
+    description: 'Clientes de Tarumã podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Tatuquara',
-    description: 'Realize perícias robustas no Tatuquara. Garantia de laudo transparente certificado para transferências e transações do seu veículo usado.'
+    description: 'Clientes de Tatuquara podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Tingui',
-    description: 'Atendimento veloz no Tingui. Vistoria cautelar com análise de 80+ itens e pesquisa profunda em bases de leilão nacionais.'
+    description: 'Clientes de Tingui podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Uberaba',
-    description: 'No Uberaba, a Carplus é a segurança necessária para fechar negócio sem riscos ocultos de fraudes ou chassi remarcado indevidamente.'
+    description: 'Clientes de Uberaba podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Umbará',
-    description: 'Proteção integral no Umbará. Vistorias estruturadas que fornecem ao comprador a real condição da traseira, longarinas e motor do carro.'
+    description: 'Clientes de Umbará podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Vila Izabel',
-    description: 'Moradores de Vila Izabel contam com nossa excelência e precisão em vistorias automotivas a um passo de sua casa. Agende já seu laudo.'
+    description: 'Clientes de Vila Izabel podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Vista Alegre',
-    description: 'Não compre carros seminovos sem passar pela Carplus se você mora no Vista Alegre. Certificamos o valor real do automóvel com perícia técnica.'
+    description: 'Clientes de Vista Alegre podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Xaxim',
-    description: 'Uma das maiores áreas industriais e de venda de veículos no Xaxim, com suporte total para certificar segurança e integridade de frotas.'
+    description: 'Clientes de Xaxim podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Vila Sandra',
-    description: 'Região popular da CIC. Apoio completo em perícias veiculares e vistorias de transferência para moradores e lojistas da Vila Sandra.'
+    description: 'Clientes de Vila Sandra podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Vila Verde',
-    description: 'Região popular do imenso distrito da CIC. Realizamos laudos periciais cautelares detalhados e minuciosos na Vila Verde.'
+    description: 'Clientes de Vila Verde podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Vitória Régia',
-    description: 'Grande área na CIC com alta demanda de compra e venda de veículos. Vistoria de procedência e segurança veicular no Vitória Régia.'
+    description: 'Clientes de Vitória Régia podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Caiuá',
-    description: 'Procedência automotiva garantida na área do Caiuá, na CIC. Evite dores de cabeça com veículos que possuem pendências ocultas.'
+    description: 'Clientes de Caiuá podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Sabará',
-    description: 'Na popular região do Sabará (CIC), a Carplus assegura seu carro com análise de motor, chassis, histórico de roubos ou passagem por leilão.'
+    description: 'Clientes de Sabará podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Gabineto',
-    description: 'Para o Gabineto e cercanias da CIC, conte com o diagnóstico estrutural avançado que impede fraudes na aquisição de automóveis.'
+    description: 'Clientes de Gabineto podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Itatiaia',
-    description: 'Moradores da região Itatiaia contam com perícias técnicas detalhadas para garantir bons negócios no mercado de seminovos.'
+    description: 'Clientes de Itatiaia podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Santa Helena',
-    description: 'Certificação cautelar completa na área popular de Santa Helena na CIC. Integridade total de chassis e colunas certificadas na hora.'
+    description: 'Clientes de Santa Helena podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Conquista',
-    description: 'Laudo cautelar certificado atendendo à comunidade de Conquista na CIC. Confiabilidade técnica com parecer pericial documentado.'
+    description: 'Clientes de Conquista podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Barigui',
-    description: 'Inspeção estrutural caprichada atendendo a região popular do Barigui na CIC. Proteja-se de perdas com nosso laudo pericial.'
+    description: 'Clientes de Barigui podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Osvaldo Cruz',
-    description: 'A área do loteamento Osvaldo Cruz na CIC conta com exames técnicos detalhados e checagem de vidros, numerações e leilões.'
+    description: 'Clientes de Osvaldo Cruz podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Atenas',
-    description: 'No conjunto popular Atenas, garantimos que sua compra veicular seja amparada por avaliações rigorosas de segurança ativa e passiva.'
+    description: 'Clientes de Atenas podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Neoville',
-    description: 'No moderno bairro planejado do Neoville (região CIC), oferecemos perícia premium para quem prioriza procedência técnica e qualidade.'
+    description: 'Clientes de Neoville podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Vila Pantanal',
-    description: 'Inspeção automotiva e vistorias de transferência ágeis para os moradores da área de Vila Pantanal, no Cajuru.'
+    description: 'Clientes de Vila Pantanal podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Vila Torres',
-    description: 'Avaliação estrutural confiável na tradicional região da Vila Torres. Verificamos se há cortes de teto ou emendas no chassi.'
+    description: 'Clientes de Vila Torres podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Vila das Torres',
-    description: 'Laudo cautelar e vistorias periciais de alta confiabilidade para motoristas e revendedores na região da Vila das Torres.'
+    description: 'Clientes de Vila das Torres podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Vila Parolin',
-    description: 'Solução rápida e transparente de perícia automotiva para a comunidade da Vila Parolin. Agende o seu check-up preventivo em instantes.'
+    description: 'Clientes de Vila Parolin podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Vila Hauer',
-    description: 'Apoio técnico sob medida para a área popular da Vila Hauer. Certificação detalhada e confiável do seu automóvel usado.'
+    description: 'Clientes de Vila Hauer podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Vila Guaíra',
-    description: 'Perícia cautelar de transferência e vistorias completas na Vila Guaíra. Evite dores de cabeça futuras e feche negócio com tranquilidade.'
+    description: 'Clientes de Vila Guaíra podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Vila Oficinas',
-    description: 'Laudo de procedência de vidros, suspensão e longarinas atendendo à popular região residencial da Vila Oficinas no Cajuru.'
+    description: 'Clientes de Vila Oficinas podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Vila Osternack',
-    description: 'Perícias veiculares com a rapidez que você precisa na Vila Osternack. Checamos 80+ itens e emitimos seu laudo pericial na hora.'
+    description: 'Clientes de Vila Osternack podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Vila São Pedro',
-    description: 'Vistoria cautelar completa e honesta para a Vila São Pedro. Saiba tudo sobre as condições do carro antes de fechar a compra.'
+    description: 'Clientes de Vila São Pedro podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Vila Audi',
-    description: 'Atendimento para a Vila Audi com análise transparente de antecedentes, restrições financeiras e histórico de sinistros.'
+    description: 'Clientes de Vila Audi podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Pinheirinho Velho',
-    description: 'Inspeções e vistorias periciais na histórica área do Pinheirinho Velho. Confiabilidade total com profissionais peritos.'
+    description: 'Clientes de Pinheirinho Velho podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Sítio Cercado Velho',
-    description: 'Laudo veicular fidedigno do estado da estrutura de longarinas e juntas na região tradicional do Sítio Cercado Velho.'
+    description: 'Clientes de Sítio Cercado Velho podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Capão Raso Velho',
-    description: 'Garanta a aprovação técnica e proteção do seu patrimônio com vistorias dedicadas no Capão Raso Velho.'
+    description: 'Clientes de Capão Raso Velho podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Jardim Gabineto',
-    description: 'Realizamos vistorias cautelares de total credibilidade para a vizinhança do Jardim Gabineto em Curitiba.'
+    description: 'Clientes de Jardim Gabineto podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Jardim Itatiaia',
-    description: 'Evite ciladas em revendas de automóveis. Faça a vistoria cautelar Carplus no Jardim Itatiaia e faça uma compra consciente.'
+    description: 'Clientes de Jardim Itatiaia podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Jardim Kosmos',
-    description: 'Checagem rigorosa de numeração de motor e procedência do câmbio na tradicional comunidade do Jardim Kosmos.'
+    description: 'Clientes de Jardim Kosmos podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Jardim da Ordem',
-    description: 'Suporte pericial confiável para garantir a originalidade e a boa procedência de veículos comprados no Jardim da Ordem.'
+    description: 'Clientes de Jardim da Ordem podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Jardim Alvorada',
-    description: 'Vistoria automotiva completa e detalhada para toda a região popular do Jardim Alvorada em Curitiba.'
+    description: 'Clientes de Jardim Alvorada podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'CIC Central',
-    description: 'Inspeção técnica veicular minuciosa com entrega imediata na movimentada região do CIC Central em Curitiba.'
+    description: 'Clientes de CIC Central podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   }
 ];
 
 export const CITIES_SEO: CityType[] = [
   {
     name: 'São José dos Pinhais',
-    description: 'A Carplus Vistorias atende moradores de São José dos Pinhais com vistoria cautelar e laudo na hora. Fácil acesso pelo Contorno Sul até o Portão, Curitiba. Para quem compra veículos em leilões ou revendas de SJP, nosso laudo é essencial.'
+    description: 'Clientes de São José dos Pinhais podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Pinhais',
-    description: 'Moradores de Pinhais encontram na Carplus Vistorias o laudo cautelar mais robusto e completo da região metropolitana. Evite fraudes estruturais.'
+    description: 'Clientes de Pinhais podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Colombo',
-    description: 'Colombo e região norte da Grande Curitiba: perícia veicular de alto padrão com verificação minuciosa de chassis e antecedentes.'
+    description: 'Clientes de Colombo podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Araucária',
-    description: 'Para quem reside ou revende em Araucária, a Carplus realiza vistorias periciais rigorosas com laudos emitidos em menos de uma hora.'
+    description: 'Clientes de Araucária podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Almirante Tamandaré',
-    description: 'Vistoria cautelar detalhada garantindo segurança jurídica nas transações de carros para moradores de Almirante Tamandaré.'
+    description: 'Clientes de Almirante Tamandaré podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Campo Largo',
-    description: 'Vistoria cautelar e laudo homologado na entrada oeste para Campo Largo. Análise profunda de colisões de lataria e peças estruturais.'
+    description: 'Clientes de Campo Largo podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Campo Magro',
-    description: 'Evite dores de cabeça comprando seminovos em Campo Magro. Saiba se o chassi do carro é original antes de assinar o recibo de compra.'
+    description: 'Clientes de Campo Magro podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Fazenda Rio Grande',
-    description: 'Fácil deslocamento pela BR-116. Garantimos a vistoria cautelar mais detalhada da Grande Curitiba para moradores de Fazenda Rio Grande.'
+    description: 'Clientes de Fazenda Rio Grande podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Quatro Barras',
-    description: 'Para Quatro Barras, as avaliações estruturadas da Carplus asseveram a originalidade mecânica e operacional de qualquer modelo nacional ou importado.'
+    description: 'Clientes de Quatro Barras podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Campina Grande do Sul',
-    description: 'Proteção pericial de peso para Campina Grande do Sul. Mapeamos soldas clandestinas e repinturas completas que depreciam automóveis.'
+    description: 'Clientes de Campina Grande do Sul podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Mandirituba',
-    description: 'Tranquilidade e agilidade jurídica para o município metropolitano de Mandirituba. Pareceres sérios com credenciamento nacional.'
+    description: 'Clientes de Mandirituba podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Balsa Nova',
-    description: 'Compradores de Balsa Nova contam com vistorias veiculares robustas de chassi e painéis periciados, livre de multas ou irregularidades.'
+    description: 'Clientes de Balsa Nova podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Rio Branco do Sul',
-    description: 'Para lojistas e autônomos de Rio Branco do Sul, a Carplus executa perícias veiculares ágeis e perfeitamente aceitas por seguradoras.'
+    description: 'Clientes de Rio Branco do Sul podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Itaperuçu',
-    description: 'Certificação cautelar completa atestando numerações de peças e integridade técnica na cidade de Itaperuçu e região norte.'
+    description: 'Clientes de Itaperuçu podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   },
   {
     name: 'Tijucas do Sul',
-    description: 'Suporte automotivo especializado para Tijucas do Sul. Análise documental completa e parecer estrutural estendido na hora.'
+    description: 'Clientes de Tijucas do Sul podem consultar a Carplus para avaliação do veículo na base do Portão, em Curitiba. Confirme o agendamento antes de sair. Para deslocamento fora do Portão, consulte disponibilidade e taxa.'
   }
 ];
 
 export const FAQS_SEO: FAQItemType[] = [
   {
-    question: '1. O que é vistoria cautelar?',
-    answer: 'A vistoria cautelar é uma perícia técnica realizada em um veículo usado para verificar suas condições estruturais, documentais e históricas antes da compra, venda ou financiamento. O laudo cautelar analisa mais de 80 itens do veículo, incluindo estrutura do chassi, lataria, numerações identificadoras, pesquisa de antecedentes (roubo, leilão, gravame) e histórico de colisões.'
+    "question": "Onde fazer vistoria cautelar em Curitiba?",
+    "answer": "A Carplus Vistorias atende na Av. Presidente Arthur da Silva Bernardes, 1323, no bairro Portão. Entre em contato pelo WhatsApp (41) 98874-0258 para confirmar a disponibilidade e agendar."
   },
   {
-    question: '2. Por que fazer vistoria cautelar antes de comprar um carro?',
-    answer: 'Comprar um carro usado sem vistoria cautelar é um risco enorme. Veículos com histórico de batida grave, adulteração de chassi, leilão ou gravame financeiro podem representar perda total do investimento. A vistoria cautelar da Carplus garante que você saiba exatamente o que está comprando antes de assinar qualquer contrato.'
+    "question": "O que é analisado na vistoria cautelar?",
+    "answer": "O site apresenta análise de estrutura e pintura, conferência de identificadores e pesquisa de histórico do veículo. Confirme com a equipe quais itens e consultas fazem parte do serviço escolhido e quais limitações serão registradas no laudo."
   },
   {
-    question: '3. Quanto tempo leva a vistoria cautelar na Carplus?',
-    answer: 'A vistoria cautelar completa na Carplus leva entre 45 e 60 minutos. O laudo é emitido na hora, ao final da inspeção. Não há espera ou envio posterior — você sai com o documento em mãos.'
+    "question": "Quanto custa e quanto tempo demora?",
+    "answer": "Solicite o orçamento e a estimativa de prazo informando o modelo, o ano do veículo e a finalidade da avaliação. O valor e o horário precisam ser confirmados pela equipe; esta página não apresenta tabela de preços nem prazo garantido."
   },
   {
-    question: '4. A vistoria cautelar da Carplus é aceita no DETRAN?',
-    answer: 'Sim. O laudo técnico emitido pela Carplus Vistorias é aceito pelo DETRAN-PR, por todos os cartórios de notas e registro de imóveis do Paraná, por financeiras e bancos que operam no estado, e por seguradoras conveniadas.'
+    "question": "A vistoria cautelar garante que o carro não terá problemas?",
+    "answer": "Não. A avaliação reúne informações sobre os itens examinados e as consultas disponíveis naquele momento. Leia o escopo, os apontamentos e as limitações do relatório. Para dúvidas sobre funcionamento ou desgaste, converse também com um profissional de mecânica."
   },
   {
-    question: '5. Qual o valor da vistoria cautelar em Curitiba?',
-    answer: 'Entre em contato pelo WhatsApp (41) 98874-0258 para consultar nossos valores atualizados. A Carplus oferece preços competitivos com a vistoria mais completa de Curitiba, incluindo seguro de responsabilidade civil sem custo adicional.'
+    "question": "O laudo cautelar substitui o procedimento de transferência?",
+    "answer": "Não trate os dois serviços como equivalentes. Se a finalidade é uma transferência, confirme diretamente com o Detran-PR quais procedimentos e documentos são exigidos para o seu caso. Informe essa finalidade à Carplus antes de contratar."
   },
   {
-    question: '6. A Carplus atende no meu bairro?',
-    answer: 'A Carplus Vistorias está localizada no Portão, em Curitiba, com fácil acesso de todos os bairros da cidade e da região metropolitana. Atendemos moradores de Água Verde, Boqueirão, CIC, Cajuru, Santa Felicidade, Boa Vista, e mais de 27 cidades da Grande Curitiba.'
+    "question": "Preciso levar o carro até o Portão?",
+    "answer": "O atendimento é realizado na base da empresa no Portão. Se precisar de deslocamento fora da região do Portão, consulte antes a disponibilidade e a taxa. O site informa que não há taxa de deslocamento para atendimento na base."
   },
   {
-    question: '7. O que está incluído na vistoria cautelar da Carplus?',
-    answer: 'Nossa vistoria cautelar inclui: análise estrutural de chassi e longarinas, verificação de lataria e pintura, conferência de todas as numerações identificadoras, pesquisa de antecedentes (roubo, furto, leilão, gravame, judicial), verificação de recall, análise documental e emissão de laudo técnico com fotos.'
+    "question": "O que informar ao solicitar o agendamento?",
+    "answer": "Informe modelo, ano, finalidade da vistoria e preferência de data. Pergunte quais documentos levar e combine com o proprietário a apresentação do veículo. Não é necessário publicar documentos pessoais ou do carro em comentários públicos."
   },
   {
-    question: '8. Preciso agendar com antecedência?',
-    answer: 'Recomendamos agendamento pelo WhatsApp para garantir atendimento no horário de sua preferência. Atendemos de segunda a sábado. Em alguns casos, é possível atendimento no mesmo dia, sujeito à disponibilidade.'
-  },
-  {
-    question: '9. Posso levar o vendedor junto para a vistoria?',
-    answer: 'Sim, o vendedor pode acompanhar a vistoria. A transparência é total — o laudo documenta o estado real do veículo, o que beneficia tanto o comprador quanto o vendedor honesto.'
-  },
-  {
-    question: '10. A vistoria cautelar detecta batidas e reparos ocultos?',
-    answer: 'Sim. Utilizamos medidor de espessura de pintura (espessímetro), detector de massa plástica e análise visual técnica para identificar repintura, solda, massa em excesso e deformações estruturais que indicam colisões anteriores, mesmo quando ocultas com reparos.'
-  },
-  {
-    question: '11. O que é gravame veicular e como a Carplus verifica?',
-    answer: 'Gravame é uma restrição financeira sobre o veículo — geralmente financiamento não quitado. Comprando um carro com gravame, você pode perder o veículo para a financeira. A Carplus consulta as principais bases de dados para identificar gravames ativos antes da emissão do laudo.'
-  },
-  {
-    question: '12. A vistoria cautelar é obrigatória em Curitiba?',
-    answer: 'A vistoria cautelar não é legalmente obrigatória para todas as transações, mas é fortemente recomendada. Para transferência de veículos com mais de determinado tempo de uso, o DETRAN-PR pode exigir laudo de vistoria. Consulte-nos para verificar a necessidade no seu caso.'
-  },
-  {
-    question: '13. Que tipos de veículos a Carplus vistoria?',
-    answer: 'Realizamos vistoria cautelar em carros de passeio, SUVs, picapes, minivans e utilitários leves. Consulte-nos para veículos de maior porte como caminhões e ônibus.'
-  },
-  {
-    question: '14. O laudo da Carplus tem validade?',
-    answer: 'O laudo técnico emitido pela Carplus tem validade de 30 dias para fins de transferência e documentação. Para negociações, a validade é imediata — reflete o estado do veículo no dia da vistoria.'
-  },
-  {
-    question: '15. Como funciona o seguro de responsabilidade civil da Carplus?',
-    answer: 'A Carplus Vistorias inclui seguro de responsabilidade civil em todos os laudos. Isso significa que, caso o laudo apresente alguma falha técnica que cause dano documentado ao cliente, estamos cobertos para indenizar. É nossa garantia de qualidade.'
-  },
-  {
-    question: '16. A Carplus faz vistoria de veículos de leilão?',
-    answer: 'Sim. A vistoria de veículos de leilão é um dos nossos serviços mais solicitados. Laudos de leilão frequentemente apresentam danos ocultos que só uma perícia técnica especializada consegue identificar. Recomendamos fortemente a vistoria antes de qualquer arremate.'
-  },
-  {
-    question: '17. Posso fazer a vistoria antes de pagar o sinal?',
-    answer: 'Absolutamente sim — e recomendamos isso fortemente. Faça a vistoria cautelar antes de pagar qualquer valor ao vendedor. Um bom vendedor não se recusará a permitir a vistoria do veículo.'
-  },
-  {
-    question: '18. A Carplus emite laudo digital?',
-    answer: 'Sim. Emitimos laudo em formato digital (PDF) e impresso. O laudo digital pode ser enviado por e-mail ou WhatsApp imediatamente após a vistoria.'
-  },
-  {
-    question: '19. O que fazer se o laudo identificar problemas no veículo?',
-    answer: 'O laudo da Carplus documentará todos os problemas encontrados com fotos e descrição técnica. Com essas informações, você pode negociar desconto no preço, exigir reparos, ou simplesmente desistir da compra — com segurança e documentação para eventual disputa.'
-  },
-  {
-    question: '20. Como agendar a vistoria cautelar na Carplus em Curitiba?',
-    answer: 'O agendamento é simples: entre em contato pelo WhatsApp (41) 98874-0258, informe o modelo do veículo e sua preferência de horário. Nossa equipe confirmará o agendamento em minutos. Você também pode enviar e-mail para laudo@carplusvistorias.com.br.'
+    "question": "Como usar o resultado antes de comprar?",
+    "answer": "Leia o relatório com atenção e peça esclarecimentos sobre cada apontamento. Considere a avaliação junto com os documentos e as demais verificações necessárias à negociação. Um resultado isolado não garante valorização, financiamento ou aceitação por seguradora."
   }
 ];
