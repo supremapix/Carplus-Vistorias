@@ -58,7 +58,7 @@ export default function LocationPage({ slug, onGoHome }: LocationPageProps) {
     const formattedName = slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
     return {
       name: formattedName,
-      description: `A Carplus Vistorias em ${formattedName} realiza vistoria cautelar de procedência e laudos automotivos para sua total segurança antes de comprar ou transferir veículos usados.`,
+      description: `Vistoria cautelar para quem está em ${formattedName}, com atendimento na base da Carplus no Portão, Curitiba. Consulte o escopo da avaliação e o agendamento.`,
       type: 'bairro' as const,
       bairroGenitive: `em ${formattedName}`
     };
@@ -91,13 +91,12 @@ export default function LocationPage({ slug, onGoHome }: LocationPageProps) {
       "@graph": [
         {
           "@type": "AutomotiveBusiness",
-          "@id": `https://carplusvistorias.com.br/vistoria-cautelar-${slug}/#organization`,
+          "@id": "https://www.carplusvistorias.com.br/#organization",
           "name": "Carplus Vistorias",
-          "description": `Vistoria cautelar e perícia automotiva ${bairroGenitive}, Curitiba – PR. Laudo completo emitido na hora com total segurança.`,
-          "url": `https://carplusvistorias.com.br/vistoria-cautelar-${slug}/`,
+          "description": `Vistoria cautelar para clientes ${bairroGenitive}. Atendimento na base do Portão, Curitiba; consulte escopo, prazo e agendamento.`,
+          "url": "https://www.carplusvistorias.com.br/",
           "telephone": "+554198874-0258",
           "image": "https://img.carplusvistorias.com.br/vistorias-pr.png",
-          "priceRange": "$$",
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "Av. Presidente Arthur da Silva Bernardes, 1323",
@@ -105,11 +104,6 @@ export default function LocationPage({ slug, onGoHome }: LocationPageProps) {
             "addressRegion": "PR",
             "postalCode": "80320-300",
             "addressCountry": "BR"
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": -25.4660,
-            "longitude": -49.2890
           }
         }
       ]
@@ -120,8 +114,8 @@ export default function LocationPage({ slug, onGoHome }: LocationPageProps) {
     <div className="min-h-screen bg-zinc-950 text-zinc-100">
       {/* Dynamic SEO Meta Tag injection by Helmet */}
       <EnhancedSEO
-        title={`Vistoria Cautelar ${bairroGenitive} em Curitiba | Carplus Vistorias`}
-        description={`Perícia automotiva e Vistoria Cautelar ${bairroGenitive}, Curitiba - PR. Evite golpes e compre com total segurança. Laudo completo emitido na hora.`}
+        title={`Vistoria Cautelar para ${name} | Carplus Vistorias`}
+        description={`Vistoria cautelar para quem está ${bairroGenitive}, com atendimento na base do Portão, Curitiba. Consulte o que é avaliado, orçamento e prazo do laudo.`}
         keywords={`vistoria cautelar ${slug}, vistoria cautelar ${name}, pericia automotiva ${name}, laudo cautelar ${name}`}
         canonicalUrl={`https://www.carplusvistorias.com.br/vistoria-cautelar-${slug}`}
         structuredData={structuredDataObj}
@@ -154,7 +148,7 @@ export default function LocationPage({ slug, onGoHome }: LocationPageProps) {
           </h1>
           
           <p className="text-zinc-300 max-w-3xl mx-auto text-sm sm:text-base leading-relaxed font-semibold">
-            Realize sua perícia automotiva e garanta a procedência de veículos usados {bairroGenitive} ou arredores de Curitiba com laudo emitido imediatamente na nossa sede.
+            Antes de fechar a compra de um usado {bairroGenitive}, consulte a avaliação de estrutura e procedência. O atendimento é na base do Portão, em Curitiba; confirme o escopo e o prazo do laudo ao agendar.
           </p>
 
           {/* Aviso Proeminente de Atendimento na Base da Empresa e Regra de Deslocamento */}
@@ -311,7 +305,7 @@ export default function LocationPage({ slug, onGoHome }: LocationPageProps) {
                   <span>Atendimento na Base da Empresa · Bairro Portão</span>
                 </div>
                 <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-medium">
-                  Nossa base própria está localizada na Av. Presidente Arthur da Silva Bernardes, 1323 no Portão. <strong>O atendimento é realizado na base da empresa</strong> com equipamentos de ponta para emissão de laudo certificado na hora.
+                  Nossa base está localizada na Av. Presidente Arthur da Silva Bernardes, 1323 no Portão. <strong>O atendimento é realizado na base da empresa</strong>. Consulte os itens avaliados e o prazo de entrega do laudo antes da visita.
                 </p>
                 <p className="text-xs sm:text-sm text-amber-300 leading-relaxed font-bold bg-amber-500/10 p-3 rounded-lg border border-amber-500/30">
                   Realizando a vistoria aqui na base no Portão não há taxa. Caso precise de deslocamento em outras regiões fora da região do Portão, temos uma taxa — consulte antes o valor!
@@ -324,8 +318,16 @@ export default function LocationPage({ slug, onGoHome }: LocationPageProps) {
                 {description.replace('Carplus Vistorias', 'Carplus Vistorias')}
               </p>
               <p className="text-white text-sm leading-relaxed font-semibold">
-                O mercado automotivo em Curitiba é agitado, sendo comum encontrar carros com chassis remarcados, sinistros graves camuflados em oficinas clandestinas, ou carros com problemas crônicos provenientes de leilões que perdem até 40% do seu valor comercial. Com a Carplus Vistorias, você descobre a verdade sobre a estrutura e procedência do seu automóvel de forma profissional.
+                Fotos e anúncios não substituem a avaliação presencial. Antes de pagar um sinal, combine com o vendedor a apresentação do veículo e pergunte quais verificações estão incluídas. A cautelar ajuda a identificar indícios de reparos e inconsistências, mas não elimina todos os riscos de uma compra nem substitui uma avaliação mecânica quando necessária.
               </p>
+              <h3 className="text-white text-lg">O que confirmar antes de sair para a vistoria</h3>
+              <ul className="list-disc pl-5 space-y-2 text-zinc-300 text-sm font-medium">
+                <li>Informe modelo, ano, sua localidade e a dúvida principal sobre o veículo.</li>
+                <li>Confirme horário, documentos necessários, valor e prazo de entrega do laudo.</li>
+                <li>Combine a presença do veículo com o vendedor e confira o endereço da base no Portão.</li>
+                <li>Se precisar de deslocamento, consulte disponibilidade e taxa antes de contratar.</li>
+                <li>Peça explicação dos apontamentos e dos limites das consultas de histórico antes de decidir a compra.</li>
+              </ul>
             </div>
             
             <div className="pt-4">
@@ -363,7 +365,7 @@ export default function LocationPage({ slug, onGoHome }: LocationPageProps) {
               O Que Analisamos Na Cautelar Completa
             </h2>
             <p className="text-white max-w-xl mx-auto text-xs sm:text-sm font-bold">
-              Nosso laudo técnico emite um parecer final analisando em detalhes mais de 80 componentes essenciais de procedência e integridade corporal.
+              Confirme com a equipe quais verificações fazem parte do serviço escolhido e quais limitações serão registradas no laudo.
             </p>
           </div>
 
@@ -371,7 +373,7 @@ export default function LocationPage({ slug, onGoHome }: LocationPageProps) {
             {[
               { title: 'Chassi e Numerações', text: 'Conferência de numeração do câmbio, motor, vidros, etiquetas de identificações industriais e gravação do chassi.', icon: 'fa-barcode' },
               { title: 'Coluna e Longarinas', text: 'Inspeção profunda das partes estruturais primárias e soldas de fábrica na estrutura da carroceria.', icon: 'fa-car-burst' },
-              { title: 'Histórico Completo', text: 'Sindicância sobre furto ativo, sinistros, leilões, indenizações integrais de seguros, restrições e pendências judiciais.', icon: 'fa-file-shield' },
+              { title: 'Consultas de Histórico', text: 'Consulte quais bases e informações estão incluídas. Ausência de apontamentos em uma consulta não garante um histórico sem ocorrências.', icon: 'fa-file-shield' },
               { title: 'Lataria e Pintura', text: 'Leitura técnica de repinturas com medidores eletrônicos de espessura de micrômetros de alta fidelidade.', icon: 'fa-spray-can' }
             ].map(item => (
               <div key={item.title} className="bg-white border-2 border-black p-6 rounded-xl transition-all flex flex-col justify-between shadow-lg text-zinc-950">
@@ -401,7 +403,7 @@ export default function LocationPage({ slug, onGoHome }: LocationPageProps) {
               Também Atendemos na Região
             </h2>
             <p className="text-white max-w-xl mx-auto text-xs sm:text-sm font-bold">
-              Selecione outro bairro ou cidade satélite vizinha de {name} para visualizar a cobertura e laudos rápidos em Curitiba.
+              Consulte também as orientações para outras localidades. O atendimento é na base do Portão, em Curitiba; deslocamento depende de consulta prévia.
             </p>
           </div>
 
