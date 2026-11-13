@@ -470,7 +470,7 @@ export default function App() {
                     </div>
                     <div className="flex items-start gap-2.5">
                       <span className="text-primary text-lg mt-0.5"><i className="fa-solid fa-circle-check"></i></span>
-                      <span className="text-white text-sm font-bold">Seguro Integrado Incluso</span>
+                      <span className="text-white text-sm font-bold">Escopo Confirmado no Agendamento</span>
                     </div>
                   </div>
 
@@ -1188,7 +1188,7 @@ export default function App() {
             <div className="lg:col-span-5 space-y-6">
               <Logo variant="dark" showText={false} className="logo-glowing" />
               <p className="text-sm text-justify text-white max-w-sm mt-4 leading-relaxed font-semibold">
-                Especialistas em Vistoria Cautelar e Perícia Automotiva em Curitiba – PR. Laudo emitido com total segurança para sua negociação.
+                Especialistas em Vistoria Cautelar e Perícia Automotiva em Curitiba – PR. Consulte escopo, orçamento e prazo para sua avaliação.
               </p>
               {/* Trust symbol badge */}
               <div className="pt-2 flex items-center gap-3 text-primary font-mono text-xs font-bold uppercase tracking-wider select-none">
@@ -1213,7 +1213,7 @@ export default function App() {
                 </li>
                 <li>
                   <a href="#servicos" onClick={(e) => { e.preventDefault(); handleNavigate('servicos'); }} className="text-white hover:text-primary transition-colors flex items-center gap-2">
-                    <i className="fa-solid fa-chevron-right text-[10px] text-primary"></i> Laudo de Transferência
+                    <i className="fa-solid fa-chevron-right text-[10px] text-primary"></i> Dúvidas sobre Transferência
                   </a>
                 </li>
                 <li>
