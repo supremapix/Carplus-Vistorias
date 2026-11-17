@@ -6,6 +6,7 @@
 import React, { useState, useEffect } from 'react';
 import { Heart, Zap, MapPin, Map, Star } from 'lucide-react';
 import Header from './components/Header';
+import ReviewInvitation from './components/ReviewInvitation';
 import Logo from './components/Logo';
 import FAQAccordion from './components/FAQAccordion';
 import CityExplorer from './components/CityExplorer';
@@ -1171,6 +1172,8 @@ export default function App() {
           </>
         )}
       </main>
+
+      <ReviewInvitation />
 
       {/* 4. Footer Global Section */}
       <footer 
