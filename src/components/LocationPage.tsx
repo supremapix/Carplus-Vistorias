@@ -1,3 +1,4 @@
+import AtendimentoQuadrinhos from './AtendimentoQuadrinhos';
 import React, { useMemo } from 'react';
 import { NEIGHBORHOODS_SEO, CITIES_SEO } from '../data';
 import EnhancedSEO from './EnhancedSEO';
@@ -268,6 +269,8 @@ export default function LocationPage({ slug, onGoHome }: LocationPageProps) {
           <div className="hero-laser-line"></div>
         </div>
       </section>
+
+      <AtendimentoQuadrinhos slug={slug} />
 
       {/* Why Cautelar section with dynamic local copy and background integration */}
       <section className="relative py-20 bg-zinc-950 border-b border-zinc-900 px-6 overflow-hidden">
