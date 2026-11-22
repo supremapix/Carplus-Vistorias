@@ -90,33 +90,7 @@ p {
 }
 #main-header.scrolled {
   background: rgba(26, 26, 26, 0.95);
-  backdrop-filter: blur(8px);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
-}
-
-/* Menu links dynamic underline hover */
-.nav-link {
-  position: relative;
-  color: var(--color-white);
-  text-decoration: none;
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  letter-spacing: 0.05em;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--color-primary);
-  transition: width 0.3s ease;
-}
-.nav-link:hover::after, .nav-link.active::after {
-  width: 100%;
 }
 
 /* Animated header CTA check button shake */
@@ -144,27 +118,6 @@ p {
     linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
   background-size: 30px 30px;
   pointer-events: none;
-}
-
-/* Glow logo animations */
-@keyframes logo-glow {
-  from { filter: drop-shadow(0 0 2px rgba(245,166,35,0.25)); }
-  to { filter: drop-shadow(0 0 10px rgba(245,166,35,0.6)); }
-}
-.logo-glowing {
-  animation: logo-glow 3.5s ease-in-out infinite alternate;
-}
-
-/* Divider flow animations */
-@keyframes divider-flow {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
-}
-.footer-divider {
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
-  background-size: 200% 100%;
-  animation: divider-flow 4s linear infinite;
 }
 
 /* Hero Badge animations */
@@ -387,5 +340,3 @@ p {
     background-image: url("https://img.carplusvistorias.com.br/fundo-site-carplus-cwb-pr.png");
   }
 }
-
-

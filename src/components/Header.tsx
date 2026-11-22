@@ -3,18 +3,18 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, type MouseEvent } from 'react';
 import Logo from './Logo';
 import { AppSection } from '../types';
 
 interface HeaderProps {
-  activeSection: AppSection;
-  onNavigate: (section: AppSection) => void;
+  activeSection?: AppSection;
+  onNavigate?: (section: AppSection) => void;
 }
 
 export default function Header({ activeSection, onNavigate }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -39,8 +39,10 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
     { id: 'faq', label: 'FAQ / Dúvidas' },
   ];
 
-  const handleLinkClick = (id: AppSection) => {
-    setIsDrawerOpen(false);
+  const hrefFor = (id: AppSection) => id === 'home' ? '/' : '/#' + id;
+  const handleLinkClick = (event: MouseEvent<HTMLAnchorElement>, id: AppSection) => {
+    if (!onNavigate || event.button !== 0 || event.metaKey || event.ctrlKey || event.altKey || event.shiftKey) return;
+    event.preventDefault();
     onNavigate(id);
   };
 
@@ -49,46 +51,46 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
       <header
         id="main-header"
         className={`${
-          isScrolled 
-            ? 'scrolled bg-zinc-950/95 backdrop-blur-md py-3 shadow-xl shadow-black/30' 
+          (isScrolled || !onNavigate)
+            ? 'scrolled bg-zinc-950/95 py-3 shadow-xl shadow-black/30' 
             : 'bg-gradient-to-b from-black/80 to-transparent py-5'
         } fixed top-0 left-0 w-full z-[1000] transition-all duration-300 ${
-          isLoaded ? 'translate-y-0 opacity-100' : '-translate-y-6 opacity-0'
-        } transform duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)]`}
+          (isLoaded || !onNavigate) ? 'opacity-100' : 'opacity-0'
+        } duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)]`}
       >
+        {(isScrolled || !onNavigate) && <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 backdrop-blur-md" />}
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           
           {/* Logo with clean scaling */}
-          <div 
+          <a
             className="cursor-pointer transition-transform duration-300 active:scale-95 flex items-center"
-            onClick={() => handleLinkClick('home')}
+            href="/"
+            onClick={(event) => handleLinkClick(event, 'home')}
           >
             <Logo 
               variant="dark" 
               isHeader={true} 
               className={`origin-left transition-all duration-300 ${isScrolled ? 'scale-90' : 'scale-100'}`} 
             />
-          </div>
+          </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-5 xl:gap-8">
+          <nav aria-label="Menu principal" className="hidden lg:flex items-center gap-5 xl:gap-8">
             {navItems.map((item, index) => (
-              <button
-                key={item.id}
-                onClick={() => handleLinkClick(item.id)}
+              <a key={item.id} href={hrefFor(item.id)} onClick={(event) => handleLinkClick(event, item.id)}
                 className={`nav-link text-[9px] min-[1100px]:text-[9.5px] xl:text-[10px] uppercase tracking-[0.2em] font-medium font-display transition-all py-1 cursor-pointer transform duration-500 delay-[${index * 50}ms] ${
-                  isLoaded ? 'translate-y-0 opacity-100' : '-translate-y-2 opacity-0'
+                  (isLoaded || !onNavigate) ? 'translate-y-0 opacity-100' : '-translate-y-2 opacity-0'
                 } ${
                   activeSection === item.id ? 'active text-primary font-bold' : 'text-white hover:text-primary'
                 }`}
               >
                 {item.label}
-              </button>
+              </a>
             ))}
           </nav>
 
           {/* Header Action Button (Shaking) */}
-          <div className={`hidden md:flex flex-col items-center gap-1 transition-all duration-700 delay-300 transform ${isLoaded ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'}`}>
+          <div className={`hidden md:flex flex-col items-center gap-1 transition-all duration-700 delay-300 transform ${(isLoaded || !onNavigate) ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'}`}>
             <a
               href="/contato.html"
               className="premium-btn-green flex items-center gap-2 font-display font-extrabold text-[11px] uppercase tracking-[0.12em] py-2 px-4 rounded-lg transition-all"
@@ -101,78 +103,28 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
             </span>
           </div>
 
-          {/* Mobile Hamburguer Indicator */}
-          <button
-            onClick={() => setIsDrawerOpen(!isDrawerOpen)}
-            className="lg:hidden flex flex-col justify-between w-6 h-5 select-none focus:outline-none z-[1001]"
-            aria-label="Abrir Menu"
-          >
-            <span 
-              className={`w-full h-0.5 bg-white rounded-full transition-all duration-300 origin-left ${
-                isDrawerOpen ? 'rotate-45 translate-x-1' : ''
-              }`}
-            ></span>
-            <span 
-              className={`w-full h-0.5 bg-white rounded-full transition-all duration-300 ${
-                isDrawerOpen ? 'opacity-0 scale-0' : ''
-              }`}
-            ></span>
-            <span 
-              className={`w-full h-0.5 bg-white rounded-full transition-all duration-300 origin-left ${
-                isDrawerOpen ? '-rotate-45 translate-x-1' : ''
-              }`}
-            ></span>
-          </button>
-        </div>
-      </header>
-
-      {/* Backdrop overlay for Mobile Drawer */}
-      <div 
-        onClick={() => setIsDrawerOpen(false)}
-        className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-[999] lg:hidden transition-opacity duration-500 ${
-          isDrawerOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-        }`}
-      />
-
-      {/* Mobile Right Slide Drawer */}
-      <div 
-        className={`fixed top-0 right-0 w-[80vw] sm:w-[320px] h-screen bg-zinc-950 border-l border-zinc-900 shadow-2xl z-[1000] lg:hidden py-24 px-8 flex flex-col justify-between transition-transform duration-[450ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform ${
-          isDrawerOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
-      >
-        <div className="flex flex-col gap-6">
-          <div className={`mb-6 pb-4 border-b border-zinc-900/50 flex flex-col gap-2 transition-all duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${isDrawerOpen ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
-            <Logo variant="dark" isHeader={true} className="scale-90 origin-left mb-1" />
-            <span className="text-xs text-primary font-mono font-bold uppercase tracking-widest block">Carplus Vistorias</span>
-          </div>
-          <nav className="flex flex-col gap-5">
-            {navItems.map((item, index) => (
-              <button
-                key={item.id}
-                onClick={() => handleLinkClick(item.id)}
-                className={`text-left font-display font-semibold text-base uppercase tracking-widest py-1 transition-all duration-[500ms] ease-out cursor-pointer ${
-                  activeSection === item.id ? 'text-primary pl-3 border-l-2 border-primary font-bold' : 'text-white hover:text-primary pl-0'
-                } ${isDrawerOpen ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}
-                style={{ transitionDelay: isDrawerOpen ? `${(index + 1) * 60}ms` : '0ms' }}
-              >
-                {item.label}
-              </button>
-            ))}
-            <a
-              href="/mapa-do-site.html"
-              className={`text-left font-display font-semibold text-base uppercase tracking-widest py-1 text-white hover:text-primary transition-all duration-[500ms] ease-out ${isDrawerOpen ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}
-              style={{ transitionDelay: isDrawerOpen ? `${(navItems.length + 1) * 60}ms` : '0ms' }}
-            >
-              Mapa do Site
-            </a>
-          </nav>
-        </div>
-
-        {/* Drawer Contact Footer Info */}
-        <div 
-          className={`flex flex-col gap-4 border-t border-zinc-900/50 pt-4 mt-auto transition-all duration-[600ms] ease-out ${isDrawerOpen ? 'translate-y-0 opacity-100 animate-pulse-subtle' : 'translate-y-10 opacity-0'}`}
-          style={{ transitionDelay: isDrawerOpen ? `${(navItems.length + 2) * 60}ms` : '0ms' }}
-        >
+          <details data-carplus-mobile-menu className="group relative lg:hidden">
+            <summary aria-label="Menu" className="relative z-[1001] flex min-h-11 min-w-11 cursor-pointer list-none flex-col items-center justify-center gap-1.5 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary [&::-webkit-details-marker]:hidden">
+              <span aria-hidden="true" className="h-0.5 w-6 rounded-full bg-white group-open:translate-y-2 group-open:rotate-45" />
+              <span aria-hidden="true" className="h-0.5 w-6 rounded-full bg-white group-open:opacity-0" />
+              <span aria-hidden="true" className="h-0.5 w-6 rounded-full bg-white group-open:-translate-y-2 group-open:-rotate-45" />
+            </summary>
+            <div data-carplus-menu-backdrop aria-hidden="true" className="fixed inset-0 bg-black/60 backdrop-blur-sm" />
+            <div className="fixed inset-y-0 right-0 flex w-[80vw] max-w-[320px] flex-col gap-6 overflow-y-auto border-l border-zinc-900 bg-zinc-950 px-6 pb-6 pt-24 shadow-2xl">
+              <div className="border-b border-zinc-900 pb-4">
+                <Logo variant="dark" isHeader={true} className="max-w-full origin-left scale-90" />
+                <span className="block text-xs font-bold uppercase tracking-widest text-primary">Carplus Vistorias</span>
+              </div>
+              <nav aria-label="Menu móvel" className="flex flex-col gap-2">
+                {navItems.map((item) => (
+                  <a key={item.id} href={hrefFor(item.id)} onClick={(event) => handleLinkClick(event, item.id)}
+                    className={`flex min-h-11 items-center text-left font-display text-base font-semibold uppercase tracking-widest ${activeSection === item.id ? 'border-l-2 border-primary pl-3 text-primary' : 'text-white hover:text-primary'}`}>
+                    {item.label}
+                  </a>
+                ))}
+                <a href="/mapa-do-site.html" className="flex min-h-11 items-center text-left font-display text-base font-semibold uppercase tracking-widest text-white hover:text-primary">Mapa do Site</a>
+              </nav>
+              <div className="mt-auto flex flex-col gap-4 border-t border-zinc-900 pt-4">
           <div className="flex flex-col gap-2 bg-zinc-900/40 p-3 rounded-lg border border-zinc-900 text-left">
             <span className="text-[9px] text-primary uppercase font-bold tracking-widest block font-mono mb-1">Contato & Endereço</span>
             
@@ -209,8 +161,11 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
               Fale Conosco · Profissional & Premium
             </span>
           </div>
+              </div>
+            </div>
+          </details>
         </div>
-      </div>
+      </header>
     </>
   );
 }
