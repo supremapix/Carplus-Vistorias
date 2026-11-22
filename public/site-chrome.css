@@ -1,0 +1,50 @@
+/* Menu links dynamic underline hover */
+.nav-link {
+  position: relative;
+  color: var(--color-white, #fff);
+  text-decoration: none;
+  font-family: var(--font-display, Poppins, sans-serif);
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-primary, #F5A623);
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after, .nav-link.active::after {
+  width: 100%;
+}
+
+/* Glow logo animations */
+@keyframes logo-glow {
+  from { filter: drop-shadow(0 0 2px rgba(245,166,35,0.25)); }
+  to { filter: drop-shadow(0 0 10px rgba(245,166,35,0.6)); }
+}
+.logo-glowing {
+  animation: logo-glow 3.5s ease-in-out infinite alternate;
+}
+
+/* Divider flow animations */
+@keyframes divider-flow {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.footer-divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-primary, #F5A623), transparent);
+  background-size: 200% 100%;
+  animation: divider-flow 4s linear infinite;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  #main-header *, .logo-glowing, .footer-divider { animation: none !important; transition: none !important; }
+}

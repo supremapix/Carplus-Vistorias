@@ -2,6 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
+import Header from '../src/components/Header';
+import Footer from '../src/components/Footer';
 import AtendimentoQuadrinhos from '../src/components/AtendimentoQuadrinhos';
 const PRE_COMPRA_PAGES = [
   {
@@ -188,6 +190,21 @@ function save(slug: string, html: string) {
   fs.writeFileSync(path.join(dir, 'index.html'), html);
   fs.writeFileSync(path.join(root, 'public', slug + '.html'), html);
 }
+const renderChrome = (node: Parameters<typeof renderToStaticMarkup>[0]) =>
+  renderToStaticMarkup(node).replace(/^((<link\b[^>]+\/>)+)/, '');
+const siteHeader = renderChrome(createElement(Header, {}));
+const siteFooter = renderChrome(createElement(Footer, {}));
+function applySiteChrome(html: string, slug: string) {
+  // Only update the known outer header and footer; leave semantic metadata and content intact.
+  const header = /<header\b[^>]*>([\s\S]*?)<\/header>/i;
+  const footer = /<footer\b[^>]*>([\s\S]*?)<\/footer>/i;
+  if (!header.test(html) || !footer.test(html)) throw new Error('Layout ausente: ' + slug);
+  const merged = html.replace(header, () => siteHeader)
+    .replace(footer, () => siteFooter)
+    .replace('<main class="pt-[76px]">', '<main class="pt-[76px] sm:pt-[88px] lg:pt-[104px]">');
+  return merged.includes('src="/site-menu.js"') ? merged :
+    merged.replace('</head>', '<link rel="stylesheet" href="/site-chrome.css">\n<script defer src="/site-menu.js"></script>\n</head>');
+}
 const hqBlock = /<!-- carplus-hq-start -->[\s\S]*?<!-- carplus-hq-end -->(?:\r?\n)?/g;
 function insertQuadrinhos(html: string, slug: string, preCompra = false) {
   const entry = '<section id="perguntas"';
@@ -211,15 +228,15 @@ for (const match of locations) {
   if (slug === 'curitiba' || generated.has(slug)) continue;
   const name = match[2].trim().replace(/^(?:no|na|em|nas|nos) /, '');
   const html = template.replaceAll('[Bairro]', name).replaceAll('[slug]', slug);
-  save('vistoria-cautelar-' + slug, insertQuadrinhos(html, slug));
+  save('vistoria-cautelar-' + slug, applySiteChrome(insertQuadrinhos(html, slug), slug));
   generated.add(slug);
 }
 // Keep the separately reviewed Curitiba guide and its existing route form intact.
-fs.writeFileSync(path.join(root, 'public', 'vistoria-cautelar-curitiba.html'), insertQuadrinhos(read('vistoria-cautelar-curitiba.html'), 'curitiba'));
+fs.writeFileSync(path.join(root, 'public', 'vistoria-cautelar-curitiba.html'), applySiteChrome(insertQuadrinhos(read('vistoria-cautelar-curitiba.html'), 'curitiba'), 'curitiba'));
 const preTemplate = read('_template-pre-compra.html');
 for (const page of PRE_COMPRA_PAGES) {
   let html = preTemplate;
   for (const key of ['title', 'description', 'h1', 'canonicalUrl'] as const) html = html.replaceAll('[' + key + ']', page[key]);
-  save(page.slug, insertQuadrinhos(html, page.slug, true));
+  save(page.slug, applySiteChrome(insertQuadrinhos(html, page.slug, true), page.slug));
 }
 console.log('Reviewed output: ' + generated.size + ' local pages and ' + PRE_COMPRA_PAGES.length + ' pre-purchase pages. Eight FAQs per page; JSON-LD parsed.');
