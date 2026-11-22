@@ -1,5 +1,8 @@
 import fs from 'fs';
 import path from 'path';
+import { createElement } from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
+import AtendimentoQuadrinhos from '../src/components/AtendimentoQuadrinhos';
 const PRE_COMPRA_PAGES = [
   {
     slug: 'vistoria-pre-compra-curitiba',
@@ -185,6 +188,19 @@ function save(slug: string, html: string) {
   fs.writeFileSync(path.join(dir, 'index.html'), html);
   fs.writeFileSync(path.join(root, 'public', slug + '.html'), html);
 }
+const hqBlock = /<!-- carplus-hq-start -->[\s\S]*?<!-- carplus-hq-end -->(?:\r?\n)?/g;
+function insertQuadrinhos(html: string, slug: string, preCompra = false) {
+  const entry = '<section id="perguntas"';
+  if (!html.includes(entry)) throw new Error('Ponto de inserção não encontrado: ' + slug);
+  const hq = renderToStaticMarkup(createElement(AtendimentoQuadrinhos, { slug, preCompra }));
+  if (!hq.includes('id="atendimento-em-quadrinhos"') || (hq.match(/<img\b/g) || []).length !== 4) {
+    throw new Error('Quadrinhos incompletos: ' + slug);
+  }
+  const navEnd = 'href="#agendamento">Como agendar</a>';
+  const jump = '<a class="text-primary underline underline-offset-4" href="#atendimento-em-quadrinhos">Guia em quadrinhos</a>';
+  const clean = html.replace(hqBlock, '');
+  return (clean.includes(jump) ? clean : clean.replace(navEnd, navEnd + jump)).replace(entry, () => '<!-- carplus-hq-start -->' + hq + '<!-- carplus-hq-end -->\n' + entry);
+}
 const template = read('_template-bairro.html');
 const sitemap = read('mapa-do-site.html');
 const locations = [...sitemap.matchAll(/href="\/vistoria-cautelar-([^".]+?)(?:\.html)?"[^>]*>Vistoria ([^<]+)<\/a>/g)];
@@ -195,13 +211,15 @@ for (const match of locations) {
   if (slug === 'curitiba' || generated.has(slug)) continue;
   const name = match[2].trim().replace(/^(?:no|na|em|nas|nos) /, '');
   const html = template.replaceAll('[Bairro]', name).replaceAll('[slug]', slug);
-  save('vistoria-cautelar-' + slug, html);
+  save('vistoria-cautelar-' + slug, insertQuadrinhos(html, slug));
   generated.add(slug);
 }
+// Keep the separately reviewed Curitiba guide and its existing route form intact.
+fs.writeFileSync(path.join(root, 'public', 'vistoria-cautelar-curitiba.html'), insertQuadrinhos(read('vistoria-cautelar-curitiba.html'), 'curitiba'));
 const preTemplate = read('_template-pre-compra.html');
 for (const page of PRE_COMPRA_PAGES) {
   let html = preTemplate;
   for (const key of ['title', 'description', 'h1', 'canonicalUrl'] as const) html = html.replaceAll('[' + key + ']', page[key]);
-  save(page.slug, html);
+  save(page.slug, insertQuadrinhos(html, page.slug, true));
 }
 console.log('Reviewed output: ' + generated.size + ' local pages and ' + PRE_COMPRA_PAGES.length + ' pre-purchase pages. Eight FAQs per page; JSON-LD parsed.');

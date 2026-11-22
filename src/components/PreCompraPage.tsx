@@ -1,3 +1,4 @@
+import AtendimentoQuadrinhos from './AtendimentoQuadrinhos';
 import React, { useMemo, useState } from 'react';
 import EnhancedSEO from './EnhancedSEO';
 import AnimatedCar from './AnimatedCar';
@@ -372,6 +373,8 @@ export default function PreCompraPage({ slug, onGoHome }: PreCompraPageProps) {
         </section>
 
         {/* METRICS / STATS STRIP */}
+        <AtendimentoQuadrinhos slug={slug} preCompra />
+
         <section className="bg-zinc-900/40 border-b border-zinc-900 py-10">
           <div className="container mx-auto px-4 max-w-6xl grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
             <div>
