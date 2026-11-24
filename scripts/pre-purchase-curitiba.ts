@@ -2,8 +2,8 @@ const sectionClass = 'py-12 md:py-16 px-4 md:px-8 border-b border-zinc-800';
 const headingClass = 'text-2xl md:text-3xl font-display font-bold text-white';
 const paragraphClass = 'text-base md:text-lg text-zinc-300 leading-relaxed';
 const linkClass = 'text-primary underline underline-offset-4';
-const section = (id: string, title: string, contents: string) =>
-  `<section id="${id}" class="${sectionClass}"><div class="max-w-5xl mx-auto space-y-5"><h2 class="${headingClass}">${title}</h2>${contents}</div></section>`;
+const section = (id: string, title: string, bodyHtml: string) =>
+  `<section id="${id}" class="${sectionClass}"><div class="max-w-5xl mx-auto space-y-5"><h2 class="${headingClass}">${title}</h2>${bodyHtml}</div></section>`;
 const p = (text: string) => `<p class="${paragraphClass}">${text}</p>`;
 
 const questions = [
