@@ -5,12 +5,13 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import Header from '../src/components/Header';
 import Footer from '../src/components/Footer';
 import AtendimentoQuadrinhos from '../src/components/AtendimentoQuadrinhos';
+import { applyCuritibaPrePurchase } from './pre-purchase-curitiba';
 const PRE_COMPRA_PAGES = [
   {
     slug: 'vistoria-pre-compra-curitiba',
-    title: 'Vistoria Pré Compra Curitiba | Carplus Vistorias',
-    h1: 'Vistoria Pré Compra Curitiba',
-    description: 'Avaliação antes de comprar um veículo, com atendimento na base do Portão em Curitiba. Consulte escopo, orçamento e agendamento.',
+    title: 'Vistoria pré-compra em Curitiba | Carplus Vistorias',
+    h1: 'Vistoria pré-compra em Curitiba: o que verificar antes de fechar',
+    description: 'Vai comprar um usado? Saiba como combinar com o vendedor, confirmar o escopo da vistoria no Portão e ler o relatório antes de decidir.',
     keywords: 'vistoria pre compra curitiba, laudo de carro usado, perito automotivo curitiba, comprar carro seguro, carplus vistorias',
     canonicalUrl: 'https://www.carplusvistorias.com.br/vistoria-pre-compra-curitiba',
     anchorText: 'Vistoria Pré Compra Curitiba'
@@ -237,6 +238,7 @@ const preTemplate = read('_template-pre-compra.html');
 for (const page of PRE_COMPRA_PAGES) {
   let html = preTemplate;
   for (const key of ['title', 'description', 'h1', 'canonicalUrl'] as const) html = html.replaceAll('[' + key + ']', page[key]);
+  if (page.slug === 'vistoria-pre-compra-curitiba') html = applyCuritibaPrePurchase(html);
   save(page.slug, applySiteChrome(insertQuadrinhos(html, page.slug, true), page.slug));
 }
 console.log('Reviewed output: ' + generated.size + ' local pages and ' + PRE_COMPRA_PAGES.length + ' pre-purchase pages. Eight FAQs per page; JSON-LD parsed.');
